@@ -1,0 +1,282 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "type": "message",
+            "text": "You may be looking for ssh_channel_read(ssh_channel channel, void * dest, uint32_t count, int is_stderr ). Reads data from a channel. Returns The number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.",
+            "user": "U9HPG3B3L",
+            "ts": "1520620646.000014"
+        },
+        {
+            "type": "message",
+            "text": "How do I read from a channel in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620622.000210"
+        },
+        {
+            "type": "message",
+            "text": "How do I read the response from ssh_channel_request_exec?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620592.000547"
+        },
+        {
+            "type": "message",
+            "text": "ssh_channel_request_exec returns SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.",
+            "user": "U9HPG3B3L",
+            "ts": "1520620382.000533"
+        },
+        {
+            "type": "message",
+            "text": "ssh_channel_request_exec(ssh_channel channel, const char * cmd). Parameters are 1) channel: The channel to execute the command. 2) cmd: The command to execute (e.g. \"ls ~\/ -al | grep -i reports\").",
+            "user": "U9HPG3B3L",
+            "ts": "1520620327.000485"
+        },
+        {
+            "type": "message",
+            "text": "How do I get the output from ssh_channel_request_exec?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620325.000423"
+        },
+        {
+            "type": "message",
+            "text": "You may be looking for sftp_new(). Start a new sftp session.",
+            "user": "U9HPG3B3L",
+            "ts": "1520620267.000264"
+        },
+        {
+            "type": "message",
+            "text": "What parameters does ssh_channel_request_exec take?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620247.000297"
+        },
+        {
+            "type": "message",
+            "text": "How do I initialize an sftp_session in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620199.000562"
+        },
+        {
+            "type": "message",
+            "text": "How do I create an sftp_session?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620181.000629"
+        },
+        {
+            "type": "message",
+            "text": "You may be looking for ssh_channel_free().",
+            "user": "U9HPG3B3L",
+            "ts": "1520620174.000590"
+        },
+        {
+            "type": "message",
+            "text": "You may be looking for ssh_channel_close().",
+            "user": "U9HPG3B3L",
+            "ts": "1520620160.000742"
+        },
+        {
+            "type": "message",
+            "text": "Are you looking for ssh_channel_request_exec()?  Run a shell command without an interactive shell. This is similar to 'sh -c command'.",
+            "user": "U9HPG3B3L",
+            "ts": "1520620132.000528"
+        },
+        {
+            "type": "message",
+            "text": "How do I free a channel?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620127.000736"
+        },
+        {
+            "type": "message",
+            "text": "How do I close a channel?",
+            "user": "U9NGUL8AK",
+            "ts": "1520620123.000268"
+        },
+        {
+            "type": "message",
+            "text": "How do I send a command over an ssh:Channel",
+            "user": "U9NGUL8AK",
+            "ts": "1520620090.000574"
+        },
+        {
+            "type": "message",
+            "text": "The ssh::Channel class describes the state of an SSH channel.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619697.000298"
+        },
+        {
+            "type": "message",
+            "text": "You may be looking for ssh_channel_new(). Allocate a new channel.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619672.000315"
+        },
+        {
+            "type": "message",
+            "text": "What object type is an ssh_channel?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619665.000180"
+        },
+        {
+            "type": "message",
+            "text": "How do I create a new ssh_channel in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619629.000116"
+        },
+        {
+            "type": "message",
+            "text": "ssh_free returns void.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619442.000370"
+        },
+        {
+            "type": "message",
+            "text": "ssh_disconnect returns void.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619414.000230"
+        },
+        {
+            "type": "message",
+            "text": "ssh_is_server_known returns SSH_SERVER_KNOWN_OK: The server is known and has not changed.\nSSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.\nSSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.\nSSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.\nSSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.\nSSH_SERVER_ERROR: Some error happened.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619384.000681"
+        },
+        {
+            "type": "message",
+            "text": "What does ssh_free return in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619338.000568"
+        },
+        {
+            "type": "message",
+            "text": "What does ssh_disconnect return in libssh",
+            "user": "U9NGUL8AK",
+            "ts": "1520619326.000546"
+        },
+        {
+            "type": "message",
+            "text": "What does ssh_is_server_known return in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619311.000064"
+        },
+        {
+            "type": "message",
+            "text": "You may ask for more information about any of these functions.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619298.000483"
+        },
+        {
+            "type": "message",
+            "text": "Are you looking for ssh_disconnect(), ssh_silent_disconnect(), or ssh_free()?",
+            "user": "U9HPG3B3L",
+            "ts": "1520619247.000225"
+        },
+        {
+            "type": "message",
+            "text": "Are you looking for ssh_is_server_known()?  Checks the user's known host file for a previous connection to the current server.",
+            "user": "U9HPG3B3L",
+            "ts": "1520619222.000192"
+        },
+        {
+            "type": "message",
+            "text": "How do I free the session in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619160.000544"
+        },
+        {
+            "type": "message",
+            "text": "How do I disconnect from the server?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619154.000139"
+        },
+        {
+            "type": "message",
+            "text": "How do I disconnect from the server and free the session?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619141.000506"
+        },
+        {
+            "type": "message",
+            "text": "How do I authenticate the server in libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520619127.000271"
+        },
+        {
+            "type": "message",
+            "text": "There are many functions in libssh. Can you specify what kind of function you are looking for?",
+            "user": "U9HPG3B3L",
+            "ts": "1520618823.000311"
+        },
+        {
+            "type": "message",
+            "text": "Please list the functions in libssh",
+            "user": "U9NGUL8AK",
+            "ts": "1520618755.000243"
+        },
+        {
+            "type": "message",
+            "text": "Returns SSH_OK on success, SSH_ERROR on error. SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "U9HPG3B3L",
+            "ts": "1520618667.000617"
+        },
+        {
+            "type": "message",
+            "text": "What does ssh_connect return?",
+            "user": "U9NGUL8AK",
+            "ts": "1520618615.000742"
+        },
+        {
+            "type": "message",
+            "text": "For example: ssh_options_set(my_session, SSH_OPTIONS_HOST, \"localhost\");",
+            "user": "U9HPG3B3L",
+            "ts": "1520618508.000199"
+        },
+        {
+            "type": "message",
+            "text": "To connect to a particular host, you may use ssh_options_set(ssh_session session, enum ssh_options_e type, const void * value ) using the parameter SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *).",
+            "user": "U9HPG3B3L",
+            "ts": "1520618432.000430"
+        },
+        {
+            "type": "message",
+            "text": "Show me an example of connecting to localhost with libssh",
+            "user": "U9NGUL8AK",
+            "ts": "1520618318.000647"
+        },
+        {
+            "type": "message",
+            "text": "I found the following similar to \"connect\" and \"localhost\": ssh_connect() and ssh_options_getopt()",
+            "user": "U9HPG3B3L",
+            "ts": "1520618200.000273"
+        },
+        {
+            "type": "message",
+            "text": "The ssh::Session class contains the state of a SSH connection.",
+            "user": "U9HPG3B3L",
+            "ts": "1520618137.000272"
+        },
+        {
+            "type": "message",
+            "text": "How do I connect to localhost in libssh",
+            "user": "U9NGUL8AK",
+            "ts": "1520618084.000288"
+        },
+        {
+            "type": "message",
+            "text": "What is in ssh_session_struct for libssh?",
+            "user": "U9NGUL8AK",
+            "ts": "1520618073.000354"
+        },
+        {
+            "type": "message",
+            "text": "Are you looking for ssh_new(void )? Returns A new ssh_session pointer, NULL on error.",
+            "user": "U9HPG3B3L",
+            "ts": "1520617503.000582"
+        },
+        {
+            "type": "message",
+            "text": "how do I create a new ssh_session in libssh",
+            "user": "U9NGUL8AK",
+            "ts": "1520617411.000263"
+        }
+    ],
+    "has_more": false
+}

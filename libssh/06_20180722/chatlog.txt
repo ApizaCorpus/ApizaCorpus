@@ -1,0 +1,406 @@
+Apiza [12:38 PM]
+Hello! I am Apiza, an automated virtual assistant supervised by a human. I look forward to helping you today!
+
+Programmer_6 [12:42 PM]
+Hi Apiza, can you explain how to create a new ssh session?
+
+Apiza [12:43 PM]
+Sure! It looks like the best way to create a new ssh session is with
+
+ssh_session ssh_new    (    void         )
+
+Description
+Create a new ssh session.
+
+Programmer_6 [12:43 PM]
+is that a void method or does it return anything?
+
+Apiza [12:44 PM]
+This method returns an "ssh_session":
+
+Returns
+A new ssh_session pointer, NULL on error.
+
+Programmer_6 [12:52 PM]
+how do I connect to localhost once I've created a new ssh_session?
+
+Apiza [12:53 PM]
+This looks like the best method to connect:
+
+int ssh_connect    (    ssh_session session    )
+
+Description 
+Connect to the ssh server.
+
+Parameters 
+session: The ssh session to connect.
+
+Returns 
+SSH_OK on success, SSH_ERROR on error. 
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+The only method I found involving "localhost" is ssh_options_getopt:
+
+int ssh_options_getopt    (    ssh_session     session,
+int *     argcptr,
+char **     argv 
+)
+
+Description
+Parse command line arguments.
+This is a helper for your application to generate the appropriate options from the command line arguments.
+The argv array and argc value are changed so that the parsed arguments wont appear anymore in them.
+The single arguments (without switches) are not parsed. thus, myssh -l user localhost
+The command wont set the hostname value of options to localhost.
+
+Programmer_6 [12:55 PM]
+for the ssh_connect() method, shouldn't I provide a username and password to connect to an ssh server?
+
+Apiza [12:56 PM]
+The ssh_connect method doesn't seem to mention a username field or a password field. The function ssh_userauth_password may be appropriate:
+
+int ssh_userauth_password    (    ssh_session     session,
+const char *     username,
+const char *     password 
+)
+
+Description
+Try to authenticate by password.
+This authentication method is normally disabled on SSHv2 server. You should use keyboard-interactive mode.
+The 'password' value MUST be encoded UTF-8. It is up to the server how to interpret the password and validate it against the password database. However, if you read the password in some other encoding, you MUST convert the password to UTF-8.
+
+Programmer_6 [12:58 PM]
+for the ssh_connect() method, can you tell me what the int values are for SSH_OK, SSH_ERROR and SSH_AGAIN?
+
+Apiza [12:59 PM]
+Sure it looks like these are the "Error return codes":
+
+/* Error return codes */
+#define SSH_OK 0     /* No error */
+#define SSH_ERROR -1 /* Error of some kind */
+#define SSH_AGAIN -2 /* The nonblocking call must be repeated */
+#define SSH_EOF -127 /* We have already a eof */
+
+Programmer_6 [1:01 PM]
+and for the ssh_userauth_password() method, does that only tell you if the provided authentication is valid or will it connect to the server as well?
+
+Apiza [1:03 PM]
+You must be connected to the server before using ssh_userauth_password.
+
+ssh_userauth_password returns
+
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+Note
+Most server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.
+
+Programmer_6 [1:04 PM]
+can you give me the int values for those codes?
+
+Apiza [1:05 PM]
+Sure!
+
+enum ssh_auth_e {
+  SSH_AUTH_SUCCESS=0,
+  SSH_AUTH_DENIED,
+  SSH_AUTH_PARTIAL,
+  SSH_AUTH_INFO,
+  SSH_AUTH_AGAIN,
+  SSH_AUTH_ERROR=-1
+};
+
+Programmer_6 [1:10 PM]
+can you tell me more about how to connect to localhost after an ssh_session is successfully created?
+
+Apiza [1:12 PM]
+Sure thing, I was able to find one example that goes from ssh_new to ssh_connect:
+
+// Open session and set options
+ my_ssh_session = ssh_new();
+ if (my_ssh_session == NULL)
+   exit(-1);
+ ssh_options_set(my_ssh_session, SSH_OPTIONS_HOST, "localhost");
+ // Connect to server
+ rc = ssh_connect(my_ssh_session);
+
+Programmer_6 [1:17 PM]
+ok great.  What method should I use to authenticate the server?  Is it different from ssh_userauth_password() which authenticates the user?
+
+Apiza [1:20 PM]
+Hmm, I am not certain about that. I may still be able to find an answer. Can you elaborate?
+
+Programmer_6 [1:21 PM]
+what method should be used to authenticate the server?
+
+Apiza [1:24 PM]
+I couldn't find a function to "authenticate the server" but I found ones to "Check if the server is known" and "verify [a hash of the public key]". Would either of those be helpful?
+
+Programmer_6 [1:25 PM]
+nevermind, is it possible to authenticate a user without a username?
+also, what does a return code of 1 signify from ssh_userauth_password()?
+
+Apiza [1:27 PM]
+I found the following "userauth" methods that don't need a "username" or "user"  parameter:
+
+int ssh_userauth_gssapi    (    ssh_session     session    )
+
+const char* ssh_userauth_kbdint_getanswer    (    ssh_session     session,
+unsigned int     i 
+)
+
+const char* ssh_userauth_kbdint_getinstruction    (    ssh_session     session    )
+
+const char* ssh_userauth_kbdint_getname    (    ssh_session     session    )
+
+int ssh_userauth_kbdint_getnanswers    (    ssh_session     session    )
+
+int ssh_userauth_kbdint_getnprompts    (    ssh_session     session    )
+
+const char* ssh_userauth_kbdint_getprompt    (    ssh_session     session,
+unsigned int     i,
+char *     echo 
+)
+
+int ssh_userauth_kbdint_setanswer    (    ssh_session     session,
+unsigned int     i,
+const char *     answer 
+)
+
+Would you like to know more about any of these?
+A 1 denotes the enum SSH_AUTH_DENIED.
+
+Programmer_6 [1:28 PM]
+no, can you show me an example of ssh_userauth_password() being used?
+
+Apiza [1:30 PM]
+Sure! I found the following example:
+
+int rc;
+char * password;
+ssh_session my_ssh_session;
+...
+rc = ssh_userauth_password(my_ssh_session, NULL, password);
+if (rc != SSH_AUTH_SUCCESS)
+{
+   fprintf(stderr, "Error authenticating with password: %s\n",
+           ssh_get_error(my_ssh_session));
+   ssh_disconnect(my_ssh_session);
+   ssh_free(my_ssh_session);
+   exit(-1);
+}
+
+Programmer_6 [1:31 PM]
+great, that works.  And do ssh_disconnect and ssh_free return anything?
+
+Apiza [1:32 PM]
+I'm glad to hear that!
+
+ssh_disconnect and ssh_free both return void.
+
+Programmer_6 [1:33 PM]
+Ok, how would I create and open a new ssh channel in an existing ssh session?
+
+Apiza [1:36 PM]
+It looks like ssh_channel ssh_channel_new    (    ssh_session     session    ) will help create a new ssh channel.
+
+Description
+Allocate a new channel.
+
+There are a few methods to open an ssh channel:
+
+int ssh_channel_open_auth_agent    (    ssh_channel     channel    )
+
+int ssh_channel_open_session    (    ssh_channel     channel    )
+
+int ssh_channel_open_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+int ssh_channel_open_reverse_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+int ssh_channel_open_x11    (    ssh_channel     channel,
+const char *     orig_addr,
+int     orig_port 
+)
+
+Would you like to hear more about one of these?
+
+Programmer_6 [1:37 PM]
+can you tell me more about ssh_channel_new().  how do I know if it executed successfully?
+
+Apiza [1:38 PM]
+Sure!
+
+ssh_channel ssh_channel_new    (    ssh_session     session    )
+
+Description
+Allocate a new channel.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A pointer to a newly allocated channel, NULL on error.
+
+References ssh_buffer_free(), and ssh_buffer_new().
+
+Programmer_6 [1:39 PM]
+ok great, and whats the difference between ssh_channel_open_auth_agent and ssh_channel_open_session
+
+Apiza [1:40 PM]
+ssh_channel_open_auth_agent:
+
+Description
+Open an agent authentication forwarding channel.
+This type of channel can be opened by a server towards a client in order to provide SSH-Agent services to the server-side process. This channel can only be opened if the client claimed support by sending a channel request beforehand.
+
+ssh_channel_open_session:
+
+Description
+Open a session channel (suited for a shell, not TCP forwarding).
+ssh_channel_open_session seems to be the more popular function.
+
+Programmer_6 [1:41 PM]
+and what are the return codes for ssh_channel_open_session?
+
+Apiza [1:41 PM]
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_6 [1:44 PM]
+I'm getting an SSH_ERROR.  Can you show me an example of how it's used?  Any parameters I need to set up?
+
+Apiza [1:45 PM]
+Sure! I found the following example:
+
+int rc;
+ssh_channel channel;
+...
+rc = ssh_channel_open_session(channel);
+if (rc != SSH_OK)
+{
+   ssh_channel_free(channel);
+   return rc;
+}
+
+Programmer_6 [1:48 PM]
+great, and how would I execute a command on an opened channel?
+
+Apiza [1:48 PM]
+This method should work:
+
+int ssh_channel_request_exec    (    ssh_channel     channel,
+const char *     cmd 
+)
+
+Description
+Run a shell command without an interactive shell.
+This is similar to 'sh -c command'.
+
+Parameters
+channel: The channel to execute the command.
+cmd: The command to execute (e.g. "ls ~/ -al | grep -i reports").
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Example:
+
+rc = channel_request_exec(channel, "ps aux");
+if (rc > 0) {
+   return -1;
+}
+while ((rc = channel_read(channel, buffer, sizeof(buffer), 0)) > 0) {
+   if (fwrite(buffer, 1, rc, stdout) != (unsigned int) rc) {
+       return -1;
+   }
+}
+
+Programmer_6 [1:51 PM]
+what is buffer in that code sample?
+just a char *?
+
+Apiza [1:53 PM]
+The buffer variable used in ssh_channel_read is a void *
+
+int ssh_channel_read    (    ssh_channel     channel,
+void *     dest,
+uint32_t     count,
+int     is_stderr 
+)
+
+Parameters
+channel: The channel to read from.
+dest: The destination buffer which will get the data.
+count: The count of bytes to be read.
+is_stderr: A boolean value to mark reading from the stderr flow.
+
+Programmer_6 [1:54 PM]
+how do I shut down a channel?
+specifically by sending an eof?
+
+Apiza [1:55 PM]
+One of those methods may help:
+
+int ssh_channel_close    (    ssh_channel     channel    )
+Description
+Close a channel.
+This sends an end of file and then closes the channel. You won't be able to recover any data the server was going to send or was in buffers.
+
+
+void ssh_channel_free    (    ssh_channel     channel    )
+Description
+Close and free a channel.
+To send an eof, you may use int ssh_channel_send_eof    (    ssh_channel     channel    )
+
+Programmer_6 [2:01 PM]
+does ssh_channel_close also free the channel?
+
+Apiza [2:02 PM]
+ssh_channel_close only closes the channel. ssh_channel_free closes and frees the channel.
+
+Programmer_6 [2:02 PM]
+nevermind I figured it out
+
+Apiza [2:03 PM]
+I am glad to hear it!
+
+Programmer_6 [2:04 PM]
+how do I create a new sftp_session on an existing ssh_session?
+
+Apiza [2:04 PM]
+sftp_session sftp_new    (    ssh_session     session    )
+
+Description
+Start a new sftp session.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A new sftp session or NULL on error.
+
+References ssh_channel_free(), ssh_channel_new(), and ssh_channel_open_session().
+
+See also
+sftp_free()
+
+Programmer_6 [2:06 PM]
+do I need to call any methods to initialize the sftp_session?
+
+Apiza [2:07 PM]
+It looks like you do. You can use
+
+int sftp_init    (    sftp_session     sftp    )
+Returns
+0 on success, < 0 on error with ssh error set.

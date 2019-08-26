@@ -1,0 +1,452 @@
+Programmer_27 [7:26 PM]
+How do I register key events?
+
+Apiza [7:27 PM]
+You'll most likely want to be using al_key_down:
+
+bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)
+
+Return true if the key specified was held down in the state specified.
+
+Programmer_27 [7:28 PM]
+Can I use keyboard events as an event source?
+
+Apiza [7:31 PM]
+Yes, you'll want to use something like:
+
+al_register_event_source(event_queue, al_get_keyboard_event_source());
+
+Programmer_27 [7:32 PM]
+What event type is a keyboard event?
+
+Apiza [7:33 PM]
+One of the following:
+
+ALLEGRO_EVENT_KEY_DOWN
+ALLEGRO_EVENT_KEY_UP
+ALLEGRO_EVENT_KEY_CHAR
+
+Programmer_27 [7:34 PM]
+How do I access the keycode from an event object?
+
+Apiza [7:35 PM]
+ev.keyboard.keycode will get you the keycode for event ev.
+
+Programmer_27 [7:35 PM]
+What are the keycodes for up, down, left and right?
+
+Apiza [7:36 PM]
+The keycodes for the arrow keys are the following:
+
+ALLEGRO_KEY_LEFT
+ALLEGRO_KEY_RIGHT
+ALLEGRO_KEY_UP
+ALLEGRO_KEY_DOWN
+
+Programmer_27 [7:39 PM]
+al_get_keyboard is failing with "Assertion `new_keyboard_driver' failed". What might be the cause of this?
+
+Apiza [7:40 PM]
+Have you called al_install_keyboard?
+
+Programmer_27 [7:40 PM]
+How do I call al_install_keyboard?
+
+Apiza [7:41 PM]
+al_install_keyboard() should work.
+
+bool al_install_keyboard(void)
+
+Install a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.
+
+Programmer_27 [7:42 PM]
+How do I play a sound in Allegro?
+
+Apiza [7:43 PM]
+You should be able to play a sound with al_play_sample:
+
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+
+Plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.
+
+Parameters:
+
+gain - relative volume at which the sample is played; 1.0 is normal.
+pan - 0.0 is centred, -1.0 is left, 1.0 is right, or ALLEGRO_AUDIO_PAN_NONE.
+speed - relative speed at which the sample is played; 1.0 is normal.
+loop - ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR
+ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.
+
+Programmer_27 [7:44 PM]
+How do I load a sample in Allegro?
+
+Apiza [7:45 PM]
+You should be able to load a sample with al_load_sample:
+
+ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+
+Loads a few different audio file formats based on their extension.
+
+Note that this stores the entire file in memory at once, which may be time consuming. To read the file as it is needed, use al_load_audio_stream.
+
+Returns the sample on success, NULL on failure.
+
+Programmer_27 [7:51 PM]
+How do I get more detailed error information from Allegro?
+
+Apiza [7:53 PM]
+I don't think you can get more detailed information than you're already getting. Is there any error in particular you're having trouble with?
+
+Programmer_27 [7:53 PM]
+al_load_sample is returning NULL. Is there any way to find out why?
+
+Apiza [7:55 PM]
+al_load_sample returns NULL on failure. Have you called al_init_acodec_addon?
+
+bool al_init_acodec_addon(void)
+
+This function registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.
+
+Depending on what libraries are available, the full set of recognised extensions is: .wav, .flac, .ogg, .opus, .it, .mod, .s3m, .xm, .voc.
+
+Limitations:
+
+Saving is only supported for wav files.
+
+The wav file loader currently only supports 8/16 bit little endian PCM files. 16 bits are used when saving wav files. Use flac files if more precision is required.
+
+Module files (.it, .mod, .s3m, .xm) are often composed with streaming in mind, and sometimes cannot be easily rendered into a finite length sample. Therefore they cannot be loaded with al_load_sample/al_load_sample_f and must be streamed with al_load_audio_stream or al_load_audio_stream_f.
+
+.voc file streaming is unimplemented.
+
+Programmer_27 [7:58 PM]
+Now al_load_sample is segfaulting. Is there anything else I need to do before calling al_load_sample?
+
+Apiza [7:59 PM]
+You'll also want to call al_reserve_samples:
+
+bool al_reserve_samples(int reserve_samples)
+
+Reserves a number of sample instances, attaching them to the default mixer. If no default mixer is set when this function is called, then it will create one and attach it to the default voice. If no default voice has been set, it, too, will be created.
+
+If you call this function a second time with a smaller number of samples, then the excess internal sample instances will be destroyed causing some sounds to stop and some instances returned by al_lock_sample_id to be invalidated.
+
+This diagram illustrates the structures that are set up:
+
+                                     sample instance 1
+                                   / sample instance 2
+default voice <-- default mixer <---         .
+                                   \        .
+                                     sample instance N
+
+Returns true on success, false on error. al_install_audio must have been called first.
+
+Programmer_27 [8:01 PM]
+How do I load a font?
+
+Apiza [8:02 PM]
+al_load_font will allow you to load a font:
+
+ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)
+
+Loads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.
+
+The flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.
+
+Programmer_27 [8:03 PM]
+What flags can be passed to al_load_font?
+
+Apiza [8:06 PM]
+It will take the following if you pass the name of a known bitmap format:
+
+ALLEGRO_NO_PREMULTIPLIED_ALPHA
+By default, Allegro pre-multiplies the alpha channel of an image with the images color data when it loads it. Typically that would look something like this:
+
+r = get_float_byte();
+g = get_float_byte();
+b = get_float_byte();
+a = get_float_byte();
+
+r = r * a;
+g = g * a;
+b = b * a;
+
+set_image_pixel(x, y, r, g, b, a);
+The reason for this can be seen in the Allegro example ex_premulalpha, ie, using pre-multiplied alpha gives more accurate color results in some cases. To use alpha blending with images loaded with pre-multiplied alpha, you would use the default blending mode, which is set with al_set_blender(ALLEGRO_ADD, ALLEGRO_ONE, ALLEGRO_INVERSE_ALPHA).
+
+The ALLEGRO_NO_PREMULTIPLIED_ALPHA flag being set will ensure that images are not loaded with alpha pre-multiplied, but are loaded with color values direct from the image. That looks like this:
+
+r = get_float_byte();
+g = get_float_byte();
+b = get_float_byte();
+a = get_float_byte();
+
+set_image_pixel(x, y, r, g, b, a);
+To draw such an image using regular alpha blending, you would use al_set_blender(ALLEGRO_ADD, ALLEGRO_ALPHA, ALLEGRO_INVERSE_ALPHA) to set the correct blender. This has some caveats. First, as mentioned above, drawing such an image can result in less accurate color blending (when drawing an image with linear filtering on, the edges will be darker than they should be). Second, the behaviour is somewhat confusing, which is explained in the example below.
+
+// Load and create bitmaps with an alpha channel
+al_set_new_bitmap_format(ALLEGRO_PIXEL_FORMAT_ANY_32_WITH_ALPHA);
+// Load some bitmap with alpha in it
+bmp = al_load_bitmap("some_alpha_bitmap.png");
+// We will draw to this buffer and then draw this buffer to the screen
+tmp_buffer = al_create_bitmap(SCREEN_W, SCREEN_H);
+// Set the buffer as the target and clear it
+al_set_target_bitmap(tmp_buffer);
+al_clear_to_color(al_map_rgba_f(0, 0, 0, 1));
+// Draw the bitmap to the temporary buffer
+al_draw_bitmap(bmp, 0, 0, 0);
+// Finally, draw the buffer to the screen
+// The output will look incorrect (may take close inspection
+// depending on the bitmap -- it may also be very obvious)
+al_set_target_bitmap(al_get_backbuffer(display));
+al_draw_bitmap(tmp_buffer, 0, 0, 0);
+To explain further, if you have a pixel with 0.5 alpha, and you're using (ALLEGRO_ADD, ALLEGRO_ALPHA, ALLEGRO_INVERSE_ALPHA) for blending, the formula is:
+
+a = da * dst + sa * src
+Expands to:
+
+result_a = dst_a * (1-0.5) + 0.5 * 0.5
+So if you draw the image to the temporary buffer, it is blended once resulting in 0.75 alpha, then drawn again to the screen, blended in the same way, resulting in a pixel has 0.1875 as an alpha value.
+
+Otherwise it will use the following:
+
+ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.
+
+ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).
+
+ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2
+
+Programmer_27 [8:06 PM]
+How do I display text?
+
+Apiza [8:07 PM]
+al_draw_text should allow you to display text:
+
+void al_draw_text(const ALLEGRO_FONT *font,
+  ALLEGRO_COLOR color, float x, float y, int flags,
+  char const *text)
+
+Writes the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.
+
+The flags parameter can be 0 or one of the following flags:
+
+ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).
+ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.
+ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.
+It can also be combined with this flag:
+
+ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4
+This function does not support newline characters (\n), but you can use al_draw_multiline_text for multi line text output.
+
+Programmer_27 [8:11 PM]
+al_load_font is returning NULL. What are some possible reasons?
+
+Apiza [8:12 PM]
+Are you sure the filename and size are correct?
+
+Programmer_27 [8:13 PM]
+What is the size parameter in al_load_font?
+
+Apiza [8:14 PM]
+The size parameter determines the size the font will be rendered at, specified in pixels. The standard font size is measured in units per EM, if you instead want to specify the size as the total height of glyphs in pixels, pass it as a negative value.
+
+Programmer_27 [8:16 PM]
+Do I need to call anything before calling al_load_font?
+
+Apiza [8:17 PM]
+You may need to call al_init_font_addon and/or al_init_ttf_addon, along with al_create_display in order to display the font once it has loaded.
+
+Programmer_27 [8:21 PM]
+How do I load an image?
+
+Apiza [8:22 PM]
+You should be able to load an image from a file with al_load_bitmap:
+
+ALLEGRO_BITMAP *al_load_bitmap(const char *filename)
+
+Loads an image file into a new ALLEGRO_BITMAP. The file type is determined by the extension, except if the file has no extension in which case al_identify_bitmap is used instead.
+
+Returns NULL on error.
+
+This is the same as calling al_load_bitmap_flags with a flags parameter of 0.
+
+Note: the core Allegro library does not support any image file formats by default. You must use the allegro_image addon, or register your own format handler.
+
+Programmer_27 [8:23 PM]
+Do I need to call anything before calling al_load_bitmap?
+
+Apiza [8:23 PM]
+You'll probably want to call al_init_image_addon:
+
+bool al_init_image_addon(void)
+
+Initializes the image addon. This registers bitmap format handlers for al_load_bitmap, al_load_bitmap_f, al_save_bitmap, al_save_bitmap_f.
+
+The following types are built into the Allegro image addon and guaranteed to be available: BMP, DDS, PCX, TGA. Every platform also supports JPEG and PNG via external dependencies.
+
+Other formats may be available depending on the operating system and installed libraries, but are not guaranteed and should not be assumed to be universally available.
+
+The DDS format is only supported to load from, and only if the DDS file contains textures compressed in the DXT1, DXT3 and DXT5 formats. Note that when loading a DDS file, the created bitmap will always be a video bitmap and will have the pixel format matching the format in the file.
+
+Programmer_27 [8:25 PM]
+I need PNG support, how do I load that?
+
+Apiza [8:26 PM]
+As long as you've called al_init_image_addon you should already have PNG support. Are you having trouble loading a PNG file?
+
+Programmer_27 [8:27 PM]
+I've loaded the bitmap, how do I blit it onto another bitmap?
+
+Apiza [8:28 PM]
+What do you want to do with the two bitmaps?
+
+Programmer_27 [8:28 PM]
+I want to draw one bitmap over another
+
+Apiza [8:30 PM]
+al_draw_bitmap should allow you to draw a second bitmap over the first:
+
+void al_draw_bitmap(ALLEGRO_BITMAP *bitmap, float dx, float dy, int flags)
+
+Draws an unscaled, unrotated bitmap at the given position to the current target bitmap (see al_set_target_bitmap).
+
+flags can be a combination of:
+
+ALLEGRO_FLIP_HORIZONTAL - flip the bitmap about the y-axis
+ALLEGRO_FLIP_VERTICAL - flip the bitmap about the x-axis
+
+Note: The current target bitmap must be a different bitmap. Drawing a bitmap to itself (or to a sub-bitmap of itself) or drawing a sub-bitmap to its parent (or another sub-bitmap of its parent) are not currently supported. To copy part of a bitmap into the same bitmap simply use a temporary bitmap instead.
+
+Note: The backbuffer (or a sub-bitmap thereof) can not be transformed, blended or tinted. If you need to draw the backbuffer draw it to a temporary bitmap first with no active transformation (except translation). Blending and tinting settings/parameters will be ignored. This does not apply when drawing into a memory bitmap.
+
+Programmer_27 [8:31 PM]
+How do I scale a bitmap?
+
+Apiza [8:32 PM]
+al_draw_scaled_bitmap should allow you to scale a bitmap:
+
+void al_draw_scaled_bitmap(ALLEGRO_BITMAP *bitmap,
+  float sx, float sy, float sw, float sh,
+  float dx, float dy, float dw, float dh, int flags)
+
+Draws a scaled version of the given bitmap to the target bitmap.
+
+sx - source x
+sy - source y
+sw - source width
+sh - source height
+dx - destination x
+dy - destination y
+dw - destination width
+dh - destination height
+flags - same as for al_draw_bitmap
+See al_draw_bitmap for a note on restrictions on which bitmaps can be drawn where.
+
+Programmer_27 [8:33 PM]
+How do I get a bitmap's width and height?
+
+Apiza [8:34 PM]
+al_get_bitmap_height and al_get_bitmap_width should allow you to do that:
+
+int al_get_bitmap_height(ALLEGRO_BITMAP *bitmap)
+
+Returns the height of a bitmap in pixels.
+
+int al_get_bitmap_width(ALLEGRO_BITMAP *bitmap)
+
+Returns the width of a bitmap in pixels.
+
+Programmer_27 [8:36 PM]
+How do I rotate a bitmap?
+
+Apiza [8:37 PM]
+al_draw_rotated_bitmap should let you rotate a bitmap:
+
+void al_draw_rotated_bitmap(ALLEGRO_BITMAP *bitmap,
+  float cx, float cy, float dx, float dy, float angle, int flags)
+
+Draws a rotated version of the given bitmap to the target bitmap. The bitmap is rotated by 'angle' radians clockwise.
+
+The point at cx/cy relative to the upper left corner of the bitmap will be drawn at dx/dy and the bitmap is rotated around this point. If cx,cy is 0,0 the bitmap will rotate around its upper left corner.
+
+cx - center x (relative to the bitmap)
+cy - center y (relative to the bitmap)
+dx - destination x
+dy - destination y
+angle - angle by which to rotate (radians)
+flags - same as for al_draw_bitmap
+Example
+
+float w = al_get_bitmap_width(bitmap);
+float h = al_get_bitmap_height(bitmap);
+al_draw_rotated_bitmap(bitmap, w / 2, h / 2, x, y, ALLEGRO_PI / 2, 0);
+The above code draws the bitmap centered on x/y and rotates it 90° clockwise.
+
+See al_draw_bitmap for a note on restrictions on which bitmaps can be drawn where.
+
+Programmer_27 [8:48 PM]
+How do I capture mouse events?
+
+Apiza [8:49 PM]
+al_get_mouse_event_source will give you the mouse event source:
+
+ALLEGRO_EVENT_SOURCE *al_get_mouse_event_source(void)
+
+Retrieve the mouse event source. All mouse events are generated by this event source.
+
+Returns NULL if the mouse subsystem was not installed.
+
+Programmer_27 [8:49 PM]
+How do I install the mouse subsystem?
+
+Apiza [8:50 PM]
+al_install_mouse should do that:
+
+bool al_install_mouse(void)
+
+Install a mouse driver.
+
+Returns true if successful. If a driver was already installed, nothing happens and true is returned.
+
+Programmer_27 [8:51 PM]
+What does a mouse click event look like?
+
+Apiza [8:52 PM]
+ALLEGRO_MOUSE_STATE's buttons field will tell you whether or not it has been clicked:
+
+typedef struct ALLEGRO_MOUSE_STATE ALLEGRO_MOUSE_STATE;
+
+Public fields (read only):
+
+x - mouse x position
+y - mouse y position
+w, z - mouse wheel position (2D 'ball')
+buttons - mouse buttons bitfield
+
+The zeroth bit is set if the primary mouse button is held down, the first bit is set if the secondary mouse button is held down, and so on.
+
+pressure - pressure, ranging from 0.0 to 1.0
+
+Programmer_27 [8:53 PM]
+What is the event type of a mouse click?
+
+Apiza [8:54 PM]
+ALLEGRO_EVENT_MOUSE_BUTTON_DOWN
+
+A mouse button was pressed.
+
+mouse.x (int)
+x-coordinate
+mouse.y (int)
+y-coordinate
+mouse.z (int)
+z-coordinate
+mouse.w (int)
+w-coordinate
+mouse.button (unsigned)
+The mouse button which was pressed, numbering from 1.
+mouse.pressure (float)
+Pressure, ranging from 0.0 to 1.0.
+mouse.display (ALLEGRO_DISPLAY *)
+The display which had mouse focus.

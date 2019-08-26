@@ -1,0 +1,402 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "type": "message",
+            "text": "what settings do i have to set before ssh_connect",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844690.000772"
+        },
+        {
+            "type": "message",
+            "text": "ssh_connect()\nint ssh_connect(ssh_session session)\nConnect to the ssh server.\nParameters[in]sessionThe ssh session to connect.\nReturns SSH_OK on success, SSH_ERROR on error.SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "U9HPG3B3L",
+            "ts": "1524844654.000593"
+        },
+        {
+            "type": "message",
+            "text": "show me the original text of the ssh_connect function",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844620.000272"
+        },
+        {
+            "type": "message",
+            "text": "Okay, authentication functions. Are you looking for a specific one?",
+            "user": "U9HPG3B3L",
+            "ts": "1524844578.000316"
+        },
+        {
+            "type": "message",
+            "text": "libssh authentication functions",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844494.000170"
+        },
+        {
+            "type": "message",
+            "text": "There are 15 main components of The libssh API: The libssh callbacks, The SSH authentication functions, The SSH buffer functions, The SSH channel functions, The SSH error functions, The SSH logging functions,The SSH message functions, The SSH helper functions,The SSH Public Key Infrastructure, The SSH poll functions, The SSH scp functions, The SSH session functions, The SSH string functions, and The SSH threading functions.",
+            "user": "U9HPG3B3L",
+            "ts": "1524844465.000799"
+        },
+        {
+            "type": "message",
+            "text": "show me an overview of the libssh api",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844361.000102"
+        },
+        {
+            "type": "message",
+            "text": "There are three main components: The libssh server API, The libssh SFTP API, and The libssh API",
+            "user": "U9HPG3B3L",
+            "ts": "1524844343.000592"
+        },
+        {
+            "type": "message",
+            "text": "show me an overview",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844282.000752"
+        },
+        {
+            "type": "message",
+            "text": "How can I help you navigate the libssh documentation?",
+            "user": "U9HPG3B3L",
+            "ts": "1524844274.000212"
+        },
+        {
+            "type": "message",
+            "text": "libssh documentary",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844211.000725"
+        },
+        {
+            "type": "message",
+            "text": "website of libssh documentary",
+            "user": "UAEG4DC9Z",
+            "ts": "1524844201.000708"
+        },
+        {
+            "type": "message",
+            "text": "You may be able to use ssh_get_error():\n\nconst char* ssh_get_error(void * error)\nRetrieve the error text message from the last error.\nParameters: error- An ssh_session or ssh_bind.\nReturns: A static string describing the error.",
+            "user": "U9HPG3B3L",
+            "ts": "1524844081.000480"
+        },
+        {
+            "type": "message",
+            "text": "how to fix SSH_SERVER_ERROR",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843980.000137"
+        },
+        {
+            "type": "message",
+            "text": "which of those errors is \"-1\"",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843860.000624"
+        },
+        {
+            "type": "message",
+            "text": "int ssh_is_server_known(ssh_session session)\nCheck if the server is known.Checks the user's known host file for a previous connection to the current server.\nParameters: -sessionThe SSH session to use.\nReturns:SSH_SERVER_KNOWN_OK: The server is known and has not changed.\nSSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.\nSSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.\nSSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.\nSSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.\nSSH_SERVER_ERROR: Some error happened.",
+            "user": "U9HPG3B3L",
+            "ts": "1524843661.000551"
+        },
+        {
+            "type": "message",
+            "text": "yes",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843627.000529"
+        },
+        {
+            "type": "message",
+            "text": "ye",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843625.000481"
+        },
+        {
+            "type": "message",
+            "text": "The first way (recommended) is to use the ssh_is_server_known() function. Would you like to know more?",
+            "user": "U9HPG3B3L",
+            "ts": "1524843614.000733"
+        },
+        {
+            "type": "message",
+            "text": "how to authenticate a server",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843568.000648"
+        },
+        {
+            "type": "message",
+            "text": "You can set options using ssh_options_set(ssh_session session,enum ssh_options_e type,const void * value ). For example, ssh_options_set(my_ssh_session, SSH_OPTIONS_HOST, \"localhost\");",
+            "user": "U9HPG3B3L",
+            "ts": "1524843542.000348"
+        },
+        {
+            "type": "message",
+            "text": "what settings do I need to make",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843463.000448"
+        },
+        {
+            "type": "message",
+            "text": "Once all settings have been made, you can connect using ssh_connect(). That function will return SSH_OK if the connection worked, SSH_ERROR otherwise.",
+            "user": "U9HPG3B3L",
+            "ts": "1524843445.000210"
+        },
+        {
+            "type": "message",
+            "text": "connect to server",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843405.000579"
+        },
+        {
+            "type": "message",
+            "text": "int ssh_userauth_password(ssh_session session,const char * username,const char * password )\n\nTry to authenticate by password.This authentication method is normally disabled on SSHv2 server. You should use keyboard-interactive mode.The 'password' value MUST be encoded UTF-8. It is up to the server how to interpret the password and validate it against the password database. However, if you read the password in some other encoding, you MUST convert the password to UTF-8.",
+            "user": "U9HPG3B3L",
+            "ts": "1524843295.000313"
+        },
+        {
+            "type": "message",
+            "text": "Did you mean ssh_options?",
+            "user": "U9HPG3B3L",
+            "ts": "1524843288.000486"
+        },
+        {
+            "type": "message",
+            "text": "password",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843202.000802"
+        },
+        {
+            "type": "message",
+            "text": "How would you like to authenticate a user?",
+            "user": "U9HPG3B3L",
+            "ts": "1524843192.000399"
+        },
+        {
+            "type": "message",
+            "text": "default ssh_session settings",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843110.000646"
+        },
+        {
+            "type": "message",
+            "text": "authenticate user",
+            "user": "UAEG4DC9Z",
+            "ts": "1524843105.000243"
+        },
+        {
+            "type": "message",
+            "text": "There are many options for ssh_options_e type, including SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *), SSH_OPTIONS_PORT: The port to connect to (unsigned int), and SSH_OPTIONS_PORT_STR: The port to connect to (const char *).",
+            "user": "U9HPG3B3L",
+            "ts": "1524843001.000725"
+        },
+        {
+            "type": "message",
+            "text": "ssh_options_e",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842896.000689"
+        },
+        {
+            "type": "message",
+            "text": "int ssh_options_set(ssh_session session,enum ssh_options_e type,const void * value )\n\nParameters: session- An allocated SSH session structure.type- The option type to set. value- The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.\n\nReturns: 0 on success, &lt; 0 on error.",
+            "user": "U9HPG3B3L",
+            "ts": "1524842858.000676"
+        },
+        {
+            "type": "message",
+            "text": "yes",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842776.000369"
+        },
+        {
+            "type": "message",
+            "text": "I believe ssh_options_set() will help you set a remote for an ssh-session. Would you like to know more?",
+            "user": "U9HPG3B3L",
+            "ts": "1524842768.000347"
+        },
+        {
+            "type": "message",
+            "text": "how to set a remote for an ssh-session",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842632.000047"
+        },
+        {
+            "type": "message",
+            "text": "I'm sorry, I could not find ssh_session_struct.",
+            "user": "U9HPG3B3L",
+            "ts": "1524842564.000320"
+        },
+        {
+            "type": "message",
+            "text": "ssh_session has: friend class Channel;",
+            "user": "U9HPG3B3L",
+            "ts": "1524842559.000645"
+        },
+        {
+            "type": "message",
+            "text": "definition of ssh_session_struct",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842520.000557"
+        },
+        {
+            "type": "message",
+            "text": "show me fields of ssh_session",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842441.000788"
+        },
+        {
+            "type": "message",
+            "text": "Members include acceptForward(int timeout_ms), connect(), disconnect(), getAuthList()...",
+            "user": "U9HPG3B3L",
+            "ts": "1524842417.000176"
+        },
+        {
+            "type": "message",
+            "text": "show me the members of ssh_session",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842322.000461"
+        },
+        {
+            "type": "message",
+            "text": "The ssh::Session class contains the state of a SSH connection. There are 22 member functions. Do you need help connecting an ssh_session?",
+            "user": "U9HPG3B3L",
+            "ts": "1524842303.000196"
+        },
+        {
+            "type": "message",
+            "text": "typedefinition ssh_session",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842159.000608"
+        },
+        {
+            "type": "message",
+            "text": "ssh_connect()\nint ssh_connect(ssh_session session)\nConnect to the ssh server.\nParameters[in]sessionThe ssh session to connect.\nReturns SSH_OK on success, SSH_ERROR on error.SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "U9HPG3B3L",
+            "ts": "1524842134.000040"
+        },
+        {
+            "type": "message",
+            "text": "ssh_connection signature",
+            "user": "UAEG4DC9Z",
+            "ts": "1524842051.000442"
+        },
+        {
+            "type": "message",
+            "text": "The ssh::Session class contains the state of a SSH connection.",
+            "user": "U9HPG3B3L",
+            "ts": "1524842029.000774"
+        },
+        {
+            "type": "message",
+            "text": "show me the typedefinition of my_ssh_session",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841966.000527"
+        },
+        {
+            "type": "message",
+            "text": "\/\/ Connect to server\n  rc = ssh_connect(my_ssh_session);",
+            "user": "U9HPG3B3L",
+            "ts": "1524841937.000434"
+        },
+        {
+            "type": "message",
+            "text": "show me an example",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841835.000713"
+        },
+        {
+            "type": "message",
+            "text": "OK, how can I help you with setting up a ssh connection and authentication with a server?",
+            "user": "U9HPG3B3L",
+            "ts": "1524841825.000140"
+        },
+        {
+            "type": "message",
+            "text": "setting up a ssh connection and authentification with a server",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841764.000557"
+        },
+        {
+            "type": "message",
+            "text": "There are many functions in libssh, would you like to narrow down to a specific topic?",
+            "user": "U9HPG3B3L",
+            "ts": "1524841740.000219"
+        },
+        {
+            "type": "message",
+            "text": "The function ssh_new(void ) takes no arguments and returns a new ssh_session pointer, NULL on error.",
+            "user": "U9HPG3B3L",
+            "ts": "1524841694.000632"
+        },
+        {
+            "type": "message",
+            "text": "type of SSH_ERROR",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841681.000251"
+        },
+        {
+            "type": "message",
+            "text": "ssh_session pointer typedef",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841618.000750"
+        },
+        {
+            "type": "message",
+            "text": "ssh_connect set server",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841610.000394"
+        },
+        {
+            "type": "message",
+            "text": "list all function of libssh documentary",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841593.000261"
+        },
+        {
+            "type": "message",
+            "text": "I'm sorry, I'm not sure what you mean by \"libssh documentary overview\"",
+            "user": "U9HPG3B3L",
+            "ts": "1524841579.000627"
+        },
+        {
+            "type": "message",
+            "text": "ssh_connect(ssh_session session). Connect to the ssh server. Parameters: session- The ssh session to connect. Returns: SSH_OK on success, SSH_ERROR on error. SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "U9HPG3B3L",
+            "ts": "1524841548.000425"
+        },
+        {
+            "type": "message",
+            "text": "ssh_session* ssh_new incompatible pointer type",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841547.000878"
+        },
+        {
+            "type": "message",
+            "text": "libssh documentary overview",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841484.000279"
+        },
+        {
+            "type": "message",
+            "text": "how to connect to a server",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841479.000536"
+        },
+        {
+            "type": "message",
+            "text": "Are you looking for the function ssh_new(void )? Create a new ssh session. Returns A new ssh_session pointer, NULL on error.",
+            "user": "U9HPG3B3L",
+            "ts": "1524841288.000377"
+        },
+        {
+            "type": "message",
+            "text": "how to create an ssh session with libssh?",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841223.000671"
+        },
+        {
+            "type": "message",
+            "text": "libssh documentary",
+            "user": "UAEG4DC9Z",
+            "ts": "1524841204.000199"
+        }
+    ],
+    "has_more": false
+}

@@ -1,0 +1,72 @@
+Programmer_21 [12:36 AM]
+Ah, thank you.
+Is there a written portion of the survey?
+
+Zack [12:38 AM]
+There isn't a formal one, but if you have any specific thoughts that you'd like share, please do!
+
+
+Programmer_21 [12:39 AM]
+I'm going to be honest (brutally so)
+
+Zack [12:39 AM]
+Please do! I would also ask: if a system like this were to be incorporated into an actual product (say an IDE), other than the response speed, what features would you hope to see?
+
+Programmer_21 [12:39 AM]
+Please don't take it as a slight on the AI programming or whatever.
+Well...I wouldn't use it.
+The speed was by far the most frustrating part, to the point where I tried to work on other aspects (like part 4) while waiting for it to "parse"
+But you know about that.
+One of the big things that I like about the actual documentation are links. I can click through and see what each thing does.
+Having it out in a text format doesn't allow that.
+I work in Unity, and practically live in the Unity docs.
+Case in point of what I'm used to/would be after: https://docs.unity3d.com/ScriptReference/GridBrushBase.html
+
+Zack [12:45 AM]
+Right, where there are links right there to all the relevant stuff
+
+Programmer_21 [12:45 AM]
+I don't know if Allegro has that.
+If the AI suggests a function, I'd like to know any overloads to that function.
+I spent a very long time just trying to figure out how to output numbers to the screen.
+I will admit that I've been spoiled by Unity and C#, where string conversions are taken care of.
+If Allegro has that ability, I couldn't find it.
+
+Zack [12:49 AM]
+Haha, for sure, it's a different beast. I've got a question, if you'll be brutally honest: Can you think of any features a conversational virtual assistant like Apiza could provide that would actually benefit your natural workflow - augmenting the normal documentation, rather than replacing it?
+
+Programmer_21 [12:51 AM]
+Hmm. I'm not sure, I've had to rely on not having one for so long that it's difficult to say.
+I would say that an AI would come in handy when I don't actually know what I want or what to do.
+Or rather, the only times that I could see myself using it would be times that I usually try to ask a person.
+It's hard to come up with a reasonable example.
+
+Zack [12:53 AM]
+That's alright, the "times that I usually try to ask a person" are exactly what I was curious about
+
+Programmer_21 [12:54 AM]
+You'll find that I asked a lot for examples, as usually the official documentation just says what it does, not how to use it.
+"I want to move this over to the side, but when it hits the edge this breaks, see?"
+That's hard for an AI to process.
+The other times are when the documentation is lacking or incomplete
+"Who has actually used the Steam API? What does the second parameter in the Input function even DO?!"
+
+Zack [12:56 AM]
+Ahahaha
+
+Programmer_21 [12:57 AM]
+I'm serious, I didn't implement Steamworks into my game, Proxy - Ultimate Hacker (shameless plug) because I couldn't tell what things DID or how to use them.
+The only way was to badger this one person and they eventually admitted that "you pretty much have to have done this to know what it does"
+When they fell silent, I was left with questions and no answers.
+
+Zack [12:58 AM]
+That is a terrifyingly relatable scenario :slightly_smiling_face:
+Thank you though, this was really fantastic feedback!
+
+Programmer_21 [1:00 AM]
+The only way that I would use this is if it could "read" code.
+At one point I was very stuck on getting the keyboard inputs to work.
+The example worked, but mine didn't. (edited) 
+Turns out I needed to initialize the keyboard input.
+So in AI terms...scan for certain terms and determine dependencies?
+That's pretty much all of my issues. I hope it helped!

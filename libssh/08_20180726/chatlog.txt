@@ -1,0 +1,527 @@
+Programmer_8 [6:46 PM]
+Hi Apiza, how's it going?
+
+Apiza [6:46 PM]
+Hello
+
+Programmer_8 [6:46 PM]
+How was your day?
+
+Apiza [6:47 PM]
+I am well.
+
+Programmer_8 [6:47 PM]
+It was hot here today.  How is the weather where you are?
+
+Apiza [6:48 PM]
+The weather here is warm with thunderstorms.
+
+Programmer_8 [6:49 PM]
+I'm just outside Chicago.  Are you located in South Bend?
+
+Apiza [6:50 PM]
+My current location is Cleveland, OH, United States.
+
+Programmer_8 [6:58 PM]
+Apiza, what is the command to create a new ssh_session in the libssh API?
+
+Apiza [6:59 PM]
+The command to create a new ssh session is:
+ssh_session ssh_new    (    void         )
+
+Description
+Create a new ssh session.
+
+
+
+Returns
+A new ssh_session pointer, NULL on error.
+
+Programmer_8 [7:04 PM]
+Just to confirm, is the ssh_session type a pointer type?
+
+Apiza [7:06 PM]
+ssh_session is not a pointer type.
+
+Programmer_8 [7:06 PM]
+But when you gave me the command to create a new ssh session, you said it "Returns" "A new ssh_session pointer...".
+I'm confused.
+
+Apiza [7:08 PM]
+ssh_new returns a pointer to type ssh_session
+
+Programmer_8 [7:09 PM]
+OK, thanks for clarifying.
+Next up:  how do I connect to a host using the libssh API?
+
+Apiza [7:11 PM]
+To connect to a host, try using the command:
+int ssh_connect    (    ssh_session     session    )
+
+Description
+Connect to the ssh server.
+
+Parameters
+session: The ssh session to connect.
+
+Returns
+SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+See also
+ssh_new()
+ssh_disconnect()
+
+Programmer_8 [7:12 PM]
+Thank you.
+Also, how do I authenticate a server in the libssh API?  And  in the libssh API, how do I authenticate a user to a server?
+
+Apiza [7:16 PM]
+To authenticate a server, try using the command:
+int ssh_is_server_known    (    ssh_session     session    )
+
+Description
+Check if the server is known.
+Checks the user's known host file for a previous connection to the current server.
+
+Parameters
+session: The SSH session to use.
+
+Returns
+SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+See also
+ssh_get_pubkey_hash()
+Bug:
+There is no current way to remove or modify an entry into the known host table.
+
+To authenticate a user to a server, try using the command:
+int ssh_userauth_password    (    ssh_session     session,
+const char *     username,
+const char *     password 
+)
+
+Description
+Try to authenticate by password.
+This authentication method is normally disabled on SSHv2 server. You should use keyboard-interactive mode.
+The 'password' value MUST be encoded UTF-8. It is up to the server how to interpret the password and validate it against the password database. However, if you read the password in some other encoding, you MUST convert the password to UTF-8.
+
+Parameters
+session: The ssh session to use.
+username: The username, this SHOULD be NULL.
+password: The password to authenticate in UTF-8.
+
+Returns
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+Note
+Most server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.
+
+See also
+ssh_userauth_none()
+ssh_userauth_kbdint()
+
+Programmer_8 [7:17 PM]
+Sounds good.  But how do I connect to a specific hostname using the libssh API?
+
+Apiza [7:20 PM]
+Sorry, what do you mean by "specific hostname"?
+
+Programmer_8 [7:23 PM]
+To be exact, I want to open a connection to localhost.
+
+Apiza [7:27 PM]
+Try using the command:
+int ssh_channel_open_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+Description
+Open a TCP/IP forwarding channel.
+
+Parameters
+channel: An allocated channel.
+remotehost: The remote host to connected (host name or IP).
+remoteport: The remote port.
+sourcehost: The numeric IP address of the machine from where the connection request originates. This is mostly for logging purposes.
+localport: The port on the host from where the connection originated. This is mostly for logging purposes.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_8 [7:27 PM]
+OK.
+This code returns an SSH_ERROR:  connection_status = ssh_connect(sess);  sess is an ssh_session which was returned from ssh_new().  What did I do wrong?
+
+Apiza [7:32 PM]
+I'm not sure what is wrong with This code returns an SSH_ERROR:  connection_status = ssh_connect(sess);  sess is an ssh_session which was returned from ssh_new().
+
+Programmer_8 [7:34 PM]
+Can I pass ssh_connect a hostname?
+
+Apiza [7:36 PM]
+ssh_connect() takes an ssh_session:
+int ssh_connect    (    ssh_session     session    )
+
+Description
+Connect to the ssh server.
+
+Parameters
+session: The ssh session to connect.
+
+Returns
+SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+See also
+ssh_new()
+ssh_disconnect()
+
+Programmer_8 [7:37 PM]
+How do I set the hostname for an SSH session?
+How do I use the ssh_disconnect command?
+
+Apiza [7:39 PM]
+For setting the hostname, try using the command:
+Try using the command:
+int ssh_channel_open_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+Description
+Open a TCP/IP forwarding channel.
+
+Parameters
+channel: An allocated channel.
+remotehost: The remote host to connected (host name or IP).
+remoteport: The remote port.
+sourcehost: The numeric IP address of the machine from where the connection request originates. This is mostly for logging purposes.
+localport: The port on the host from where the connection originated. This is mostly for logging purposes.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+The ssh_disconnect command is:
+void ssh_disconnect    (    ssh_session     session    )
+
+Description
+Disconnect from a session (client or server).
+The session can then be reused to open a new session.
+
+Parameters
+session: The SSH session to use.
+
+Programmer_8 [7:44 PM]
+How do I open a channel in SSH?
+
+Apiza [7:45 PM]
+To open a new channel in SSH, try:
+ssh_channel ssh_channel_new    (    ssh_session     session    )
+
+Description
+Allocate a new channel.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A pointer to a newly allocated channel, NULL on error.
+
+Programmer_8 [7:48 PM]
+How do I free an SSH session?
+How many arguments does ssh_connect() accept?
+
+Apiza [7:49 PM]
+To free an SSH session, try:
+void ssh_free    (    ssh_session     session    )
+
+Description
+Deallocate a SSH session handle.
+
+Parameters
+session: The SSH session to free.
+
+See also
+ssh_disconnect()
+ssh_new()
+ssh_connect() takes one argument:
+int ssh_connect    (    ssh_session     session    )
+
+Description
+Connect to the ssh server.
+
+Parameters
+session: The ssh session to connect.
+
+Returns
+SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+See also
+ssh_new()
+ssh_disconnect()
+
+Programmer_8 [7:55 PM]
+I need double quotes around strings in C, right?
+ssh_channel_open_forward() takes a long time and doesn't return any output.  Is this normal?  Is there a way to set a timeout?
+How do I set a hostname on an SSH session?
+How do I set a hostname on an SSH channel?
+
+Apiza [7:57 PM]
+Yes, strings, or char arrays, use double quotes.
+For channel timeout, try:
+int ssh_channel_poll_timeout    (    ssh_channel     channel,
+int     timeout,
+int     is_stderr 
+)
+
+Description
+Polls a channel for data to read, waiting for a certain timeout.
+
+Parameters
+channel: The channel to poll.
+timeout: Set an upper limit on the time for which this function will block, in milliseconds. Specifying a negative value means an infinite timeout. This parameter is passed to the poll() function.
+is_stderr: A boolean to select the stderr stream.
+
+Returns
+The number of bytes available for reading, 0 if nothing is available (timeout elapsed), SSH_EOF on end of file, SSH_ERROR on error.
+
+See also
+ssh_channel_is_eof()
+For setting a hostname, try:
+int ssh_channel_open_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+Description
+Open a TCP/IP forwarding channel.
+
+Parameters
+channel: An allocated channel.
+remotehost: The remote host to connected (host name or IP).
+remoteport: The remote port.
+sourcehost: The numeric IP address of the machine from where the connection request originates. This is mostly for logging purposes.
+localport: The port on the host from where the connection originated. This is mostly for logging purposes.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_8 [8:01 PM]
+I tried that.  It locks.
+
+Apiza [8:03 PM]
+For it locks, try:
+void ssh_channel_set_blocking    (    ssh_channel     channel,
+int     blocking 
+)
+
+Description
+Put the channel into blocking or nonblocking mode.
+
+Parameters
+channel: The channel to use.
+blocking: A boolean for blocking or nonblocking.
+
+See also
+ssh_set_blocking()
+
+Programmer_8 [8:05 PM]
+How do I set the hostname for a channel?
+What are your goals in life?
+
+Apiza [8:07 PM]
+For setting the hostname for a channel, try:
+int ssh_channel_open_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+Description
+Open a TCP/IP forwarding channel.
+
+Parameters
+channel: An allocated channel.
+remotehost: The remote host to connected (host name or IP).
+remoteport: The remote port.
+sourcehost: The numeric IP address of the machine from where the connection request originates. This is mostly for logging purposes.
+localport: The port on the host from where the connection originated. This is mostly for logging purposes.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+or
+
+int ssh_channel_open_reverse_forward    (    ssh_channel     channel,
+const char *     remotehost,
+int     remoteport,
+const char *     sourcehost,
+int     localport 
+)
+
+Description
+Open a TCP/IP reverse forwarding channel.
+
+Parameters
+channel: An allocated channel.
+remotehost: The remote host to connected (host name or IP).
+remoteport: The remote port.
+sourcehost: The source host (your local computer). It's optional and for logging purpose.
+localport: The source port (your local computer). It's optional and for logging purpose.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_8 [8:07 PM]
+Apiza, how do I execute a command on an SSH channel?
+
+Apiza [8:08 PM]
+Here are the functions related to ssh_channel:
+channel_read_buffer
+ssh_channel_accept_forward
+ssh_channel_accept_x11
+ssh_channel_cancel_forward
+ssh_channel_change_pty_size
+ssh_channel_close
+ssh_channel_free
+ssh_channel_get_exit_status
+ssh_channel_get_session
+ssh_channel_is_closed
+ssh_channel_is_eof
+ssh_channel_is_open
+ssh_channel_listen_forward
+ssh_channel_new
+ssh_channel_open_auth_agent
+ssh_channel_open_forward
+ssh_channel_open_reverse_forward
+ssh_channel_open_session
+ssh_channel_open_x11
+ssh_channel_poll
+ssh_channel_poll_timeout
+ssh_channel_read
+ssh_channel_read_nonblocking
+ssh_channel_read_timeout
+ssh_channel_request_auth_agent
+ssh_channel_request_env
+ssh_channel_request_exec
+ssh_channel_request_pty
+ssh_channel_request_pty_size
+ssh_channel_request_send_break
+ssh_channel_request_send_exit_signal
+ssh_channel_request_send_exit_status
+ssh_channel_request_send_signal
+ssh_channel_request_shell
+ssh_channel_request_subsystem
+ssh_channel_request_x11
+ssh_channel_select
+ssh_channel_send_eof
+ssh_channel_set_blocking
+ssh_channel_set_counter
+ssh_channel_window_size
+ssh_channel_write
+ssh_channel_write_stderr
+
+Programmer_8 [8:10 PM]
+What are the functions related to SSH sessions?
+How do I use the ssh_channel_request_exec() command?
+
+Apiza [8:11 PM]
+Here are the functions related to ssh_session:
+ssh_blocking_flush
+ssh_clean_pubkey_hash
+ssh_connect
+ssh_disconnect
+ssh_dump_knownhost
+ssh_free
+ssh_get_cipher_in
+ssh_get_cipher_out
+ssh_get_clientbanner
+ssh_get_disconnect_message
+ssh_get_fd
+ssh_get_hexa
+ssh_get_hmac_in
+ssh_get_hmac_out
+ssh_get_issue_banner
+ssh_get_kex_algo
+ssh_get_openssh_version
+ssh_get_poll_flags
+ssh_get_pubkey_hash
+ssh_get_publickey
+ssh_get_publickey_hash
+ssh_get_serverbanner
+ssh_get_server_publickey
+ssh_get_status
+ssh_get_version
+ssh_is_blocking
+ssh_is_connected
+ssh_is_server_known
+ssh_new
+ssh_options_copy
+ssh_options_get
+ssh_options_getopt
+ssh_options_get_port
+ssh_options_parse_config
+ssh_options_set
+ssh_print_hexa
+ssh_select
+ssh_send_debug
+ssh_send_ignore
+ssh_set_blocking
+ssh_set_counters
+ssh_set_fd_except
+ssh_set_fd_toread
+ssh_set_fd_towrite
+ssh_silent_disconnect
+ssh_write_knownhost
+Here is the documentation for ssh_channel_request_exec:
+int ssh_channel_request_exec    (    ssh_channel     channel,
+const char *     cmd 
+)
+
+Description
+Run a shell command without an interactive shell.
+This is similar to 'sh -c command'.
+
+Parameters
+channel: The channel to execute the command.
+cmd: The command to execute (e.g. "ls ~/ -al | grep -i reports").
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+Example:
+
+rc = channel_request_exec(channel, "ps aux");
+if (rc > 0) {
+   return -1;
+}
+while ((rc = channel_read(channel, buffer, sizeof(buffer), 0)) > 0) {
+   if (fwrite(buffer, 1, rc, stdout) != (unsigned int) rc) {
+       return -1;
+   }
+}
+
+See also
+ssh_channel_request_shell()
+
+Programmer_8 [8:19 PM]
+Thanks for your help today.  It was great to meet you!
+
+Programmer_8 [8:24 PM]
+What are your plans for the future?

@@ -1,0 +1,47 @@
+Zack [12:49 PM]
+Great, thank you! There weren't any comment boxes in the survey, but if you have any comments, I'd love to hear them
+
+
+Programmer_23 [12:49 PM]
+ok, so first and foremost it's quite slow and that makes it unusable, but I guess you already know that
+if you don't take the slow part into account
+I think it biggest issue is that it seems to only talk about one api call about a time
+at some point it would be nice if it could return a list of a bunch of possible ideas
+Also I didn't knew that it will keep making different suggestions when I answered 'no' when it asked if I wanted to know about XX function
+for example here:
+Pasted image at 2019-01-05, 11:52 AM 
+
+
+Zack [12:52 PM]
+Ah
+
+Programmer_23 [12:52 PM]
+I had already hear about al_play_sample and that wasn't what I wanted
+I just answered no in frustration, but it actually followed up with the function that I did wanted
+I wasn't expecting that
+I was expecting 'no' to basically stop the iteraction
+
+Zack [12:55 PM]
+Gotcha. Were you pleasantly surprised when it followed up with the right function, or was it off-putting? (Or something else?)
+
+Programmer_23 [12:56 PM]
+I was pleasantly surprised as at that point I was already going to lockup the header files
+I guess I was frustrated that it wasn't easier to figure out that if I answered no it would keep suggesting alternatives
+so mixed feelings :slightly_smiling_face:
+
+Zack [12:57 PM]
+Understood, thank you! That is very valuable feedback.
+
+Programmer_23 [12:58 PM]
+Also I was frustrated that I already asked these questions:
+how do I get an ALLEGRO_SAMPLE
+how do I load a sample from a file ?
+how to load a wav file?
+how to load a sample from a wav?
+and it never pointed me to al_load_sample
+
+Zack [1:00 PM]
+Oh, yeah, that would definitely be frustrating. Thank you for putting up with it! :slightly_smiling_face:
+
+Programmer_23 [1:01 PM]
+anyway, that was a fun experiment :slightly_smiling_face:

@@ -1,0 +1,20 @@
+Zack [4:38 PM]
+Alright, you can find a good stopping point!
+
+Thanks for your work! How did it go?
+
+Programmer_13 [4:41 PM]
+I think at first I was a little slow out of the gate, specifically from a lack of available examples and no prior experience creating this type of program. As I went on I started to work better, I think I was understanding better how to approach this by the end.
+I think in the middle there were more examples in the answers I was receiving from Apiza, and I understood better how to ask it questions
+
+...
+
+Programmer_13 [4:45 PM]
+I think that I initially didn't realize how much information Apiza could give me in terms of asking it about parameters required for functions
+
+...
+
+Programmer_13 [5:01 PM]
+All done,
+
+I would say the speed of responses was the main reason for some of my lower scores, it felt like it was a bit on the slow side, but ultimately helpful.

@@ -1,0 +1,22 @@
+Zack [1:54 PM]
+Alright, you can come to a stopping point!
+How did it go?
+
+
+Programmer_28 [1:54 PM]
+ok, yeah I am at a stopping point. I think it well, I did not complete as many tasks as I would have liked but I finished steps 1-3
+I was impressed with Apiza
+
+...
+
+Programmer_28 [2:01 PM]
+when I said "nevermind" the last time, I noticed that I was drawing the text after flipping the delay. I have not used Allegro before but I am familiar with game programming and realized that I was probably drawing the text after the buffers were already swapped
+
+Other than the delay, I think Apiza is a nicer way to discover the API, because it gives common suggestions, it's less work of scanning online docs
+
+...
+
+Programmer_28 [2:06 PM]
+ok, I just did the survey. I think it was pretty powerful. I really liked that I could ask about a topic like "how do I play an audio file" and then it gives the basic setup and after I do that work, I can simply say "what's next". That is really nice because most APIs have multiple ceremonies you have to do to get something working
+
+The speed was the only thing frustrating to me; but I guess more GPUs can fix that. :slightly_smiling_face:    It was nice that I did not have to curate my questions carefully for the machine

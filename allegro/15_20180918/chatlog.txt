@@ -1,0 +1,145 @@
+Programmer_15 [9:16 PM]
+Hi Apiza
+
+
+Apiza [9:16 PM]
+Hello! I am Apiza, a virtual assistant designed to help you navigate and use APIs. How can I help?
+
+Programmer_15 [9:17 PM]
+What is the definition of structure of ALLERGO_EVENT
+?
+
+Apiza [9:18 PM]
+I found the following description for ALLEGRO_EVENT:
+
+An ALLEGRO_EVENT is a union of all builtin event structures, i.e. it is an object large enough to hold the data of any event type. All events have the following fields in common:
+
+type (ALLEGRO_EVENT_TYPE)
+    Indicates the type of event.
+any.source (ALLEGRO_EVENT_SOURCE *)
+    The event source which generated the event.
+any.timestamp (double)
+    When the event was generated.
+
+Programmer_15 [9:19 PM]
+What are the possible values for ALLERGO_EVENT_TYPE
+And ALLERGO_EVENT_SOURCE
+
+Apiza [9:20 PM]
+ALLERGO_EVENT_TYPE is an enum with several values, including ALLEGRO_EVENT_JOYSTICK_AXIS , ALLEGRO_EVENT_KEY_DOWN   , and ALLEGRO_EVENT_MOUSE_AXES. There are 30 different values in total. Are you looking for one type in particular?
+I found the following description of ALLEGRO_EVENT_SOURCE:
+
+An event source is any object which can generate events. For example, an ALLEGRO_DISPLAY can generate events, and you can get the ALLEGRO_EVENT_SOURCE pointer from an ALLEGRO_DISPLAY with al_get_display_event_source.
+
+You may create your own "user" event sources that emit custom events.
+
+Programmer_15 [9:26 PM]
+Please tell me more about ALlERGO_EVENT_KEY events
+
+Apiza [9:27 PM]
+There are three different types of EVENT_KEY events: ALLEGRO_EVENT_KEY_DOWN, ALLEGRO_EVENT_KEY_UP, and ALLEGRO_EVENT_KEY_CHAR
+
+Programmer_15 [9:28 PM]
+Is there allergo_event key left and key right
+
+Apiza [9:30 PM]
+I found two Key codes: ALLEGRO_KEY_LEFT and ALLEGRO_KEY_RIGHT. These can be used with keyboard routines such as al_key_down
+
+Programmer_15 [9:34 PM]
+Tell me more about al_key routines
+
+Apiza [9:36 PM]
+There are 9 functions directly relating to the keyboard:
+
+al_install_keyboard
+al_is_keyboard_installed
+al_uninstall_keyboard
+al_get_keyboard_state
+al_clear_keyboard_state
+al_key_down
+al_keycode_to_name
+al_set_keyboard_leds
+al_get_keyboard_event_source
+
+Programmer_15 [9:38 PM]
+What function plays an audio file?
+
+Apiza [9:40 PM]
+There are many function related to Audio playback. al_play_sample plays a given ALLEGRO_SAMPLE.
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+Would you like help loading and playing an ALLEGRO_SAMPLE?
+
+Programmer_15 [9:43 PM]
+Yes
+
+Apiza [9:45 PM]
+Sure thing! It looks like this is how you could load and play an audio file:
+
+
+  ALLEGRO_SAMPLE *sample=NULL;
+    
+  if(!al_install_audio()){
+     fprintf(stderr, "failed to initialize audio!\n");
+     return -1;
+  }
+    
+  if (!al_reserve_samples(1)){
+     fprintf(stderr, "failed to reserve samples!\n");
+     return -1;
+  }
+    
+  sample = al_load_sample( "footstep.wav" );
+
+  if (!sample){
+     printf( "Audio clip sample not loaded!\n" );
+     return -1;
+  }
+
+  al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);
+    
+  al_destroy_sample(sample);
+
+Programmer_15 [10:00 PM]
+Why is allergo sample* mistaken as int*
+What does the function al_load_sample return
+
+Apiza [10:01 PM]
+The al_load_sample function looks like this: ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+
+Returns the sample on success, NULL on failure.
+For sample-loading errors, it look like you may need to initialize the "audio codec add-on". Use `al_init_acodec_addon()` to initialize the audio codec.
+
+Programmer_15 [10:12 PM]
+Can you help me with fuctions that draw bitmap
+
+Apiza [10:13 PM]
+I'm happy to help! Where would you like to start with bitmap drawing?
+
+Programmer_15 [10:13 PM]
+I want to draw a png
+
+Apiza [10:15 PM]
+Alright, the variable that you will need to initialize is an ALLEGRO_BITMAP. You can do so with the function al_create_bitmap: ALLEGRO_BITMAP *al_create_bitmap(int w, int h)
+
+Programmer_15 [10:16 PM]
+What function takes a png file as input and draws a bitmap?
+
+Apiza [10:16 PM]
+ALLEGRO_BITMAP *al_load_bitmap(const char *filename)
+
+Loads an image file into a new ALLEGRO_BITMAP. The file type is determined by the extension, except if the file has no extension in which case al_identify_bitmap is used instead.
+
+Returns NULL on error.
+
+Programmer_15 [10:20 PM]
+Load bitmap returns null
+
+Apiza [10:22 PM]
+If you're getting errors loading an image, you may need to initialize the "image addon." You can do this using al_init_image_addon()
+
+Programmer_15 [10:35 PM]
+Image not displayed event after loading the png in bitmap?
+
+Apiza [10:36 PM]
+Sorry, could you rephrase your question?

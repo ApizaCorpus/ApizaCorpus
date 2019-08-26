@@ -1,0 +1,13 @@
+Zack [1:08 PM]
+In addition to those questions, I'd like to hear any comments you have on Apiza (any specific improvements you would suggest, cases where you think it would be more or less useful, etc.)
+
+
+Programmer_25 [1:09 PM]
+okay, I think it was a good experience, But it lacks the ability to answer some specific questions
+It is very good replacement of the api documentation
+If you could implement examples/code snippets in Apiza
+it would be awesome
+however, It is absolutely faster to learn and most of the time it correctly points you to all the things required to do a task
+
+Zack [1:11 PM]
+That definitely makes sense, thank you :slightly_smiling_face:

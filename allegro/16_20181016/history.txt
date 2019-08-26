@@ -1,0 +1,6 @@
+https://www.google.com/search?q=printf+bool
+https://stackoverflow.com/questions/17307275/what-is-the-printf-format-specifier-for-bool
+https://www.google.com/search?q=memset+syntax
+https://www.geeksforgeeks.org/memset-c-example/
+https://www.google.com/search?q=memset+array
+https://stackoverflow.com/questions/17288859/using-memset-for-integer-array-in-c

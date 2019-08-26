@@ -1,0 +1,475 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "aea5b0b4-26e5-4b5b-8def-d5e25af24938",
+            "type": "message",
+            "text": "bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)",
+            "user": "UB659D0FM",
+            "ts": "1546720356.017300"
+        },
+        {
+            "client_msg_id": "0bf1cf08-88ef-47d5-904a-83ac0086a762",
+            "type": "message",
+            "text": "Returns true if the key specified was held down in the state specified.",
+            "user": "UB659D0FM",
+            "ts": "1546720349.017100"
+        },
+        {
+            "client_msg_id": "d16ee5be-7e88-4f76-a49f-cb830ba5aea7",
+            "type": "message",
+            "text": "tell me about al_key_down",
+            "user": "UF7FXADMK",
+            "ts": "1546720336.016900"
+        },
+        {
+            "client_msg_id": "7a833753-7e2b-467e-9aa6-c0b53b458ffb",
+            "type": "message",
+            "text": "nevermind",
+            "user": "UF7FXADMK",
+            "ts": "1546720319.016500"
+        },
+        {
+            "client_msg_id": "46a3b339-f22a-4fce-8a67-c55f2aa2269a",
+            "type": "message",
+            "text": "tell me about al_keyboard_state",
+            "user": "UF7FXADMK",
+            "ts": "1546720303.016300"
+        },
+        {
+            "client_msg_id": "e7748f27-7628-46fb-985f-02170e78cc9b",
+            "type": "message",
+            "text": "no",
+            "user": "UF7FXADMK",
+            "ts": "1546720233.016000"
+        },
+        {
+            "client_msg_id": "31e429a9-f4bc-4575-a449-d2a33997f7ad",
+            "type": "message",
+            "text": "Are you asking about ALLEGRO_KEYBOARD_STATE?",
+            "user": "UB659D0FM",
+            "ts": "1546720199.015800"
+        },
+        {
+            "client_msg_id": "3414d551-d7e4-47d3-aaef-11e2adbeeaab",
+            "type": "message",
+            "text": "what is ALLEGRO_KEYBOARD",
+            "user": "UF7FXADMK",
+            "ts": "1546720170.015600"
+        },
+        {
+            "client_msg_id": "d5c1abb7-5282-4656-9fad-b119b87cfa49",
+            "type": "message",
+            "text": "An event source is any object which can generate events. For example, an ALLEGRO_DISPLAY can generate events, and you can get the ALLEGRO_EVENT_SOURCE pointer from an ALLEGRO_DISPLAY with al_get_display_event_source.\n\nYou may create your own \"user\" event sources that emit custom events.",
+            "user": "UB659D0FM",
+            "ts": "1546720054.015400"
+        },
+        {
+            "client_msg_id": "3d113bbe-885a-4f44-83df-9861bffa7327",
+            "type": "message",
+            "text": "what are the fields of ALLEGRO_EVENT_SOURCE",
+            "user": "UF7FXADMK",
+            "ts": "1546720037.015200"
+        },
+        {
+            "client_msg_id": "7032bf82-8ef8-424c-a89d-e1c158f76ebd",
+            "type": "message",
+            "text": "typedef struct ALLEGRO_EVENT_SOURCE ALLEGRO_EVENT_SOURCE;",
+            "user": "UB659D0FM",
+            "ts": "1546720010.014900"
+        },
+        {
+            "client_msg_id": "07197010-fe70-4bd3-852a-75685a90b6cc",
+            "type": "message",
+            "text": "what is they type of ALLEGRO_EVENT_SOURCE",
+            "user": "UF7FXADMK",
+            "ts": "1546719991.014700"
+        },
+        {
+            "client_msg_id": "d565cb6c-52b7-4f23-935f-9db419eff0ce",
+            "type": "message",
+            "text": "bool al_install_keyboard(void)",
+            "user": "UB659D0FM",
+            "ts": "1546719640.014400"
+        },
+        {
+            "client_msg_id": "b3fd923d-1a68-4c90-b584-e8e9cf71e073",
+            "type": "message",
+            "text": "This method installs a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.",
+            "user": "UB659D0FM",
+            "ts": "1546719633.014200"
+        },
+        {
+            "client_msg_id": "75ce29a0-f9cc-47b0-ac4e-d524fbfec976",
+            "type": "message",
+            "text": "tell me about al_install_keyboard",
+            "user": "UF7FXADMK",
+            "ts": "1546719612.014000"
+        },
+        {
+            "client_msg_id": "86f39a40-0194-447c-be00-0d22a2a86ba0",
+            "type": "message",
+            "text": "I\u2019m not sure I understand",
+            "user": "UB659D0FM",
+            "ts": "1546719600.013700"
+        },
+        {
+            "client_msg_id": "275514c2-1ccd-4ca3-90a9-a66abd18c9d4",
+            "type": "message",
+            "text": "what is al_get_keyboard",
+            "user": "UF7FXADMK",
+            "ts": "1546719582.013500"
+        },
+        {
+            "client_msg_id": "b51315fd-ab0c-43f6-a7f7-34536064045f",
+            "type": "message",
+            "text": "Are you asking about al_install_keyboard?",
+            "user": "UB659D0FM",
+            "ts": "1546719582.013400"
+        },
+        {
+            "client_msg_id": "e6c6271c-8011-48f6-8333-769af1023b01",
+            "type": "message",
+            "text": "when I call al_get_keyboard_event_source, the assertion 'new_keyboard_driver' fails",
+            "user": "UF7FXADMK",
+            "ts": "1546719552.013100"
+        },
+        {
+            "client_msg_id": "d37d3d06-c38d-42bf-a2f7-028ddc0352f7",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_SOURCE *al_get_keyboard_event_source(void)",
+            "user": "UB659D0FM",
+            "ts": "1546719491.012400"
+        },
+        {
+            "client_msg_id": "40a71fe6-486c-41e2-a504-3b48982dbef3",
+            "type": "message",
+            "text": "The method retrieves the keyboard event source. All keyboard events are generated by this event source.\nReturns NULL if the keyboard subsystem was not installed.",
+            "user": "UB659D0FM",
+            "ts": "1546719483.012200"
+        },
+        {
+            "client_msg_id": "4e9c1360-32b5-40aa-9ea3-4ddf230c7f0a",
+            "type": "message",
+            "text": "yes",
+            "user": "UF7FXADMK",
+            "ts": "1546719471.012000"
+        },
+        {
+            "client_msg_id": "e1209746-51d2-45d3-ba84-baaa7876628c",
+            "type": "message",
+            "text": "Are you asking about al_get_keyboard_event_source?",
+            "user": "UB659D0FM",
+            "ts": "1546719267.011800"
+        },
+        {
+            "client_msg_id": "35d384c5-64f9-41d0-9428-94f6758a59d5",
+            "type": "message",
+            "text": "how can I check to see if my keyboard is generating events",
+            "user": "UF7FXADMK",
+            "ts": "1546719221.011600"
+        },
+        {
+            "client_msg_id": "a71247b4-2894-47a2-a0cb-12565aff25da",
+            "type": "message",
+            "text": "void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)",
+            "user": "UB659D0FM",
+            "ts": "1546719159.011300"
+        },
+        {
+            "client_msg_id": "51c55bb9-5c8c-4da6-8891-49940b330045",
+            "type": "message",
+            "text": "This method saves the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state.",
+            "user": "UB659D0FM",
+            "ts": "1546719152.011100"
+        },
+        {
+            "client_msg_id": "ff3f6915-babc-4fd2-8783-32beff1ef31f",
+            "type": "message",
+            "text": "tell me about al_get_keyboard_state",
+            "user": "UF7FXADMK",
+            "ts": "1546719118.010900"
+        },
+        {
+            "client_msg_id": "e49003ef-9051-4b9e-be27-e0e60ea5274f",
+            "type": "message",
+            "text": "no",
+            "user": "UF7FXADMK",
+            "ts": "1546719108.010600"
+        },
+        {
+            "client_msg_id": "9d43540f-29ea-45ef-b2cd-488848db808c",
+            "type": "message",
+            "text": "Are you interested in al_get_keyboard_state or al_key_down?",
+            "user": "UB659D0FM",
+            "ts": "1546719085.010400"
+        },
+        {
+            "client_msg_id": "831d5ee0-74aa-4f71-ac21-c5fddafb102b",
+            "type": "message",
+            "text": "I\u2019m not sure I understand",
+            "user": "UB659D0FM",
+            "ts": "1546719016.010200"
+        },
+        {
+            "client_msg_id": "8c8f555e-74cd-4322-87dd-d3a3885f6e36",
+            "type": "message",
+            "text": "if I have an ALLEGRO_EVENT called ev, should ev.type == ALLEGRO_EVENT_KEY_DOWN return true when I press a key?",
+            "user": "UF7FXADMK",
+            "ts": "1546718981.010000"
+        },
+        {
+            "client_msg_id": "c48c750a-8658-403c-9675-68b68bca49a6",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_KEY_DOWN represents a keyboard key was pressed.",
+            "user": "UB659D0FM",
+            "ts": "1546718529.009100"
+        },
+        {
+            "client_msg_id": "32e45047-e761-47c5-bd57-56c4fc14715f",
+            "type": "message",
+            "text": "tell me about ALLEGRO_EVENT_KEY_DOWN",
+            "user": "UF7FXADMK",
+            "ts": "1546718506.008900"
+        },
+        {
+            "client_msg_id": "f9ab25b7-76f7-4f8b-a5f6-3045025f4671",
+            "type": "message",
+            "text": "An ALLEGRO_EVENT is a union of all builtin event structures, i.e. it is an object large enough to hold the data of any event type. All events have the following fields in common:\n\ntype (ALLEGRO_EVENT_TYPE)\nIndicates the type of event.\nany.source (ALLEGRO_EVENT_SOURCE *)\nThe event source which generated the event.\nany.timestamp (double)\nWhen the event was generated.\nBy examining the type field you can then access type-specific fields. The any.source field tells you which event source generated that particular event. The any.timestamp field tells you when the event was generated. The time is referenced to the same starting point as al_get_time.\n\nEach event is of one of the following types, with the usable fields given.",
+            "user": "UB659D0FM",
+            "ts": "1546718457.008500"
+        },
+        {
+            "client_msg_id": "a1af61ef-4b68-4b15-bdec-3f5047eefacd",
+            "type": "message",
+            "text": "what is ALLEGRO_EVENT",
+            "user": "UF7FXADMK",
+            "ts": "1546718438.008300"
+        },
+        {
+            "client_msg_id": "bf7ccebf-b67e-49cc-8c56-edd933e8a6d7",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_JOYSTICK_AXIS\nALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN\nALLEGRO_EVENT_JOYSTICK_BUTTON_UP\nALLEGRO_EVENT_JOYSTICK_CONFIGURATION\nALLEGRO_EVENT_KEY_DOWN\nALLEGRO_EVENT_KEY_UP\nALLEGRO_EVENT_KEY_CHAR\nALLEGRO_EVENT_MOUSE_AXES\nALLEGRO_EVENT_MOUSE_BUTTON_DOWN\nALLEGRO_EVENT_MOUSE_BUTTON_UP\nALLEGRO_EVENT_MOUSE_WARPED\nALLEGRO_EVENT_MOUSE_ENTER_DISPLAY\nALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY\nALLEGRO_EVENT_TOUCH_BEGIN\nALLEGRO_EVENT_TOUCH_END\nALLEGRO_EVENT_TOUCH_MOVE\nALLEGRO_EVENT_TOUCH_CANCEL\nALLEGRO_EVENT_TIMER\nALLEGRO_EVENT_DISPLAY_EXPOSE\nALLEGRO_EVENT_DISPLAY_RESIZE\nALLEGRO_EVENT_DISPLAY_CLOSE\nALLEGRO_EVENT_DISPLAY_LOST\nALLEGRO_EVENT_DISPLAY_FOUND\nALLEGRO_EVENT_DISPLAY_SWITCH_OUT\nALLEGRO_EVENT_DISPLAY_SWITCH_IN\nALLEGRO_EVENT_DISPLAY_ORIENTATION\nALLEGRO_EVENT_DISPLAY_HALT_DRAWING\nALLEGRO_EVENT_DISPLAY_RESUME_DRAWING\nALLEGRO_EVENT_DISPLAY_CONNECTED\nALLEGRO_EVENT_DISPLAY_DISCONNECTED",
+            "user": "UB659D0FM",
+            "ts": "1546718115.008000"
+        },
+        {
+            "client_msg_id": "c66358c4-dea4-4566-b2e9-75d5bdbca8d2",
+            "type": "message",
+            "text": "what are the possible events",
+            "user": "UF7FXADMK",
+            "ts": "1546718095.007800"
+        },
+        {
+            "client_msg_id": "2e12ed74-dde0-48be-a43d-df4e33aa6edf",
+            "type": "message",
+            "text": "Note: this event is about the physical keys being pressed on the keyboard. Look for ALLEGRO_EVENT_KEY_CHAR events for character input.",
+            "user": "UB659D0FM",
+            "ts": "1546718010.007500"
+        },
+        {
+            "client_msg_id": "f212f7a3-b604-4526-957c-3d5deb2d0dcb",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_KEY_DOWN represents a keyboard key was pressed.",
+            "user": "UB659D0FM",
+            "ts": "1546717995.007300"
+        },
+        {
+            "client_msg_id": "b64297b2-2d3f-4042-b800-1699df5dfac9",
+            "type": "message",
+            "text": "what is ALLEGRO_EVENT_KEY_DOWN",
+            "user": "UF7FXADMK",
+            "ts": "1546717935.007100"
+        },
+        {
+            "client_msg_id": "f0a35c0d-b238-420e-a179-c89c7f4cebb9",
+            "type": "message",
+            "text": "I\u2019m not sure I understand",
+            "user": "UB659D0FM",
+            "ts": "1546717812.006800"
+        },
+        {
+            "client_msg_id": "9f8fe879-9c16-4fb1-a073-33c756985f9b",
+            "type": "message",
+            "text": "what is ALLEGRO_EVENT_KEY_LEFT",
+            "user": "UF7FXADMK",
+            "ts": "1546717759.006600"
+        },
+        {
+            "client_msg_id": "ab9ef02a-985a-4133-bc81-f5c3b039601e",
+            "type": "message",
+            "text": "Are you asking about one of the following?ALLEGRO_EVENT_KEY_DOWN, ALLEGRO_EVENT_KEY_UP, ALLEGRO_EVENT_KEY_CHAR",
+            "user": "UB659D0FM",
+            "ts": "1546717609.006300"
+        },
+        {
+            "client_msg_id": "fddb032d-d6aa-4e1f-bd3d-6712b9d104b6",
+            "type": "message",
+            "text": "what is the keyboard event type called",
+            "user": "UF7FXADMK",
+            "ts": "1546717540.006100"
+        },
+        {
+            "client_msg_id": "9aff2770-9ae4-41e1-8519-7d88bb6a31f9",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_SOURCE *al_get_keyboard_event_source(void)",
+            "user": "UB659D0FM",
+            "ts": "1546717103.005800"
+        },
+        {
+            "client_msg_id": "a6e20d80-1c58-41aa-ac65-9ed98373ba4c",
+            "type": "message",
+            "text": "The method retrieves the keyboard event source. All keyboard events are generated by this event source.\nReturns NULL if the keyboard subsystem was not installed.",
+            "user": "UB659D0FM",
+            "ts": "1546717090.005600"
+        },
+        {
+            "client_msg_id": "9d71c873-0099-45e7-bdb0-9df1fd6f4b0e",
+            "type": "message",
+            "text": "I don't know. What does that do?",
+            "user": "UF7FXADMK",
+            "ts": "1546717079.005400"
+        },
+        {
+            "client_msg_id": "1f0a38f5-438f-4353-98ab-421f1c54c098",
+            "type": "message",
+            "text": "Are you asking about al_get_keyboard_event_source?",
+            "user": "UB659D0FM",
+            "ts": "1546717066.005200"
+        },
+        {
+            "client_msg_id": "0cda45c0-e6b3-42a0-bc08-ef58cbd479ac",
+            "type": "message",
+            "text": "what's the event type for a key press",
+            "user": "UF7FXADMK",
+            "ts": "1546717002.005000"
+        },
+        {
+            "client_msg_id": "e5e8c1d2-f1e3-4748-bceb-fc9b78e33d16",
+            "type": "message",
+            "text": "ALLEGRO_KEYBOARD_STATE is a structure that is used to hold a \"snapshot\" of a keyboard's state at a particular instant. It contains the following publically readable fields: display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.\nYou cannot read the state of keys directly. Use the function al_key_down.",
+            "user": "UB659D0FM",
+            "ts": "1546716631.004800"
+        },
+        {
+            "client_msg_id": "fa9129cb-3b38-46b1-93d2-6fa86a0a2711",
+            "type": "message",
+            "text": "what states can allegro_keyboard_state be in",
+            "user": "UF7FXADMK",
+            "ts": "1546716559.004600"
+        },
+        {
+            "client_msg_id": "f975e988-b7ba-40de-a60b-82fa7e290803",
+            "type": "message",
+            "text": "Well I'll do an experiment and let you know :slightly_smiling_face:",
+            "user": "UF7FXADMK",
+            "ts": "1546716361.004100"
+        },
+        {
+            "client_msg_id": "3a5f0b2b-bab9-4a45-8960-2d4b14d8c8fe",
+            "type": "message",
+            "text": "I believe so",
+            "user": "UB659D0FM",
+            "ts": "1546716325.003800"
+        },
+        {
+            "client_msg_id": "a41a0d5c-efa5-4c70-a66a-a9fb262c9473",
+            "type": "message",
+            "text": "when a user presses a key, is a corresponding event placed in the event queue?",
+            "user": "UF7FXADMK",
+            "ts": "1546716305.003600"
+        },
+        {
+            "client_msg_id": "563ce213-a07a-4791-b356-41d402a1766c",
+            "type": "message",
+            "text": "ALLEGRO_KEY_LEFT, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_UP, ALLEGRO_KEY_DOWN",
+            "user": "UB659D0FM",
+            "ts": "1546716253.003200"
+        },
+        {
+            "client_msg_id": "30ffb147-7cce-4d84-a0da-e853ae1f9e73",
+            "type": "message",
+            "text": "void al_wait_for_event(ALLEGRO_EVENT_QUEUE *queue, ALLEGRO_EVENT *ret_event)",
+            "user": "UB659D0FM",
+            "ts": "1546716207.003000"
+        },
+        {
+            "client_msg_id": "feb51aa7-213d-44e7-9469-e64d9a844acc",
+            "type": "message",
+            "text": "al_wait_for_event waits until the event queue specified is non-empty. If ret_eventis not NULL, the first event in the queue will be copied into ret_event and removed from the queue. If ret_event is NULL the first event is left at the head of the queue.",
+            "user": "UB659D0FM",
+            "ts": "1546716200.002800"
+        },
+        {
+            "client_msg_id": "629f7bd2-ca03-4240-9743-863ad2bd75da",
+            "type": "message",
+            "text": "what are the keycodes for up, down, left, and right arrowkeys",
+            "user": "UF7FXADMK",
+            "ts": "1546716171.002600"
+        },
+        {
+            "client_msg_id": "0f9bf3bc-be1d-4430-aad4-6197e1677934",
+            "type": "message",
+            "text": "bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)",
+            "user": "UB659D0FM",
+            "ts": "1546716141.002200"
+        },
+        {
+            "client_msg_id": "26d23ccc-af8f-49a5-b9b7-4cc9c303ef1a",
+            "type": "message",
+            "text": "al_key_down returns true if the key specified was held down in the state specified.",
+            "user": "UB659D0FM",
+            "ts": "1546716134.002000"
+        },
+        {
+            "client_msg_id": "19bdc9b5-c7b6-4248-803c-5de55f14a92b",
+            "type": "message",
+            "text": "what arguments does it take and what does it return",
+            "user": "UF7FXADMK",
+            "ts": "1546716105.001800"
+        },
+        {
+            "client_msg_id": "2aa1df73-2aca-4ed8-a177-dc7fb437e795",
+            "type": "message",
+            "text": "also what does al_wait_for_event do?",
+            "user": "UF7FXADMK",
+            "ts": "1546716090.001500"
+        },
+        {
+            "client_msg_id": "e97da3a9-2ced-4603-98bc-9ab3e2637ec7",
+            "type": "message",
+            "text": "yes",
+            "user": "UF7FXADMK",
+            "ts": "1546716078.001200"
+        },
+        {
+            "client_msg_id": "3c2ab282-d2c9-4063-8fcc-180572741950",
+            "type": "message",
+            "text": "Are you asking about al_key_down?",
+            "user": "UB659D0FM",
+            "ts": "1546716026.001000"
+        },
+        {
+            "client_msg_id": "b4096b11-9c53-46ca-9d25-20d4df4e963c",
+            "type": "message",
+            "text": "How can I see if the user pressed a key",
+            "user": "UF7FXADMK",
+            "ts": "1546715991.000800"
+        },
+        {
+            "client_msg_id": "b400b2aa-7229-4470-84a1-84893b714bbc",
+            "type": "message",
+            "text": "Hello!",
+            "user": "UB659D0FM",
+            "ts": "1546715845.000400"
+        },
+        {
+            "client_msg_id": "b759aecd-de60-475c-8fec-e941a294f442",
+            "type": "message",
+            "text": "hey",
+            "user": "UF7FXADMK",
+            "ts": "1546715838.000200"
+        }
+    ],
+    "has_more": false
+}

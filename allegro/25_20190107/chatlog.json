@@ -1,0 +1,251 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "87f43eed-2320-4e93-82f6-da11a76f3c12",
+            "type": "message",
+            "text": "can you guide me to  use a PNG format?",
+            "user": "UF9JCDAF8",
+            "ts": "1546883328.010100"
+        },
+        {
+            "client_msg_id": "44bc2735-8e9a-4cf4-a1de-6675dff10801",
+            "type": "message",
+            "text": "It looks like you'll want to use al_init_image_addon:\n\nbool al_init_image_addon(void)\n\nInitializes the image addon. This registers bitmap format handlers for al_load_bitmap, al_load_bitmap_f, al_save_bitmap, al_save_bitmap_f.\n\nThe following types are built into the Allegro image addon and guaranteed to be available: BMP, DDS, PCX, TGA. Every platform also supports JPEG and PNG via external dependencies.\n\nOther formats may be available depending on the operating system and installed libraries, but are not guaranteed and should not be assumed to be universally available.\n\nThe DDS format is only supported to load from, and only if the DDS file contains textures compressed in the DXT1, DXT3 and DXT5 formats. Note that when loading a DDS file, the created bitmap will always be a video bitmap and will have the pixel format matching the format in the file.",
+            "user": "UB659D0FM",
+            "ts": "1546883038.009800"
+        },
+        {
+            "client_msg_id": "ec1aa19f-e2ea-4546-adca-af0a5726b271",
+            "type": "message",
+            "text": "how to load a .png bitmap",
+            "user": "UF9JCDAF8",
+            "ts": "1546882944.009600"
+        },
+        {
+            "client_msg_id": "671ace93-76aa-4458-9757-1fd023591429",
+            "type": "message",
+            "text": "This should help with al_load_font:\n\nALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)\n\nLoads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.\n\nThe flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.",
+            "user": "UB659D0FM",
+            "ts": "1546882519.009400"
+        },
+        {
+            "client_msg_id": "e29ab331-4c02-4036-8e53-565eb307650a",
+            "type": "message",
+            "text": "using al_load_font ?",
+            "user": "UF9JCDAF8",
+            "ts": "1546882472.009200"
+        },
+        {
+            "client_msg_id": "7809a2e0-e3c1-4db3-ad68-4a677a122158",
+            "type": "message",
+            "text": "This should help with al_draw_text:\n\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text)\nWrites the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.\nThe flags parameter can be 0 or one of the following flags:\n    \u2022 ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\n    \u2022 ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\n    \u2022 ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\nIt can also be combined with this flag:\n    \u2022 ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.",
+            "user": "UB659D0FM",
+            "ts": "1546882291.009000"
+        },
+        {
+            "client_msg_id": "d071835e-2798-4464-ae57-0370e910112e",
+            "type": "message",
+            "text": "how can i use al_draw_text ?",
+            "user": "UF9JCDAF8",
+            "ts": "1546882226.008800"
+        },
+        {
+            "client_msg_id": "1d1afb2f-27e3-45c8-a0a2-86a04aef7c2f",
+            "type": "message",
+            "text": "You\u2019ll probably want to use al_init_font_addon:\n\nbool al_init_font_addon(void)\n\nInitialise the font addon.\nNote that if you intend to load bitmap fonts, you will need to initialise allegro_image separately (unless you are using another library to load images).\nSimilarly, if you wish to load truetype-fonts, do not forget to also call al_init_ttf_addon.\nReturns true on success, false on failure. On the 5.0 branch, this function has no return value. You may wish to avoid checking the return value if your code needs to be compatible with Allegro 5.0. Currently, the function will never return false.",
+            "user": "UB659D0FM",
+            "ts": "1546882060.008600"
+        },
+        {
+            "client_msg_id": "387acac1-ab10-4375-9051-fdf98cf5c252",
+            "type": "message",
+            "text": "no",
+            "user": "UF9JCDAF8",
+            "ts": "1546881986.008400"
+        },
+        {
+            "client_msg_id": "fec36648-c90f-4bc0-9dbe-614b6d3d82d4",
+            "type": "message",
+            "text": "Have you called al_init_font_addon() and al_init_ttf_addon()?",
+            "user": "UB659D0FM",
+            "ts": "1546881971.008200"
+        },
+        {
+            "client_msg_id": "80ef9512-8f53-4d1e-baaf-3bd7acd8476f",
+            "type": "message",
+            "text": "what is this error for ?\n\nallegro_tasks: \/build\/allegro5-LWhWgt\/allegro5-5.2.4.0\/addons\/font\/text.c:79: al_draw_ustr: Assertion `font' failed.",
+            "user": "UF9JCDAF8",
+            "ts": "1546881854.008000"
+        },
+        {
+            "client_msg_id": "b4053842-6d66-44ba-8130-27b8fc01db9e",
+            "type": "message",
+            "text": "It looks like you\u2019ll want to use al_init_acodec_addon:\n\nbool al_init_acodec_addon(void)\n\nThis function registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.\nDepending on what libraries are available, the full set of recognised extensions is: .wav, .flac, .ogg, .opus, .it, .mod, .s3m, .xm, .voc.\nLimitations:\n    \u2022 Saving is only supported for wav files.\n    \u2022 The wav file loader currently only supports 8\/16 bit little endian PCM files. 16 bits are used when saving wav files. Use flac files if more precision is required.\n    \u2022 Module files (.it, .mod, .s3m, .xm) are often composed with streaming in mind, and sometimes cannot be easily rendered into a finite length sample. Therefore they cannot be loaded with al_load_sample\/al_load_sample_f and must be streamed with al_load_audio_stream or al_load_audio_stream_f.\n    \u2022 .voc file streaming is unimplemented.\nReturn true on success.",
+            "user": "UB659D0FM",
+            "ts": "1546881750.007700"
+        },
+        {
+            "client_msg_id": "dd3c4d92-c332-4b04-a863-b699475a42c3",
+            "type": "message",
+            "text": "how can i get ALLEGRO_SAMPLE * from .wav file?",
+            "user": "UF9JCDAF8",
+            "ts": "1546881632.007500"
+        },
+        {
+            "client_msg_id": "03984566-b870-437b-b106-67f3a9d395e2",
+            "type": "message",
+            "text": "Use al_install_audio to initialize sound. To load any sample formats, you will need to initialise the acodec addon with al_init_acodec_addon.\n\nAfter that, you can simply use al_reserve_samples and pass the number of sound effects typically playing at the same time. Then load your sound effects with al_load_sample and play them with al_play_sample. To stream large pieces of music from disk, you can use al_load_audio_stream so the whole piece will not have to be pre-loaded into memory.\n\nIf the above sounds too simple and you can't help but think about clipping and latency issues, don't worry. Allegro gives you full control over how much or little you want its sound system to do. The al_reserve_samples function mentioned above only sets up a default mixer and a number of sample instances but you don't need to use it.\n\nInstead, to get a \"direct connection\" to the sound system you would use an ALLEGRO_VOICE (but depending on the platform only one such voice is guaranteed to be available and it might require a specific format of audio data). Therefore all sound can be first routed through an ALLEGRO_MIXER which is connected to such a voice (or another mixer) and will mix together all sample data fed to it.\n\nYou can then directly stream real-time sample data to a mixer or a voice using an ALLEGRO_AUDIO_STREAM or play complete sounds using an ALLEGRO_SAMPLE_INSTANCE. The latter simply points to an ALLEGRO_SAMPLE and will stream it for you.",
+            "user": "UB659D0FM",
+            "ts": "1546880285.007200"
+        },
+        {
+            "client_msg_id": "b439f1aa-4bf2-4426-a48f-96eb831d3246",
+            "type": "message",
+            "text": "what is the function the play a sound",
+            "user": "UF9JCDAF8",
+            "ts": "1546880224.007000"
+        },
+        {
+            "client_msg_id": "43d219c9-5088-484e-a61f-bd16e43dbcb7",
+            "type": "message",
+            "text": "The key codes for the arrow keys are:\n\nALLEGRO_KEY_LEFT\nALLEGRO_KEY_RIGHT\nALLEGRO_KEY_UP\nALLEGRO_KEY_DOWN",
+            "user": "UB659D0FM",
+            "ts": "1546880164.006600"
+        },
+        {
+            "client_msg_id": "7557b025-128e-49df-80e3-e96166e0f5f9",
+            "type": "message",
+            "text": "al_key_down should return true if the specified key is pressed:\n\nbool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)\n\nReturn true if the key specified was held down in the state specified.",
+            "user": "UB659D0FM",
+            "ts": "1546880135.006400"
+        },
+        {
+            "client_msg_id": "4784dfba-d9bf-468c-b48a-78fe14433702",
+            "type": "message",
+            "text": "Get arrow keys when they are pressed on keyboard",
+            "user": "UF9JCDAF8",
+            "ts": "1546880063.006200"
+        },
+        {
+            "client_msg_id": "3afc00dc-7c3e-4676-9b71-951f407aa2b0",
+            "type": "message",
+            "text": "What do you mean by get the arrow keys?",
+            "user": "UB659D0FM",
+            "ts": "1546879871.005300"
+        },
+        {
+            "client_msg_id": "6c1e220b-1dd2-499f-b745-8e0f010bd803",
+            "type": "message",
+            "text": "can you write a short snippet to get the arrow keys?",
+            "user": "UF9JCDAF8",
+            "ts": "1546879837.005100"
+        },
+        {
+            "client_msg_id": "9e725e5a-eae3-4477-9dbc-649ae5af109d",
+            "type": "message",
+            "text": "yes",
+            "user": "UF9JCDAF8",
+            "ts": "1546879783.004500"
+        },
+        {
+            "client_msg_id": "1d7ea777-1a65-4a21-892c-0084501ecc6d",
+            "type": "message",
+            "text": "Have you called al_init()?",
+            "user": "UB659D0FM",
+            "ts": "1546879623.004300"
+        },
+        {
+            "client_msg_id": "f828906c-e067-46dd-8130-daded1e01d44",
+            "type": "message",
+            "text": "allegro_tasks: \/build\/allegro5-LWhWgt\/allegro5-5.2.4.0\/src\/keybdnu.c:241: al_get_keyboard_state: Assertion `new_keyboard_driver' failed.",
+            "user": "UF9JCDAF8",
+            "ts": "1546879535.004000"
+        },
+        {
+            "client_msg_id": "de88669b-1c7d-4a83-a8ba-9e5bbdd33acc",
+            "type": "message",
+            "text": "getting this error",
+            "user": "UF9JCDAF8",
+            "ts": "1546879534.003900"
+        },
+        {
+            "client_msg_id": "ad87a6f9-0968-48eb-bd05-be50b5f64f64",
+            "type": "message",
+            "text": "al_get_keyboard_state will allow you to get the keyboard state:\n\nvoid al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)\n\n\nSave the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state.",
+            "user": "UB659D0FM",
+            "ts": "1546879371.003600"
+        },
+        {
+            "client_msg_id": "d1aa473a-cd14-49ad-aa2f-3642412b996f",
+            "type": "message",
+            "text": "where can I get the keyboard state?",
+            "user": "UF9JCDAF8",
+            "ts": "1546879324.003400"
+        },
+        {
+            "client_msg_id": "7094d095-f814-4caf-a4cc-d80e03409c15",
+            "type": "message",
+            "text": "ALLEGRO_KEYBOARD_STATE\n\ntypedef struct ALLEGRO_KEYBOARD_STATE ALLEGRO_KEYBOARD_STATE;\n\nThis is a structure that is used to hold a \"snapshot\" of a keyboard's state at a particular instant. It contains the following publically readable fields:\n    \u2022 display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.",
+            "user": "UB659D0FM",
+            "ts": "1546878687.003100"
+        },
+        {
+            "client_msg_id": "64cd59b5-f5d1-40b9-a73e-d0f6df74429d",
+            "type": "message",
+            "text": "what is the type of ALLEGRO_KEYBOARD_STATE?",
+            "user": "UF9JCDAF8",
+            "ts": "1546878641.002900"
+        },
+        {
+            "client_msg_id": "e1e545a5-4147-4b11-a111-d5e669c58afe",
+            "type": "message",
+            "text": "al_key_down will give you the status of a given key:\n\nbool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)",
+            "user": "UB659D0FM",
+            "ts": "1546878449.002500"
+        },
+        {
+            "client_msg_id": "3b3bedb0-0744-4a65-8ee0-ffe99657b566",
+            "type": "message",
+            "text": "they are enum, So, How can I use ALLEGRO_KEY_LEFT to get the status of this key?",
+            "user": "UF9JCDAF8",
+            "ts": "1546878381.002300"
+        },
+        {
+            "client_msg_id": "9dbe5fa3-ef1c-40c2-aa90-746198810806",
+            "type": "message",
+            "text": "Are these boolean values?",
+            "user": "UF9JCDAF8",
+            "ts": "1546878318.001700"
+        },
+        {
+            "client_msg_id": "b2b20ac1-1fa4-4273-8b58-4ae0aff59d43",
+            "type": "message",
+            "text": "The key codes for the arrow keys are:\n\nALLEGRO_KEY_LEFT\nALLEGRO_KEY_RIGHT\nALLEGRO_KEY_UP\nALLEGRO_KEY_DOWN",
+            "user": "UB659D0FM",
+            "ts": "1546878218.001100"
+        },
+        {
+            "client_msg_id": "fe94b96e-1b0a-46cf-9c7e-36e09b53ae9a",
+            "type": "message",
+            "text": "How can i get arrow keys in Allegro?",
+            "user": "UF9JCDAF8",
+            "ts": "1546878153.000900"
+        },
+        {
+            "client_msg_id": "fe0c4399-c2ca-436d-ae3d-5d43f96ca564",
+            "type": "message",
+            "text": "Hi Programmer_25!",
+            "user": "UB659D0FM",
+            "ts": "1546878001.000500"
+        },
+        {
+            "client_msg_id": "e55ad3ca-e20e-4322-812b-96243bb47ca1",
+            "type": "message",
+            "text": "Hi Apiza",
+            "user": "UF9JCDAF8",
+            "ts": "1546877980.000200"
+        }
+    ],
+    "has_more": false
+}

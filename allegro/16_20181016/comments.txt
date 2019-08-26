@@ -1,0 +1,2 @@
+Programmer_16 [5:51 PM]
+I finished the survey. Pretty much my onliy complaint would be that it was slow. That could have just been the vm. I had to wait a while for answers. Since this was a cool little project I didn't mind, but to wait a minute for an answer about API function signatures at work would probably frustrate the heck out of me. I was very cool how perfectly Apiza understood what I wanted to know and even offered code samples.

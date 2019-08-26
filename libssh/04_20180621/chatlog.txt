@@ -1,0 +1,285 @@
+Programmer_4 [8:04 PM]
+hello
+
+Apiza [8:05 PM]
+Hello! I am Apiza. How may I help you?
+
+Programmer_4 [8:05 PM]
+When was libssh Version 1.x released?
+
+Apiza [8:07 PM]
+Hmm, I don't know about that, sorry! Is there anything else I can do?
+
+Programmer_4 [8:07 PM]
+How do I create a new ssh_session?
+
+Apiza [8:08 PM]
+The function "ssh_session ssh_new(void)" should create a new ssh_session.
+
+Programmer_4 [8:09 PM]
+How to I free a ssh session?
+
+Apiza [8:10 PM]
+Try using the function "void ssh_free (ssh_session session)"
+
+Programmer_4 [8:11 PM]
+How do I connect to an IP and port?
+
+Apiza [8:13 PM]
+To connect, I'd reccomend using "int ssh_connect(ssh_session session)". It looks like you can set an IP and Port using 
+"int ssh_options_set(ssh_session session,
+enum ssh_options_e type,
+const void * value 
+)
+
+Programmer_4 [8:13 PM]
+What is the return value of ssh_options_set?
+
+Apiza [8:13 PM]
+ssh_options_set returns an int: "0 on success, < 0 on error."
+
+Programmer_4 [8:14 PM]
+How do I get an SSH error message?
+
+Apiza [8:16 PM]
+The function "const char* ssh_get_error(void * error)". This should return "A static string describing the error."
+
+Programmer_4 [8:16 PM]
+How do I pass the SSH password?
+
+Apiza [8:18 PM]
+The function ssh_options_set takes an enum "type" as a parameter. One value for "type" is "SSH_OPTIONS_PASSWORD_AUTH": "Set it if password authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use password authentication)."
+
+Programmer_4 [8:19 PM]
+What are the possible states of ssh_is_server_known
+
+Apiza [8:21 PM]
+The function int ssh_is_server_known (ssh_session session) returns an int, but it is deprecated.
+
+Programmer_4 [8:22 PM]
+What is the alternative to ssh_is_server_known?
+
+Apiza [8:23 PM]
+The best alternative would be "ssh_session_is_known_server()", but I can't find much information about that.
+
+Programmer_4 [8:24 PM]
+What parameters does ssh_session_is_known_server take?
+
+Apiza [8:25 PM]
+ssh_session_is_known_server takes an "ssh_session" as a parameter.
+
+Programmer_4 [8:25 PM]
+What does ssh_session_is_known_server return?
+
+Apiza [8:26 PM]
+"ssh_session_is_known_server()" returns an int describing the state of the server.
+
+Programmer_4 [8:27 PM]
+What values can ssh_session_is_known_server return?
+
+Apiza [8:28 PM]
+It looks like these are all of the different values:
+
+/* These are the different states a SSH session can be into its life */
+enum ssh_session_state_e {
+  SSH_SESSION_STATE_NONE=0,
+  SSH_SESSION_STATE_CONNECTING,
+  SSH_SESSION_STATE_SOCKET_CONNECTED,
+  SSH_SESSION_STATE_BANNER_RECEIVED,
+  SSH_SESSION_STATE_INITIAL_KEX,
+  SSH_SESSION_STATE_KEXINIT_RECEIVED,
+  SSH_SESSION_STATE_DH,
+  SSH_SESSION_STATE_AUTHENTICATING,
+  SSH_SESSION_STATE_AUTHENTICATED,
+  SSH_SESSION_STATE_ERROR,
+  SSH_SESSION_STATE_DISCONNECTED
+};
+
+Programmer_4 [8:28 PM]
+Which header file is ssh_session_is_known_server in?
+
+Apiza [8:30 PM]
+I'm sorry, I can't help you with that. Is there anything else I can answer?
+
+Programmer_4 [8:30 PM]
+Where is ssh_session_is_known_server defined? (edited)
+
+Apiza [8:31 PM]
+I'm sorry, I can't help you with that. Is there anything else I can answer?
+
+Programmer_4 [8:32 PM]
+What values can ssh_is_server_known return?
+
+Apiza [8:34 PM]
+ssh_is_server_known returns an int. The value of this int can be SSH_SERVER_KNOWN_OK, SSH_SERVER_KNOWN_CHANGED, SSH_SERVER_FOUND_OTHER, SSH_SERVER_FILE_NOT_FOUND, or SSH_SERVER_NOT_KNOWN.
+
+Programmer_4 [8:35 PM]
+What does SSH_SERVER_FOUND_OTHER mean?
+
+Apiza [8:36 PM]
+It looks like SSH_SERVER_FOUND_OTHER indicates that "The host key for this server was not found but an other type of key exists."
+
+Programmer_4 [8:37 PM]
+What are the possible types of SSH keys?
+
+Apiza [8:39 PM]
+It looks like there are several possible SSH keys. Some examples are "ssh-rsa,ssh-dss,ecdh-sha2-nistp256".
+
+Programmer_4 [8:40 PM]
+How do I determine which type of SSH key exists?
+
+Apiza [8:42 PM]
+The function "ssh_get_publickey_hash()" may be useful. It Allocates a buffer with the hash of the public key.
+
+Programmer_4 [8:43 PM]
+Is there a libssh function to get the location of the public key file?
+
+Apiza [8:45 PM]
+I'm not sure about that. I was able to find that the known host file is in ~/.ssh/known_hosts on Unix.
+
+Programmer_4 [8:45 PM]
+What's 1 + 1?
+
+Apiza [8:46 PM]
+2
+
+Programmer_4 [8:47 PM]
+What port does libssh default to?
+
+Apiza [8:48 PM]
+Default is port 22
+
+Programmer_4 [8:50 PM]
+What values does ssh_userauth_password return?
+
+Apiza [8:50 PM]
+ssh_userauth_password() returns an int:
+
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+
+Programmer_4 [8:53 PM]
+What are the commonly used functions taking ssh_channel as a parameter?
+
+Apiza [8:55 PM]
+There are a lot of common functions that take ssh_channel as a parameter, including
+"void ssh_channel_free (ssh_channel channel)", 
+"int channel_read_buffer (ssh_channel channel, ssh_buffer buffer, uint32_t count, int is_stderr)", 
+"int ssh_channel_poll (ssh_channel channel, int is_stderr)", and
+"int ssh_channel_write (ssh_channel channel, const void *data, uint32_t len)".
+
+Programmer_4 [8:56 PM]
+How do I use channel_read_buffer?
+
+Apiza [8:59 PM]
+For example, if you have ssh_channel channel and ssh_buffer buffer, you could use
+"int nbytes = ssh_channel_read_buffer(channel, buffer, sizeof(buffer), 0);"
+
+Programmer_4 [8:59 PM]
+What is the actual type of ssh_buffer?
+
+Apiza [9:01 PM]
+The ssh_buffer_struct consists of the following fields:
+char *data, uint32_t used, uint32_t allocated, uint32_t pos, int secure;
+
+Programmer_4 [9:01 PM]
+What is the difference between ssh_channel_read_buffer and ssh_channel_read? (edited)
+
+Apiza [9:03 PM]
+ssh_channel_read_buffer reads data from a channel into a buffer and has parameter ssh_buffer buffer, while ssh_channel_read reads data from a channel and has parameter void *dest.
+
+Programmer_4 [9:04 PM]
+How do I close a channel cleanly?
+
+Apiza [9:05 PM]
+int ssh_channel_close(ssh_channel channel) will close a channel.This sends an end of file and then closes the channel. You won't be able to recover any data the server was going to send or was in buffers.
+
+Programmer_4 [9:05 PM]
+Is ssh_channel_send_eof necessary before ssh_channel_close?
+
+Apiza [9:08 PM]
+ssh_channel_send_eof is not necessary, but you should use it before ssh_channel_close if no errors have occurred.
+
+Programmer_4 [9:08 PM]
+Does ssh_channel_read NULL-terminate the buffer?
+
+Apiza [9:11 PM]
+Sorry, I am not sure. I found this code snippet that may be useful regarding ssh_channel_send_eof:
+
+rc = ssh_channel_send_eof(channel);
+if (rc == SSH_ERROR) {
+   return -1;
+}
+
+while(!ssh_channel_is_eof(channel)) {
+   rc = ssh_channel_read(channel, buf, sizeof(buf), 0);
+   if (rc == SSH_ERROR) {
+       return -1;
+   }
+}
+
+ssh_channel_close(channel);
+
+Programmer_4 [9:12 PM]
+What are the possible types for the third parameter of sftp_mkdir?
+
+Apiza [9:13 PM]
+The third parameter of sftp_mkdir must be of type "mode_t".
+
+Programmer_4 [9:16 PM]
+What are the possible types of mode_t?
+
+Apiza [9:18 PM]
+I was able to find the following definitions for possible values of mode_t:
+
+#define S_IRWXU 0000700    /* RWX mask for owner */
+#define S_IRUSR 0000400    /* R for owner */
+#define S_IWUSR 0000200    /* W for owner */
+#define S_IXUSR 0000100    /* X for owner */
+
+#define S_IRWXG 0000070    /* RWX mask for group */
+#define S_IRGRP 0000040    /* R for group */
+#define S_IWGRP 0000020    /* W for group */
+#define S_IXGRP 0000010    /* X for group */
+
+#define S_IRWXO 0000007    /* RWX mask for other */
+#define S_IROTH 0000004    /* R for other */
+#define S_IWOTH 0000002    /* W for other */
+#define S_IXOTH 0000001    /* X for other */
+
+#define S_ISUID 0004000    /* set user id on execution */
+#define S_ISGID 0002000    /* set group id on execution */
+#define S_ISVTX 0001000    /* save swapped text even after use */
+
+Programmer_4 [9:21 PM]
+What are the possible return values of sftp_write?
+How do I close a sftp_file?
+
+Apiza [9:22 PM]
+sftp_write() Returns type "ssize_t": number of bytes written, < 0 on error with ssh and sftp error set.
+"int sftp_close(sftp_file file)" can be used to close an open file handle.
+
+Programmer_4 [9:23 PM]
+How do I know if a sftp_file already exists?
+How do I disconnect a sftp_session?
+
+Apiza [9:25 PM]
+In the function sftp_open(), the parameter "int accesstype" can regulate whether the file is opened based on file existance: "accesstype    Is one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated."
+I can't find anything to "disconnect" a sftp_session, only to "close".
+
+Programmer_4 [9:27 PM]
+How do I close a sftp_session?
+And how do I switch SFTP directory?
+
+Apiza [9:28 PM]
+"void sftp_free(sftp_session sftp)" will close a sftp session.
+Hmm, I can't find anything to "switch" SFTP directory, but I see functions to "close", "create", "open", "move", or "remove" a directory.
+
+Programmer_4 [9:31 PM]
+How do I create a file inside a directory via SFTP?
+
+Apiza [9:32 PM]
+sftp_open() can be used to create a file inside a directory, using the "O_CREAT" option for the "accesstype" parameter.

@@ -1,0 +1,2 @@
+https://www.google.com/search?q=ssh_channel_request_exec+ssh_error&oq=ssh_channel_request_exec+ssh_error
+http://api.libssh.org/master/group__libssh__channel.html

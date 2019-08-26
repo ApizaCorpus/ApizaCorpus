@@ -1,0 +1,223 @@
+Programmer_3 [11:07 AM]
+hello
+
+"In the main method, use the libssh API to create a new ssh_session. Ensure that the session is successfully created"
+how to create a new ssh_session?
+
+Apiza [11:09 AM]
+Hi! I'm apiza, a virtual assistant designed to programmers with APIs. I look forward to working with you today!
+
+Programmer_3 [11:09 AM]
+okay habibi..now give me the answer
+
+Apiza [11:11 AM]
+You can create a new ssh session using the "ssh_session ssh_new()" function.
+
+Programmer_3 [11:12 AM]
+I have written this,
+```ssh_session session;```
+has a new session been created?
+
+Apiza [11:13 AM]
+You have created an unitialized session, please use the "ssh_session ssh_new()" function to fully intialize a new session. It returns a new ssh_session pointer, or NULL on error.
+
+Programmer_3 [11:14 AM]
+```session = ssh_new()```
+like this?
+
+Apiza [11:14 AM]
+I believe so.
+
+Programmer_3 [11:15 AM]
+how to connect to localhost?
+
+Apiza [11:15 AM]
+You can connect to a session by using the "int ssh_connect(ssh_session session)" function.
+
+Programmer_3 [11:16 AM]
+where to give username and password?
+how to authenticate the server?
+
+Apiza [11:18 AM]
+You can set properties of a session using the "ssh_options_set(session, option, char*)" function. An example would be to set the host options, which can be done with the following statement "ssh_options_set(my_ssh_session, SSH_OPTIONS_HOST, "129.0.0.1");"
+There are several functions to authenticate a session, would you like me to enumerate them all?
+
+Programmer_3 [11:19 AM]
+tell me the easiest one
+
+Apiza [11:20 AM]
+"int ssh_userauth_publickey_auto(ssh_session session, const char* username, const char* passphrase)" will attempt to automatically authenticate with public key and "none".
+Would you like me to list the parameters?
+
+Programmer_3 [11:22 AM]
+howt to "Disconnect from the server and free the session." ?
+
+Apiza [11:23 AM]
+"ssh_disconnect(ssh_session session)" and "ssh_free(ssh_session session)" functions can be used to clean up resources.
+
+Programmer_3 [11:24 AM]
+how to Create and open a new ssh_channel in the ssh_session ?
+
+Apiza [11:25 AM]
+"ssh_channel ssh_channel_new(ssh_session session)" function can be used to create a new channel from a session.
+There are a few functions that can open a ssh_channel depending upon settings such as protocol, purpose, etc. Would you like me to list them all?
+
+Programmer_3 [11:27 AM]
+tell the easiest one
+
+Apiza [11:28 AM]
+"int ssh_channel_open_session(ssh_channel channel)" seems to be the function that opens a channel that has the least amount of configuration.
+
+Programmer_3 [11:29 AM]
+how to Execute the command "who" on the open channel?
+
+Apiza [11:30 AM]
+The function "int ssh_channel_request_exec(ssh_channel channel, const char* cmd)" executes a shell command without an interactive shell on the host machine.
+
+Programmer_3 [11:31 AM]
+how to read response from channel?
+
+Apiza [11:33 AM]
+You can read data from a channel using the "int ssh_channel_read(ssh_channel channel, void* buff, uint32_t count, int is_stderr)" function.
+
+Programmer_3 [11:34 AM]
+what are these ?
+```void* buff, uint32_t count, int is_stderr```
+
+Apiza [11:35 AM]
+According to the API documentation, void* buff is a destination buffer where the read data will be transferred to. unit32_t count is the number of bytes to be read, and int is_stderr is a boolean value to mark reading from the stderr flow.
+
+Programmer_3 [11:35 AM]
+what values should i give ?
+
+Apiza [11:36 AM]
+I am sorry, I am confused.
+
+Programmer_3 [11:40 AM]
+can you give me example use of ssh_channel_read?
+
+Apiza [11:41 AM]
+An example usage of ssh_channel_read would be "ssh_channel_read(my_channel, my_buffer, sizeof(buffer), 0);" to read 512 bytes from the channel stdout if my_buffer is an array of type "char" of size 512.
+Excuse me, "sizeof(buffer)" should be "sizeof(my_buffer)" in the above example.
+
+Programmer_3 [11:45 AM]
+can you give me an example of my_buffer or buffer?
+
+Apiza [11:47 AM]
+A statically allocated buffer would use the following command "char my_buffer[512];"
+
+Programmer_3 [11:51 AM]
+how to print to stdout ?
+
+Apiza [11:52 AM]
+I'm sorry, I am not authorized to answer API questions regarding APIs other than libssh.
+
+Programmer_3 [11:55 AM]
+how to shutdown the channel ?
+
+Apiza [11:56 AM]
+There are two functions that refer to the functionality you are requestion. The first is "int ssh_channel_close(ssh_channel channel)" and the second is "void ssh_channel_free(ssh_channel channel)."
+
+Programmer_3 [11:57 AM]
+how to send eof?
+
+Apiza [11:58 AM]
+You can use the function "int ssh_channel_send_eof(ssh_channel channel)" to send an end of file on the channel.
+
+Programmer_3 [12:00 PM]
+how to Create and initialize a new sftp session on the connected ssh session ?
+
+Apiza [12:02 PM]
+You can use the "ssftp_session sftp_new(ssh_session session)" to start a new sftp session.
+Excuse me "sftp_session sftp_new(ssh_session session)"
+
+Programmer_3 [12:04 PM]
+how to Create a new file in Dir1?
+
+Apiza [12:05 PM]
+To open a new file using sftp, you can use the "sftp_file sftp_open(sftp_session session, const char* filepath, int accesstype, mode_t mode)" function.
+
+Programmer_3 [12:06 PM]
+can you give me an example of mode?
+
+Apiza [12:07 PM]
+An example mode_t mode value would be "S_IRWXU".
+
+Programmer_3 [12:09 PM]
+how to create a new directory?
+
+Apiza [12:10 PM]
+You can create a new directory using the "int sftp_mkdir(sftp_session session, const char* dirpath, mode_t mode)" function.
+
+Programmer_3 [12:11 PM]
+can you give me an example of accesstype?
+
+Apiza [12:12 PM]
+An example of an access type would be "int access_type = O_WRONLY | O_CREAT | O_TRUNC;"
+
+Programmer_3 [12:13 PM]
+how to write  a string to the file ?
+
+Apiza [12:15 PM]
+You can write to an open file using the "ssize_t sftp_write(sftp_file file, const void* buffer, size_t count)" function.
+
+Programmer_3 [12:16 PM]
+can you give me an example of const void* buffer ?
+
+Apiza [12:18 PM]
+In this specific case, "const void* buffer" is the contents of the file to be written. An example would to write a static message "hello world!" where const char* buff = "hello world!";.
+
+Programmer_3 [12:18 PM]
+an example of count ?
+
+Apiza [12:19 PM]
+"count" is the number of bytes to be written to the file. In the example where the buffer is "hello world!", count would be sizeof(buffer).
+
+Programmer_3 [12:20 PM]
+how to close the file?
+
+Apiza [12:21 PM]
+You can close a file using the "int sftp_close(sftp_file file)" function.
+
+Programmer_3 [12:22 PM]
+how to free the session?
+
+Apiza [12:23 PM]
+To free a sftp_session, use the "void sftp_free(sftp_session session)" function.
+
+Programmer_3 [12:24 PM]
+how to return errors
+?
+
+Apiza [12:24 PM]
+I am sorry, I am confused.
+
+Programmer_3 [12:24 PM]
+how to return errors?
+
+Apiza [12:25 PM]
+There are several function used to get errors from different data types, are you referring to getting errors from sftp_sessions?
+
+Programmer_3 [12:25 PM]
+yes from sftp_sessions
+
+Apiza [12:26 PM]
+You can use the "int sftp_get_error(sftp_session session)" function to get the latest error set by a posix like sftp function.
+
+Programmer_3 [12:26 PM]
+can you give me example of output of sftp_get_error ?
+
+Apiza [12:28 PM]
+an example for error checking when creating a directory is "if (sftp_get_error(session) != SSH_FX_FILE_ALREADY_EXISTS) { ... }"
+
+Programmer_3 [12:29 PM]
+how to disconnect from the server?
+
+Apiza [12:30 PM]
+To close an ssh_session, you can use the "void ssh_disconnect(ssh_session session)" function.
+
+Programmer_3 [12:31 PM]
+okay I think my job is done
+
+Apiza [12:31 PM]
+Great! Please contact my administrator for further instructions.

@@ -1,0 +1,5 @@
+https://www.google.com/search?q=libSSH+tutorial+c&oq=libSSH+tutorial+c
+http://api.libssh.org/master/libssh_tutorial.html
+https://www.google.com/search?q=libSSH+create&oq=libSSH+create
+https://www.google.com/search?q=libssh+tutorial+C+construct+object&oq=libssh+tutorial+C+construct+object
+http://api.libssh.org/master/libssh_tutor_guided_tour.html

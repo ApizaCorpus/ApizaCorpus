@@ -1,0 +1,357 @@
+Programmer_30 [5:03 PM]
+How would I get key input from the user?
+
+
+Apiza [5:04 PM]
+Hi! I'm Apiza, a virtual assistant designed to help you with api questions! I look forward to helping you today.
+
+Programmer_30 [5:04 PM]
+Okay, how would I get key input from the user?
+
+Apiza [5:05 PM]
+Hi! I'm Apiza, a virtual assistant designed to help you with api questions! I look forward to helping you today.
+you can use the al_wait_for_event(ALLEGRO_EVENT_QUEUE* q, ALLEGRO_EVENT* ev) function to get input from the user
+
+Programmer_30 [5:07 PM]
+What kind of data type does that return?
+
+Apiza [5:07 PM]
+al_wait_for_event(ALLEGRO_EVENT_QUEUE* q, ALLEGRO_EVENT* ev) will populate the ALLEGRO_EVENT* object upon success
+
+Programmer_30 [5:08 PM]
+What variables does the ALLEGRO_EVENT* object have?
+
+Apiza [5:09 PM]
+would you like the entire union declaration?
+
+Programmer_30 [5:09 PM]
+Yes
+
+Apiza [5:09 PM]
+union ALLEGRO_EVENT
+{
+  /* This must be the same as the first field of _AL_EVENT_HEADER.  */
+  ALLEGRO_EVENT_TYPE type;
+  /* `any' is to allow the user to access the other fields which are
+   * common to all event types, without using some specific type
+   * structure.
+   */
+  ALLEGRO_ANY_EVENT      any;
+  ALLEGRO_DISPLAY_EVENT  display;
+  ALLEGRO_JOYSTICK_EVENT joystick;
+  ALLEGRO_KEYBOARD_EVENT keyboard;
+  ALLEGRO_MOUSE_EVENT    mouse;
+  ALLEGRO_TIMER_EVENT    timer;
+  ALLEGRO_TOUCH_EVENT    touch;
+  ALLEGRO_USER_EVENT     user;
+};
+
+Programmer_30 [5:10 PM]
+Can I have more information about the ALLEGRO_KEYBOARD_EVENT object?
+
+Apiza [5:11 PM]
+Sure! ALLEGRO_KEYBOARD_EVENT is a struct that contains a display pointer, the keycode of the physical key pressed, and other information
+
+Programmer_30 [5:11 PM]
+Can I see the definition?
+
+Apiza [5:11 PM]
+typedef struct ALLEGRO_KEYBOARD_EVENT
+{
+  _AL_EVENT_HEADER(struct ALLEGRO_KEYBOARD)
+  struct ALLEGRO_DISPLAY *display; /* the window the key was pressed in */
+  int keycode;                 /* the physical key pressed */
+  int unichar;                 /* unicode character or negative */
+  unsigned int modifiers;      /* bitfield */
+  bool repeat;                 /* auto-repeated or not */
+} ALLEGRO_KEYBOARD_EVENT;
+
+Programmer_30 [5:12 PM]
+Do you know what the keycodes are for the arrow keys?
+
+Apiza [5:13 PM]
+I believe allegro5 has predefined enum values for keycodes. For instance, you could compare ev.keyboard.keycode == ALLEGRO_KEY_UP
+
+Programmer_30 [5:28 PM]
+It seems that the ALLEGRO_KEY_UP does not match ev.keyboard.keycode for some reason
+
+Apiza [5:28 PM]
+I am unsure, can you provide me an example?
+
+Programmer_30 [5:29 PM]
+ev.keyboard,keycode is returned large numbers, while ALLGRO_KEY_UP is simply 85
+
+Apiza [5:30 PM]
+are you pressing the up arrow key and not getting ALLEGRO_KEY_UP?
+
+Programmer_30 [5:31 PM]
+Yes
+
+Apiza [5:31 PM]
+I am unsure. What have you done to initialize the keyboard and allegro?
+
+Programmer_30 [5:31 PM]
+I have not initialized the keyboard
+
+Apiza [5:32 PM]
+I believe that may have something to do with it
+
+Programmer_30 [5:32 PM]
+How would I initialize the keyboard?
+
+Apiza [5:33 PM]
+you can use the function:
+
+bool al_install_keyboard(void)
+
+to initialize the keyboard
+
+Programmer_30 [5:35 PM]
+It does not seem to have had any affect
+
+Apiza [5:36 PM]
+What else have you done to initialize allegro?
+
+Programmer_30 [5:36 PM]
+I have done al_init(), al_create_display(), al_create_event_queue(), al_create_timer, and al_create_bitmap
+
+Apiza [5:37 PM]
+Great! Have you connected the event queue and devices?
+
+Programmer_30 [5:38 PM]
+I don't think so, what would that look like?
+
+Apiza [5:39 PM]
+you can use al_register_event_source(ALLEGRO_EVENT_QUEUE* q, EVENT_SOURCE* src). Would you like an example?
+
+Programmer_30 [5:39 PM]
+Yes
+
+Apiza [5:40 PM]
+ALLEGRO_EVENT_QUEUE* q = NULL;
+al_init();
+q = al_create_event_queue();
+al_install_keyboard();
+al_register_event_source(q, al_get_keyboard_event_source());
+
+Programmer_30 [5:47 PM]
+How can I tell if the user isn't touching anything on the keyboard?
+
+Apiza [5:47 PM]
+I am unsure. I assume no events would be fired then and the event queue would be always empty
+
+Programmer_30 [5:48 PM]
+How can I tell if the user is holding the key?
+
+Apiza [5:48 PM]
+Sorry, please clarify
+
+Programmer_30 [5:49 PM]
+How can I play soudn?
+How can I play sound?
+
+Apiza [5:49 PM]
+The first step to playing audio is to initialize an audio driver
+
+Programmer_30 [5:50 PM]
+How do I initialize an audio driver?
+
+Apiza [5:50 PM]
+You can use the function:
+
+bool al_install_audio(void)
+
+to initialize an audio driver
+
+Programmer_30 [5:51 PM]
+What's the next step?
+
+Apiza [5:51 PM]
+The second step to playing audio is to initialize audio codecs
+
+Programmer_30 [5:51 PM]
+How do I initialize audio codecs?
+
+Apiza [5:51 PM]
+You can do this using the function:
+
+bool al_init_acodec_addon(void)
+
+Programmer_30 [5:52 PM]
+What's the next step?
+
+Apiza [5:53 PM]
+There are several branches at this point that a user can take. What are you attempting to do?
+
+1) Play a pre-recorded sample
+2) Play a sample recorded from a microphone
+
+Programmer_30 [5:53 PM]
+Play a pre-recorded sample
+
+Apiza [5:54 PM]
+The first step to playing a sound file is to reserve the sample in memory. This can be done using two functions:
+
+bool al_reserve_samples(int num_samples);
+ALLEGRO_SAMPLE* sample = al_load_sample(const char* filepath);
+
+Programmer_30 [5:54 PM]
+What is the parameter num_samples
+
+Apiza [5:55 PM]
+int num_samples in reference to function:
+
+bool al_reserve_samples(int num_samples)
+
+refers to the number of sound files you want to load into memory.
+
+Programmer_30 [5:56 PM]
+Okay, what's the next step?
+
+Apiza [5:58 PM]
+The next step is to play the loaded ALLEGRO_SAMPLE* object using the function:
+
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+
+Programmer_30 [5:58 PM]
+Can you explain to me the parameters of that function?
+
+Apiza [6:01 PM]
+Sure! Here is a description of the parameters:
+
+ALLEGRO_SAMPLE* spl:        The sample file data
+float gain:                 The gain of the played sample
+float pan:                  The pan of the played sample
+float speed:                The speed to play the file
+ALLEGRO_PLAYMODE loop:      whether to loop the file or not
+ALLEGRO_SAMPLE_ID* ret_id:  Typically NULL, however this is the return id to be used
+
+Programmer_30 [6:01 PM]
+And you explain more about ALLEGRO_PLAYMODE
+
+Apiza [6:02 PM]
+Here are the options for ALLEGRO_PLAYMODE:
+
+Sample and stream playback mode.
+
+* ALLEGRO_PLAYMODE_ONCE
+* ALLEGRO_PLAYMODE_LOOP
+* ALLEGRO_PLAYMODE_BIDIR
+
+Programmer_30 [6:04 PM]
+How would I display text?
+
+Apiza [6:05 PM]
+I am sorry, there are multiple ways to show text, specifically to which do you refer?
+
+Programmer_30 [6:05 PM]
+I would like to display a score on the corner of the screen
+
+Apiza [6:06 PM]
+Would you like to draw a font?
+
+Programmer_30 [6:06 PM]
+Yes
+
+Apiza [6:06 PM]
+Great! You can start by initializing fonts. This can be done via the functions:
+
+bool al_init_font_addon(void);
+bool al_init_ttf_addon(void);
+
+Programmer_30 [6:07 PM]
+Then?
+
+Apiza [6:08 PM]
+Have you created a display?
+
+Programmer_30 [6:08 PM]
+Yes
+
+Apiza [6:09 PM]
+you can first load in a font using the function:
+
+ALLEGRO_FONT* al_load_ttf_font(const char* fpath, int size, int flags);
+
+Programmer_30 [6:09 PM]
+Can you elaborate on the flags parameter?
+
+Apiza [6:10 PM]
+Here is flag information:
+
+The following flags are supported:
+
+* ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file
+ supports it.
+
+* ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no
+ anti-aliasing of the font is done).
+
+* ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default
+ in newer versions of FreeType. Since: 5.0.6, 5.1.2
+
+Programmer_30 [6:11 PM]
+Then?
+
+Apiza [6:13 PM]
+You can draw text using the following function:
+
+void al_draw_text(const ALLEGRO_FONT *font,
+  ALLEGRO_COLOR color, float x, float y, int flags,
+  char const *text)
+
+Programmer_30 [6:15 PM]
+Can you give me more information about the color parameter
+
+Apiza [6:16 PM]
+ALLEGRO_COLOR is a struct containing rgba values. Would you like the declaration
+
+Programmer_30 [6:17 PM]
+Yes
+
+Apiza [6:18 PM]
+* Type: ALLEGRO_COLOR
+*/
+typedef struct ALLEGRO_COLOR ALLEGRO_COLOR;
+
+struct ALLEGRO_COLOR
+{
+  float r, g, b, a;
+};
+
+Programmer_30 [6:19 PM]
+Can you give more more information about the flags parameter?
+
+Apiza [6:21 PM]
+The `flags` parameter can be 0 or one of the following flags:
+
+- ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).
+- ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.
+- ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.
+
+Programmer_30 [6:24 PM]
+What is a typical font size for ALLEGRO_FONT
+
+Apiza [6:25 PM]
+It depends on your screen. I would suggest trying a bunch of values. Typically, I would suggest 72
+
+Programmer_30 [6:26 PM]
+How big are the numbers r, g, b, and a typically are for ALLEGRO_COLOR
+
+Apiza [6:27 PM]
+rgb are typically within [0,255]. Allegro5 supports utility functions to map rbg values to an ALLEGRO_COLOR struct instance
+
+Programmer_30 [6:28 PM]
+Can you show my the utility functions?
+
+Apiza [6:28 PM]
+One such utility is:
+
+ALLEGRO_COLOR al_map_rgb(float r, float g, float b)
+
+Programmer_30 [6:30 PM]
+My al_draw_text is not drawing
+
+Apiza [6:30 PM]
+I am unsure, please specify

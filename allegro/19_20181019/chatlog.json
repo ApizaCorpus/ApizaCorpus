@@ -1,0 +1,440 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "045d5e53-8532-4ed7-ad96-5e42694db41c",
+            "type": "message",
+            "text": "Are you interested in al_draw_textf?",
+            "user": "UB659D0FM",
+            "ts": "1539985149.000100"
+        },
+        {
+            "client_msg_id": "f3cc5240-d5db-44f3-bc9b-190d14bdbe31",
+            "type": "message",
+            "text": "How do you draw an ALLEGRO_FONT instance?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539985044.000100"
+        },
+        {
+            "client_msg_id": "2f305ef0-e3bf-4686-a5c6-c631c4bfcc86",
+            "type": "message",
+            "text": "ALLEGRO_FONT is a handle identifying any kind of font. Usually you will create it with al_load_font which supports loading all kinds of TrueType fonts supported by the FreeType library. If you instead pass the filename of a bitmap file, it will be loaded with al_load_bitmap and a font in Allegro's bitmap font format will be created from it with al_grab_font_from_bitmap.",
+            "user": "UB659D0FM",
+            "ts": "1539984982.000100"
+        },
+        {
+            "client_msg_id": "b56287c1-77d5-4a63-b770-234eaa09a572",
+            "type": "message",
+            "text": "How to draw an ALLEGRO_FONT to backbuffer?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984947.000100"
+        },
+        {
+            "client_msg_id": "b62715b2-b3a9-4d99-841f-802928f11944",
+            "type": "message",
+            "text": "Allegro render ttf font",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984922.000100"
+        },
+        {
+            "client_msg_id": "81fd8bdc-6e81-44fa-b3fe-8eb5f1480fbc",
+            "type": "message",
+            "text": "al_init_ttf_addon call this after al_init_font_addon to make al_load_font recognize \".ttf\" and other formats supported by al_load_ttf_font. Returns true on success, false on failure.",
+            "user": "UB659D0FM",
+            "ts": "1539984749.000100"
+        },
+        {
+            "client_msg_id": "7b62fc9e-ab7c-41fb-aa36-401b9ea7af9d",
+            "type": "message",
+            "text": "Do I need to initialize allegro for ttf fonts?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984692.000100"
+        },
+        {
+            "client_msg_id": "26b5b34e-e4ff-4ff9-aaec-6130cd637998",
+            "type": "message",
+            "text": "al_load_bitmap_font_flags like al_load_bitmap_font but additionally takes a flags parameter which is a bitfield containing a combination of the following:\nALLEGRO_NO_PREMULTIPLIED_ALPHA\nThe same meaning as for al_load_bitmap_flags.",
+            "user": "UB659D0FM",
+            "ts": "1539984496.000100"
+        },
+        {
+            "client_msg_id": "a0111d51-c340-4590-bd68-9492e9839586",
+            "type": "message",
+            "text": "List al_load_bitmap_font_flags",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984445.000100"
+        },
+        {
+            "client_msg_id": "42973e89-95bb-4c44-afe0-82ca73f2353b",
+            "type": "message",
+            "text": "ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)",
+            "user": "UB659D0FM",
+            "ts": "1539984428.000200"
+        },
+        {
+            "client_msg_id": "d8a95543-4397-4531-915b-9fb636bdd00e",
+            "type": "message",
+            "text": "function signature for al_load_font",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984419.000100"
+        },
+        {
+            "client_msg_id": "1a1e7dc8-aa67-46d7-aa6d-a1a4d69b85c9",
+            "type": "message",
+            "text": "al_load_font loads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.\nThe flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.",
+            "user": "UB659D0FM",
+            "ts": "1539984389.000200"
+        },
+        {
+            "client_msg_id": "1556c5f2-0bd5-4759-9a3b-31a16b9bee4c",
+            "type": "message",
+            "text": "How do you load a font in allegro?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984364.000100"
+        },
+        {
+            "client_msg_id": "962c6d91-184c-466c-b61f-5c18ab043e86",
+            "type": "message",
+            "text": "I\u2019m not sure I understand your question",
+            "user": "UB659D0FM",
+            "ts": "1539984304.000100"
+        },
+        {
+            "client_msg_id": "b2861002-8932-4677-8ae3-7b6a33f09855",
+            "type": "message",
+            "text": "Allegro font functions",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984260.000100"
+        },
+        {
+            "client_msg_id": "7ae9fc0b-02e1-42ff-a812-3cec4c6c85f4",
+            "type": "message",
+            "text": "Would you like to know more about one of those functions?",
+            "user": "UB659D0FM",
+            "ts": "1539984246.000200"
+        },
+        {
+            "client_msg_id": "688f8544-93c4-46e7-ba7f-b5fcb27efdc0",
+            "type": "message",
+            "text": "Drawing operations:\n\t\tal_clear_to_color\n\t\tal_clear_depth_buffer\n\t\tal_draw_bitmap\n\t\tal_draw_tinted_bitmap\n\t\tal_draw_bitmap_region\n\t\tal_draw_tinted_bitmap_region\n\t\tal_draw_pixel\n\t\tal_draw_rotated_bitmap\n\t\tal_draw_tinted_rotated_bitmap\n\t\tal_draw_scaled_rotated_bitmap\n\t\tal_draw_tinted_scaled_rotated_bitmap\n\t\tal_draw_tinted_scaled_rotated_bitmap_region\n\t\tal_draw_scaled_bitmap\n\t\tal_draw_tinted_scaled_bitmap\n\t\tal_get_target_bitmap\n\t\tal_put_pixel\n\t\tal_put_blended_pixel",
+            "user": "UB659D0FM",
+            "ts": "1539984221.000100"
+        },
+        {
+            "client_msg_id": "cb59cd5a-d519-429c-951a-d1b1ad5128ac",
+            "type": "message",
+            "text": "What are the allegro functions for drawing text?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539984141.000100"
+        },
+        {
+            "client_msg_id": "23eb4926-98ba-4191-8a14-b84fdc88751b",
+            "type": "message",
+            "text": "bool al_reserve_samples(int reserve_samples)",
+            "user": "UB659D0FM",
+            "ts": "1539983953.000100"
+        },
+        {
+            "client_msg_id": "dc2e3078-bdc2-4c54-9045-3f30255fb4bd",
+            "type": "message",
+            "text": "function signature for al_reserve_samples()",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539983944.000100"
+        },
+        {
+            "client_msg_id": "84917f25-9bf4-4d77-9a4c-ac1989632294",
+            "type": "message",
+            "text": "al_play_sample plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.",
+            "user": "UB659D0FM",
+            "ts": "1539983861.000100"
+        },
+        {
+            "client_msg_id": "0da3e05d-e009-40c5-9333-5efde34318f4",
+            "type": "message",
+            "text": "Why is al_play_sample() returning false?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539983809.000100"
+        },
+        {
+            "client_msg_id": "ffb62967-92f9-43e0-81cc-1cd26534e5e2",
+            "type": "message",
+            "text": "Sample and stream playback mode. ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, ALLEGRO_PLAYMODE_BIDIR",
+            "user": "UB659D0FM",
+            "ts": "1539983236.000100"
+        },
+        {
+            "client_msg_id": "824fb074-9c11-41b1-8a11-756d9272e520",
+            "type": "message",
+            "text": "Enumerate ALLEGRO_PLAYMODE",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539983216.000100"
+        },
+        {
+            "client_msg_id": "3ed68aad-5493-401d-932b-f74312a7a089",
+            "type": "message",
+            "text": "ALLEGRO_PLAYMODE is an enum.",
+            "user": "UB659D0FM",
+            "ts": "1539983206.000100"
+        },
+        {
+            "client_msg_id": "87daa2f7-66a6-48e3-95df-809dc25c6390",
+            "type": "message",
+            "text": "What is ALLEGRO_PLAYMODE ?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539983149.000100"
+        },
+        {
+            "client_msg_id": "e9e7463b-5579-49a9-a03c-ffa6f4447092",
+            "type": "message",
+            "text": "An ALLEGRO_SAMPLE_ID represents a sample being played via al_play_sample. It can be used to later stop the sample with al_stop_sample. The underlying ALLEGRO_SAMPLE_INSTANCE can be extracted using al_lock_sample_id.",
+            "user": "UB659D0FM",
+            "ts": "1539983027.000200"
+        },
+        {
+            "client_msg_id": "129cbcae-0307-4d8c-a77a-48ebd10343d2",
+            "type": "message",
+            "text": "What is ALLEGRO_SAMPLE_ID",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539983003.000100"
+        },
+        {
+            "client_msg_id": "9a76f9f6-2097-4265-8f41-3b72333bf122",
+            "type": "message",
+            "text": "bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UB659D0FM",
+            "ts": "1539982869.000100"
+        },
+        {
+            "client_msg_id": "51a40e1b-ffbb-4ae4-871e-88abb2a933df",
+            "type": "message",
+            "text": "Function signature for al_play_sample()",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982844.000100"
+        },
+        {
+            "client_msg_id": "5852f848-4e69-416a-ad1c-18ec4890e685",
+            "type": "message",
+            "text": "ALLEGRO_SAMPLE *al_load_sample(const char *filename)",
+            "user": "UB659D0FM",
+            "ts": "1539982671.000100"
+        },
+        {
+            "client_msg_id": "334c3b63-8bb7-4124-8b7f-f0c352769f36",
+            "type": "message",
+            "text": "Function signature for al_load_sample()",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982662.000100"
+        },
+        {
+            "client_msg_id": "78a29ffc-1c19-4617-827e-3e8f8c6a0d4c",
+            "type": "message",
+            "text": "al_load_sample loads a few different audio file formats based on their extension.\nNote that this stores the entire file in memory at once, which may be time consuming. To read the file as it is needed, use al_load_audio_stream.\nReturns the sample on success, NULL on failure.",
+            "user": "UB659D0FM",
+            "ts": "1539982621.000100"
+        },
+        {
+            "client_msg_id": "c04e6c03-6f50-46cc-8e1d-385d7fa1db03",
+            "type": "message",
+            "text": "How do you load an audio sample in Allegro?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982556.000100"
+        },
+        {
+            "client_msg_id": "6b631e76-066e-4b37-897d-adb6527f0cbf",
+            "type": "message",
+            "text": "bool al_init_acodec_addon(void)",
+            "user": "UB659D0FM",
+            "ts": "1539982466.000200"
+        },
+        {
+            "client_msg_id": "f9d1d3b8-925a-48e1-807f-a5ac325bfbce",
+            "type": "message",
+            "text": "function signature for al_init_acodec_addon",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982450.000100"
+        },
+        {
+            "client_msg_id": "80077e8b-46ed-4647-b480-32f29817fb75",
+            "type": "message",
+            "text": "bool al_install_audio(void)",
+            "user": "UB659D0FM",
+            "ts": "1539982323.000100"
+        },
+        {
+            "client_msg_id": "870d65fb-5b99-4e2a-b529-a27d8de0b90e",
+            "type": "message",
+            "text": "function signature for al_install_audio",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982310.000100"
+        },
+        {
+            "client_msg_id": "3752c1fc-8b6b-4f1e-8a1a-03dab13718f3",
+            "type": "message",
+            "text": "Use al_install_audio to initialize sound. To load any sample formats, you will need to initialise the acodec addon with al_init_acodec_addon.",
+            "user": "UB659D0FM",
+            "ts": "1539982255.000100"
+        },
+        {
+            "client_msg_id": "ba629554-c2da-4965-9f6c-fb5de480d0a2",
+            "type": "message",
+            "text": "Play a sound effect in allegro",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982216.000100"
+        },
+        {
+            "client_msg_id": "45b81ee3-77b2-48d6-bdf0-815adf4512ff",
+            "type": "message",
+            "text": "Allegro play sound",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982202.000100"
+        },
+        {
+            "client_msg_id": "8f65d9a3-402f-4769-9455-1d9a6055ca21",
+            "type": "message",
+            "text": "Could you be more specific as to what audio function you\u2019re interested in?",
+            "user": "UB659D0FM",
+            "ts": "1539982187.000100"
+        },
+        {
+            "client_msg_id": "e5e28e15-134f-4b6d-b40f-94cca3ff8e04",
+            "type": "message",
+            "text": "Allegro sound functions",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539982126.000100"
+        },
+        {
+            "client_msg_id": "f80f702c-7b05-48f3-8bb0-1e0aca42f798",
+            "type": "message",
+            "text": "void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)\n{\n   ASSERT(new_keyboard_driver);\n   ASSERT(ret_state);\n\n   new_keyboard_driver-&gt;get_keyboard_state(ret_state);\n}",
+            "user": "UB659D0FM",
+            "ts": "1539981604.000100"
+        },
+        {
+            "client_msg_id": "f907c089-29f6-438d-a339-5bc8400eb41e",
+            "type": "message",
+            "text": "Yes",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539981561.000100"
+        },
+        {
+            "client_msg_id": "2e368a9c-1699-46a2-932f-caa315d1916c",
+            "type": "message",
+            "text": "Would you like me to send you the source code for al_get_keyboard_state?",
+            "user": "UB659D0FM",
+            "ts": "1539981521.000100"
+        },
+        {
+            "client_msg_id": "63056721-b447-42dc-a483-d8d23809bda8",
+            "type": "message",
+            "text": "I\u2019m not sure I understand your question",
+            "user": "UB659D0FM",
+            "ts": "1539981394.000100"
+        },
+        {
+            "client_msg_id": "c2a78ca6-273e-4e66-b6d9-36ee129a5a84",
+            "type": "message",
+            "text": "Why does al_get_keyboard_state() fail with assertion?",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539981354.000100"
+        },
+        {
+            "client_msg_id": "ef36732a-c354-4886-87fa-aa57998189ab",
+            "type": "message",
+            "text": "You can save the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state, using al_get_keyboard_state",
+            "user": "UB659D0FM",
+            "ts": "1539981193.000100"
+        },
+        {
+            "client_msg_id": "a87adda7-e93d-4147-be6e-891ab9c47028",
+            "type": "message",
+            "text": "al_get_keyboard_state assertion",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539981166.000100"
+        },
+        {
+            "client_msg_id": "c9230125-9733-487f-a1dc-37d6cb03f747",
+            "type": "message",
+            "text": "I\u2019m not sure I understand your question",
+            "user": "UB659D0FM",
+            "ts": "1539980879.000100"
+        },
+        {
+            "client_msg_id": "b59ddb9b-c638-4b64-b3b9-fc6908423378",
+            "type": "message",
+            "text": "Allegro error  al_get_keyboard_state: Assertion `ret_state' failed.",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539980796.000100"
+        },
+        {
+            "client_msg_id": "7447496e-fb8a-4f20-a5b7-dcf1bce29136",
+            "type": "message",
+            "text": "bool al_install_keyboard(void)",
+            "user": "UB659D0FM",
+            "ts": "1539980600.000200"
+        },
+        {
+            "client_msg_id": "eb3112cf-2181-4ff2-b7a4-2e70858c9145",
+            "type": "message",
+            "text": "function signature for al_install_keyboard",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539980577.000100"
+        },
+        {
+            "client_msg_id": "390cde0a-5654-42aa-bb48-53e48850105b",
+            "type": "message",
+            "text": "To install a keyboard driver, use al_install_keyboard",
+            "user": "UB659D0FM",
+            "ts": "1539980454.000200"
+        },
+        {
+            "client_msg_id": "dece5140-f549-4fd4-8251-5502fc59f4db",
+            "type": "message",
+            "text": "al_get_keyboard_state: Assertion `new_keyboard_driver' failed.",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539980367.000100"
+        },
+        {
+            "client_msg_id": "fd32c8a7-c351-47bb-97b1-4abe3a3b0f8a",
+            "type": "message",
+            "text": "ALLEGRO_KEYBOARD_STATE is a structure that is used to hold a \"snapshot\" of a keyboard's state at a particular instant. It contains the following publicly readable fields: display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.",
+            "user": "UB659D0FM",
+            "ts": "1539980149.000100"
+        },
+        {
+            "client_msg_id": "8925ce61-f4e2-44ba-aec8-91d88dc37c75",
+            "type": "message",
+            "text": "Documentation for ALLEGRO_KEYBOARD_STATE",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539980088.000100"
+        },
+        {
+            "client_msg_id": "909bf8d0-24d4-4d06-88c5-4c348ef98c82",
+            "type": "message",
+            "text": "void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)",
+            "user": "UB659D0FM",
+            "ts": "1539979999.000100"
+        },
+        {
+            "client_msg_id": "04a928ad-c4c9-4c73-9937-11cebd05431d",
+            "type": "message",
+            "text": "Whats the function signature for al_get_keyboard_state",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539979956.000100"
+        },
+        {
+            "client_msg_id": "a3b9509d-c7c0-4253-84de-92c86bd5246c",
+            "type": "message",
+            "text": "You can save the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state, using al_get_keyboard_state",
+            "user": "UB659D0FM",
+            "ts": "1539979778.000100"
+        },
+        {
+            "client_msg_id": "61e79bd1-89b2-4db7-81f2-a54f65dd382e",
+            "type": "message",
+            "text": "allegro keyboard input",
+            "user": "UDJ7XQ0P5",
+            "ts": "1539979670.000100"
+        }
+    ],
+    "has_more": false
+}

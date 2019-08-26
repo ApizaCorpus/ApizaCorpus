@@ -1,0 +1,405 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "608731c3-811d-4dbb-a73b-d8afae89682c",
+            "type": "message",
+            "text": "In libssh, the function \"sftp_mkdir\" has signature \"sftp_mkdir(sft_session sftp, const char* directory, mode_t mode)\"",
+            "user": "UB659D0FM",
+            "ts": "1532715969.000298"
+        },
+        {
+            "client_msg_id": "2414893c-0576-49db-88b1-533247874bd5",
+            "type": "message",
+            "text": "what arguments does the sftp_mkdir function accept?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715908.000312"
+        },
+        {
+            "client_msg_id": "0f37b912-66a2-4725-ab0a-e20474afe070",
+            "type": "message",
+            "text": "in libssh, the function \"sftp_open\" returns: Returns\nA sftp file handle, NULL on error with ssh and sftp error set.",
+            "user": "UB659D0FM",
+            "ts": "1532715905.000347"
+        },
+        {
+            "client_msg_id": "ae06c444-a553-43fa-9717-9eac7c8c7618",
+            "type": "message",
+            "text": "what are possible return values when creating a file with sftp_file interface?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715861.000170"
+        },
+        {
+            "client_msg_id": "96558b07-ce8b-4e0a-ba7b-dfeb58f97556",
+            "type": "message",
+            "text": "You're welcome!",
+            "user": "UB659D0FM",
+            "ts": "1532715712.000346"
+        },
+        {
+            "client_msg_id": "876f2ccb-2ef6-46e8-ad02-6408fb754c98",
+            "type": "message",
+            "text": "thanks",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715702.000052"
+        },
+        {
+            "client_msg_id": "75f4fa50-da88-4857-929f-1fa61b8269dd",
+            "type": "message",
+            "text": "You can free a sftp_session in libssh by using the \"void sftp_free(sftp_session sftp)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532715458.000119"
+        },
+        {
+            "client_msg_id": "b8492055-fa79-4556-8aa8-2dba423ca091",
+            "type": "message",
+            "text": "how do I free an sftp session?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715429.000014"
+        },
+        {
+            "client_msg_id": "bfe27c92-9412-4d15-ad69-ff2d446e97bf",
+            "type": "message",
+            "text": "You can open a directory in libssh using the \"sftp_dir sftp_opendir(sftp_session session, const char* file)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532715409.000478"
+        },
+        {
+            "client_msg_id": "1f816be4-4e1c-47ef-ace7-17b531eab45e",
+            "type": "message",
+            "text": "You can open a file in libssh using the \"sftp_file sftp_open(sftp_session session, const char* file, int accesstype, mode_t mode)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532715385.000132"
+        },
+        {
+            "client_msg_id": "281b8491-9962-4a43-a442-f0cd0f885af2",
+            "type": "message",
+            "text": "just for creating a file and a directory",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715322.000181"
+        },
+        {
+            "client_msg_id": "e0cca223-5245-4483-9f88-860e2199c90d",
+            "type": "message",
+            "text": "There are 49 functions associated with ssh_session objects, would you like me to list them all?",
+            "user": "UB659D0FM",
+            "ts": "1532715289.000323"
+        },
+        {
+            "client_msg_id": "d228e4ba-5e48-482b-aa31-4cd47a263e03",
+            "type": "message",
+            "text": "what functions are available on the sftp_session interface?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715248.000309"
+        },
+        {
+            "client_msg_id": "877281cb-e315-48dd-aad1-786142aa08b7",
+            "type": "message",
+            "text": "You can create a sftp session using the \"sftp_session sftp_new(ssh_session session)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1532715225.000342"
+        },
+        {
+            "client_msg_id": "cab00f65-f0aa-4fa4-b2f2-50432186646e",
+            "type": "message",
+            "text": "ok. what is the api for creating an SFTP session?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715181.000170"
+        },
+        {
+            "client_msg_id": "24baf104-4c41-4148-a1df-0dab877d7c6f",
+            "type": "message",
+            "text": "You can close a channel in libssh by using the \"int ssh_channel_close(ssh_channel channel)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532715180.000114"
+        },
+        {
+            "client_msg_id": "4b0b52ac-ce5f-4d4b-be49-131976ce1ad6",
+            "type": "message",
+            "text": "You can free a channel in libssh by using the \"void ssh_channel_free(ssh_channel channel)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532715151.000069"
+        },
+        {
+            "client_msg_id": "fa6c9e6f-aa6c-4889-badc-5d0d98af43eb",
+            "type": "message",
+            "text": "You can attempt to retrieve a username in libssh by using the \"int ssh_getpass(const char* prompt, char* buf, size_t len, int echo, int verify)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532715121.000170"
+        },
+        {
+            "client_msg_id": "97d3de59-e3a5-4c50-9cbc-dfc69d41a65e",
+            "type": "message",
+            "text": "how do I shut down a channel?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715105.000054"
+        },
+        {
+            "client_msg_id": "3eda5eea-6786-4fee-8d3f-bdf466989ec7",
+            "type": "message",
+            "text": "how do I free a channel?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715088.000293"
+        },
+        {
+            "client_msg_id": "1cbc425a-a358-46dd-abff-94a5000a5fe3",
+            "type": "message",
+            "text": "is there a function for showing remote username?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715030.000107"
+        },
+        {
+            "client_msg_id": "4fe32ffb-b43c-4bde-bbc0-89389b3b99dd",
+            "type": "message",
+            "text": "how do I show the remote username?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532715009.000177"
+        },
+        {
+            "client_msg_id": "090e65fe-d07e-4973-98d7-66945ed6a197",
+            "type": "message",
+            "text": "You can attempt to run a shell command without an interactive shell in libssh by using the \"int ssh_channel_request_exec(ssh_channel channel, const char* cmd)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532714979.000287"
+        },
+        {
+            "client_msg_id": "86542050-877c-47a7-976f-cc04752f07ad",
+            "type": "message",
+            "text": "how do I execute an SSH command in an established session?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714920.000312"
+        },
+        {
+            "client_msg_id": "f1826683-bdad-4097-a3ee-f02e8f725d47",
+            "type": "message",
+            "text": "You're welcome!",
+            "user": "UB659D0FM",
+            "ts": "1532714903.000107"
+        },
+        {
+            "client_msg_id": "d7cd45b9-831a-4aa9-88ba-de40ef89e56a",
+            "type": "message",
+            "text": "thanks",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714871.000137"
+        },
+        {
+            "client_msg_id": "97fbb44f-2545-4938-8050-cc61623ac276",
+            "type": "message",
+            "text": "According to libssh: ssh_is_server_known returns: Returns\nSSH_SERVER_KNOWN_OK: The server is known and has not changed.\nSSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.\nSSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.\nSSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.\nSSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.\nSSH_SERVER_ERROR: Some error happened.",
+            "user": "UB659D0FM",
+            "ts": "1532714766.000451"
+        },
+        {
+            "client_msg_id": "7117da03-a9c9-40df-9713-3d773bbbe577",
+            "type": "message",
+            "text": "what is the data type that is_server_known function returns?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714724.000068"
+        },
+        {
+            "client_msg_id": "76168a8f-6629-4d10-98da-6ada7d142b3b",
+            "type": "message",
+            "text": "what does the s_server_known function return?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714712.000105"
+        },
+        {
+            "client_msg_id": "a25d025f-8c6d-496e-b89d-ec79ad45f5bc",
+            "type": "message",
+            "text": "I'm sorry, I do not understand your question, I am only authorized to respond to api questions.",
+            "user": "UB659D0FM",
+            "ts": "1532714577.000088"
+        },
+        {
+            "client_msg_id": "3f8bd3fc-f90f-47d7-8327-22f6bb4af324",
+            "type": "message",
+            "text": "who",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714563.000002"
+        },
+        {
+            "client_msg_id": "9c37313f-fc59-480a-a054-cd86471d69b7",
+            "type": "message",
+            "text": "There are 47 functions referring to channel objects in libssh, to which are you referring?",
+            "user": "UB659D0FM",
+            "ts": "1532714522.000388"
+        },
+        {
+            "client_msg_id": "672b304c-21ab-4815-8014-fe5bbe2a8331",
+            "type": "message",
+            "text": "what is the api for the ssh_channel?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714488.000172"
+        },
+        {
+            "client_msg_id": "6c1db685-56ab-46dc-905f-6ab078c0e219",
+            "type": "message",
+            "text": "I'm sorry, I do not understand your question, I am only authorized to respond to api questions.",
+            "user": "UB659D0FM",
+            "ts": "1532714462.000452"
+        },
+        {
+            "client_msg_id": "0dae1cbc-eb2c-47f0-876b-74ea63fac3f6",
+            "type": "message",
+            "text": "how would i execute the who command in the ssh_channel function?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714426.000197"
+        },
+        {
+            "client_msg_id": "a7cbec27-4c30-46d8-848d-72d358db5302",
+            "type": "message",
+            "text": "to create a new channel, you can use the \"ssh_channel ssh_channel_new(ssh_session session)\" function",
+            "user": "UB659D0FM",
+            "ts": "1532714390.000512"
+        },
+        {
+            "client_msg_id": "1f1bca78-f198-4e41-8963-6daf6c565da9",
+            "type": "message",
+            "text": "libssh contains a function \"int ssh_is_server_known(ssh_session session)\" that can be used to check if a server is known.",
+            "user": "UB659D0FM",
+            "ts": "1532714358.000434"
+        },
+        {
+            "client_msg_id": "26e04202-4718-47e6-874e-374cfdd57436",
+            "type": "message",
+            "text": "how do I create a new ssh_channel?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714357.000144"
+        },
+        {
+            "client_msg_id": "70354fdc-7312-4566-aa17-80e1883718e9",
+            "type": "message",
+            "text": "do you know the is_server_known function?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714310.000388"
+        },
+        {
+            "client_msg_id": "dfa455b0-97a3-431f-bf96-a64200ebbd5a",
+            "type": "message",
+            "text": "int ssh_userauth_gssapi(ssh_session session)\nint ssh_userauth_kbdint(ssh_session session, const char * user, const char * submethods)\nint ssh_userauth_none(ssh_session session, const char * username)\nint ssh_userauth_password(ssh_session session, const char * username, const char * password)\nint ssh_userauth_publickey(ssh_session session, const char * username, const ssh_key privkey)\nint ssh_userauth_publickey_auto(ssh_session session, const char * username, const char * passphrase)\nint ssh_userauth_try_publickey(ssh_session session, const char * username, const ssh_key pubkey)",
+            "user": "UB659D0FM",
+            "ts": "1532714214.000118"
+        },
+        {
+            "client_msg_id": "90f7fecd-60be-4aef-a541-e18c81bedef0",
+            "type": "message",
+            "text": "yes",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714199.000390"
+        },
+        {
+            "client_msg_id": "aafb4114-39b6-491a-a831-200aad6d4ac0",
+            "type": "message",
+            "text": "There are several authentication functions, would you like me to list them all?",
+            "user": "UB659D0FM",
+            "ts": "1532714181.000204"
+        },
+        {
+            "client_msg_id": "ad56ea70-c68a-4990-8cae-e65b9323982e",
+            "type": "message",
+            "text": "just for the server",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714116.000025"
+        },
+        {
+            "client_msg_id": "739810b1-1c6d-4c15-b43a-64a529611c10",
+            "type": "message",
+            "text": "There are several authentication functions, would you like me to list them all?",
+            "user": "UB659D0FM",
+            "ts": "1532714040.000112"
+        },
+        {
+            "client_msg_id": "e30cfe79-6a53-453e-a3b3-871bbaa7ee13",
+            "type": "message",
+            "text": "how do I authenticate to the server?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532714012.000382"
+        },
+        {
+            "client_msg_id": "cd63444b-46eb-46fe-94b8-201fff0e5afa",
+            "type": "message",
+            "text": "I am happy to be of service!",
+            "user": "UB659D0FM",
+            "ts": "1532713236.000206"
+        },
+        {
+            "client_msg_id": "536d301a-dee5-4842-b25e-82eade0c5ec3",
+            "type": "message",
+            "text": "thanks thats helpful",
+            "user": "UBUKJ9WBW",
+            "ts": "1532713218.000491"
+        },
+        {
+            "client_msg_id": "045d19cd-9125-4998-bded-5bfada9e5742",
+            "type": "message",
+            "text": "To connect in libssh, you can use the function \"int ssh_connect(ssh_session session)\"",
+            "user": "UB659D0FM",
+            "ts": "1532713031.000402"
+        },
+        {
+            "client_msg_id": "78e2b84f-6cd0-4e4d-b8dc-e352dd3ec406",
+            "type": "message",
+            "text": "According to libssh::ssh_options_set(ssh_session session, enum ssh_options_e type, const void* value), the \"type\" parameter can be set to: SSH_OPTIONS_HOST for setting a host, SSH_OPTIONS_PORT for setting a port number",
+            "user": "UB659D0FM",
+            "ts": "1532712999.000245"
+        },
+        {
+            "client_msg_id": "c8ce08a0-6989-4709-bd28-33fa05ab791b",
+            "type": "message",
+            "text": "how do I connect",
+            "user": "UBUKJ9WBW",
+            "ts": "1532712915.000328"
+        },
+        {
+            "client_msg_id": "d2314ae4-e218-43a7-99f2-6c0bfa3be7d1",
+            "type": "message",
+            "text": "how do I conect",
+            "user": "UBUKJ9WBW",
+            "ts": "1532712911.000412"
+        },
+        {
+            "client_msg_id": "e4559c65-e6ce-4914-932f-1ccac72e55d2",
+            "type": "message",
+            "text": "what are the parameters for setting localhost, port number and ip address",
+            "user": "UBUKJ9WBW",
+            "ts": "1532712874.000138"
+        },
+        {
+            "client_msg_id": "95c649bf-1a8e-46c3-b130-e3317f2307d1",
+            "type": "message",
+            "text": "To create a connection in libSSH, you could use the function \"ssh_session ssh_new(void)\"",
+            "user": "UB659D0FM",
+            "ts": "1532712345.000411"
+        },
+        {
+            "client_msg_id": "ee8f8c5f-7f8c-4b4d-900c-3e2b67258ccb",
+            "type": "message",
+            "text": "how do I create a new ssh_session?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532712334.000269"
+        },
+        {
+            "client_msg_id": "f160e44d-4d1b-4542-8d2a-ba8a7c83cb96",
+            "type": "message",
+            "text": "what is the API for instantiating connection object for libSSH?",
+            "user": "UBUKJ9WBW",
+            "ts": "1532712279.000306"
+        },
+        {
+            "client_msg_id": "84f433e3-0429-4c2c-a367-f1794156f33f",
+            "type": "message",
+            "text": "Hello! I'm Apiza: a Virtual Assistant designed to help answer api questions!",
+            "user": "UB659D0FM",
+            "ts": "1532712255.000237"
+        },
+        {
+            "client_msg_id": "1fa1099f-d2f8-4e9f-afe5-3ec2a86fc015",
+            "type": "message",
+            "text": "hi",
+            "user": "UBUKJ9WBW",
+            "ts": "1532712247.000249"
+        }
+    ],
+    "has_more": false
+}

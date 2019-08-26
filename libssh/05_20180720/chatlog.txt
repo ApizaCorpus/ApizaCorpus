@@ -1,0 +1,477 @@
+Programmer_5 [1:01 PM]
+Hi
+
+Apiza [1:01 PM]
+Hello! I am Apiza, an automated virtual assistant for programmers that is supervised by a human. I look forward to helping you today!
+
+Programmer_5 [1:02 PM]
+how do I create a new session in libssh
+
+Apiza [1:02 PM]
+I would suggest using the function ssh_new:
+
+ssh_session ssh_new    (    void         )
+
+Description
+Create a new ssh session.
+
+Returns
+A new ssh_session pointer, NULL on error.
+
+References ssh_buffer_new(), and ssh_set_blocking().
+
+Programmer_5 [1:02 PM]
+can you give me an example on how to use ssh_new
+
+Apiza [1:03 PM]
+Sure! Something like:
+
+my_ssh_session = ssh_new();
+
+Programmer_5 [1:03 PM]
+sweet
+
+Apiza [1:03 PM]
+I'm glad to hear it!
+
+Programmer_5 [1:03 PM]
+how do I authenticate my libssh session
+
+Apiza [1:05 PM]
+There are several authentication functions. How would you like to authenticate?
+
+Programmer_5 [1:05 PM]
+username
+
+Apiza [1:06 PM]
+I found a few functions that authenticate with username:
+
+int ssh_userauth_none    (    ssh_session     session,
+const char *     username 
+)
+
+int ssh_userauth_password    (    ssh_session     session,
+const char *     username,
+const char *     password 
+)
+
+int ssh_userauth_publickey    (    ssh_session     session,
+const char *     username,
+const ssh_key     privkey 
+)
+
+Programmer_5 [1:06 PM]
+how do I connect to localhost with libssh
+
+Apiza [1:08 PM]
+To connect, I would recommend the function
+int ssh_connect    (    ssh_session     session    ).
+
+I also found a reference to "localhost" in 
+int ssh_options_getopt    (    ssh_session     session,
+int *     argcptr,
+char **     argv 
+)
+
+Programmer_5 [1:09 PM]
+what do the return values for ssh_connect
+what are the return values for ssh_connect
+
+Apiza [1:09 PM]
+Returns
+SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+Programmer_5 [1:10 PM]
+what are the return values for ssh_userauth_password
+
+Apiza [1:11 PM]
+Returns
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+Note
+Most server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.
+
+Programmer_5 [1:13 PM]
+how do I check that the host is known in libssh
+
+Apiza [1:14 PM]
+There is a function int ssh_is_server_known    (    ssh_session     session    )
+
+Description
+Check if the server is known.
+Checks the user's known host file for a previous connection to the current server.
+
+Programmer_5 [1:14 PM]
+what does ssh_is_server_known   return
+
+Apiza [1:14 PM]
+Returns
+SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+Programmer_5 [1:23 PM]
+how do I create a new ssh_channel  with libssh
+
+Apiza [1:24 PM]
+I think you're looking for
+
+ssh_channel ssh_channel_new    (    ssh_session     session    )
+
+Description
+Allocate a new channel.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A pointer to a newly allocated channel, NULL on error.
+
+Programmer_5 [1:25 PM]
+how do I execute a command with a ssh_channel
+
+Apiza [1:26 PM]
+int ssh_channel_request_exec    (    ssh_channel     channel,
+const char *     cmd 
+)
+
+Description
+Run a shell command without an interactive shell.
+This is similar to 'sh -c command'.
+
+Programmer_5 [1:26 PM]
+what does ssh_channel_request_exec     return
+
+Apiza [1:27 PM]
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_5 [1:28 PM]
+how do I read the result of ssh_channel_request_exec
+
+Apiza [1:29 PM]
+I found a couple of functions that involve reading from the channel:
+
+int channel_read_buffer    (    ssh_channel     channel,
+ssh_buffer     buffer,
+uint32_t     count,
+int     is_stderr 
+)
+
+int ssh_channel_read    (    ssh_channel     channel,
+void *     dest,
+uint32_t     count,
+int     is_stderr 
+)
+
+int ssh_channel_read_nonblocking    (    ssh_channel     channel,
+void *     dest,
+uint32_t     count,
+int     is_stderr 
+)
+
+int ssh_channel_read_timeout    (    ssh_channel     channel,
+void *     dest,
+uint32_t     count,
+int     is_stderr,
+int     timeout 
+)
+
+Would you like to hear more about one of these?
+
+Programmer_5 [1:29 PM]
+can you give me an example of ssh_channel_read
+
+Apiza [1:31 PM]
+Sure, here's an example:
+ssh_channel channel;
+char buffer[256];
+int nbytes;
+nbytes = ssh_channel_read(channel, buffer, sizeof(buffer), 0);
+
+Programmer_5 [1:32 PM]
+how do I send an eof to the channel
+
+Apiza [1:33 PM]
+This method should work:
+
+int ssh_channel_send_eof    (    ssh_channel channel    )
+
+Description 
+Send an end of file on the channel. 
+This doesn't close the channel. You may still read from it but not write.
+
+Parameters 
+channel: The channel to send the eof to.
+
+Returns 
+SSH_OK on success, SSH_ERROR if an error occurred.
+
+Programmer_5 [1:33 PM]
+how do I close the channel
+
+Apiza [1:34 PM]
+I think you can use int ssh_channel_close    (    ssh_channel     channel    )
+
+Programmer_5 [1:34 PM]
+what does ssh_channel_close     return
+
+Apiza [1:34 PM]
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred.
+
+Programmer_5 [1:43 PM]
+why am I getting an error on ssh_channel_request_exec
+
+Apiza [1:43 PM]
+What kind of error are you getting?
+
+Programmer_5 [1:44 PM]
+SSH_ERROR
+
+Apiza [1:44 PM]
+This function may help you debug:
+
+const char* ssh_get_error    (    void *     error    )
+
+Description
+Retrieve the error text message from the last error.
+
+Parameters
+error: An ssh_session or ssh_bind.
+
+Returns
+A static string describing the error.
+
+Programmer_5 [1:46 PM]
+what does ssh_msg_disconnect mean
+oh
+I don't have the channel open
+how do I open a channel session
+
+Apiza [1:48 PM]
+This function may help with deciphering a disconnect message
+
+const char* ssh_get_disconnect_message    (    ssh_session     session    )
+This function should let you open a channel session
+
+int ssh_channel_open_session    (    ssh_channel     channel    )
+
+Description
+Open a session channel (suited for a shell, not TCP forwarding).
+
+Parameters
+channel: An allocated channel.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+See also
+ssh_channel_open_forward()
+ssh_channel_request_env()
+ssh_channel_request_shell()
+ssh_channel_request_exec()
+
+Programmer_5 [1:52 PM]
+how do I create a sftp session in libssh
+
+Apiza [1:53 PM]
+sftp_session sftp_new    (    ssh_session     session    )
+
+Description
+Start a new sftp session.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A new sftp session or NULL on error.
+
+References ssh_channel_free(), ssh_channel_new(), and ssh_channel_open_session().
+
+See also
+sftp_free()
+
+Programmer_5 [1:54 PM]
+how do I init the sftp session
+how do I create a directory
+
+Apiza [1:55 PM]
+This should do it:
+
+int sftp_init    (    sftp_session     sftp    )
+
+Description
+Initialize the sftp session with the server.
+
+Parameters
+sftp: The sftp session to initialize.
+
+Returns
+0 on success, < 0 on error with ssh error set.
+
+References ssh_buffer_new().
+
+See also
+sftp_new()
+
+Programmer_5 [1:56 PM]
+how do I create a directory in libssh using sftp
+how do I create a file in libssh using sftp
+
+Apiza [1:56 PM]
+I found two functions that may be appropriate to create a directory:
+
+int sftp_mkdir    (    sftp_session     sftp,
+const char *     directory,
+mode_t     mode 
+)
+
+Description
+Create a directory.
+
+and
+
+sftp_dir sftp_opendir    (    sftp_session     session,
+const char *     path 
+)
+
+Description
+Open a directory used to obtain directory entries.
+I can't find a function to "create" a file, but I found one to "write" a file:
+
+ssize_t sftp_write    (    sftp_file file, 
+const void * buf, 
+size_t count 
+)
+
+Description 
+Write to a file using an opened sftp file handle.
+
+Parameters 
+file: Open sftp file handle to write to. 
+buf: Pointer to buffer to write data. 
+count: Size of buffer in bytes.
+
+Returns 
+Number of bytes written, < 0 on error with ssh and sftp error set.
+
+Programmer_5 [1:58 PM]
+can you give me an example of sftp_mkdir
+
+Apiza [1:59 PM]
+Sure, here's an example:
+
+int rc;
+sftp_session sftp;
+rc = sftp_mkdir(sftp, "helloworld", S_IRWXU);
+
+Programmer_5 [2:07 PM]
+what does sftp_mkdir returhn
+
+Apiza [2:07 PM]
+Returns
+0 on success, < 0 on error with ssh and sftp error set.
+
+Programmer_5 [2:08 PM]
+how do I create a file in libssh using sftp
+how do I tell if a directory already exists
+
+Apiza [2:10 PM]
+Was sftp_write useful in creating a file? If not, sftp_open might help.
+
+Description
+Open a file on the server.
+
+Programmer_5 [2:12 PM]
+tell me about Error
+
+Apiza [2:12 PM]
+I can't find a function that checks if a directory exists. However, there are many functions requiring a directory, including
+
+sftp_dir sftp_opendir    (    sftp_session     session,
+const char *     path 
+)
+
+sftp_attributes sftp_readdir    (    sftp_session     session,
+sftp_dir     dir 
+)
+
+int sftp_rmdir    (    sftp_session     sftp,
+const char *     directory 
+)
+
+Programmer_5 [2:12 PM]
+tell me about sftp_get_error
+
+Apiza [2:12 PM]
+int sftp_get_error    (    sftp_session     sftp    )
+
+Description
+Get the last sftp error.
+Use this function to get the latest error set by a posix like sftp function.
+
+Parameters
+sftp: The sftp session where the error is saved.
+
+Returns
+The saved error (see server responses), < 0 if an error in the function occured.
+
+References ssh_buffer_free(), and ssh_buffer_new().
+
+See also
+Server responses
+
+Programmer_5 [2:13 PM]
+tell me about server respones
+
+Apiza [2:17 PM]
+I can't find specific information on "server responses" but in context, I believe you are referring to
+
+/* Error return codes */
+#define SSH_OK 0     /* No error */
+#define SSH_ERROR -1 /* Error of some kind */
+#define SSH_AGAIN -2 /* The nonblocking call must be repeated */
+#define SSH_EOF -127 /* We have already a eof */
+
+Programmer_5 [2:17 PM]
+tell me about sftp_open
+can you give me an example of sftp_open
+
+Apiza [2:19 PM]
+sftp_file sftp_open    (    sftp_session     session,
+const char *     file,
+int     accesstype,
+mode_t     mode 
+)
+
+Description
+Open a file on the server.
+
+Parameters
+session: The sftp session handle.
+file: The file to be opened.
+accesstype: Is one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated.
+mode: Mode specifies the permissions to use if a new file is created. It is modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask)
+
+Returns
+A sftp file handle, NULL on error with ssh and sftp error set.
+
+References ssh_buffer_free(), ssh_buffer_new(), and ssh_string_from_char().
+
+See also
+sftp_get_error()
+Here is an example:
+
+sftp_file file;
+sftp_session sftp;
+int access_type = O_WRONLY | O_CREAT | O_TRUNC;
+
+file = sftp_open(sftp, "helloworld/helloworld.txt",  access_type, S_IRWXU);

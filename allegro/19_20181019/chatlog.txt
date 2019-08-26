@@ -1,0 +1,207 @@
+Programmer_19 [4:07 PM]
+allegro keyboard input
+
+
+Apiza [4:09 PM]
+You can save the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state, using al_get_keyboard_state
+
+Programmer_19 [4:12 PM]
+Whats the function signature for al_get_keyboard_state
+
+Apiza [4:13 PM]
+void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)
+
+Programmer_19 [4:14 PM]
+Documentation for ALLEGRO_KEYBOARD_STATE
+
+Apiza [4:15 PM]
+ALLEGRO_KEYBOARD_STATE is a structure that is used to hold a "snapshot" of a keyboard's state at a particular instant. It contains the following publicly readable fields: display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.
+
+Programmer_19 [4:19 PM]
+al_get_keyboard_state: Assertion `new_keyboard_driver' failed.
+
+Apiza [4:20 PM]
+To install a keyboard driver, use al_install_keyboard
+
+Programmer_19 [4:22 PM]
+function signature for al_install_keyboard
+
+Apiza [4:23 PM]
+bool al_install_keyboard(void)
+
+Programmer_19 [4:26 PM]
+Allegro error  al_get_keyboard_state: Assertion `ret_state' failed.
+
+Apiza [4:27 PM]
+I’m not sure I understand your question
+
+Programmer_19 [4:32 PM]
+al_get_keyboard_state assertion
+
+Apiza [4:33 PM]
+You can save the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state, using al_get_keyboard_state
+
+Programmer_19 [4:35 PM]
+Why does al_get_keyboard_state() fail with assertion?
+
+Apiza [4:36 PM]
+I’m not sure I understand your question
+Would you like me to send you the source code for al_get_keyboard_state?
+
+Programmer_19 [4:39 PM]
+Yes
+
+Apiza [4:40 PM]
+void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)
+{
+  ASSERT(new_keyboard_driver);
+  ASSERT(ret_state);
+
+  new_keyboard_driver->get_keyboard_state(ret_state);
+}
+
+Programmer_19 [4:48 PM]
+Allegro sound functions
+
+Apiza [4:49 PM]
+Could you be more specific as to what audio function you’re interested in?
+
+Programmer_19 [4:50 PM]
+Allegro play sound
+Play a sound effect in allegro
+
+Apiza [4:50 PM]
+Use al_install_audio to initialize sound. To load any sample formats, you will need to initialise the acodec addon with al_init_acodec_addon.
+
+Programmer_19 [4:51 PM]
+function signature for al_install_audio
+
+Apiza [4:52 PM]
+bool al_install_audio(void)
+
+Programmer_19 [4:54 PM]
+function signature for al_init_acodec_addon
+
+Apiza [4:54 PM]
+bool al_init_acodec_addon(void)
+
+Programmer_19 [4:55 PM]
+How do you load an audio sample in Allegro?
+
+Apiza [4:57 PM]
+al_load_sample loads a few different audio file formats based on their extension.
+Note that this stores the entire file in memory at once, which may be time consuming. To read the file as it is needed, use al_load_audio_stream.
+Returns the sample on success, NULL on failure.
+
+Programmer_19 [4:57 PM]
+Function signature for al_load_sample()
+
+Apiza [4:57 PM]
+ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+
+Programmer_19 [5:00 PM]
+Function signature for al_play_sample()
+
+Apiza [5:01 PM]
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+
+Programmer_19 [5:03 PM]
+What is ALLEGRO_SAMPLE_ID
+
+Apiza [5:03 PM]
+An ALLEGRO_SAMPLE_ID represents a sample being played via al_play_sample. It can be used to later stop the sample with al_stop_sample. The underlying ALLEGRO_SAMPLE_INSTANCE can be extracted using al_lock_sample_id.
+
+Programmer_19 [5:05 PM]
+What is ALLEGRO_PLAYMODE ?
+
+Apiza [5:06 PM]
+ALLEGRO_PLAYMODE is an enum.
+
+Programmer_19 [5:06 PM]
+Enumerate ALLEGRO_PLAYMODE
+
+Apiza [5:07 PM]
+Sample and stream playback mode. ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, ALLEGRO_PLAYMODE_BIDIR
+
+Programmer_19 [5:16 PM]
+Why is al_play_sample() returning false?
+
+Apiza [5:17 PM]
+al_play_sample plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.
+
+Programmer_19 [5:19 PM]
+function signature for al_reserve_samples()
+
+Apiza [5:19 PM]
+bool al_reserve_samples(int reserve_samples)
+
+Programmer_19 [5:22 PM]
+What are the allegro functions for drawing text?
+
+Apiza [5:23 PM]
+Drawing operations:
+        al_clear_to_color
+        al_clear_depth_buffer
+        al_draw_bitmap
+        al_draw_tinted_bitmap
+        al_draw_bitmap_region
+        al_draw_tinted_bitmap_region
+        al_draw_pixel
+        al_draw_rotated_bitmap
+        al_draw_tinted_rotated_bitmap
+        al_draw_scaled_rotated_bitmap
+        al_draw_tinted_scaled_rotated_bitmap
+        al_draw_tinted_scaled_rotated_bitmap_region
+        al_draw_scaled_bitmap
+        al_draw_tinted_scaled_bitmap
+        al_get_target_bitmap
+        al_put_pixel
+        al_put_blended_pixel
+Would you like to know more about one of those functions?
+
+Programmer_19 [5:24 PM]
+Allegro font functions
+
+Apiza [5:25 PM]
+I’m not sure I understand your question
+
+Programmer_19 [5:26 PM]
+How do you load a font in allegro?
+
+Apiza [5:26 PM]
+al_load_font loads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.
+The flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.
+
+Programmer_19 [5:26 PM]
+function signature for al_load_font
+
+Apiza [5:27 PM]
+ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)
+
+Programmer_19 [5:27 PM]
+List al_load_bitmap_font_flags
+
+Apiza [5:28 PM]
+al_load_bitmap_font_flags like al_load_bitmap_font but additionally takes a flags parameter which is a bitfield containing a combination of the following:
+ALLEGRO_NO_PREMULTIPLIED_ALPHA
+The same meaning as for al_load_bitmap_flags.
+
+Programmer_19 [5:31 PM]
+Do I need to initialize allegro for ttf fonts?
+
+Apiza [5:32 PM]
+al_init_ttf_addon call this after al_init_font_addon to make al_load_font recognize ".ttf" and other formats supported by al_load_ttf_font. Returns true on success, false on failure.
+
+Programmer_19 [5:35 PM]
+Allegro render ttf font
+How to draw an ALLEGRO_FONT to backbuffer?
+
+Apiza [5:36 PM]
+ALLEGRO_FONT is a handle identifying any kind of font. Usually you will create it with al_load_font which supports loading all kinds of TrueType fonts supported by the FreeType library. If you instead pass the filename of a bitmap file, it will be loaded with al_load_bitmap and a font in Allegro's bitmap font format will be created from it with al_grab_font_from_bitmap.
+
+Programmer_19 [5:37 PM]
+How do you draw an ALLEGRO_FONT instance?
+
+Apiza [5:39 PM]
+Are you interested in al_draw_textf?

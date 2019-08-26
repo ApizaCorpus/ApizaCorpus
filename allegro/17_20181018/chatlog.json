@@ -1,0 +1,664 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "e5aa039d-a6fb-4649-bc02-5e23ed441812",
+            "type": "message",
+            "text": "I do not think so. I found the following example in which al_load_bitmap without al_create_bitmap:\n\n```\nALLEGRO_BITMAP  *image   = NULL;\n\n...\n\nal_init_image_addon()\n\n...\n\nimage = al_load_bitmap(\"image.png\");```",
+            "user": "UB659D0FM",
+            "ts": "1539894172.000100"
+        },
+        {
+            "client_msg_id": "25ddc03a-76eb-4aed-9617-0cd03e310b7e",
+            "type": "message",
+            "text": "Do I need to initialize bitmap before calling al_load_bitmap?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893930.000100"
+        },
+        {
+            "client_msg_id": "5ef27f38-b815-4a43-a895-1c71ec74c50e",
+            "type": "message",
+            "text": "al_get_bitmap_width\n\n```int al_get_bitmap_width(ALLEGRO_BITMAP *bitmap)```\n\nReturns the width of a bitmap in pixels.",
+            "user": "UB659D0FM",
+            "ts": "1539893632.000100"
+        },
+        {
+            "client_msg_id": "179cb950-e4bc-4527-aab0-9eb34748bc00",
+            "type": "message",
+            "text": "All al_draw_* functions draw onto the target bitmap. The target bitmap defaults to the display, unless otherwise specified. The target bitmap can be set with al_set_target_bitmap.",
+            "user": "UB659D0FM",
+            "ts": "1539893608.000100"
+        },
+        {
+            "client_msg_id": "367adcd1-0499-40de-b22a-7e3179ae1d3a",
+            "type": "message",
+            "text": "How can I get the width of a bitmap?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893582.000100"
+        },
+        {
+            "client_msg_id": "59a56a01-a17d-45cb-9f64-17d04c325d24",
+            "type": "message",
+            "text": "How can I draw a bitmap onto another bitmap?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893539.000100"
+        },
+        {
+            "client_msg_id": "e6099992-3a29-4e5f-81fd-49c116f72462",
+            "type": "message",
+            "text": "To summarize:\n\nThis function selects the bitmap to which all subsequent drawing operations in the calling thread will draw to.\n\nWould you like the full description?",
+            "user": "UB659D0FM",
+            "ts": "1539893512.000200"
+        },
+        {
+            "client_msg_id": "abb83f5b-70e9-45bc-ab51-b030a2f4aafa",
+            "type": "message",
+            "text": "What does al_set_target_bitmap do?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893454.000100"
+        },
+        {
+            "client_msg_id": "3943f06b-6114-4d68-81d7-eab6928211bb",
+            "type": "message",
+            "text": "The parameters for al_draw_scaled_bitmap:\n\nsx - source x\nsy - source y\nsw - source width\nsh - source height\ndx - destination x\ndy - destination y\ndw - destination width\ndh - destination height\nflags - same as for al_draw_bitmap",
+            "user": "UB659D0FM",
+            "ts": "1539893392.000100"
+        },
+        {
+            "client_msg_id": "a03451a7-6af8-49f0-88b0-c7fdedc7065b",
+            "type": "message",
+            "text": "What are the parameters sx, sy, sw, sh, etc.?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893368.000100"
+        },
+        {
+            "client_msg_id": "11ace5e6-1fc1-41ed-a17a-ca6c3b288937",
+            "type": "message",
+            "text": "There are a few methods that fit:\n\nal_draw_scaled_rotated_bitmap\nal_draw_tinted_scaled_rotated_bitmap\nal_draw_tinted_scaled_rotated_bitmap_region\nal_draw_scaled_bitmap\nal_draw_tinted_scaled_bitmap\n\nThe simplest method is al_draw_scaled_bitmap:\n\n```void al_draw_scaled_bitmap(ALLEGRO_BITMAP *bitmap,\n   float sx, float sy, float sw, float sh,\n   float dx, float dy, float dw, float dh, int flags)```\n\nDraws a scaled version of the given bitmap to the target bitmap.",
+            "user": "UB659D0FM",
+            "ts": "1539893346.000100"
+        },
+        {
+            "client_msg_id": "e0c6fdbe-ed19-421f-b637-4c872ed89b4c",
+            "type": "message",
+            "text": "How can I scale and draw a bitmap?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893300.000100"
+        },
+        {
+            "client_msg_id": "33482758-669e-46fa-9b64-c1820ba197d3",
+            "type": "message",
+            "text": "The simplest function is al_load_bitmap:\n\n```ALLEGRO_BITMAP *al_load_bitmap(const char *filename)```\n\nLoads an image file into a new ALLEGRO_BITMAP.",
+            "user": "UB659D0FM",
+            "ts": "1539893124.000100"
+        },
+        {
+            "client_msg_id": "c8d16870-eabd-45d6-87ba-921a85df5ddb",
+            "type": "message",
+            "text": "How can I load a bitmap?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539893089.000100"
+        },
+        {
+            "client_msg_id": "b2a2702a-c5e5-422c-9ee4-af1a6c9ec8e9",
+            "type": "message",
+            "text": "al_install_mouse\n\n```bool al_install_mouse(void)```\n\nInstall a mouse driver.\n\nReturns true if successful. If a driver was already installed, nothing happens and true is returned.",
+            "user": "UB659D0FM",
+            "ts": "1539893005.000200"
+        },
+        {
+            "client_msg_id": "37fabf5d-f58f-4f4c-b1ba-d2636e40da11",
+            "type": "message",
+            "text": "How can I install the mouse driver?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892984.000100"
+        },
+        {
+            "client_msg_id": "5dc9eb4b-88fa-42b4-9198-dc6c6e8c60e3",
+            "type": "message",
+            "text": "```bool al_get_timer_started(const ALLEGRO_TIMER *timer)```\n\nReturn true if the timer specified is currently started.",
+            "user": "UB659D0FM",
+            "ts": "1539892936.000200"
+        },
+        {
+            "client_msg_id": "7337afc1-b35a-46b0-bf4c-ab0880939b12",
+            "type": "message",
+            "text": "``` void al_resume_timer(ALLEGRO_TIMER *timer)```\n\nResume the timer specified.",
+            "user": "UB659D0FM",
+            "ts": "1539892917.000100"
+        },
+        {
+            "client_msg_id": "188cf7a8-911f-42d2-94ed-70d118ee0929",
+            "type": "message",
+            "text": "What is the return type of al_get_timer_started?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892916.000100"
+        },
+        {
+            "client_msg_id": "5e13d973-3bbc-4ac2-a3d5-f23d76a50f09",
+            "type": "message",
+            "text": "I found a few methods to get information about an ALLEGRO_TIMER :\n\nal_get_timer_started\nal_get_timer_count\nal_get_timer_speed\nal_get_timer_event_source\n\nI could not find any that return an ALLEGRO_STATE .",
+            "user": "UB659D0FM",
+            "ts": "1539892894.000200"
+        },
+        {
+            "client_msg_id": "e7ecaf2f-b41d-4de9-abe4-4722d8fe1a98",
+            "type": "message",
+            "text": "How can I resume a timer after stopping it?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892840.000100"
+        },
+        {
+            "client_msg_id": "14cd7a5e-edf5-4030-a52c-18d33bbaf0dc",
+            "type": "message",
+            "text": "How can I get the state of a timer?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892807.000100"
+        },
+        {
+            "client_msg_id": "b8287155-1afc-4cae-a2c0-8455f6f90eb3",
+            "type": "message",
+            "text": "There are several Mouse event types:\n\nALLEGRO_EVENT_MOUSE_AXES\nALLEGRO_EVENT_MOUSE_BUTTON_DOWN\nALLEGRO_EVENT_MOUSE_BUTTON_UP\nALLEGRO_EVENT_MOUSE_WARPED\nALLEGRO_EVENT_MOUSE_ENTER_DISPLAY\nALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY",
+            "user": "UB659D0FM",
+            "ts": "1539892723.000100"
+        },
+        {
+            "client_msg_id": "021c80b7-e5d8-4485-abe9-a26f769693c1",
+            "type": "message",
+            "text": "I was able to put together an example to Render text:\n\n```al_init_font_addon(); \/\/ initialize the font addon\nal_init_ttf_addon();\/\/ initialize the ttf (True Type Font) addon\n...\nALLEGRO_DISPLAY *display = al_create_display(640,480);\n...\nALLEGRO_FONT *font = al_load_ttf_font(\"pirulen.ttf\",72,0 );\n...\nal_draw_text(font, al_map_rgb(255,255,255), 640\/2, (480\/4),ALLEGRO_ALIGN_CENTRE, \"Your Text Here!\");```\n\nDoes this look useful?",
+            "user": "UB659D0FM",
+            "ts": "1539892646.000200"
+        },
+        {
+            "client_msg_id": "d750c926-ff1e-4bfa-94a0-4e7b7f821456",
+            "type": "message",
+            "text": "al_stop_timer should work:\n\n```void al_stop_timer(ALLEGRO_TIMER *timer)```\n\nStop the timer specified.",
+            "user": "UB659D0FM",
+            "ts": "1539892616.000100"
+        },
+        {
+            "client_msg_id": "a749e815-d840-48ad-ada9-1796b3f2e91a",
+            "type": "message",
+            "text": "How can I register mouse events?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892585.000100"
+        },
+        {
+            "client_msg_id": "e4fca072-0270-4a3a-acc2-a02b689220e9",
+            "type": "message",
+            "text": "How can I stop a timer?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892519.000100"
+        },
+        {
+            "client_msg_id": "11f8165a-2131-4908-94aa-3fb2d0f2c475",
+            "type": "message",
+            "text": "Sure, I will try to put together an example.",
+            "user": "UB659D0FM",
+            "ts": "1539892502.000100"
+        },
+        {
+            "client_msg_id": "b1a6f6bb-2c30-4866-ba69-a40eea035181",
+            "type": "message",
+            "text": "Can you give me an example to render text?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892464.000100"
+        },
+        {
+            "client_msg_id": "22e19f24-1779-42a4-9278-6d16c3177d04",
+            "type": "message",
+            "text": "void al_draw_text\n\nVoid return",
+            "user": "UB659D0FM",
+            "ts": "1539892258.000100"
+        },
+        {
+            "client_msg_id": "f9ff4faf-184b-4be0-981c-98c690e6f4dc",
+            "type": "message",
+            "text": "What is the return type of al_draw_text?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892209.000100"
+        },
+        {
+            "client_msg_id": "b3192476-4110-457c-89ea-312456751d9d",
+            "type": "message",
+            "text": "al_get_display_width returns an int. This value can cast to a float",
+            "user": "UB659D0FM",
+            "ts": "1539892151.000100"
+        },
+        {
+            "client_msg_id": "ec6e5b3d-c835-4b79-844e-cb1262fa8839",
+            "type": "message",
+            "text": "How can I convert an integer from al_get_display_width to a float for coordinate x?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539892039.000100"
+        },
+        {
+            "client_msg_id": "f473fd45-233f-4a98-8490-85854f4e4cf2",
+            "type": "message",
+            "text": "These methods should work:\n\n```int al_get_display_width(ALLEGRO_DISPLAY *display)```\n\nGets the width of the display.\n\n```int al_get_display_height(ALLEGRO_DISPLAY *display)```\n\nGets the height of the display.",
+            "user": "UB659D0FM",
+            "ts": "1539892003.000100"
+        },
+        {
+            "client_msg_id": "4f14a927-8ffa-4c0c-b561-9907eff4f236",
+            "type": "message",
+            "text": "How can I get the height and width of the window?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891964.000100"
+        },
+        {
+            "client_msg_id": "3a2dfb93-15c1-444e-a622-06692d77e663",
+            "type": "message",
+            "text": "x and y refer to the pixel coordinates within the display. The coordinate (0,0) refers to the upper-left-most pixel of the display.",
+            "user": "UB659D0FM",
+            "ts": "1539891942.000200"
+        },
+        {
+            "client_msg_id": "5bd915e4-77e6-4819-bb15-13a362e7eb0d",
+            "type": "message",
+            "text": "```ALLEGRO_COLOR al_map_rgb(\n   unsigned char r, unsigned char g, unsigned char b)```\n\nConvert r, g, b (ranging from 0-255) into an ALLEGRO_COLOR, using 255 for alpha.",
+            "user": "UB659D0FM",
+            "ts": "1539891875.000300"
+        },
+        {
+            "client_msg_id": "7d72456c-fcae-4985-b0e0-94e66e9d957b",
+            "type": "message",
+            "text": "What is the minimum and maximum value for x and y?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891875.000100"
+        },
+        {
+            "client_msg_id": "e8cbdfd0-8976-4684-90e7-602b940a3eb1",
+            "type": "message",
+            "text": "I am not sure about the coordinate system for x and y .",
+            "user": "UB659D0FM",
+            "ts": "1539891857.000100"
+        },
+        {
+            "client_msg_id": "64f0002a-f0b3-42cd-879b-91bc1e3d4ba9",
+            "type": "message",
+            "text": "What are the parameters for al_map_rgb?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891809.000100"
+        },
+        {
+            "client_msg_id": "2cab7386-7ea2-43fd-bca1-d1d0d3d381eb",
+            "type": "message",
+            "text": "```typedef struct ALLEGRO_COLOR ALLEGRO_COLOR;```\n\nAn ALLEGRO_COLOR structure describes a color in a device independent way. Use al_map_rgb et al. and al_unmap_rgb et al. to translate from and to various color representations.",
+            "user": "UB659D0FM",
+            "ts": "1539891764.000100"
+        },
+        {
+            "client_msg_id": "f458cb71-ac42-4c0c-bc11-e5fe56c3978b",
+            "type": "message",
+            "text": "What is the coordinate system for x and y?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891743.000100"
+        },
+        {
+            "client_msg_id": "277cc130-dd12-4564-b839-928802cbc0f6",
+            "type": "message",
+            "text": "The x and y variables are floats. The function al_draw_text Writes the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.",
+            "user": "UB659D0FM",
+            "ts": "1539891722.000200"
+        },
+        {
+            "client_msg_id": "470126d8-22fc-4f2c-9300-6b98a77833a6",
+            "type": "message",
+            "text": "What are possible values for ALLEGRO_COLOR?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891680.000100"
+        },
+        {
+            "client_msg_id": "e2019b72-61bf-482a-b12d-bf08ea2ccf08",
+            "type": "message",
+            "text": "What are the values x and y in al_draw_text?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891615.000100"
+        },
+        {
+            "client_msg_id": "4372b15e-6b81-4eea-bf21-e538963bff56",
+            "type": "message",
+            "text": "al_destroy_font\n\n```void al_destroy_font(ALLEGRO_FONT *f)```\n\nFrees the memory being used by a font structure. Does nothing if passed NULL.",
+            "user": "UB659D0FM",
+            "ts": "1539891576.000200"
+        },
+        {
+            "client_msg_id": "269f7ad4-9d94-4e4c-9164-1eb197c75be2",
+            "type": "message",
+            "text": "How can I free a font?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891538.000100"
+        },
+        {
+            "client_msg_id": "d41e8cae-3eec-4c0b-91a6-d7bf233495a5",
+            "type": "message",
+            "text": "I found this list of supported values for the int flags:\n\nALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.\n\nALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).\n\nALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2",
+            "user": "UB659D0FM",
+            "ts": "1539891489.000200"
+        },
+        {
+            "client_msg_id": "a4ca9d5d-c822-4865-b6be-968870f5a3da",
+            "type": "message",
+            "text": "I found a description of the int size for the similar method al_load_ttf_font:\n\nThe size parameter determines the size the font will be rendered at, specified in pixels.",
+            "user": "UB659D0FM",
+            "ts": "1539891428.000100"
+        },
+        {
+            "client_msg_id": "53f8415c-4759-4db2-bdf5-408d2d7525dd",
+            "type": "message",
+            "text": "What are possible values for flags?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891412.000100"
+        },
+        {
+            "client_msg_id": "4b0064ff-3b57-40f5-8e0f-e1b9aee113ac",
+            "type": "message",
+            "text": "What is the size of a font?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891377.000100"
+        },
+        {
+            "client_msg_id": "7f2a1b4c-e7df-44de-af89-a24945e6e17f",
+            "type": "message",
+            "text": "The size parameter is an int.\n\nThe flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.",
+            "user": "UB659D0FM",
+            "ts": "1539891336.000100"
+        },
+        {
+            "client_msg_id": "ef84c510-72b6-42d2-804c-6b815c9e7672",
+            "type": "message",
+            "text": "What are the parameters size and flags?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891290.000100"
+        },
+        {
+            "client_msg_id": "8d3008bb-0802-4be8-9a78-2b927f31aaf0",
+            "type": "message",
+            "text": "The simplest method to Load a font is al_load_font:\n\n```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```\n\nLoads a font from disk.",
+            "user": "UB659D0FM",
+            "ts": "1539891229.000100"
+        },
+        {
+            "client_msg_id": "d4d215ff-0bb7-4281-b5c6-659d6c0ea3c6",
+            "type": "message",
+            "text": "How can I load a font?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891204.000100"
+        },
+        {
+            "client_msg_id": "306e1c3d-bc95-485b-8ba6-022a809479e8",
+            "type": "message",
+            "text": "```bool al_init_font_addon(void)```\n\nInitialise the font addon.",
+            "user": "UB659D0FM",
+            "ts": "1539891133.000100"
+        },
+        {
+            "client_msg_id": "3fd6c0d9-f788-473a-9667-6dfee42bcbe3",
+            "type": "message",
+            "text": "How can I initialize the ALLEGRO_FONT add-on?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891115.000100"
+        },
+        {
+            "client_msg_id": "cc35df24-970c-4b93-9dcb-89d02ac36423",
+            "type": "message",
+            "text": "The simplest method to Display text in window frame is al_draw_text:\n\n```void al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) ```\n\nThis requires the ALLEGRO_FONT add-on.",
+            "user": "UB659D0FM",
+            "ts": "1539891092.000200"
+        },
+        {
+            "client_msg_id": "2878a708-4b96-4306-9262-b451b9cabc2b",
+            "type": "message",
+            "text": "How can I display text within the window frame?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539891013.000100"
+        },
+        {
+            "client_msg_id": "b1ebdd7f-7f36-4e74-9e3a-90e688c0c64e",
+            "type": "message",
+            "text": "ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.",
+            "user": "UB659D0FM",
+            "ts": "1539890909.000200"
+        },
+        {
+            "client_msg_id": "1258dc00-f8fb-4edf-95a9-3ee2fc2f87c8",
+            "type": "message",
+            "text": "What is the purpose of the last parameter in al_play_sample? (ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890895.000100"
+        },
+        {
+            "client_msg_id": "760d1b73-2b15-4320-a541-6d06c5b48bbb",
+            "type": "message",
+            "text": "enum ALLEGRO_PLAYMODE\n\nDescription: Sample and stream playback mode.\n\nValues:\nALLEGRO_PLAYMODE_ONCE\nALLEGRO_PLAYMODE_LOOP\nALLEGRO_PLAYMODE_BIDIR",
+            "user": "UB659D0FM",
+            "ts": "1539890884.000100"
+        },
+        {
+            "client_msg_id": "f990e140-af7e-4ade-b523-fa0c60d01338",
+            "type": "message",
+            "text": "What are possible values for ALLEGRO_PLAYNODE?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890847.000100"
+        },
+        {
+            "client_msg_id": "16706e4a-6d32-4f94-b67f-136651319a8e",
+            "type": "message",
+            "text": "al_destroy_sample should work:\n\n```void al_destroy_sample(ALLEGRO_SAMPLE *spl)```\n\nFree the sample data structure.",
+            "user": "UB659D0FM",
+            "ts": "1539890814.000200"
+        },
+        {
+            "client_msg_id": "dfbb3b2e-3c87-404f-9e85-79958aaf098f",
+            "type": "message",
+            "text": "is there a function to free samples?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890780.000200"
+        },
+        {
+            "client_msg_id": "711fc974-70cc-466f-b13c-615395bd3681",
+            "type": "message",
+            "text": "al_reserve_samples Returns true on success, false on error.\n\nal_load_sample Returns the sample on success, NULL on failure.",
+            "user": "UB659D0FM",
+            "ts": "1539890738.000100"
+        },
+        {
+            "client_msg_id": "c3be92be-8bdf-43c4-b1bc-6157258b7165",
+            "type": "message",
+            "text": "Is this created by al_reserve_samples?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890686.000100"
+        },
+        {
+            "client_msg_id": "fadbcc77-b70f-43a1-9a95-eadd7b819170",
+            "type": "message",
+            "text": "plauy",
+            "user": "UB659D0FM",
+            "ts": "1539890618.000200"
+        },
+        {
+            "client_msg_id": "7ea137c9-78cf-4b8f-8568-2de94fd5e5fa",
+            "type": "message",
+            "text": "Audio samples are contained within the ALLEGRO_SAMPLE struct.",
+            "user": "UB659D0FM",
+            "ts": "1539890600.000200"
+        },
+        {
+            "client_msg_id": "a4e56cd7-f5d6-4eb2-b4cf-d1318c9a48ae",
+            "type": "message",
+            "text": "Where are the samples allocated?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890537.000100"
+        },
+        {
+            "client_msg_id": "cecf15d7-2475-41d8-aca9-a943f9c62606",
+            "type": "message",
+            "text": "*Reserve audio samples:\n\n```bool al_reserve_samples(int reserve_samples)```\nReserves a number of sample instances, attaching them to the default mixer.\n\n*Load audio samples:\n\n```ALLEGRO_SAMPLE *al_load_sample(const char *filename)```\nLoads a few different audio file formats based on their extension.",
+            "user": "UB659D0FM",
+            "ts": "1539890446.000100"
+        },
+        {
+            "client_msg_id": "da37c557-e940-41dc-8401-611691021506",
+            "type": "message",
+            "text": "How can I reserve and load audio samples?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890412.000100"
+        },
+        {
+            "client_msg_id": "f9501bda-e39f-4668-86d9-84a86d3e5591",
+            "type": "message",
+            "text": "```bool al_init_acodec_addon(void)```\n\nThis function registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.",
+            "user": "UB659D0FM",
+            "ts": "1539890352.000100"
+        },
+        {
+            "client_msg_id": "8829a52c-e9fe-482d-a3bb-f79f3e2d17ab",
+            "type": "message",
+            "text": "How can I install an audio codec addon?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890347.000100"
+        },
+        {
+            "client_msg_id": "389e3cfc-4fb8-4b26-aa93-18f2d15e27b5",
+            "type": "message",
+            "text": "This should install the audio subsystem:\n\n```bool al_install_audio(void)```\n\nInstall the audio subsystem.",
+            "user": "UB659D0FM",
+            "ts": "1539890302.000100"
+        },
+        {
+            "client_msg_id": "1a8c92a8-6e97-4641-8bc0-859bd7959158",
+            "type": "message",
+            "text": "How do I install the audio subsystem?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890274.000100"
+        },
+        {
+            "client_msg_id": "ac96e754-3dd2-4cba-802c-7f56f60174ec",
+            "type": "message",
+            "text": "The simplest method to Play Sound is al_play_sample:\n\n```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```\n\nTo use al_play_sample, you must first install the audio subsystem, the audio codec addon, reserve samples, and load sample",
+            "user": "UB659D0FM",
+            "ts": "1539890210.000100"
+        },
+        {
+            "client_msg_id": "84c7841f-ce3e-433f-b1c6-6b2f37d63d95",
+            "type": "message",
+            "text": "How can I play sound effects?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539890096.000100"
+        },
+        {
+            "client_msg_id": "d55eaa27-61d5-4e2f-80bf-0af3dc3a134a",
+            "type": "message",
+            "text": "keyboard.keycode (int)\nThe code corresponding to the physical key which was pressed.",
+            "user": "UB659D0FM",
+            "ts": "1539889766.000100"
+        },
+        {
+            "client_msg_id": "3c8e534c-eb63-4335-97c5-aa85a0aaf2e0",
+            "type": "message",
+            "text": "What type is event.keyboard.keycode",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889678.000200"
+        },
+        {
+            "client_msg_id": "911ca13d-c00b-430e-870c-c79358cfc912",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_SOURCE *al_get_keyboard_event_source(void)",
+            "user": "UB659D0FM",
+            "ts": "1539889501.000100"
+        },
+        {
+            "client_msg_id": "b1eb6ca5-7a7c-4c1d-8873-4995b1f7e43b",
+            "type": "message",
+            "text": "What is the parameter list for al_get_keyboard_event_source?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889472.000100"
+        },
+        {
+            "client_msg_id": "041023f0-5f7f-4675-9111-b4be7baeadac",
+            "type": "message",
+            "text": "To get keyboard input, you can utilize the ALLEGRO_EVENT struct. The event types ALLEGRO_EVENT_KEY_DOWN, ALLEGRO_EVENT_KEY_UP, and ALLEGRO_EVENT_KEY_CHAR allow you to get keys pressed or released in event.keyboard.keycode",
+            "user": "UB659D0FM",
+            "ts": "1539889406.000100"
+        },
+        {
+            "client_msg_id": "61ff97ae-18b4-41f6-a297-232068ae3d53",
+            "type": "message",
+            "text": "How can I implement keyboard input?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889296.000100"
+        },
+        {
+            "client_msg_id": "e84b9063-7a10-4459-bc1b-df99f9643521",
+            "type": "message",
+            "text": "void al_uninstall_keyboard(void)",
+            "user": "UB659D0FM",
+            "ts": "1539889266.000200"
+        },
+        {
+            "client_msg_id": "71e5291e-ff35-4441-9811-4aefa2461513",
+            "type": "message",
+            "text": "What is the parameter list of al_uninstall_keyboard",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889244.000200"
+        },
+        {
+            "client_msg_id": "a6d42334-9d2a-433a-a06e-08c576cd7edc",
+            "type": "message",
+            "text": "Returns true if successful. If a driver was already installed, nothing happens and true is returned.",
+            "user": "UB659D0FM",
+            "ts": "1539889158.000100"
+        },
+        {
+            "client_msg_id": "24501de8-a18d-4525-ba49-b7865b5bf533",
+            "type": "message",
+            "text": "When does ai_install_keyboard return true?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889142.000100"
+        },
+        {
+            "client_msg_id": "d196a3a0-7821-4c6f-917b-d733f0b9ed04",
+            "type": "message",
+            "text": "bool al_install_keyboard(void)",
+            "user": "UB659D0FM",
+            "ts": "1539889113.000100"
+        },
+        {
+            "client_msg_id": "cf66feb6-0067-40c9-b972-bc0cf7a45f32",
+            "type": "message",
+            "text": "what is the parameter list of ai_install_keyboard",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889095.000100"
+        },
+        {
+            "client_msg_id": "8b9061bd-5f55-454d-9321-a050f63bba1f",
+            "type": "message",
+            "text": "I found the following functions labelled as \u201cKeyboard routines\u201d:\n\nal_install_keyboard\nal_is_keyboard_installed\nal_uninstall_keyboard\nal_get_keyboard_state\nal_clear_keyboard_state\nal_key_down\nal_keycode_to_name\nal_set_keyboard_leds\nal_get_keyboard_event_source",
+            "user": "UB659D0FM",
+            "ts": "1539889042.000200"
+        },
+        {
+            "client_msg_id": "4b109ad2-771b-442b-bc84-ce485563db67",
+            "type": "message",
+            "text": "What functions are provided for keyboard input?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539889002.000100"
+        },
+        {
+            "client_msg_id": "ec1613ff-e170-4a80-bdca-34a68ac81d77",
+            "type": "message",
+            "text": "Hi! I am Apiza, a virtual assistant built to help you navigate the Allegro API. How can I help you?",
+            "user": "UB659D0FM",
+            "ts": "1539888889.000100"
+        },
+        {
+            "client_msg_id": "eca27f27-810a-41ae-9f10-d4bcdffaed73",
+            "type": "message",
+            "text": "Anyone there?",
+            "user": "UDH7Q6XNY",
+            "ts": "1539888880.000100"
+        }
+    ],
+    "has_more": false
+}

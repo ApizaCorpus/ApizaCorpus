@@ -1,0 +1,29 @@
+Zack [8:55 PM]
+Alright, you can finish up!
+
+How'd it go?
+
+Programmer_27 [8:56 PM]
+It went alright. I managed to get 6 of the tasks done, and Apiza was mostly helpful
+Most of the time the first answer given by Apiza directly answered the question
+
+Zack [8:57 PM]
+Wow, that's great, nicely done!
+
+Programmer_27 [8:58 PM]
+The wait was a bit annoying though. I'm used to getting answers (well, search results) within a few seconds of entering a query. Though I suppose you'll improve the response time as the system is developed further.
+
+...
+
+Programmer_27 [9:28 PM]
+I found myself holding back on the complexity of my questions. I think it was the delay - I didn't want to waste several minutes asking questions that it didn't understand, so nearly all my questions were simple "how to I do x"-style questions.
+I would have liked to see how far it could take a dialogue
+
+Zack [9:31 PM]
+Gotcha :slightly_smiling_face: Are there any particular features that come to mind that you would hope/expect to see in a full implementation of a system like this?
+
+Programmer_27 [9:32 PM]
+Does it give examples? I never asked it for any example code, so it could already be there, but I find when learning a new API I usually go to simple examples.
+
+Zack [9:33 PM]
+It can to a limited extent. Good to hear that that would be a feature of interest!

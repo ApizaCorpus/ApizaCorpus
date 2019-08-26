@@ -1,0 +1,80 @@
+```
+int ssh_options_set(ssh_session session,
+enum ssh_options_e type,
+const void * value 
+)
+```
+Description
+This function can set all possible ssh options.
+Parameters
+session: An allocated SSH session structure.
+type: The option type to set. This could be one of the following:
+SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *).
+SSH_OPTIONS_PORT: The port to connect to (unsigned int).
+SSH_OPTIONS_PORT_STR: The port to connect to (const char *).
+SSH_OPTIONS_FD: The file descriptor to use (socket_t).
+If you wish to open the socket yourself for a reason or another, set the file descriptor. Don't forget to set the hostname as the hostname is used as a key in the known_host mechanism.
+SSH_OPTIONS_BINDADDR: The address to bind the client to (const char *).
+SSH_OPTIONS_USER: The username for authentication (const char *).
+If the value is NULL, the username is set to the default username.
+SSH_OPTIONS_SSH_DIR: Set the ssh directory (const char *,format string).
+If the value is NULL, the directory is set to the default ssh directory.
+The ssh directory is used for files like known_hosts and identity (private and public key). It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_KNOWNHOSTS: Set the known hosts file name (const char *,format string).
+If the value is NULL, the directory is set to the default known hosts file, normally ~/.ssh/known_hosts.
+The known hosts file is used to certify remote hosts are genuine. It may include "%d" which will be replaced by the user home directory.
+SSH_OPTIONS_GLOBAL_KNOWNHOSTS: Set the global known hosts file name (const char *,format string).
+If the value is NULL, the directory is set to the default global known hosts file, normally /etc/ssh/ssh_known_hosts.
+The known hosts file is used to certify remote hosts are genuine.
+SSH_OPTIONS_ADD_IDENTITY (or SSH_OPTIONS_IDENTITY): Add a new identity file (const char *, format string) to the identity list.
+By default identity, id_dsa and id_rsa are checked.
+The identity used to authenticate with public key will be prepended to the list. It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_TIMEOUT: Set a timeout for the connection in seconds (long).
+SSH_OPTIONS_TIMEOUT_USEC: Set a timeout for the connection in micro seconds (long).
+SSH_OPTIONS_SSH1: Allow or deny the connection to SSH1 servers (int, 0 is false).
+SSH_OPTIONS_SSH2: Allow or deny the connection to SSH2 servers (int, 0 is false).
+SSH_OPTIONS_LOG_VERBOSITY: Set the session logging verbosity (int).
+The verbosity of the messages. Every log smaller or equal to verbosity will be shown.
+SSH_LOG_NOLOG: No logging
+SSH_LOG_RARE: Rare conditions or warnings
+SSH_LOG_ENTRY: API-accessible entrypoints
+SSH_LOG_PACKET: Packet id and size
+SSH_LOG_FUNCTIONS: Function entering and leaving
+SSH_OPTIONS_LOG_VERBOSITY_STR: Set the session logging verbosity (const char *).
+The verbosity of the messages. Every log smaller or equal to verbosity will be shown.
+SSH_LOG_NOLOG: No logging
+SSH_LOG_RARE: Rare conditions or warnings
+SSH_LOG_ENTRY: API-accessible entrypoints
+SSH_LOG_PACKET: Packet id and size
+SSH_LOG_FUNCTIONS: Function entering and leaving 
+See the corresponding numbers in libssh.h.
+SSH_OPTIONS_AUTH_CALLBACK: Set a callback to use your own authentication function (function pointer).
+SSH_OPTIONS_AUTH_USERDATA: Set the user data passed to the authentication function (generic pointer).
+SSH_OPTIONS_LOG_CALLBACK: Set a callback to use your own logging function (function pointer).
+SSH_OPTIONS_LOG_USERDATA: Set the user data passed to the logging function (generic pointer).
+SSH_OPTIONS_STATUS_CALLBACK: Set a callback to show connection status in realtime (function pointer).
+fn(void *arg, float status)
+During ssh_connect(), libssh will call the callback with status from 0.0 to 1.0.
+SSH_OPTIONS_STATUS_ARG: Set the status argument which should be passed to the status callback (generic pointer).
+SSH_OPTIONS_CIPHERS_C_S: Set the symmetric cipher client to server (const char *, comma-separated list).
+SSH_OPTIONS_CIPHERS_S_C: Set the symmetric cipher server to client (const char *, comma-separated list).
+SSH_OPTIONS_KEY_EXCHANGE: Set the key exchange method to be used (const char *, comma-separated list). ex: "ecdh-sha2-nistp256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1"
+SSH_OPTIONS_HOSTKEYS: Set the preferred server host key types (const char *, comma-separated list). ex: "ssh-rsa,ssh-dss,ecdh-sha2-nistp256"
+SSH_OPTIONS_COMPRESSION_C_S: Set the compression to use for client to server communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION_S_C: Set the compression to use for server to client communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION: Set the compression to use for both directions communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION_LEVEL: Set the compression level to use for zlib functions. (int, value from 1 to 9, 9 being the most efficient but slower).
+SSH_OPTIONS_STRICTHOSTKEYCHECK: Set the parameter StrictHostKeyChecking to avoid asking about a fingerprint (int, 0 = false).
+SSH_OPTIONS_PROXYCOMMAND: Set the command to be executed in order to connect to server (const char *).
+SSH_OPTIONS_GSSAPI_SERVER_IDENTITY Set it to specify the GSSAPI server identity that libssh should expect when connecting to the server (const char *).
+SSH_OPTIONS_GSSAPI_CLIENT_IDENTITY Set it to specify the GSSAPI client identity that libssh should expect when connecting to the server (const char *).
+SSH_OPTIONS_GSSAPI_DELEGATE_CREDENTIALS Set it to specify that GSSAPI should delegate credentials to the server (int, 0 = false).
+SSH_OPTIONS_PASSWORD_AUTH Set it if password authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use password authentication).
+SSH_OPTIONS_PUBKEY_AUTH Set it if pubkey authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false).
+SSH_OPTIONS_KBDINT_AUTH Set it if keyboard-interactive authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use keyboard-interactive authentication).
+SSH_OPTIONS_GSSAPI_AUTH Set it if gssapi authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use gssapi authentication).
+SSH_OPTIONS_NODELAY Set it to disable Nagle's Algorithm (TCP_NODELAY) on the session socket. (int, 0=false)
+Parameters
+value: The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.
+Returns
+0 on success, < 0 on error.

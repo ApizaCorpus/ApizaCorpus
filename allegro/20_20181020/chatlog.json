@@ -1,0 +1,368 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "a127ed40-213a-42c0-9778-227b8a066aae",
+            "type": "message",
+            "text": "I'm sorry, I don't have an example of that.",
+            "user": "UB659D0FM",
+            "ts": "1540053357.000100"
+        },
+        {
+            "client_msg_id": "6b8fa3a3-f0b4-4361-b1a5-720030434780",
+            "type": "message",
+            "text": "show me example of using al_draw_scaled_bitmap",
+            "user": "UDJL9AM7U",
+            "ts": "1540053333.000200"
+        },
+        {
+            "client_msg_id": "dbd1a6f8-af8a-4a2b-9176-3c70ff58f4a0",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nvoid al_draw_scaled_bitmap(ALLEGRO_BITMAP *bitmap,\n   float sx, float sy, float sw, float sh,\n   float dx, float dy, float dw, float dh, int flags)\n```",
+            "user": "UB659D0FM",
+            "ts": "1540053311.000200"
+        },
+        {
+            "client_msg_id": "50d63aab-660c-42c6-848c-4cc81c1fa88e",
+            "type": "message",
+            "text": "how to resize a bitmap",
+            "user": "UDJL9AM7U",
+            "ts": "1540053235.000100"
+        },
+        {
+            "client_msg_id": "adc29579-0382-4602-b9ad-30b8ec522515",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nALLEGRO_BITMAP *al_load_bitmap(const char *filename)\n```",
+            "user": "UB659D0FM",
+            "ts": "1540053216.000100"
+        },
+        {
+            "client_msg_id": "735a2b38-f41b-4f0b-8b01-63f6403ec485",
+            "type": "message",
+            "text": "how to load an image into a bitmap",
+            "user": "UDJL9AM7U",
+            "ts": "1540053160.000100"
+        },
+        {
+            "client_msg_id": "e3698cac-1a7a-473c-ad9d-ae350fc8942d",
+            "type": "message",
+            "text": "Here is an example of using bitmaps:\n\n<https:\/\/wiki.allegro.cc\/index.php?title=Allegro_5_Tutorial\/Bitmaps>",
+            "user": "UB659D0FM",
+            "ts": "1540052932.000100"
+        },
+        {
+            "client_msg_id": "e13c0726-8c39-489f-a22b-9b04bc3f19b4",
+            "type": "message",
+            "text": "show me example of creating a bitmap from an image",
+            "user": "UDJL9AM7U",
+            "ts": "1540052886.000100"
+        },
+        {
+            "client_msg_id": "96601ee3-85e7-46f9-8ccb-34af521b14cb",
+            "type": "message",
+            "text": "I'm sorry, I don't have an example of enabling trace messages.",
+            "user": "UB659D0FM",
+            "ts": "1540052831.000200"
+        },
+        {
+            "client_msg_id": "005ac1a5-5469-43a2-943d-ae9c72b62b59",
+            "type": "message",
+            "text": "show me example of enabling trace messages",
+            "user": "UDJL9AM7U",
+            "ts": "1540052763.000100"
+        },
+        {
+            "client_msg_id": "edeff885-0271-4be4-a5c9-4b017b667109",
+            "type": "message",
+            "text": "I'm sorry, I don't have an example of debugging allegro.",
+            "user": "UB659D0FM",
+            "ts": "1540052693.000100"
+        },
+        {
+            "client_msg_id": "2e1db56a-a6ad-4e6e-8156-38612f3d988c",
+            "type": "message",
+            "text": "Here is an example of using dialog:\n\n<https:\/\/wiki.allegro.cc\/index.php?title=Showing_a_basic_native_GUI_message_box>",
+            "user": "UB659D0FM",
+            "ts": "1540052666.000200"
+        },
+        {
+            "client_msg_id": "4d897966-aa2b-4d8a-b76b-922d66dda6ad",
+            "type": "message",
+            "text": "show me example of debugging allegro",
+            "user": "UDJL9AM7U",
+            "ts": "1540052602.000100"
+        },
+        {
+            "client_msg_id": "fbe03317-ff8b-43cc-831d-3a3538c53575",
+            "type": "message",
+            "text": "show me example of using al_open_native_text_log",
+            "user": "UDJL9AM7U",
+            "ts": "1540052572.000100"
+        },
+        {
+            "client_msg_id": "987eeb46-0991-4ab4-8c3d-43a85dc2e0a6",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nALLEGRO_TEXTLOG *al_open_native_text_log(char const *title, int flags)\n```",
+            "user": "UB659D0FM",
+            "ts": "1540052532.000200"
+        },
+        {
+            "client_msg_id": "4aae4bf4-5211-45b1-a424-5a17e2e739ad",
+            "type": "message",
+            "text": "how to enable Allegro logging",
+            "user": "UDJL9AM7U",
+            "ts": "1540052443.000100"
+        },
+        {
+            "type": "message",
+            "text": "",
+            "files": [
+                {
+                    "id": "FDL38H6PQ",
+                    "created": 1540052286,
+                    "timestamp": 1540052286,
+                    "name": "-.txt",
+                    "title": "Untitled",
+                    "mimetype": "text\/plain",
+                    "filetype": "text",
+                    "pretty_type": "Plain Text",
+                    "user": "UB659D0FM",
+                    "editable": true,
+                    "size": 4590,
+                    "mode": "snippet",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FDL38H6PQ\/-.txt",
+                    "url_private_download": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FDL38H6PQ\/download\/-.txt",
+                    "permalink": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FDL38H6PQ\/-.txt",
+                    "permalink_public": "https:\/\/slack-files.com\/T9H4718E4-FDL38H6PQ-7c59b02920",
+                    "edit_link": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FDL38H6PQ\/-.txt\/edit",
+                    "preview": "Here is the source code for `al_load_ttf_font_stretch_f`:\r\n```\r\n\/* Function: al_load_ttf_font_stretch_f\r\n *\/\r\nALLEGRO_FONT *al_load_ttf_font_stretch_f(ALLEGRO_FILE *file,\r",
+                    "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Here is the source code for `al_load_ttf_font_stretch_f`:<\/pre><\/div>\n<div><pre>```<\/pre><\/div>\n<div><pre>\/* Function: al_load_ttf_font_stretch_f<\/pre><\/div>\n<div><pre> *\/<\/pre><\/div>\n<div><pre>ALLEGRO_FONT *al_load_ttf_font_stretch_f(ALLEGRO_FILE *file,<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                    "lines": 141,
+                    "lines_more": 136,
+                    "preview_is_truncated": true
+                }
+            ],
+            "upload": true,
+            "user": "UB659D0FM",
+            "display_as_bot": false,
+            "ts": "1540052287.000100"
+        },
+        {
+            "client_msg_id": "171bb14a-3d28-4252-8568-09db9c89842a",
+            "type": "message",
+            "text": "show me source code for al_load_ttf_font_stretch_f",
+            "user": "UDJL9AM7U",
+            "ts": "1540052200.000100"
+        },
+        {
+            "client_msg_id": "e534e150-9062-4334-92de-47231c6b09f6",
+            "type": "message",
+            "text": "Here is the source code for `al_load_ttf_font_stretch`:\n```\n\/* Function: al_load_ttf_font_stretch\n *\/\nALLEGRO_FONT *al_load_ttf_font_stretch(char const *filename, int w, int h,\n   int flags)\n{\n   ALLEGRO_FILE *f;\n   ALLEGRO_FONT *font;\n   ASSERT(filename);\n\n   f = al_fopen(filename, \"rb\");\n   if (!f) {\n      ALLEGRO_ERROR(\"Unable to open file for reading: %s\\n\", filename);\n      return NULL;\n   }\n\n   \/* The file handle is owned by the function and the file is usually only\n    * closed when the font is destroyed, in case Freetype has to load data\n    * at a later time.\n    *\/\n   font = al_load_ttf_font_stretch_f(f, filename, w, h, flags);\n\n   return font;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1540052170.000100"
+        },
+        {
+            "client_msg_id": "bce124df-c15c-416f-aac4-8f7a1d7efff7",
+            "type": "message",
+            "text": "show me source code for al_load_ttf_font_stretch",
+            "user": "UDJL9AM7U",
+            "ts": "1540052157.000100"
+        },
+        {
+            "client_msg_id": "5f942865-aba6-4d64-94c6-789ddeff003e",
+            "type": "message",
+            "text": "Here is the source code for `al_load_ttf_font`:\n```\n\/* Function: al_load_ttf_font\n *\/\nALLEGRO_FONT *al_load_ttf_font(char const *filename, int size, int flags)\n{\n   return al_load_ttf_font_stretch(filename, 0, size, flags);\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1540052052.000100"
+        },
+        {
+            "client_msg_id": "14ccc448-13f3-4bd2-a940-cfc822279e17",
+            "type": "message",
+            "text": "when does al_load_ttf_font return NULL",
+            "user": "UDJL9AM7U",
+            "ts": "1540051972.000100"
+        },
+        {
+            "client_msg_id": "a5425058-eb61-4366-b7f2-33ae97495ec1",
+            "type": "message",
+            "text": "I'm sorry, I'm not sure how to answer that question.",
+            "user": "UB659D0FM",
+            "ts": "1540051917.000100"
+        },
+        {
+            "client_msg_id": "bfb377c8-0663-4870-aa5a-83ab9e7b5088",
+            "type": "message",
+            "text": "what are the reasons al_load_ttf_font fails?",
+            "user": "UDJL9AM7U",
+            "ts": "1540051857.000100"
+        },
+        {
+            "client_msg_id": "0cc00b1c-671c-4e71-a0ba-35b2a9448b42",
+            "type": "message",
+            "text": "Here is the documentation for `al_load_ttf_font`:\n\n```\nLoads a TrueType font from a file using the FreeType library. Quoting from the FreeType FAQ this means support for many different font formats:\n\nTrueType, OpenType, Type1, CID, CFF, Windows FON\/FNT, X11 PCF, and others\n\nThe size parameter determines the size the font will be rendered at, specified in pixels. The standard font size is measured in units per EM, if you instead want to specify the size as the total height of glyphs in pixels, pass it as a negative value.\n\n    Note: If you want to display text at multiple sizes, load the font multiple times with different size parameters.\n\nThe following flags are supported:\n\n    ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.\n\n    ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).\n\n    ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2\n\nSee also: al_init_ttf_addon, al_load_ttf_font_f\n```",
+            "user": "UB659D0FM",
+            "ts": "1540051596.000100"
+        },
+        {
+            "client_msg_id": "159a27e5-d38f-4300-87a7-c3b89cf6893a",
+            "type": "message",
+            "text": "show me man page for  al_load_ttf_font",
+            "user": "UDJL9AM7U",
+            "ts": "1540051542.000100"
+        },
+        {
+            "client_msg_id": "a069d988-72c7-4df6-8378-b940b7b91924",
+            "type": "message",
+            "text": "Here is an example of drawing text:\n\n<https:\/\/wiki.allegro.cc\/index.php?title=Allegro_5_Tutorial\/Addons\/Fonts>",
+            "user": "UB659D0FM",
+            "ts": "1540050764.000100"
+        },
+        {
+            "client_msg_id": "da5ae1b2-03c3-4c2c-a575-80bdb923fdfd",
+            "type": "message",
+            "text": "show me example of using al_draw_text",
+            "user": "UDJL9AM7U",
+            "ts": "1540050732.000100"
+        },
+        {
+            "client_msg_id": "61cbdfda-bf70-43e5-bfd7-581f1efa32a9",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nint al_get_display_width(ALLEGRO_DISPLAY *display)\n```",
+            "user": "UB659D0FM",
+            "ts": "1540050676.000100"
+        },
+        {
+            "client_msg_id": "63b52f83-37cf-4a7f-8373-7fd2a4b7cf19",
+            "type": "message",
+            "text": "how to get size of display",
+            "user": "UDJL9AM7U",
+            "ts": "1540050643.000100"
+        },
+        {
+            "client_msg_id": "29916dd4-41df-4620-b2b9-debdf9a1f539",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) \n```",
+            "user": "UB659D0FM",
+            "ts": "1540050613.000100"
+        },
+        {
+            "client_msg_id": "dfce7c28-e7e2-461a-8656-963b6308f4fa",
+            "type": "message",
+            "text": "how to draw text on display",
+            "user": "UDJL9AM7U",
+            "ts": "1540050591.000100"
+        },
+        {
+            "client_msg_id": "f8ac9a33-e56f-4084-9aeb-d39a5a5a3bc9",
+            "type": "message",
+            "text": "Here is an example of using displays:\n\n<https:\/\/wiki.allegro.cc\/index.php?title=Allegro_5_Tutorial\/Displays>",
+            "user": "UB659D0FM",
+            "ts": "1540050431.000100"
+        },
+        {
+            "client_msg_id": "70d9a822-611a-4a75-a2ee-f72fb59d0236",
+            "type": "message",
+            "text": "give me example of display numbers to display",
+            "user": "UDJL9AM7U",
+            "ts": "1540050389.000100"
+        },
+        {
+            "client_msg_id": "52db988f-fed7-48e1-85af-667f77b051ee",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nALLEGRO_DISPLAY *al_create_display(int w, int h)\n```",
+            "user": "UB659D0FM",
+            "ts": "1540050321.000100"
+        },
+        {
+            "client_msg_id": "a133db06-7ce3-4e04-9d8d-19d576c7a02a",
+            "type": "message",
+            "text": "what is the function to display numbers on screen",
+            "user": "UDJL9AM7U",
+            "ts": "1540050178.000100"
+        },
+        {
+            "client_msg_id": "b85fc76a-58c0-43bb-80e4-22458802ba01",
+            "type": "message",
+            "text": "Here is an example of playing a wav file:\n\n<https:\/\/wiki.allegro.cc\/index.php?title=Allegro_5_Tutorial\/Addons\/Audio>",
+            "user": "UB659D0FM",
+            "ts": "1540049789.000100"
+        },
+        {
+            "client_msg_id": "81bf13f8-73bb-4f17-99a9-61d71d463f99",
+            "type": "message",
+            "text": "give me example of playing a wav file",
+            "user": "UDJL9AM7U",
+            "ts": "1540049760.000100"
+        },
+        {
+            "client_msg_id": "120ed0b8-746e-4f7b-8b7c-3883d36fcb9c",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nbool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)\n```",
+            "user": "UB659D0FM",
+            "ts": "1540049727.000100"
+        },
+        {
+            "client_msg_id": "6bc5a93c-43d2-45a1-ae76-b048a9a1708a",
+            "type": "message",
+            "text": "how to you play an audio wav file",
+            "user": "UDJL9AM7U",
+            "ts": "1540049681.000100"
+        },
+        {
+            "client_msg_id": "d8a61dfe-cec4-4c16-90cb-b3129dc11f85",
+            "type": "message",
+            "text": "Here is an example of keyboard input:\n\n<https:\/\/wiki.allegro.cc\/index.php?title=Basic_Keyboard_Example>",
+            "user": "UB659D0FM",
+            "ts": "1540048894.000200"
+        },
+        {
+            "client_msg_id": "957218ed-932c-41aa-a520-b7cee13921a5",
+            "type": "message",
+            "text": "give me example of al_key_down usage",
+            "user": "UDJL9AM7U",
+            "ts": "1540048819.000100"
+        },
+        {
+            "client_msg_id": "44b04b15-322a-443f-b106-d00b7f61871b",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```void al_clear_keyboard_state(ALLEGRO_DISPLAY *display)```",
+            "user": "UB659D0FM",
+            "ts": "1540048791.000100"
+        },
+        {
+            "client_msg_id": "f7f68e6f-806b-4777-85d3-59c732ea56d1",
+            "type": "message",
+            "text": "what is the api for allocating ALLEGRO_KEYBOARD_STATE?",
+            "user": "UDJL9AM7U",
+            "ts": "1540048750.000100"
+        },
+        {
+            "client_msg_id": "1dc5728f-7b76-44da-9612-578e7f041a36",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)```",
+            "user": "UB659D0FM",
+            "ts": "1540048676.000200"
+        },
+        {
+            "client_msg_id": "caad7772-2642-424f-830c-45e24578e7c8",
+            "type": "message",
+            "text": "what is the function to read keyboard input?",
+            "user": "UDJL9AM7U",
+            "ts": "1540048649.000100"
+        },
+        {
+            "client_msg_id": "dd9332ea-9d55-49d0-999d-ef36e3f6518f",
+            "type": "message",
+            "text": "what is the function to read keyboard input?",
+            "user": "UDJL9AM7U",
+            "ts": "1540048589.000100"
+        }
+    ],
+    "has_more": false
+}

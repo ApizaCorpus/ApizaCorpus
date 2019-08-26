@@ -1,0 +1,99 @@
+Programmer_1 [12:43 PM]
+how do I create a new ssh_session in libssh
+
+
+Apiza [12:45 PM]
+Are you looking for ssh_new(void )? Returns A new ssh_session pointer, NULL on error.
+
+Programmer_1 [12:54 PM]
+What is in ssh_session_struct for libssh?
+How do I connect to localhost in libssh
+
+Apiza [12:55 PM]
+The ssh::Session class contains the state of a SSH connection.
+I found the following similar to "connect" and "localhost": ssh_connect() and ssh_options_getopt()
+
+Programmer_1 [12:58 PM]
+Show me an example of connecting to localhost with libssh
+
+Apiza [1:00 PM]
+To connect to a particular host, you may use ssh_options_set(ssh_session session, enum ssh_options_e type, const void * value ) using the parameter SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *).
+For example: ssh_options_set(my_session, SSH_OPTIONS_HOST, "localhost");
+
+Programmer_1 [1:03 PM]
+What does ssh_connect return?
+
+Apiza [1:04 PM]
+Returns SSH_OK on success, SSH_ERROR on error. SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+Programmer_1 [1:05 PM]
+Please list the functions in libssh
+
+Apiza [1:07 PM]
+There are many functions in libssh. Can you specify what kind of function you are looking for?
+
+Programmer_1 [1:12 PM]
+How do I authenticate the server in libssh?
+How do I disconnect from the server and free the session?
+How do I disconnect from the server?
+How do I free the session in libssh?
+
+Apiza [1:13 PM]
+Are you looking for ssh_is_server_known()?  Checks the user's known host file for a previous connection to the current server.
+Are you looking for ssh_disconnect(), ssh_silent_disconnect(), or ssh_free()?
+You may ask for more information about any of these functions.
+
+Programmer_1 [1:15 PM]
+What does ssh_is_server_known return in libssh?
+What does ssh_disconnect return in libssh
+What does ssh_free return in libssh?
+
+Apiza [1:16 PM]
+ssh_is_server_known returns SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+ssh_disconnect returns void.
+ssh_free returns void.
+
+Programmer_1 [1:20 PM]
+How do I create a new ssh_channel in libssh?
+What object type is an ssh_channel?
+
+Apiza [1:21 PM]
+You may be looking for ssh_channel_new(). Allocate a new channel.
+The ssh::Channel class describes the state of an SSH channel.
+
+Programmer_1 [1:28 PM]
+How do I send a command over an ssh:Channel
+How do I close a channel?
+How do I free a channel?
+
+Apiza [1:28 PM]
+Are you looking for ssh_channel_request_exec()?  Run a shell command without an interactive shell. This is similar to 'sh -c command'.
+You may be looking for ssh_channel_close().
+You may be looking for ssh_channel_free().
+
+Programmer_1 [1:29 PM]
+How do I create an sftp_session?
+How do I initialize an sftp_session in libssh?
+What parameters does ssh_channel_request_exec take?
+
+Apiza [1:31 PM]
+You may be looking for sftp_new(). Start a new sftp session.
+
+Programmer_1 [1:32 PM]
+How do I get the output from ssh_channel_request_exec?
+
+Apiza [1:32 PM]
+ssh_channel_request_exec(ssh_channel channel, const char * cmd). Parameters are 1) channel: The channel to execute the command. 2) cmd: The command to execute (e.g. "ls ~/ -al | grep -i reports").
+ssh_channel_request_exec returns SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_1 [1:36 PM]
+How do I read the response from ssh_channel_request_exec?
+How do I read from a channel in libssh?
+
+Apiza [1:37 PM]
+You may be looking for ssh_channel_read(ssh_channel channel, void * dest, uint32_t count, int is_stderr ). Reads data from a channel. Returns The number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.

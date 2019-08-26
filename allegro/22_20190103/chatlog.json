@@ -1,0 +1,560 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "bfc27465-d962-402f-a364-9cb9a41925b5",
+            "type": "message",
+            "text": "There are a few more steps that I can see: the first is to initialize the acodec table. This can be done with the function bool al_init_acodec_addon(void)",
+            "user": "UB659D0FM",
+            "ts": "1546546473.023200"
+        },
+        {
+            "client_msg_id": "dd560f6b-bc41-4b8e-9ad9-8a61aadf7782",
+            "type": "message",
+            "text": "allegro initialized and the audio driver installed but al_load_sample cannot load wav file",
+            "user": "UF5P58M0U",
+            "ts": "1546546432.023000"
+        },
+        {
+            "client_msg_id": "9e2a1d4a-a3ed-4f70-ad2e-4463726d6293",
+            "type": "message",
+            "text": "function bool al_install_audio(void)",
+            "user": "UB659D0FM",
+            "ts": "1546546270.022500"
+        },
+        {
+            "client_msg_id": "cdd4facb-f9d3-4904-bb25-176d0a509540",
+            "type": "message",
+            "text": "How to install audio driver?",
+            "user": "UF5P58M0U",
+            "ts": "1546546248.022300"
+        },
+        {
+            "client_msg_id": "7f2f143a-fc54-4296-9d6e-c658e6a761f1",
+            "type": "message",
+            "text": "is allegro initialized and the audio driver installed?",
+            "user": "UB659D0FM",
+            "ts": "1546546230.022000"
+        },
+        {
+            "client_msg_id": "ca99efbb-a585-4016-97df-cd6663b4a1da",
+            "type": "message",
+            "text": "NULL",
+            "user": "UF5P58M0U",
+            "ts": "1546546196.021800"
+        },
+        {
+            "client_msg_id": "d1114c81-eced-48f7-a5e1-5ddeeea01e4d",
+            "type": "message",
+            "text": "what is al_load_sample() returning?",
+            "user": "UB659D0FM",
+            "ts": "1546546187.021600"
+        },
+        {
+            "client_msg_id": "7e024186-8f62-455a-a6e1-db85359b7354",
+            "type": "message",
+            "text": "Yes",
+            "user": "UF5P58M0U",
+            "ts": "1546546177.021400"
+        },
+        {
+            "client_msg_id": "c3ce336c-972b-4a08-b820-b5f5dfb186d2",
+            "type": "message",
+            "text": "is the file in the same directory as the source code?",
+            "user": "UB659D0FM",
+            "ts": "1546546168.021200"
+        },
+        {
+            "client_msg_id": "43b4a189-e82d-420b-badc-f8a06ccfb417",
+            "type": "message",
+            "text": "al_load_sample is not loading wav file",
+            "user": "UF5P58M0U",
+            "ts": "1546546142.021000"
+        },
+        {
+            "client_msg_id": "a36c2bc5-e611-4279-8965-491caec41fd4",
+            "type": "message",
+            "text": "I am unsure, maybe they are not being triggered?",
+            "user": "UB659D0FM",
+            "ts": "1546545903.020600"
+        },
+        {
+            "client_msg_id": "4c6d2470-6b4a-476b-835c-bfca09063791",
+            "type": "message",
+            "text": "I want get error messages from library?",
+            "user": "UF5P58M0U",
+            "ts": "1546545856.020400"
+        },
+        {
+            "client_msg_id": "c8c1b506-2571-4f95-919e-21610bd95ed8",
+            "type": "message",
+            "text": "what do you see?",
+            "user": "UB659D0FM",
+            "ts": "1546545819.019800"
+        },
+        {
+            "client_msg_id": "26cbbc59-419f-494c-ab46-f6e6d54524fa",
+            "type": "message",
+            "text": "I do not see error messages from library how to fix it?",
+            "user": "UF5P58M0U",
+            "ts": "1546545801.019600"
+        },
+        {
+            "client_msg_id": "625574b7-1e94-40c6-b1cd-7ec770018af5",
+            "type": "message",
+            "text": "I believe initializing allegro using al_init(void) will enable debug mode",
+            "user": "UB659D0FM",
+            "ts": "1546545733.019000"
+        },
+        {
+            "client_msg_id": "7406e66e-77e4-4408-9f54-e192347e63d9",
+            "type": "message",
+            "text": "How to enable debug mode for library",
+            "user": "UF5P58M0U",
+            "ts": "1546545687.018800"
+        },
+        {
+            "client_msg_id": "abdddc82-1424-4d2f-a6e0-1f31f4b356f5",
+            "type": "message",
+            "text": "I am unsure",
+            "user": "UB659D0FM",
+            "ts": "1546545499.018400"
+        },
+        {
+            "client_msg_id": "8d3d36e2-6df8-40c8-87e3-f0705bf7d7e4",
+            "type": "message",
+            "text": "How to get  ALLEGRO_ERROR messages printed?",
+            "user": "UF5P58M0U",
+            "ts": "1546545470.018200"
+        },
+        {
+            "client_msg_id": "1fc0dc8c-255a-46c7-951a-703c0ed5480b",
+            "type": "message",
+            "text": "I am unsure, they should be erroring by default",
+            "user": "UB659D0FM",
+            "ts": "1546545411.017900"
+        },
+        {
+            "client_msg_id": "1b920514-317a-4f86-a072-caa0ab623c5e",
+            "type": "message",
+            "text": "How to enable ALLEGRO_ERROR messages?",
+            "user": "UF5P58M0U",
+            "ts": "1546545341.017700"
+        },
+        {
+            "client_msg_id": "a488ef6d-512b-43fb-9108-bb9a93b6242d",
+            "type": "message",
+            "text": "here is a rough example:\n\nALLEGRO_SAMPLE *sample=NULL;\nif(!al_install_audio()){\n    fprintf(stderr, \"failed to initialize audio!\\n\");\n    return -1;\n}\nsample = al_load_sample( \"footstep.wav\" );\nif (!sample){\n    printf( \"Audio clip sample not loaded!\\n\" );\n    return -1;\n}\nal_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);\nal_destroy_sample(sample);",
+            "user": "UB659D0FM",
+            "ts": "1546545178.017400"
+        },
+        {
+            "client_msg_id": "e91bedf4-7a42-4bd8-9301-5c2d6a88b5be",
+            "type": "message",
+            "text": "How to play audio file, example?",
+            "user": "UF5P58M0U",
+            "ts": "1546545087.017200"
+        },
+        {
+            "client_msg_id": "be43a68f-e3e5-4178-affb-a2693c3373ff",
+            "type": "message",
+            "text": "here is the declaration for add_acodec_table_entry:\n\nstatic ACODEC_TABLE *add_acodec_table_entry(const char *ext)",
+            "user": "UB659D0FM",
+            "ts": "1546544972.016800"
+        },
+        {
+            "client_msg_id": "d76c6217-4f57-45b2-a66a-01f3cbccba15",
+            "type": "message",
+            "text": "How to add acodec table entry?",
+            "user": "UF5P58M0U",
+            "ts": "1546544894.016600"
+        },
+        {
+            "client_msg_id": "b83e05b9-07c0-4afd-9947-907ccf7443c0",
+            "type": "message",
+            "text": "I am sorry, I do not understand your question",
+            "user": "UB659D0FM",
+            "ts": "1546544856.016100"
+        },
+        {
+            "client_msg_id": "8ec21fa0-6816-47b1-9464-9193c716c72c",
+            "type": "message",
+            "text": "How to set handler for wav file?",
+            "user": "UF5P58M0U",
+            "ts": "1546544837.015900"
+        },
+        {
+            "client_msg_id": "5e0e9ba3-12f1-46ec-b5f6-d75dfaad2057",
+            "type": "message",
+            "text": "here is the source code for al_load_sample:\n\n\/* Function: al_load_sample\n *\/\nALLEGRO_SAMPLE *al_load_sample(const char *filename)\n{\n   const char *ext;\n   ACODEC_TABLE *ent;\n\n   ASSERT(filename);\n   ext = strrchr(filename, '.');\n   if (ext == NULL) {\n      ALLEGRO_ERROR(\"Unable to determine extension for %s.\\n\", filename);\n      return NULL;\n   }\n\n   ent = find_acodec_table_entry(ext);\n   if (ent &amp;&amp; ent-&gt;loader) {\n      return (ent-&gt;loader)(filename);\n   }\n   else {\n      ALLEGRO_ERROR(\"No handler for audio file extension %s - \"\n         \"therefore not trying to load %s.\\n\", ext, filename);\n   }\n\n   return NULL;\n}",
+            "user": "UB659D0FM",
+            "ts": "1546544786.015600"
+        },
+        {
+            "client_msg_id": "c6e26879-e9eb-4ffc-a597-ac14346bdaa2",
+            "type": "message",
+            "text": "possible errors in al_load_sample",
+            "user": "UF5P58M0U",
+            "ts": "1546544740.015400"
+        },
+        {
+            "client_msg_id": "9e930005-aa2c-4cdd-9481-2814f4b9179c",
+            "type": "message",
+            "text": "I do not believe al_load_sample returns an error message",
+            "user": "UB659D0FM",
+            "ts": "1546544693.015100"
+        },
+        {
+            "client_msg_id": "1bb71471-52cc-4f46-a4c4-f78374a9b284",
+            "type": "message",
+            "text": "How to get error message in case of error in al_load_sample",
+            "user": "UF5P58M0U",
+            "ts": "1546544662.014900"
+        },
+        {
+            "client_msg_id": "7e7688f7-b0a1-4896-8285-c84e46cc118c",
+            "type": "message",
+            "text": "al_load_sample returns a pointer, on error it returns NULL",
+            "user": "UB659D0FM",
+            "ts": "1546544627.014400"
+        },
+        {
+            "client_msg_id": "6e431d77-c60d-4b23-a9e4-cfc360b954d2",
+            "type": "message",
+            "text": "How to check error of al_load_sample",
+            "user": "UF5P58M0U",
+            "ts": "1546544602.014100"
+        },
+        {
+            "client_msg_id": "1d9ca5be-af13-4d21-aeed-a365b4bddd79",
+            "type": "message",
+            "text": "you can use the following function:\/* Function: al_load_sample\n*\/\nALLEGRO_SAMPLE *al_load_sample(const char *filename)",
+            "user": "UB659D0FM",
+            "ts": "1546544569.013600"
+        },
+        {
+            "client_msg_id": "5edcd599-64e5-475f-8f69-0f9ee4afade2",
+            "type": "message",
+            "text": "declaration of al_load_sample",
+            "user": "UF5P58M0U",
+            "ts": "1546544540.013200",
+            "edited": {
+                "user": "UF5P58M0U",
+                "ts": "1546544543.000000"
+            }
+        },
+        {
+            "client_msg_id": "96e7a281-53ec-47ed-a0a6-f9ad63c6a055",
+            "type": "message",
+            "text": "al_load_sample( \"footstep.wav\" );",
+            "user": "UB659D0FM",
+            "ts": "1546544524.012900"
+        },
+        {
+            "client_msg_id": "6598a118-eeac-4073-beda-7a6b6bed1941",
+            "type": "message",
+            "text": "how to use al_load_sample",
+            "user": "UF5P58M0U",
+            "ts": "1546544508.012700"
+        },
+        {
+            "client_msg_id": "0973c947-5b3a-4444-81f2-f93499f35414",
+            "type": "message",
+            "text": "al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);",
+            "user": "UB659D0FM",
+            "ts": "1546544203.012400"
+        },
+        {
+            "client_msg_id": "167bc339-3364-4d7c-8eae-614b9578bd20",
+            "type": "message",
+            "text": "example of  al_play_sample",
+            "user": "UF5P58M0U",
+            "ts": "1546544192.012200"
+        },
+        {
+            "client_msg_id": "7cf12dff-0013-4f6d-b86b-db873a338050",
+            "type": "message",
+            "text": "NULL",
+            "user": "UB659D0FM",
+            "ts": "1546544166.011900"
+        },
+        {
+            "client_msg_id": "b7d45eda-a4c1-4c5b-9ad4-ee223e654b52",
+            "type": "message",
+            "text": "example of ALLEGRO_SAMPLE_ID",
+            "user": "UF5P58M0U",
+            "ts": "1546544133.011700"
+        },
+        {
+            "client_msg_id": "427bbf3f-6060-4ede-915c-642cbd03b2db",
+            "type": "message",
+            "text": "from source file addons\/audio\/allegro5\/allegro_audio.h:\n\n\n\/* Enum: ALLEGRO_PLAYMODE\n *\/\nenum ALLEGRO_PLAYMODE\n{\n   ALLEGRO_PLAYMODE_ONCE   = 0x100,\n   ALLEGRO_PLAYMODE_LOOP   = 0x101,\n   ALLEGRO_PLAYMODE_BIDIR  = 0x102,\n   _ALLEGRO_PLAYMODE_STREAM_ONCE   = 0x103,   \/* internal *\/\n   _ALLEGRO_PLAYMODE_STREAM_ONEDIR = 0x104    \/* internal *\/\n};",
+            "user": "UB659D0FM",
+            "ts": "1546544105.011500"
+        },
+        {
+            "client_msg_id": "075273d1-41bb-4903-8c3e-8b9c9fc4d77f",
+            "type": "message",
+            "text": "definition of ALLEGRO_PLAYMODE",
+            "user": "UF5P58M0U",
+            "ts": "1546544053.011300"
+        },
+        {
+            "client_msg_id": "450f9f5a-35e6-49cc-95bc-0c3213e85d56",
+            "type": "message",
+            "text": "to load an audio file, you can use the function:\n\n\/* Function: al_load_sample\n *\/\nALLEGRO_SAMPLE *al_load_sample(const char *filename)",
+            "user": "UB659D0FM",
+            "ts": "1546543689.011000"
+        },
+        {
+            "client_msg_id": "12ecbbb4-6f49-46a3-b56d-31b81cd3bee6",
+            "type": "message",
+            "text": "Play the wav file?",
+            "user": "UF5P58M0U",
+            "ts": "1546543629.010800"
+        },
+        {
+            "client_msg_id": "c89905b9-9eca-4ae0-9aaf-521cf1561177",
+            "type": "message",
+            "text": "you can play a sample using the function:\n\nbool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UB659D0FM",
+            "ts": "1546543590.010500"
+        },
+        {
+            "client_msg_id": "5101dd4c-a8bb-45e7-a77c-539f3c7604c0",
+            "type": "message",
+            "text": "How to play wav file?",
+            "user": "UF5P58M0U",
+            "ts": "1546543521.010300"
+        },
+        {
+            "client_msg_id": "5d2c380c-c33c-4582-8916-0b243d6c5157",
+            "type": "message",
+            "text": "How to play music?",
+            "user": "UF5P58M0U",
+            "ts": "1546543440.010000"
+        },
+        {
+            "client_msg_id": "44f811c4-61a0-495b-aa04-fa49bd190966",
+            "type": "message",
+            "text": "from doc file docs\/src\/refman\/keyboard.txt:\n\n## Key codes\n\nThe constant ALLEGRO_KEY_MAX is always one higher than\nthe highest key code. So if you want to use the key code as array index\nyou can do something like this:\n\n~~~~c\nbool pressed_keys[ALLEGRO_KEY_MAX];\n\/\/...\npressed_keys[key_code] = true;\n~~~~\n\nThese are the list of key codes used by Allegro, which are returned in\nthe event.keyboard.keycode field of the ALLEGRO_KEY_DOWN and\nALLEGRO_KEY_UP events and which you can pass to [al_key_down]:\n\n    ALLEGRO_KEY_A ... ALLEGRO_KEY_Z\n    ALLEGRO_KEY_0 ... ALLEGRO_KEY_9\n    ALLEGRO_KEY_PAD_0 ... ALLEGRO_KEY_PAD_9\n    ALLEGRO_KEY_F1 ... ALLEGRO_KEY_F12\n    ALLEGRO_KEY_ESCAPE\n    ALLEGRO_KEY_TILDE\n    ALLEGRO_KEY_MINUS\n    ALLEGRO_KEY_EQUALS\n    ALLEGRO_KEY_BACKSPACE\n    ALLEGRO_KEY_TAB\n    ALLEGRO_KEY_OPENBRACE\n    ALLEGRO_KEY_CLOSEBRACE\n    ALLEGRO_KEY_ENTER\n    ALLEGRO_KEY_SEMICOLON\n    ALLEGRO_KEY_QUOTE\n    ALLEGRO_KEY_BACKSLASH\n    ALLEGRO_KEY_BACKSLASH2\n    ALLEGRO_KEY_COMMA\n    ALLEGRO_KEY_FULLSTOP\n    ALLEGRO_KEY_SLASH\n    ALLEGRO_KEY_SPACE\n    ALLEGRO_KEY_INSERT\n    ALLEGRO_KEY_DELETE\n    ALLEGRO_KEY_HOME\n    ALLEGRO_KEY_END\n    ALLEGRO_KEY_PGUP\n    ALLEGRO_KEY_PGDN\n    ALLEGRO_KEY_LEFT\n    ALLEGRO_KEY_RIGHT\n    ALLEGRO_KEY_UP\n    ALLEGRO_KEY_DOWN\n    ALLEGRO_KEY_PAD_SLASH\n    ALLEGRO_KEY_PAD_ASTERISK\n    ALLEGRO_KEY_PAD_MINUS\n    ALLEGRO_KEY_PAD_PLUS\n    ALLEGRO_KEY_PAD_DELETE\n    ALLEGRO_KEY_PAD_ENTER\n    ALLEGRO_KEY_PRINTSCREEN\n    ALLEGRO_KEY_PAUSE\n    ALLEGRO_KEY_ABNT_C1\n    ALLEGRO_KEY_YEN\n    ALLEGRO_KEY_KANA\n    ALLEGRO_KEY_CONVERT\n    ALLEGRO_KEY_NOCONVERT\n    ALLEGRO_KEY_AT\n    ALLEGRO_KEY_CIRCUMFLEX\n    ALLEGRO_KEY_COLON2\n    ALLEGRO_KEY_KANJI\n    ALLEGRO_KEY_LSHIFT\n    ALLEGRO_KEY_RSHIFT\n    ALLEGRO_KEY_LCTRL\n    ALLEGRO_KEY_RCTRL\n    ALLEGRO_KEY_ALT\n    ALLEGRO_KEY_ALTGR\n    ALLEGRO_KEY_LWIN\n    ALLEGRO_KEY_RWIN\n    ALLEGRO_KEY_MENU\n    ALLEGRO_KEY_SCROLLLOCK\n    ALLEGRO_KEY_NUMLOCK\n    ALLEGRO_KEY_CAPSLOCK\n    ALLEGRO_KEY_PAD_EQUALS\n    ALLEGRO_KEY_BACKQUOTE\n    ALLEGRO_KEY_SEMICOLON2\n    ALLEGRO_KEY_COMMAND\n\n    \/* Since: 5.1.1 *\/\n    \/* Android only for now *\/\n    ALLEGRO_KEY_BACK\n\n    \/* Since: 5.1.2 *\/\n    \/* Android only for now *\/\n    ALLEGRO_KEY_VOLUME_UP\n    ALLEGRO_KEY_VOLUME_DOWN\n\n    \/* Since: 5.1.6 *\/\n    \/* Android only for now *\/\n    ALLEGRO_KEY_SEARCH\n    ALLEGRO_KEY_DPAD_CENTER\n    ALLEGRO_KEY_BUTTON_X\n    ALLEGRO_KEY_BUTTON_Y\n    ALLEGRO_KEY_DPAD_UP\n    ALLEGRO_KEY_DPAD_DOWN\n    ALLEGRO_KEY_DPAD_LEFT\n    ALLEGRO_KEY_DPAD_RIGHT\n    ALLEGRO_KEY_SELECT\n    ALLEGRO_KEY_START\n    ALLEGRO_KEY_L1\n    ALLEGRO_KEY_R1\n\n## Keyboard modifier flags\n\n    ALLEGRO_KEYMOD_SHIFT\n    ALLEGRO_KEYMOD_CTRL\n    ALLEGRO_KEYMOD_ALT\n    ALLEGRO_KEYMOD_LWIN\n    ALLEGRO_KEYMOD_RWIN\n    ALLEGRO_KEYMOD_MENU\n    ALLEGRO_KEYMOD_ALTGR\n    ALLEGRO_KEYMOD_COMMAND\n    ALLEGRO_KEYMOD_SCROLLLOCK\n    ALLEGRO_KEYMOD_NUMLOCK\n    ALLEGRO_KEYMOD_CAPSLOCK\n    ALLEGRO_KEYMOD_INALTSEQ\n    ALLEGRO_KEYMOD_ACCENT1\n    ALLEGRO_KEYMOD_ACCENT2\n    ALLEGRO_KEYMOD_ACCENT3\n    ALLEGRO_KEYMOD_ACCENT4\n\nThe event field 'keyboard.modifiers' is a bitfield composed of these constants.\nThese indicate the modifier keys which were pressed at the time a character was\ntyped.",
+            "user": "UB659D0FM",
+            "ts": "1546542982.009700"
+        },
+        {
+            "client_msg_id": "a86fc534-c574-43a9-9d10-f92c84b257c6",
+            "type": "message",
+            "text": "What is values available for keyboard keycode",
+            "user": "UF5P58M0U",
+            "ts": "1546542952.009500"
+        },
+        {
+            "client_msg_id": "e37279f2-c770-4965-a7f2-bee3e29763b6",
+            "type": "message",
+            "text": "from doc file docs\/src\/refman\/keyboard.txt:\n\n## API: al_install_keyboard\n\nInstall a keyboard driver. Returns true if successful. If a driver\nwas already installed, nothing happens and true is returned.\n\nSee also: [al_uninstall_keyboard], [al_is_keyboard_installed]",
+            "user": "UB659D0FM",
+            "ts": "1546542691.008900"
+        },
+        {
+            "client_msg_id": "dcb5a459-23c5-4cee-9030-834c3ff1dd38",
+            "type": "message",
+            "text": "Show me documentation for al_install_keyboard",
+            "user": "UF5P58M0U",
+            "ts": "1546542631.008700"
+        },
+        {
+            "client_msg_id": "0377bb31-0791-4ead-b582-67d83c287764",
+            "type": "message",
+            "text": "bool al_install_keyboard(void);",
+            "user": "UB659D0FM",
+            "ts": "1546542591.008200"
+        },
+        {
+            "client_msg_id": "21dad4be-b4e8-4254-9d18-5b57738a163f",
+            "type": "message",
+            "text": "I would like to get declaration al_install_keyboard",
+            "user": "UF5P58M0U",
+            "ts": "1546542542.008000"
+        },
+        {
+            "client_msg_id": "1c35fba4-7487-49c4-8608-dd1b88da2957",
+            "type": "message",
+            "text": "would you like the declaration or definition of al_install_keyboard()?",
+            "user": "UB659D0FM",
+            "ts": "1546542507.007600"
+        },
+        {
+            "client_msg_id": "b3fb8983-d7b1-4af6-91d9-f7db7b03aaf7",
+            "type": "message",
+            "text": "one second, scanning source files...",
+            "user": "UB659D0FM",
+            "ts": "1546542457.007400"
+        },
+        {
+            "client_msg_id": "a365114d-ac2e-42ac-814c-5eecc6a92099",
+            "type": "message",
+            "text": "Show me declaration for al_install_keyboard function",
+            "user": "UF5P58M0U",
+            "ts": "1546542397.007200"
+        },
+        {
+            "client_msg_id": "db28f4d5-cd9b-4d6f-946d-b08509183bf3",
+            "type": "message",
+            "text": "keyboards can be initialized using the function al_install_keyboard();",
+            "user": "UB659D0FM",
+            "ts": "1546542354.006600"
+        },
+        {
+            "client_msg_id": "4e579292-d7e3-4c81-964d-b89cace42c03",
+            "type": "message",
+            "text": "How to install keyboard?",
+            "user": "UF5P58M0U",
+            "ts": "1546542298.006400"
+        },
+        {
+            "client_msg_id": "366b1ef5-aeb9-492e-9855-c2a8e1c5ce19",
+            "type": "message",
+            "text": "I believe the assertion comes from this function defined in src\/keybdnu.c:\n\n\n\/* Function: al_is_keyboard_installed\n *\/\nbool al_is_keyboard_installed(void)\n{\n   return (new_keyboard_driver ? true : false);\n}",
+            "user": "UB659D0FM",
+            "ts": "1546542257.006100"
+        },
+        {
+            "client_msg_id": "7f4cf09d-3f81-4b72-9b6d-6b846ede38f0",
+            "type": "message",
+            "text": "I am unsure, scanning source files...",
+            "user": "UB659D0FM",
+            "ts": "1546542149.005900"
+        },
+        {
+            "client_msg_id": "8b918950-f540-4f1d-9c83-4cc0977b8b67",
+            "type": "message",
+            "text": "What does mean  al_get_keyboard: Assertion `new_keyboard_driver' failed.",
+            "user": "UF5P58M0U",
+            "ts": "1546542093.005700"
+        },
+        {
+            "client_msg_id": "b5c8110a-d16f-4e8d-99f1-f1f569fd721a",
+            "type": "message",
+            "text": "from source file events.h:\n\ntypedef struct ALLEGRO_KEYBOARD_EVENT\n{\n   _AL_EVENT_HEADER(struct ALLEGRO_KEYBOARD)\n   struct ALLEGRO_DISPLAY *display; \/* the window the key was pressed in *\/\n   int keycode;                 \/* the physical key pressed *\/\n   int unichar;                 \/* unicode character or negative *\/\n   unsigned int modifiers;      \/* bitfield *\/\n   bool repeat;                 \/* auto-repeated or not *\/\n} ALLEGRO_KEYBOARD_EVENT;",
+            "user": "UB659D0FM",
+            "ts": "1546541739.005400"
+        },
+        {
+            "client_msg_id": "7289cbd6-0019-480a-a7cf-6ce5ca10cea9",
+            "type": "message",
+            "text": "Show me declaration of ALLEGRO_KEYBOARD_EVENT",
+            "user": "UF5P58M0U",
+            "ts": "1546541721.005200"
+        },
+        {
+            "client_msg_id": "32c92963-8c61-4cad-bece-b6cab442dd97",
+            "type": "message",
+            "text": "from source file events.h:\n\n\/* Type: ALLEGRO_EVENT_TYPE\n *\/\ntypedef unsigned int ALLEGRO_EVENT_TYPE;\n\nenum\n{\n   ALLEGRO_EVENT_JOYSTICK_AXIS               =  1,\n   ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN        =  2,\n   ALLEGRO_EVENT_JOYSTICK_BUTTON_UP          =  3,\n   ALLEGRO_EVENT_JOYSTICK_CONFIGURATION      =  4,\n\n   ALLEGRO_EVENT_KEY_DOWN                    = 10,\n   ALLEGRO_EVENT_KEY_CHAR                    = 11,\n   ALLEGRO_EVENT_KEY_UP                      = 12,\n\n   ALLEGRO_EVENT_MOUSE_AXES                  = 20,\n   ALLEGRO_EVENT_MOUSE_BUTTON_DOWN           = 21,\n   ALLEGRO_EVENT_MOUSE_BUTTON_UP             = 22,\n   ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY         = 23,\n   ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY         = 24,\n   ALLEGRO_EVENT_MOUSE_WARPED                = 25,\n\n   ALLEGRO_EVENT_TIMER                       = 30,\n\n   ALLEGRO_EVENT_DISPLAY_EXPOSE              = 40,\n   ALLEGRO_EVENT_DISPLAY_RESIZE              = 41,\n   ALLEGRO_EVENT_DISPLAY_CLOSE               = 42,\n   ALLEGRO_EVENT_DISPLAY_LOST                = 43,\n   ALLEGRO_EVENT_DISPLAY_FOUND               = 44,\n   ALLEGRO_EVENT_DISPLAY_SWITCH_IN           = 45,\n   ALLEGRO_EVENT_DISPLAY_SWITCH_OUT          = 46,\n   ALLEGRO_EVENT_DISPLAY_ORIENTATION         = 47,\n   ALLEGRO_EVENT_DISPLAY_HALT_DRAWING        = 48,\n   ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING      = 49,\n\n   ALLEGRO_EVENT_TOUCH_BEGIN                 = 50,\n   ALLEGRO_EVENT_TOUCH_END                   = 51,\n   ALLEGRO_EVENT_TOUCH_MOVE                  = 52,\n   ALLEGRO_EVENT_TOUCH_CANCEL                = 53,\n\n   ALLEGRO_EVENT_DISPLAY_CONNECTED           = 60,\n   ALLEGRO_EVENT_DISPLAY_DISCONNECTED        = 61\n};",
+            "user": "UB659D0FM",
+            "ts": "1546541679.004800"
+        },
+        {
+            "client_msg_id": "053142fc-fa60-4a6d-a97f-d9e6e4cbf8f1",
+            "type": "message",
+            "text": "Show me declaration of ALLEGRO_EVENT_TYPE",
+            "user": "UF5P58M0U",
+            "ts": "1546541652.004500"
+        },
+        {
+            "client_msg_id": "f83e9301-9cfa-48ea-8e98-3e774905915d",
+            "type": "message",
+            "text": "from source file events.h:\n\ntypedef union ALLEGRO_EVENT ALLEGRO_EVENT;\n\nunion ALLEGRO_EVENT\n{\n   \/* This must be the same as the first field of _AL_EVENT_HEADER.  *\/\n   ALLEGRO_EVENT_TYPE type;\n   \/* `any' is to allow the user to access the other fields which are\n    * common to all event types, without using some specific type\n    * structure.\n    *\/\n   ALLEGRO_ANY_EVENT      any;\n   ALLEGRO_DISPLAY_EVENT  display;\n   ALLEGRO_JOYSTICK_EVENT joystick;\n   ALLEGRO_KEYBOARD_EVENT keyboard;\n   ALLEGRO_MOUSE_EVENT    mouse;\n   ALLEGRO_TIMER_EVENT    timer;\n   ALLEGRO_TOUCH_EVENT    touch;\n   ALLEGRO_USER_EVENT     user;\n};",
+            "user": "UB659D0FM",
+            "ts": "1546541617.004200"
+        },
+        {
+            "client_msg_id": "a710a554-f814-4be5-a933-2cb98140bae5",
+            "type": "message",
+            "text": "one second, parsing source code...",
+            "user": "UB659D0FM",
+            "ts": "1546541578.004000"
+        },
+        {
+            "client_msg_id": "4da7c3a2-ec7c-47e0-a2e4-505cabf84b33",
+            "type": "message",
+            "text": "Show me declaration of ALLEGO_EVENT",
+            "user": "UF5P58M0U",
+            "ts": "1546541514.003800"
+        },
+        {
+            "client_msg_id": "e4cd8b62-44a7-4a1b-801a-0fcf61f75336",
+            "type": "message",
+            "text": "an ALLEGRO_EVENT object is a data type containing information regarding an event that has been recorded from a variety of input sources. The most notable use of this type is to specify what type of event occurred.",
+            "user": "UB659D0FM",
+            "ts": "1546541487.003500"
+        },
+        {
+            "client_msg_id": "34fba020-e611-4fb2-80c0-d7bff751e191",
+            "type": "message",
+            "text": "Describe ALLEGO_EVENT object",
+            "user": "UF5P58M0U",
+            "ts": "1546541420.003300"
+        },
+        {
+            "client_msg_id": "53f54dbc-88dd-4f26-927b-125fd30ae853",
+            "type": "message",
+            "text": "a keyboard event can be inferred via an enum contained by the \"type\" field of an ALLEGO_EVENT object",
+            "user": "UB659D0FM",
+            "ts": "1546541364.003000"
+        },
+        {
+            "client_msg_id": "1ec38472-d6ad-4cfe-8ec2-d26401eef3d3",
+            "type": "message",
+            "text": "What is keyboard event constant name?",
+            "user": "UF5P58M0U",
+            "ts": "1546541321.002800"
+        },
+        {
+            "client_msg_id": "74711a21-d012-42e7-b7f0-fd59fe30205e",
+            "type": "message",
+            "text": "you can register a keyboard callback with al_register_event_source(event_queue, al_get_keyboard_event_source());",
+            "user": "UB659D0FM",
+            "ts": "1546541235.002300"
+        },
+        {
+            "client_msg_id": "b69b48d7-24e7-41e9-aeb0-76385a4fbfaf",
+            "type": "message",
+            "text": "What is keyboard event type name?",
+            "user": "UF5P58M0U",
+            "ts": "1546541186.001900",
+            "edited": {
+                "user": "UF5P58M0U",
+                "ts": "1546541216.000000"
+            }
+        },
+        {
+            "client_msg_id": "d3080382-7006-4d90-9ccc-a18205a1b5cf",
+            "type": "message",
+            "text": "Yes, there is a keyboard event type, would you like the type name?",
+            "user": "UB659D0FM",
+            "ts": "1546541169.001700"
+        },
+        {
+            "client_msg_id": "27d3593c-bffa-4600-b06c-b537059f00b6",
+            "type": "message",
+            "text": "Is there keyboard event type?",
+            "user": "UF5P58M0U",
+            "ts": "1546541168.001600"
+        },
+        {
+            "client_msg_id": "14420779-66c2-4320-bf60-47dd8f492eed",
+            "type": "message",
+            "text": "Hi! My name is Apiza, a brand new virtual assistant, I look forward to helping you today.",
+            "user": "UB659D0FM",
+            "ts": "1546541131.001000"
+        },
+        {
+            "client_msg_id": "358935b2-0436-4c14-b4a4-4607f39eb1fa",
+            "type": "message",
+            "text": "Hello, so the first question:\nIs there keyboard event type?",
+            "user": "UF5P58M0U",
+            "ts": "1546541123.000800"
+        }
+    ],
+    "has_more": false
+}

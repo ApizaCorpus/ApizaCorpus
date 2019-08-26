@@ -1,0 +1,449 @@
+Programmer_11 [8:17 PM]
+Hello Apiza, are the functions of libssh preceeded by 'ssh'?
+
+Apiza [8:20 PM]
+Hi Programmer_11. Most of the functions of LibSSH are preceded by `ssh`. An example is `ssh_basename`. Some functions are not preceded by `ssh`, for example, `channel_read_buffer`.
+
+Programmer_11 [8:27 PM]
+Is there a function to set the options of the connection in LibSSH
+And which is the code if the server is known?
+
+Apiza [8:31 PM]
+How about this function?
+
+```int ssh_options_set ( ssh_session session,
+enum ssh_options_e type,
+const void * value 
+)```
+
+Description
+This function can set all possible ssh options.
+
+Let me know if you would like to see the complete documentation.
+
+Programmer_11 [8:31 PM]
+Please, show me the complete documentation of this function
+
+Apiza [8:33 PM]
+```
+int ssh_options_set(ssh_session session,
+enum ssh_options_e type,
+const void * value 
+)
+```
+Description
+This function can set all possible ssh options.
+Parameters
+session: An allocated SSH session structure.
+type: The option type to set. This could be one of the following:
+SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *).
+SSH_OPTIONS_PORT: The port to connect to (unsigned int).
+SSH_OPTIONS_PORT_STR: The port to connect to (const char *).
+SSH_OPTIONS_FD: The file descriptor to use (socket_t).
+If you wish to open the socket yourself for a reason or another, set the file descriptor. Don't forget to set the hostname as the hostname is used as a key in the known_host mechanism.
+SSH_OPTIONS_BINDADDR: The address to bind the client to (const char *).
+SSH_OPTIONS_USER: The username for authentication (const char *).
+If the value is NULL, the username is set to the default username.
+SSH_OPTIONS_SSH_DIR: Set the ssh directory (const char *,format string).
+If the value is NULL, the directory is set to the default ssh directory.
+The ssh directory is used for files like known_hosts and identity (private and public key). It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_KNOWNHOSTS: Set the known hosts file name (const char *,format string).
+If the value is NULL, the directory is set to the default known hosts file, normally ~/.ssh/known_hosts.
+The known hosts file is used to certify remote hosts are genuine. It may include "%d" which will be replaced by the user home directory.
+SSH_OPTIONS_GLOBAL_KNOWNHOSTS: Set the global known hosts file name (const char *,format string).
+If the value is NULL, the directory is set to the default global known hosts file, normally /etc/ssh/ssh_known_hosts.
+The known hosts file is used to certify remote hosts are genuine.
+SSH_OPTIONS_ADD_IDENTITY (or SSH_OPTIONS_IDENTITY): Add a new identity file (const char *, format string) to the identity list.
+By default identity, id_dsa and id_rsa are checked.
+The identity used to authenticate with public key will be prepended to the list. It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_TIMEOUT: Set a timeout for the connection in seconds (long).
+SSH_OPTIONS_TIMEOUT_USEC: Set a timeout for the connection in micro seconds (long).
+SSH_OPTIONS_SSH1: Allow or deny the connection to SSH1 servers (int, 0 is false).
+SSH_OPTIONS_SSH2: Allow or deny the connection to SSH2 servers (int, 0 is false).
+SSH_OPTIONS_LOG_VERBOSITY: Set the session logging verbosity (int).
+The verbosity of the messages. Every log smaller or equal to verbosity will be shown.
+SSH_LOG_NOLOG: No logging
+SSH_LOG_RARE: Rare conditions or warnings
+SSH_LOG_ENTRY: API-accessible entrypoints
+SSH_LOG_PACKET: Packet id and size
+SSH_LOG_FUNCTIONS: Function entering and leaving
+SSH_OPTIONS_LOG_VERBOSITY_STR: Set the session logging verbosity (const char *).
+The verbosity of the messages. Every log smaller or equal to verbosity will be shown.
+SSH_LOG_NOLOG: No logging
+SSH_LOG_RARE: Rare conditions or warnings
+SSH_LOG_ENTRY: API-accessible entrypoints
+SSH_LOG_PACKET: Packet id and size
+SSH_LOG_FUNCTIONS: Function entering and leaving 
+See the corresponding numbers in libssh.h.
+SSH_OPTIONS_AUTH_CALLBACK: Set a callback to use your own authentication function (function pointer).
+SSH_OPTIONS_AUTH_USERDATA: Set the user data passed to the authentication function (generic pointer).
+SSH_OPTIONS_LOG_CALLBACK: Set a callback to use your own logging function (function pointer).
+SSH_OPTIONS_LOG_USERDATA: Set the user data passed to the logging function (generic pointer).
+SSH_OPTIONS_STATUS_CALLBACK: Set a callback to show connection status in realtime (function pointer).
+fn(void *arg, float status)
+During ssh_connect(), libssh will call the callback with status from 0.0 to 1.0.
+SSH_OPTIONS_STATUS_ARG: Set the status argument which should be passed to the status callback (generic pointer).
+SSH_OPTIONS_CIPHERS_C_S: Set the symmetric cipher client to server (const char *, comma-separated list).
+SSH_OPTIONS_CIPHERS_S_C: Set the symmetric cipher server to client (const char *, comma-separated list).
+SSH_OPTIONS_KEY_EXCHANGE: Set the key exchange method to be used (const char *, comma-separated list). ex: "ecdh-sha2-nistp256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1"
+SSH_OPTIONS_HOSTKEYS: Set the preferred server host key types (const char *, comma-separated list). ex: "ssh-rsa,ssh-dss,ecdh-sha2-nistp256"
+SSH_OPTIONS_COMPRESSION_C_S: Set the compression to use for client to server communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION_S_C: Set the compression to use for server to client communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION: Set the compression to use for both directions communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION_LEVEL: Set the compression level to use for zlib functions. (int, value from 1 to 9, 9 being the most efficient but slower).
+SSH_OPTIONS_STRICTHOSTKEYCHECK: Set the parameter StrictHostKeyChecking to avoid asking about a fingerprint (int, 0 = false).
+SSH_OPTIONS_PROXYCOMMAND: Set the command to be executed in order to connect to server (const char *).
+SSH_OPTIONS_GSSAPI_SERVER_IDENTITY Set it to specify the GSSAPI server identity that libssh should expect when connecting to the server (const char *).
+SSH_OPTIONS_GSSAPI_CLIENT_IDENTITY Set it to specify the GSSAPI client identity that libssh should expect when connecting to the server (const char *).
+SSH_OPTIONS_GSSAPI_DELEGATE_CREDENTIALS Set it to specify that GSSAPI should delegate credentials to the server (int, 0 = false).
+SSH_OPTIONS_PASSWORD_AUTH Set it if password authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use password authentication).
+SSH_OPTIONS_PUBKEY_AUTH Set it if pubkey authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false).
+SSH_OPTIONS_KBDINT_AUTH Set it if keyboard-interactive authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use keyboard-interactive authentication).
+SSH_OPTIONS_GSSAPI_AUTH Set it if gssapi authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use gssapi authentication).
+SSH_OPTIONS_NODELAY Set it to disable Nagle's Algorithm (TCP_NODELAY) on the session socket. (int, 0=false)
+Parameters
+value: The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.
+Returns
+0 on success, < 0 on error.
+
+Programmer_11 [8:33 PM]
+What about the parameters of the function?
+Ok, I have seen it
+And the constant of the server when it is known?
+
+Apiza [8:36 PM]
+I'm not sure what you mean by that. Which constant are you wondering about?
+
+Programmer_11 [8:37 PM]
+I want to know the constant when the server is known
+
+Apiza [8:40 PM]
+Does this information about `ssh_options_set` help?
+
+Parameters
+value: The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.
+Here is some documentation that might help:
+
+```int ssh_is_server_known    (    ssh_session     session    )
+
+Description
+Check if the server is known.
+Checks the user's known host file for a previous connection to the current server.
+
+Parameters
+session: The SSH session to use.
+
+Returns
+SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+See also
+ssh_get_pubkey_hash()
+Bug:
+There is no current way to remove or modify an entry into the known host table.```
+
+Programmer_11 [8:43 PM]
+Perfect
+How do I create a new channel?
+
+Apiza [8:46 PM]
+Try this function:
+
+```sftp_session sftp_new_channel    (    ssh_session     session,
+ssh_channel     channel 
+)
+
+Description
+Start a new sftp session with an existing channel.
+
+Parameters
+session: The ssh session to use.
+channel: An open session channel with subsystem already allocated
+
+Returns
+A new sftp session or NULL on error.
+
+See also
+sftp_free()```
+
+Programmer_11 [8:48 PM]
+Sorry, how do I create a ssh_channel?
+
+Apiza [8:48 PM]
+Try this function:
+
+```ssh_channel ssh_channel_new    (    ssh_session     session    )
+
+Description
+Allocate a new channel.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A pointer to a newly allocated channel, NULL on error.```
+
+
+Programmer_11 [8:51 PM]
+How do I open a new session in a channel? And how do I execute a command?
+
+Apiza [8:52 PM]
+Try this function to open a new session in a channel:
+
+```int ssh_channel_open_session    (    ssh_channel     channel    )
+
+Description
+Open a session channel (suited for a shell, not TCP forwarding).
+
+Parameters
+channel: An allocated channel.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+See also
+ssh_channel_open_forward()
+ssh_channel_request_env()
+ssh_channel_request_shell()
+ssh_channel_request_exec()```
+
+Try this function to execute a command:
+
+```int ssh_channel_request_exec    (    ssh_channel     channel,
+const char *     cmd 
+)
+
+Description
+Run a shell command without an interactive shell.
+This is similar to 'sh -c command'.
+
+Parameters
+channel: The channel to execute the command.
+cmd: The command to execute (e.g. "ls ~/ -al | grep -i reports").
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+Example:
+
+rc = channel_request_exec(channel, "ps aux");
+if (rc > 0) {
+    return -1;
+}
+while ((rc = channel_read(channel, buffer, sizeof(buffer), 0)) > 0) {
+    if (fwrite(buffer, 1, rc, stdout) != (unsigned int) rc) {
+        return -1;
+    }
+}
+
+See also
+ssh_channel_request_shell()```
+
+
+
+Programmer_11 [8:55 PM]
+How is the syntax of the read of a channel method?
+Ok, nothing, I have seen it in the previous one
+
+Apiza [8:56 PM]
+Does this documentation help?
+
+```int ssh_channel_read    (    ssh_channel     channel,
+void *     dest,
+uint32_t     count,
+int     is_stderr 
+)
+
+Description
+Reads data from a channel.
+
+Parameters
+channel: The channel to read from.
+dest: The destination buffer which will get the data.
+count: The count of bytes to be read.
+is_stderr: A boolean value to mark reading from the stderr flow.
+
+Returns
+The number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.```
+
+
+Programmer_11 [9:11 PM]
+How can I start a sftp session?
+sftp connection, sorry
+
+Apiza [9:12 PM]
+Try this function:
+
+```sftp_session sftp_new    (    ssh_session     session    )
+
+Description
+Start a new sftp session.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A new sftp session or NULL on error.
+
+See also
+sftp_free()```
+
+
+Programmer_11 [9:13 PM]
+And to initialize a sftp connection?
+
+Apiza [9:13 PM]
+Try this function:
+
+```int sftp_init    (    sftp_session     sftp    )
+
+Description
+Initialize the sftp session with the server.
+
+Parameters
+sftp: The sftp session to initialize.
+
+Returns
+0 on success, < 0 on error with ssh error set.
+
+See also
+sftp_new()```
+
+
+Programmer_11 [9:17 PM]
+Can you give me the complete documentation about the method sftp_mkdir?
+
+Apiza [9:18 PM]
+Here is the complete documentation for `sftp_mkdir`:
+
+```int sftp_mkdir    (    sftp_session     sftp,
+const char *     directory,
+mode_t     mode 
+)
+
+Description
+Create a directory.
+
+Parameters
+sftp: The sftp session handle.
+directory: The directory to create.
+mode: Specifies the permissions to use. It is modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask)
+
+Returns
+0 on success, < 0 on error with ssh and sftp error set.
+
+See also
+sftp_get_error()```
+
+
+Programmer_11 [9:19 PM]
+Can you tell me more about the modes of sftp_mkdir method?
+And about the method sftp_open?
+
+Apiza [9:21 PM]
+Here is the definition of `mode_t`:
+
+ ```typedef int mode_t;```
+Here is some documentation about `sftp_open`:
+
+```sftp_file sftp_open    (    sftp_session     session,
+const char *     file,
+int     accesstype,
+mode_t     mode 
+)
+
+Description
+Open a file on the server.
+
+Parameters
+session: The sftp session handle.
+file: The file to be opened.
+accesstype: Is one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated.
+mode: Mode specifies the permissions to use if a new file is created. It is modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask)
+
+Returns
+A sftp file handle, NULL on error with ssh and sftp error set.
+
+See also
+sftp_get_error()```
+
+
+
+Programmer_11 [9:25 PM]
+What about the third parameter of the sftp_mkdir method?
+
+Apiza [9:26 PM]
+The third parameter of the `sftp_mkdir` method is:
+
+```mode_t mode```
+The `mode` parameter of `sftp_mkdir` is a Unix permission number for the created file.
+
+Programmer_11 [9:32 PM]
+Is there a type for a file of a sftp connection?
+
+Apiza [9:33 PM]
+Here is a struct definition that might help:
+
+```struct sftp_session_struct {
+    ssh_session session;
+    ssh_channel channel;
+    int server_version;
+    int client_version;
+    int version;
+    sftp_request_queue queue;
+    uint32_t id_counter;
+    int errnum;
+    void **handles;
+    sftp_ext ext;
+};```
+
+Programmer_11 [9:34 PM]
+Which is the error of existing directory?
+
+Apiza [9:34 PM]
+Here is another struct definition that might help:
+
+```/* file handler */
+struct sftp_file_struct {
+    sftp_session sftp;
+    char *name;
+    uint64_t offset;
+    ssh_string handle;
+    int eof;
+    int nonblocking;
+};```
+
+Programmer_11 [9:34 PM]
+Perfect with this one
+Which is the error of existing directory?
+
+Apiza [9:36 PM]
+Here is a function that might help with that:
+
+```int sftp_get_error    (    sftp_session     sftp    )
+
+Description
+Get the last sftp error.
+Use this function to get the latest error set by a posix like sftp function.
+
+Parameters
+sftp: The sftp session where the error is saved.
+
+Returns
+The saved error (see server responses), < 0 if an error in the function occured.
+
+See also
+Server responses```
+
+
+Programmer_11 [9:37 PM]
+Which kind of SFTP errors exist?
+
+
+Apiza [9:39 PM]
+Here is a web resource on SFTP errors:
+
+https://winscp.net/eng/docs/sftp_codes

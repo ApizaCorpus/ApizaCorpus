@@ -1,0 +1,195 @@
+Programmer_2 [11:00 AM]
+libssh documentary
+how to create an ssh session with libssh?
+
+Apiza [11:01 AM]
+Are you looking for the function ssh_new(void )? Create a new ssh session. Returns A new ssh_session pointer, NULL on error.
+
+Programmer_2 [11:04 AM]
+how to connect to a server
+libssh documentary overview
+ssh_session* ssh_new incompatible pointer type
+
+Apiza [11:05 AM]
+ssh_connect(ssh_session session). Connect to the ssh server. Parameters: session- The ssh session to connect. Returns: SSH_OK on success, SSH_ERROR on error. SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+I'm sorry, I'm not sure what you mean by "libssh documentary overview"
+
+Programmer_2 [11:06 AM]
+list all function of libssh documentary
+ssh_connect set server
+ssh_session pointer typedef
+type of SSH_ERROR
+
+Apiza [11:08 AM]
+The function ssh_new(void ) takes no arguments and returns a new ssh_session pointer, NULL on error.
+There are many functions in libssh, would you like to narrow down to a specific topic?
+
+Programmer_2 [11:09 AM]
+setting up a ssh connection and authentification with a server
+
+Apiza [11:10 AM]
+OK, how can I help you with setting up a ssh connection and authentication with a server?
+
+Programmer_2 [11:10 AM]
+show me an example
+
+Apiza [11:12 AM]
+// Connect to server
+ rc = ssh_connect(my_ssh_session);
+
+Programmer_2 [11:12 AM]
+show me the typedefinition of my_ssh_session
+
+Apiza [11:13 AM]
+The ssh::Session class contains the state of a SSH connection.
+
+Programmer_2 [11:14 AM]
+ssh_connection signature
+
+Apiza [11:15 AM]
+ssh_connect()
+int ssh_connect(ssh_session session)
+Connect to the ssh server.
+Parameters[in]sessionThe ssh session to connect.
+Returns SSH_OK on success, SSH_ERROR on error.SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+Programmer_2 [11:15 AM]
+typedefinition ssh_session
+
+Apiza [11:18 AM]
+The ssh::Session class contains the state of a SSH connection. There are 22 member functions. Do you need help connecting an ssh_session?
+
+Programmer_2 [11:18 AM]
+show me the members of ssh_session
+
+Apiza [11:20 AM]
+Members include acceptForward(int timeout_ms), connect(), disconnect(), getAuthList()...
+
+Programmer_2 [11:20 AM]
+show me fields of ssh_session
+definition of ssh_session_struct
+
+Apiza [11:22 AM]
+ssh_session has: friend class Channel;
+I'm sorry, I could not find ssh_session_struct.
+
+Programmer_2 [11:23 AM]
+how to set a remote for an ssh-session
+
+Apiza [11:26 AM]
+I believe ssh_options_set() will help you set a remote for an ssh-session. Would you like to know more?
+
+Programmer_2 [11:26 AM]
+yes
+
+Apiza [11:27 AM]
+int ssh_options_set(ssh_session session,enum ssh_options_e type,const void * value )
+
+Parameters: session- An allocated SSH session structure.type- The option type to set. value- The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.
+
+Returns: 0 on success, < 0 on error.
+
+Programmer_2 [11:28 AM]
+ssh_options_e
+
+Apiza [11:30 AM]
+There are many options for ssh_options_e type, including SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *), SSH_OPTIONS_PORT: The port to connect to (unsigned int), and SSH_OPTIONS_PORT_STR: The port to connect to (const char* ).
+
+Programmer_2 [11:31 AM]
+authenticate user
+default ssh_session settings
+
+Apiza [11:33 AM]
+How would you like to authenticate a user?
+
+Programmer_2 [11:33 AM]
+password
+
+Apiza [11:34 AM]
+Did you mean ssh_options?
+int ssh_userauth_password(ssh_session session,const char * username,const char * password )
+
+Try to authenticate by password.This authentication method is normally disabled on SSHv2 server. You should use keyboard-interactive mode.The 'password' value MUST be encoded UTF-8. It is up to the server how to interpret the password and validate it against the password database. However, if you read the password in some other encoding, you MUST convert the password to UTF-8.
+
+Programmer_2 [11:36 AM]
+connect to server
+
+Apiza [11:37 AM]
+Once all settings have been made, you can connect using ssh_connect(). That function will return SSH_OK if the connection worked, SSH_ERROR otherwise.
+
+Programmer_2 [11:37 AM]
+what settings do I need to make
+
+Apiza [11:39 AM]
+You can set options using ssh_options_set(ssh_session session,enum ssh_options_e type,const void * value ). For example, ssh_options_set(my_ssh_session, SSH_OPTIONS_HOST, "localhost");
+
+Programmer_2 [11:39 AM]
+how to authenticate a server
+
+Apiza [11:40 AM]
+The first way (recommended) is to use the ssh_is_server_known() function. Would you like to know more?
+
+Programmer_2 [11:40 AM]
+ye
+yes
+
+Apiza [11:41 AM]
+int ssh_is_server_known(ssh_session session)
+Check if the server is known.Checks the user's known host file for a previous connection to the current server.
+Parameters: -sessionThe SSH session to use.
+Returns:SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+Programmer_2 [11:44 AM]
+which of those errors is "-1"
+how to fix SSH_SERVER_ERROR
+
+Apiza [11:48 AM]
+You may be able to use ssh_get_error():
+
+const char* ssh_get_error(void * error)
+Retrieve the error text message from the last error.
+Parameters: error- An ssh_session or ssh_bind.
+Returns: A static string describing the error.
+
+Programmer_2 [11:50 AM]
+website of libssh documentary
+libssh documentary
+
+Apiza [11:51 AM]
+How can I help you navigate the libssh documentation?
+
+Programmer_2 [11:51 AM]
+show me an overview
+
+Apiza [11:52 AM]
+There are three main components: The libssh server API, The libssh SFTP API, and The libssh API
+
+Programmer_2 [11:52 AM]
+show me an overview of the libssh api
+
+Apiza [11:54 AM]
+There are 15 main components of The libssh API: The libssh callbacks, The SSH authentication functions, The SSH buffer functions, The SSH channel functions, The SSH error functions, The SSH logging functions,The SSH message functions, The SSH helper functions,The SSH Public Key Infrastructure, The SSH poll functions, The SSH scp functions, The SSH session functions, The SSH string functions, and The SSH threading functions.
+
+Programmer_2 [11:54 AM]
+libssh authentication functions
+
+Apiza [11:56 AM]
+Okay, authentication functions. Are you looking for a specific one?
+
+Programmer_2 [11:57 AM]
+show me the original text of the ssh_connect function
+
+Apiza [11:57 AM]
+ssh_connect()
+int ssh_connect(ssh_session session)
+Connect to the ssh server.
+Parameters[in]sessionThe ssh session to connect.
+Returns SSH_OK on success, SSH_ERROR on error.SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+Programmer_2 [11:58 AM]
+what settings do i have to set before ssh_connect

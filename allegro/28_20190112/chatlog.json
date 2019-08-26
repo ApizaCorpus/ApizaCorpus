@@ -1,0 +1,342 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "fa5cc76f-2b74-4481-b70d-a271b32fcc9b",
+            "type": "message",
+            "text": "how do you load a .png into a bitmap",
+            "user": "UFCAHB2NN",
+            "ts": "1547319228.013400"
+        },
+        {
+            "client_msg_id": "98802b58-9c10-4f6c-a236-c4a59081d989",
+            "type": "message",
+            "text": "Great!",
+            "user": "UB659D0FM",
+            "ts": "1547319111.013100"
+        },
+        {
+            "client_msg_id": "ab2a8ad9-9645-45a4-a064-24bf40050d0b",
+            "type": "message",
+            "text": "ok, it works",
+            "user": "UFCAHB2NN",
+            "ts": "1547319100.012900"
+        },
+        {
+            "client_msg_id": "87258bd9-cd27-4db3-a167-d5d5bb8fdb2a",
+            "type": "message",
+            "text": "nevermind",
+            "user": "UFCAHB2NN",
+            "ts": "1547318866.012700"
+        },
+        {
+            "client_msg_id": "810de1db-b3c0-4a73-8a70-297fe1ec490b",
+            "type": "message",
+            "text": "What to do if al_draw_text produces no result?",
+            "user": "UFCAHB2NN",
+            "ts": "1547318783.012500"
+        },
+        {
+            "client_msg_id": "1d8d819b-248c-451f-b394-f79d0322442b",
+            "type": "message",
+            "text": "ok, nevermind",
+            "user": "UFCAHB2NN",
+            "ts": "1547318468.012100"
+        },
+        {
+            "client_msg_id": "6e2f4324-f589-4ccc-babd-6e57083fdaa0",
+            "type": "message",
+            "text": "It seems like that's most likely a problem with your virtual machine. What size display are you using?",
+            "user": "UB659D0FM",
+            "ts": "1547318442.011800"
+        },
+        {
+            "client_msg_id": "8e8b1b26-e313-4a15-bb9d-6782c18b4440",
+            "type": "message",
+            "text": "why would al_draw_text() produce the warning \"VERR_BUFFER_OVERFLOW",
+            "user": "UFCAHB2NN",
+            "ts": "1547318305.011600"
+        },
+        {
+            "client_msg_id": "8ec38d75-498f-47c0-af9c-d8a4912b546d",
+            "type": "message",
+            "text": "al_map_rgb should allow you to create an ALLEGRO_COLOR:\n\nALLEGRO_COLOR al_map_rgb(\n   unsigned char r, unsigned char g, unsigned char b)\n\nConvert r, g, b (ranging from 0-255) into an ALLEGRO_COLOR, using 255 for alpha.",
+            "user": "UB659D0FM",
+            "ts": "1547317832.010900"
+        },
+        {
+            "client_msg_id": "d6ef49ed-cf70-43e8-88f1-a1ef38e6151e",
+            "type": "message",
+            "text": "how do you use ALLEGRO_COLOR?",
+            "user": "UFCAHB2NN",
+            "ts": "1547317714.010700"
+        },
+        {
+            "client_msg_id": "ea516c67-5f30-4b18-bd60-e9380bd6b400",
+            "type": "message",
+            "text": "To draw text you'll probably want to use al_draw_text:\n\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text)\n\nWrites the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.\n\nThe flags parameter can be 0 or one of the following flags:\n\nALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\nALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\nALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\nIt can also be combined with this flag:\n\nALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.",
+            "user": "UB659D0FM",
+            "ts": "1547317627.010200"
+        },
+        {
+            "client_msg_id": "daab2755-7989-4973-81db-adf0be063491",
+            "type": "message",
+            "text": "what's next, to draw text once I have loaded the font?",
+            "user": "UFCAHB2NN",
+            "ts": "1547317575.010000"
+        },
+        {
+            "client_msg_id": "aaf9ee52-2304-4f3e-8ad9-07adde246b00",
+            "type": "message",
+            "text": "Here's some information on al_load_ttf_font:\n\nALLEGRO_FONT *al_load_ttf_font(char const *filename, int size, int flags)\n\nLoads a TrueType font from a file using the FreeType library. Quoting from the FreeType FAQ this means support for many different font formats:\n\nTrueType, OpenType, Type1, CID, CFF, Windows FON\/FNT, X11 PCF, and others\n\nThe size parameter determines the size the font will be rendered at, specified in pixels. The standard font size is measured in units per EM, if you instead want to specify the size as the total height of glyphs in pixels, pass it as a negative value.\n\nNote: If you want to display text at multiple sizes, load the font multiple times with different size parameters.\n\nThe following flags are supported:\n\nALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.\n\nALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).\n\nALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2",
+            "user": "UB659D0FM",
+            "ts": "1547317399.009500"
+        },
+        {
+            "client_msg_id": "e36f91fc-e208-4121-95cc-25c1836b6536",
+            "type": "message",
+            "text": "how do you use al_load_ttf_font?",
+            "user": "UFCAHB2NN",
+            "ts": "1547317345.009300"
+        },
+        {
+            "client_msg_id": "180e8c47-09f1-49c3-8661-03bc68137148",
+            "type": "message",
+            "text": "You'll probably want to use al_load_font to load a font:\n\nALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)\n\nLoads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.\n\nThe flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.",
+            "user": "UB659D0FM",
+            "ts": "1547317296.009000"
+        },
+        {
+            "client_msg_id": "0a25f12f-b79a-4ebb-a1f0-c4f3495346c2",
+            "type": "message",
+            "text": "what's next?",
+            "user": "UFCAHB2NN",
+            "ts": "1547317249.008800"
+        },
+        {
+            "client_msg_id": "75bc6907-e450-459b-82e8-04e5d6dee689",
+            "type": "message",
+            "text": "You'll probably want to start with al_init_font_addon:\n\nbool al_init_font_addon(void)\n\nInitialise the font addon.\n\nNote that if you intend to load bitmap fonts, you will need to initialise allegro_image separately (unless you are using another library to load images).\n\nSimilarly, if you wish to load truetype-fonts, do not forget to also call al_init_ttf_addon.\n\nReturns true on success, false on failure. On the 5.0 branch, this function has no return value. You may wish to avoid checking the return value if your code needs to be compatible with Allegro 5.0. Currently, the function will never return false.",
+            "user": "UB659D0FM",
+            "ts": "1547317070.008300"
+        },
+        {
+            "client_msg_id": "f31522f8-6b2c-43cd-9556-7aa1417010ff",
+            "type": "message",
+            "text": "how do you draw text with Allegro?",
+            "user": "UFCAHB2NN",
+            "ts": "1547316992.008100"
+        },
+        {
+            "client_msg_id": "2fab2125-dcf8-4aa2-b70b-4a9ac0a9f80f",
+            "type": "message",
+            "text": "Great!",
+            "user": "UB659D0FM",
+            "ts": "1547316927.007800"
+        },
+        {
+            "client_msg_id": "31fc3b26-dcc3-4228-814f-50fd057a50d1",
+            "type": "message",
+            "text": "ok, it works",
+            "user": "UFCAHB2NN",
+            "ts": "1547316916.007600"
+        },
+        {
+            "client_msg_id": "66f3696d-aa5a-4f12-a7cf-435a9dd6c2eb",
+            "type": "message",
+            "text": "Have you called al_init_acodec_addon?\n\nbool al_init_acodec_addon(void)\n\nThis function registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.\n\nDepending on what libraries are available, the full set of recognised extensions is: .wav, .flac, .ogg, .opus, .it, .mod, .s3m, .xm, .voc.\n\nLimitations:\n\nSaving is only supported for wav files.\n\nThe wav file loader currently only supports 8\/16 bit little endian PCM files. 16 bits are used when saving wav files. Use flac files if more precision is required.\n\nModule files (.it, .mod, .s3m, .xm) are often composed with streaming in mind, and sometimes cannot be easily rendered into a finite length sample. Therefore they cannot be loaded with al_load_sample\/al_load_sample_f and must be streamed with al_load_audio_stream or al_load_audio_stream_f.\n\n.voc file streaming is unimplemented.\n\nReturn true on success.",
+            "user": "UB659D0FM",
+            "ts": "1547316355.007400"
+        },
+        {
+            "client_msg_id": "c294622a-2d71-4369-b7c2-5aec4dc8fd7c",
+            "type": "message",
+            "text": "how do you use allegro_acodec to handle .wav audio files?",
+            "user": "UFCAHB2NN",
+            "ts": "1547316321.007200"
+        },
+        {
+            "client_msg_id": "5b77aa7a-9762-4e5b-b32e-37dcce8abbdd",
+            "type": "message",
+            "text": "how do you get the error message when al_load_sample fails?",
+            "user": "UFCAHB2NN",
+            "ts": "1547316231.006500"
+        },
+        {
+            "client_msg_id": "959f5c91-4f4b-4535-b20e-83bcf305dfbe",
+            "type": "message",
+            "text": "You'll probably want to use al_load_sample followed by al_play_sample:\n\nALLEGRO_SAMPLE *al_load_sample(const char *filename)\n\nLoads a few different audio file formats based on their extension.\n\nNote that this stores the entire file in memory at once, which may be time consuming. To read the file as it is needed, use al_load_audio_stream.\n\nReturns the sample on success, NULL on failure.\n\nNote: the allegro_audio library does not support any audio file formats by default. You must use the allegro_acodec addon, or register your own format handler.\n\nbool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)\n\nPlays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.\n\nParameters:\n\ngain - relative volume at which the sample is played; 1.0 is normal.\npan - 0.0 is centred, -1.0 is left, 1.0 is right, or ALLEGRO_AUDIO_PAN_NONE.\nspeed - relative speed at which the sample is played; 1.0 is normal.\nloop - ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR\nret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.",
+            "user": "UB659D0FM",
+            "ts": "1547315886.006200"
+        },
+        {
+            "client_msg_id": "68f00f38-651d-479b-bfdc-04e29e7e89f3",
+            "type": "message",
+            "text": "how do you play a single wav file in Allegro?",
+            "user": "UFCAHB2NN",
+            "ts": "1547315791.006000"
+        },
+        {
+            "client_msg_id": "e3c11a31-3541-44cd-aecf-18edb632e277",
+            "type": "message",
+            "text": "Here's some information on al_reserve_samples:\n\nbool al_reserve_samples(int reserve_samples)\n\nReserves a number of sample instances, attaching them to the default mixer. If no default mixer is set when this function is called, then it will create one and attach it to the default voice. If no default voice has been set, it, too, will be created.\n\nIf you call this function a second time with a smaller number of samples, then the excess internal sample instances will be destroyed causing some sounds to stop and some instances returned by al_lock_sample_id to be invalidated.\n\nThis diagram illustrates the structures that are set up:\n\n                                      sample instance 1\n                                    \/ sample instance 2\ndefault voice &lt;-- default mixer &lt;---         .\n                                    \\        .\n                                      sample instance N\nReturns true on success, false on error. al_install_audio must have been called first.",
+            "user": "UB659D0FM",
+            "ts": "1547315702.005600"
+        },
+        {
+            "client_msg_id": "f78c3a76-f02d-4a8b-9028-1244e353bc42",
+            "type": "message",
+            "text": "describe al_reserve_samples",
+            "user": "UFCAHB2NN",
+            "ts": "1547315651.005400"
+        },
+        {
+            "client_msg_id": "ce073ca8-476b-4623-9a27-c748fdd11ec3",
+            "type": "message",
+            "text": "You'll probably want to start with al_install_audio:\n\nbool al_install_audio(void)\n\nInstall the audio subsystem.\n\nReturns true on success, false on failure.\n\nNote: most users will call al_reserve_samples and al_init_acodec_addon after this.",
+            "user": "UB659D0FM",
+            "ts": "1547315580.005100"
+        },
+        {
+            "client_msg_id": "e544a472-8636-4436-996e-eedf2ec4b398",
+            "type": "message",
+            "text": "how do you play sounds in Allegro",
+            "user": "UFCAHB2NN",
+            "ts": "1547315522.004900"
+        },
+        {
+            "client_msg_id": "ce3bb7f7-fc0d-499c-9921-5a820f07d673",
+            "type": "message",
+            "text": "Great!",
+            "user": "UB659D0FM",
+            "ts": "1547315502.004600"
+        },
+        {
+            "client_msg_id": "18260126-6edd-4171-8c6d-ce94884004c0",
+            "type": "message",
+            "text": "great, it works",
+            "user": "UFCAHB2NN",
+            "ts": "1547315474.004400"
+        },
+        {
+            "client_msg_id": "c852fc3e-7aea-4fb6-a403-25cc81a24ee4",
+            "type": "message",
+            "text": "You can retrieve the keyboard state with al_get_keyboard_state:\n\nvoid al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)\n\nSave the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state.",
+            "user": "UB659D0FM",
+            "ts": "1547314974.004200"
+        },
+        {
+            "client_msg_id": "0e3aabe4-d8b9-4f80-9a54-fbd83e5cf2be",
+            "type": "message",
+            "text": "how do you retrieve the current ALLEGRO_KEYBOARD_STATE for the keyboard?",
+            "user": "UFCAHB2NN",
+            "ts": "1547314956.004000"
+        },
+        {
+            "client_msg_id": "24a80be3-412f-4292-a9c0-485a4e3c830e",
+            "type": "message",
+            "text": "What would you like to do with it? Here's some basic information:\n\nALLEGRO_KEYBOARD_STATE\n\ntypedef struct ALLEGRO_KEYBOARD_STATE ALLEGRO_KEYBOARD_STATE;\n\nThis is a structure that is used to hold a \"snapshot\" of a keyboard's state at a particular instant. It contains the following publically readable fields:\n\ndisplay - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.\nYou cannot read the state of keys directly. Use the function al_key_down.",
+            "user": "UB659D0FM",
+            "ts": "1547314847.003500"
+        },
+        {
+            "client_msg_id": "c97d8038-f9e6-4587-ba31-cda4fd15b04f",
+            "type": "message",
+            "text": "how do you use ALLEGRO_KEYBOARD_STATE ?",
+            "user": "UFCAHB2NN",
+            "ts": "1547314772.003300"
+        },
+        {
+            "client_msg_id": "00a348ed-f43a-44cb-8d9c-6aaf43ed7325",
+            "type": "message",
+            "text": "You can check that with al_key_down:\n\nbool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)\n\nReturn true if the key specified was held down in the state specified.",
+            "user": "UB659D0FM",
+            "ts": "1547314715.002900"
+        },
+        {
+            "client_msg_id": "e26e2f84-4d15-4a32-9d55-009676329621",
+            "type": "message",
+            "text": "how do you check key pressed state",
+            "user": "UFCAHB2NN",
+            "ts": "1547314667.002700"
+        },
+        {
+            "client_msg_id": "6584ac7e-73d4-4239-b1b1-26c148e57d0c",
+            "type": "message",
+            "text": "You'll probably want to use al_get_keyboard_event_source:\n\nALLEGRO_EVENT_SOURCE *al_get_keyboard_event_source(void)\n\nRetrieve the keyboard event source. All keyboard events are generated by this event source.\n\nReturns NULL if the keyboard subsystem was not installed.",
+            "user": "UB659D0FM",
+            "ts": "1547314589.002300"
+        },
+        {
+            "client_msg_id": "9adc0c89-2e10-4cf3-a711-06d944c4741e",
+            "type": "message",
+            "text": "how do you handle keyboard events?",
+            "user": "UFCAHB2NN",
+            "ts": "1547314508.002100"
+        },
+        {
+            "client_msg_id": "0b856b64-642e-4907-93aa-4838a8932c9a",
+            "type": "message",
+            "text": "You'll probably want to look at one of the following events:\n\nALLEGRO_EVENT_KEY_DOWN\n\nA keyboard key was pressed.\n\nkeyboard.keycode (int)\nThe code corresponding to the physical key which was pressed. See the Key codes section for the list of ALLEGRO_KEY_* constants.\nkeyboard.display (ALLEGRO_DISPLAY *)\nThe display which had keyboard focus when the event occurred.\n\nALLEGRO_EVENT_KEY_UP\n\nA keyboard key was released.\n\nkeyboard.keycode (int)\nThe code corresponding to the physical key which was released. See the Key codes section for the list of ALLEGRO_KEY_* constants.\nkeyboard.display (ALLEGRO_DISPLAY *)\nThe display which had keyboard focus when the event occurred.\n\nALLEGRO_EVENT_KEY_CHAR\n\nA character was typed on the keyboard, or a character was auto-repeated.\n\nkeyboard.keycode (int)\nThe code corresponding to the physical key which was last pressed. See the Key codes section for the list of ALLEGRO_KEY_* constants.\nkeyboard.unichar (int)\nA Unicode code point (character). This may be zero or negative if the event was generated for a non-visible \"character\", such as an arrow or Function key. In that case you can act upon the keycode field.\n\nSome special keys will set the unichar field to their standard ASCII values: Tab=9, Return=13, Escape=27. In addition if you press the Control key together with A to Z the unichar field will have the values 1 to 26. For example Ctrl-A will set unichar to 1 and Ctrl-H will set it to 8.\n\nAs of Allegro 5.0.2 there are some inconsistencies in the treatment of Backspace (8 or 127) and Delete (127 or 0) keys on different platforms. These can be worked around by checking the keycode field.\n\nkeyboard.modifiers (unsigned)\nThis is a bitfield of the modifier keys which were pressed when the event occurred. See \"Keyboard modifier flags\" for the constants.\nkeyboard.repeat (bool)\nIndicates if this is a repeated character.\nkeyboard.display (ALLEGRO_DISPLAY *)\nThe display which had keyboard focus when the event occurred.\nNote: in many input methods, characters are not entered one-for-one with physical key presses. Multiple key presses can combine to generate a single character, e.g. apostrophe + e may produce '\u00e9'. Fewer key presses can also generate more characters, e.g. macro sequences expanding to common phrases.",
+            "user": "UB659D0FM",
+            "ts": "1547314247.001900"
+        },
+        {
+            "client_msg_id": "eab18df0-e8d1-4424-8a79-7de25083c370",
+            "type": "message",
+            "text": "what's next?",
+            "user": "UFCAHB2NN",
+            "ts": "1547314206.001700"
+        },
+        {
+            "client_msg_id": "ac862d87-adf2-44ee-bcdb-d0cc1a936d65",
+            "type": "message",
+            "text": "To get started, you'll probably want to use al_install_keyboard:\n\nbool al_install_keyboard(void)\n\nInstall a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.",
+            "user": "UB659D0FM",
+            "ts": "1547313961.001500"
+        },
+        {
+            "client_msg_id": "4632f4b5-701a-4e37-a684-de8ba79e2779",
+            "type": "message",
+            "text": "How do you handle keyboard input in Allegro?",
+            "user": "UFCAHB2NN",
+            "ts": "1547313888.001300"
+        },
+        {
+            "client_msg_id": "ec739eaa-f793-48e1-a87a-0e986464efd0",
+            "type": "message",
+            "text": "very well!",
+            "user": "UFCAHB2NN",
+            "ts": "1547312687.001000"
+        },
+        {
+            "client_msg_id": "0720f4e9-076e-438b-8256-c3c915d74f7d",
+            "type": "message",
+            "text": "I'm good, how about you?",
+            "user": "UB659D0FM",
+            "ts": "1547312654.000800"
+        },
+        {
+            "client_msg_id": "0b30e502-964e-4281-85f4-6d817cb426ed",
+            "type": "message",
+            "text": "How are you?",
+            "user": "UFCAHB2NN",
+            "ts": "1547312619.000600"
+        },
+        {
+            "client_msg_id": "d9c2258d-0d0c-4ffb-9b81-c4b4238bdafa",
+            "type": "message",
+            "text": "Hello!",
+            "user": "UB659D0FM",
+            "ts": "1547312591.000400"
+        },
+        {
+            "client_msg_id": "fa49d845-0dfb-415c-88f5-048db401b857",
+            "type": "message",
+            "text": "hello",
+            "user": "UFCAHB2NN",
+            "ts": "1547312573.000200"
+        }
+    ],
+    "has_more": false
+}

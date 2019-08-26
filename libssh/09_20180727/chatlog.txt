@@ -1,0 +1,158 @@
+Programmer_9 [1:24 PM]
+hi
+
+Apiza [1:24 PM]
+Hello! I'm Apiza: a Virtual Assistant designed to help answer api questions!
+
+
+Programmer_9 [1:24 PM]
+what is the API for instantiating connection object for libSSH?
+how do I create a new ssh_session?
+
+Apiza [1:25 PM]
+To create a connection in libSSH, you could use the function "ssh_session ssh_new(void)"
+
+Programmer_9 [1:34 PM]
+what are the parameters for setting localhost, port number and ip address
+how do I conect
+how do I connect
+
+Apiza [1:36 PM]
+According to libssh::ssh_options_set(ssh_session session, enum ssh_options_e type, const void* value), the "type" parameter can be set to: SSH_OPTIONS_HOST for setting a host, SSH_OPTIONS_PORT for setting a port number
+To connect in libssh, you can use the function "int ssh_connect(ssh_session session)"
+
+Programmer_9 [1:40 PM]
+thanks thats helpful
+
+Apiza [1:40 PM]
+I am happy to be of service!
+
+Programmer_9 [1:53 PM]
+how do I authenticate to the server?
+
+Apiza [1:54 PM]
+There are several authentication functions, would you like me to list them all?
+
+Programmer_9 [1:55 PM]
+just for the server
+
+Apiza [1:56 PM]
+There are several authentication functions, would you like me to list them all?
+
+Programmer_9 [1:56 PM]
+yes
+
+Apiza [1:56 PM]
+int ssh_userauth_gssapi(ssh_session session)
+int ssh_userauth_kbdint(ssh_session session, const char * user, const char * submethods)
+int ssh_userauth_none(ssh_session session, const char * username)
+int ssh_userauth_password(ssh_session session, const char * username, const char * password)
+int ssh_userauth_publickey(ssh_session session, const char * username, const ssh_key privkey)
+int ssh_userauth_publickey_auto(ssh_session session, const char * username, const char * passphrase)
+int ssh_userauth_try_publickey(ssh_session session, const char * username, const ssh_key pubkey)
+
+Programmer_9 [1:58 PM]
+do you know the is_server_known function?
+how do I create a new ssh_channel?
+
+Apiza [1:59 PM]
+libssh contains a function "int ssh_is_server_known(ssh_session session)" that can be used to check if a server is known.
+to create a new channel, you can use the "ssh_channel ssh_channel_new(ssh_session session)" function
+
+Programmer_9 [2:00 PM]
+how would i execute the who command in the ssh_channel function?
+
+Apiza [2:01 PM]
+I'm sorry, I do not understand your question, I am only authorized to respond to api questions.
+
+Programmer_9 [2:01 PM]
+what is the api for the ssh_channel?
+
+Apiza [2:02 PM]
+There are 47 functions referring to channel objects in libssh, to which are you referring?
+
+Programmer_9 [2:02 PM]
+who
+
+Apiza [2:02 PM]
+I'm sorry, I do not understand your question, I am only authorized to respond to api questions.
+
+Programmer_9 [2:05 PM]
+what does the s_server_known function return?
+what is the data type that is_server_known function returns?
+
+Apiza [2:06 PM]
+According to libssh: ssh_is_server_known returns: Returns
+SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+Programmer_9 [2:07 PM]
+thanks
+
+Apiza [2:08 PM]
+You're welcome!
+
+Programmer_9 [2:08 PM]
+how do I execute an SSH command in an established session?
+
+Apiza [2:09 PM]
+You can attempt to run a shell command without an interactive shell in libssh by using the "int ssh_channel_request_exec(ssh_channel channel, const char* cmd)" function
+
+Programmer_9 [2:10 PM]
+how do I show the remote username?
+is there a function for showing remote username?
+how do I free a channel?
+how do I shut down a channel?
+
+Apiza [2:12 PM]
+You can attempt to retrieve a username in libssh by using the "int ssh_getpass(const char* prompt, char* buf, size_t len, int echo, int verify)" function
+You can free a channel in libssh by using the "void ssh_channel_free(ssh_channel channel)" function
+You can close a channel in libssh by using the "int ssh_channel_close(ssh_channel channel)" function
+
+Programmer_9 [2:13 PM]
+ok. what is the api for creating an SFTP session?
+
+Apiza [2:13 PM]
+You can create a sftp session using the "sftp_session sftp_new(ssh_session session)" function.
+
+Programmer_9 [2:14 PM]
+what functions are available on the sftp_session interface?
+
+Apiza [2:14 PM]
+There are 49 functions associated with ssh_session objects, would you like me to list them all?
+
+Programmer_9 [2:15 PM]
+just for creating a file and a directory
+
+Apiza [2:16 PM]
+You can open a file in libssh using the "sftp_file sftp_open(sftp_session session, const char* file, int accesstype, mode_t mode)" function
+You can open a directory in libssh using the "sftp_dir sftp_opendir(sftp_session session, const char* file)" function
+
+Programmer_9 [2:17 PM]
+how do I free an sftp session?
+
+Apiza [2:17 PM]
+You can free a sftp_session in libssh by using the "void sftp_free(sftp_session sftp)" function
+
+Programmer_9 [2:21 PM]
+thanks
+
+Apiza [2:21 PM]
+You're welcome!
+
+Programmer_9 [2:24 PM]
+what are possible return values when creating a file with sftp_file interface?
+
+Apiza [2:25 PM]
+in libssh, the function "sftp_open" returns: Returns
+A sftp file handle, NULL on error with ssh and sftp error set.
+
+Programmer_9 [2:25 PM]
+what arguments does the sftp_mkdir function accept?
+
+Apiza [2:26 PM]
+In libssh, the function "sftp_mkdir" has signature "sftp_mkdir(sft_session sftp, const char* directory, mode_t mode)"

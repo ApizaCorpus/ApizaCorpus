@@ -1,0 +1,381 @@
+Programmer_29 [12:06 PM]
+What function is used to create a session
+
+Apiza [12:07 PM]
+Are you asking about ssh_new?
+
+Programmer_29 [12:07 PM]
+Yes, what arguments does it take?
+
+Apiza [12:08 PM]
+It does not take any arguments.
+
+Programmer_29 [12:08 PM]
+does it have a return value or error code?
+
+Apiza [12:08 PM]
+Would you like to see the function signature?
+
+Programmer_29 [12:08 PM]
+yes
+
+Apiza [12:09 PM]
+ssh_session ssh_new(void )
+
+Programmer_29 [12:09 PM]
+what is the type of ssh_session?
+
+Apiza [12:10 PM]
+It is a struct
+
+Programmer_29 [12:10 PM]
+what is the declaration of the struct
+what are the data members?
+
+Apiza [12:13 PM]
+ssh_session contains many data members. Can you give more information on what you are interested in?
+Or would you like me to list them all?
+
+Programmer_29 [12:13 PM]
+how do I check if an ssh session was successfully created?
+
+Apiza [12:14 PM]
+The function ssh_new returns null on error.
+
+Programmer_29 [12:17 PM]
+what is the returned ptr a ptr to?
+
+Apiza [12:18 PM]
+ssh_new returns a new ssh_session pointer, NULL on error.
+
+Programmer_29 [12:19 PM]
+ssh_new is returning null, how should i debug
+
+Apiza [12:21 PM]
+I am unsure.
+
+Programmer_29 [12:21 PM]
+what are preconditions for calling ssh_new()
+
+Apiza [12:22 PM]
+There are none.
+
+Programmer_29 [12:22 PM]
+what could cause ssh_new to fail?
+
+Apiza [12:23 PM]
+I am unsure.
+
+Programmer_29 [12:23 PM]
+how does one connect to a server using the libssh library?
+
+Apiza [12:24 PM]
+Are you asking about ssh_connect?
+
+Programmer_29 [12:24 PM]
+yes, what is the function signature of ssh_connect?
+
+Apiza [12:24 PM]
+int ssh_connect(ssh_session session)
+
+Programmer_29 [12:25 PM]
+what is the meaning of the return value from ssh_connect
+
+Apiza [12:25 PM]
+The return value is SSH_OK on success, SSH_ERROR on error. SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+Programmer_29 [12:26 PM]
+What is the integer value of these error codes?
+
+Apiza [12:27 PM]
+SSH_OK is 0, SSH_ERROR is -1, SSH_AGAIN is -2
+
+Programmer_29 [12:28 PM]
+what could cause SSH_ERROR ?
+
+Apiza [12:28 PM]
+You can get the English error string with ssh_get_error() in order to show the user what went wrong.
+
+Programmer_29 [12:30 PM]
+what does ssh_get_error return?
+
+Apiza [12:30 PM]
+A static string describing the error.
+
+Programmer_29 [12:37 PM]
+what functions does ssh_session have avalible
+
+Apiza [12:38 PM]
+The following are some functions that utilize a ssh_session:
+ssh_event_new
+ssh_free
+ssh_message_get
+ssh_new
+ssh_options_copy
+ssh_options_get_port
+
+Programmer_29 [12:40 PM]
+what argument does the ssh_get_error() take?
+
+Apiza [12:42 PM]
+The function signature is const char* ssh_get_error(void *error)
+
+Programmer_29 [12:45 PM]
+how to authenticate?
+
+Apiza [12:46 PM]
+There are many functions associated with authentication. Which are you interested in:
+ssh_userauth_agent
+ssh_userauth_gssapi
+ssh_userauth_kbdint
+ssh_userauth_kbdint_getanswer
+ssh_userauth_kbdint_getinstruction
+ssh_userauth_kbdint_getname
+ssh_userauth_kbdint_getnanswers
+ssh_userauth_kbdint_getnprompts
+ssh_userauth_kbdint_getprompt
+ssh_userauth_kbdint_setanswer
+ssh_userauth_list
+ssh_userauth_none
+ssh_userauth_password
+ssh_userauth_publickey
+ssh_userauth_publickey_auto
+ssh_userauth_try_publickey
+
+Programmer_29 [12:46 PM]
+what is the signature of ssh_userauth_password
+
+Apiza [12:47 PM]
+int ssh_userauth_password    (ssh_session session, const char *     username, const char *     password )
+
+Programmer_29 [12:48 PM]
+what are the preconditions of ssh_connect() ?
+
+Apiza [12:49 PM]
+You must have a valid ssh session to connect.
+
+Programmer_29 [12:51 PM]
+is username the SERVER ?
+
+Apiza [12:52 PM]
+I am unsure.
+
+Programmer_29 [12:52 PM]
+what are the preconditions of ssh_userauth_password ?
+
+Apiza [12:53 PM]
+You must have a valid ssh session and the password to authenticate should be in UTF-8.
+
+Programmer_29 [12:54 PM]
+How do you authenticate the server?
+
+Apiza [12:55 PM]
+There are many functions associated with authentication. Which are you interested in:
+ssh_userauth_agent
+ssh_userauth_gssapi
+ssh_userauth_kbdint
+ssh_userauth_kbdint_getanswer
+ssh_userauth_kbdint_getinstruction
+ssh_userauth_kbdint_getname
+ssh_userauth_kbdint_getnanswers
+ssh_userauth_kbdint_getnprompts
+ssh_userauth_kbdint_getprompt
+ssh_userauth_kbdint_setanswer
+ssh_userauth_list
+ssh_userauth_none
+ssh_userauth_password
+ssh_userauth_publickey
+ssh_userauth_publickey_auto
+ssh_userauth_try_publickey
+
+Programmer_29 [1:04 PM]
+is ssh_session a struct?
+
+Apiza [1:04 PM]
+yES
+It is a pointer to a struct.
+
+Programmer_29 [1:06 PM]
+is there any documentation around the use of ssh_userauth_password ?
+
+Apiza [1:07 PM]
+Here is the description of ssh_userauth_password:
+Try to authenticate by password.
+This authentication method is normally disabled on SSHv2 server. You should use keyboard-interactive mode.
+The 'password' value MUST be encoded UTF-8. It is up to the server how to interpret the password and validate it against the password database. However, if you read the password in some other encoding, you MUST convert the password to UTF-8.
+
+Programmer_29 [1:08 PM]
+does ssh_userauth_password block on user input?
+
+Apiza [1:08 PM]
+I am unsure.
+
+Programmer_29 [1:11 PM]
+what is the description of ssh_connect ?
+
+Apiza [1:12 PM]
+Connect to the ssh server.
+
+Programmer_29 [1:12 PM]
+what is the description of ssh_userauth_list ?
+
+Apiza [1:12 PM]
+Get available authentication methods from the server.
+This requires the function ssh_userauth_none() to be called before the methods are available. The server MAY return a list of methods that may continue.
+
+Programmer_29 [1:14 PM]
+describe ssh_userauth_none
+
+Apiza [1:14 PM]
+Get available authentication methods from the server.
+This requires the function ssh_userauth_none() to be called before the methods are available. The server MAY return a list of methods that may continue.
+
+Programmer_29 [1:14 PM]
+what is the description of ssh_userauth_none?
+
+Apiza [1:15 PM]
+Try to authenticate through the "none" method.
+
+Programmer_29 [1:15 PM]
+function signature of ssh_userauth_none
+
+Apiza [1:16 PM]
+int ssh_userauth_none(ssh_session session, const char * username)
+
+Programmer_29 [1:20 PM]
+is what order should ssh_connect and ssh_userauth_password be called ?
+
+Apiza [1:21 PM]
+I am unsure.
+
+Programmer_29 [1:21 PM]
+what could cause an error in ssh_userauth_password
+is there any further information about ssh_userauth_password ?
+
+Apiza [1:22 PM]
+Would you like to know what ssh_userauth_password returns?
+
+Programmer_29 [1:22 PM]
+no
+how can ssh_userauth_password fail?
+
+Apiza [1:23 PM]
+There are a couple different status codes that this function can return:
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+Note
+Most server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.
+
+Programmer_29 [1:24 PM]
+function signature of ssh_options_set
+
+Apiza [1:25 PM]
+int ssh_options_set(ssh_session     session, enum ssh_options_e type, const void * value)
+
+Programmer_29 [1:26 PM]
+what are possible values of ssh_options_e  ?
+
+Apiza [1:27 PM]
+SSH_OPTIONS_HOST,
+ SSH_OPTIONS_PORT,
+ SSH_OPTIONS_PORT_STR,
+ SSH_OPTIONS_FD,
+ SSH_OPTIONS_USER,
+ SSH_OPTIONS_SSH_DIR,
+ SSH_OPTIONS_IDENTITY,
+ SSH_OPTIONS_ADD_IDENTITY,
+ SSH_OPTIONS_KNOWNHOSTS,
+ SSH_OPTIONS_TIMEOUT,
+ SSH_OPTIONS_TIMEOUT_USEC,
+ SSH_OPTIONS_SSH1,
+ SSH_OPTIONS_SSH2,
+ SSH_OPTIONS_LOG_VERBOSITY,
+ SSH_OPTIONS_LOG_VERBOSITY_STR,
+ SSH_OPTIONS_CIPHERS_C_S,
+ SSH_OPTIONS_CIPHERS_S_C,
+ SSH_OPTIONS_COMPRESSION_C_S,
+ SSH_OPTIONS_COMPRESSION_S_C,
+ SSH_OPTIONS_PROXYCOMMAND,
+ SSH_OPTIONS_BINDADDR,
+ SSH_OPTIONS_STRICTHOSTKEYCHECK,
+ SSH_OPTIONS_COMPRESSION,
+ SSH_OPTIONS_COMPRESSION_LEVEL
+
+Programmer_29 [1:27 PM]
+what is documentation of SSH_OPTIONS_IDENTITY ?
+
+Apiza [1:28 PM]
+I am unsure.
+
+Programmer_29 [1:29 PM]
+documentation for ssh_options_set
+
+Apiza [1:30 PM]
+This function can set all possible ssh options.
+
+Programmer_29 [1:31 PM]
+how can ssh_options_set fail?
+
+Apiza [1:32 PM]
+This function returns a value of < 0 upon failure.
+
+Programmer_29 [1:32 PM]
+error codes for ssh_options_set ?
+
+Apiza [1:33 PM]
+I am unsure.
+
+Programmer_29 [1:33 PM]
+description for ssh_options_set ?
+ssh_options_set preconditions ?
+
+Apiza [1:34 PM]
+This function can set all possible ssh options.
+
+Programmer_29 [1:35 PM]
+ssh_options_set preconditions?
+
+Apiza [1:35 PM]
+Would you like to know more about the parameters of this function?
+
+Programmer_29 [1:35 PM]
+yes
+
+Apiza [1:36 PM]
+session: An allocated SSH session structure.
+type: The option type to set. This could be one of the following:
+SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *).
+SSH_OPTIONS_PORT: The port to connect to (unsigned int).
+SSH_OPTIONS_PORT_STR: The port to connect to (const char *).
+SSH_OPTIONS_FD: The file descriptor to use (socket_t).
+If you wish to open the socket yourself for a reason or another, set the file descriptor. Don't forget to set the hostname as the hostname is used as a key in the known_host mechanism.
+SSH_OPTIONS_BINDADDR: The address to bind the client to (const char *).
+SSH_OPTIONS_USER: The username for authentication (const char *).
+
+If the value is NULL, the username is set to the default username.
+SSH_OPTIONS_SSH_DIR: Set the ssh directory (const char *,format string).
+
+If the value is NULL, the directory is set to the default ssh directory.
+The ssh directory is used for files like known_hosts and identity (private and public key). It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_KNOWNHOSTS: Set the known hosts file name (const char *,format string).
+
+If the value is NULL, the directory is set to the default known hosts file, normally ~/.ssh/known_hosts.
+
+The known hosts file is used to certify remote hosts are genuine. It may include "%d" which will be replaced by the user home directory.
+SSH_OPTIONS_GLOBAL_KNOWNHOSTS: Set the global known hosts file name (const char *,format string).
+
+If the value is NULL, the directory is set to the default global known hosts file, normally /etc/ssh/ssh_known_hosts.
+The known hosts file is used to certify remote hosts are genuine.
+SSH_OPTIONS_ADD_IDENTITY (or SSH_OPTIONS_IDENTITY): Add a new identity file (const char *, format string) to the identity list.
+
+By default identity, id_dsa and id_rsa are checked.
+
+The identity used to authenticate with public key will be prepended to the list. It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_TIMEOUT: Set a timeout for the connection in seconds (long).
+SSH_OPTIONS_TIMEOUT_USEC: Set a timeout for the connection in micro seconds (long).
+SSH_OPTIONS_SSH1: Allow or deny the connection to SSH1 servers (int, 0 is false).
+SSH_OPTIONS_SSH2: Allow or deny the connection to SSH2 servers (int, 0 is false).
+SSH_OPTIONS_LOG_VERBOSITY: Set the session logging verbosity (int).

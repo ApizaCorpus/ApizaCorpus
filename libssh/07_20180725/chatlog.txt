@@ -1,0 +1,391 @@
+Programmer_7 [5:38 PM]
+create ssh_session
+
+How do I create an ssh session? (edited)
+How do I create an ssh session?
+
+Apiza [5:39 PM]
+Hello! My name is Apiza!
+
+Programmer_7 [5:39 PM]
+Hi
+How do I create an ssh session
+
+Apiza [5:40 PM]
+To create a new ssh session, use ssh_new with this signature: ssh_session ssh_new (void)
+
+Programmer_7 [5:43 PM]
+How do I ensure a session was successfully created?
+
+Apiza [5:44 PM]
+If an error occurs, null will be returned
+
+Programmer_7 [5:47 PM]
+expected expression before void
+
+Apiza [5:48 PM]
+I'm sorry, I'm not sure what this is referring to. I can only answer API questions.
+
+Programmer_7 [5:50 PM]
+Connect to localhost
+
+Apiza [5:51 PM]
+To connect, use ssh_connect with this signature: int ssh_connect (ssh_session session)
+
+Programmer_7 [5:52 PM]
+authenticate
+
+Apiza [5:53 PM]
+I'm sorry, there are several authentication methods. Would you like me to list them?
+
+Programmer_7 [5:53 PM]
+yes
+
+Apiza [5:54 PM]
+ssh_userauth_gssapi
+ssh_userauth_kbdint
+ssh_userauth_none
+ssh_userauth_password
+ssh_userauth_publickey
+ssh_userauth_publickey_auto
+ssh_userauth_try_publickey
+
+Programmer_7 [5:54 PM]
+ssh_userauth_password
+
+Apiza [5:55 PM]
+This method's signature is: int ssh_userauth_password (ssh_session session, const char * username, const char *password)
+
+Programmer_7 [5:56 PM]
+get error message
+
+Apiza [5:57 PM]
+To get error message, use ssh_get_error with this signature: const char* ssh_get_error ( void * error )
+
+Programmer_7 [6:00 PM]
+server
+
+Apiza [6:00 PM]
+I'm sorry, I can only answer API questions
+
+Programmer_7 [6:01 PM]
+Set server address
+ssh_connect
+
+Apiza [6:02 PM]
+The method's signature is: int ssh_connect (ssh_session session)
+
+Programmer_7 [6:02 PM]
+Check that host is known
+disconnect from server
+SSH Return codes
+
+Apiza [6:03 PM]
+To check if the server is known, use ssh_is_server_known with signature: int ssh_is_server_known ( ssh_session session )
+
+Programmer_7 [6:04 PM]
+set server for a session
+set host for session
+
+Apiza [6:04 PM]
+To disconnect, use ssh_disconnect with signature: void ssh_disconnect ( ssh_session session )
+
+Programmer_7 [6:04 PM]
+set host for a session
+
+Apiza [6:05 PM]
+I'm sorry, I don't understand your question
+
+Programmer_7 [6:05 PM]
+host address
+
+Apiza [6:06 PM]
+I'm sorry, I don't understand your question
+
+Programmer_7 [6:06 PM]
+how to set the host address for a session
+
+Apiza [6:06 PM]
+I'm sorry, I don't understand your question
+
+Programmer_7 [6:07 PM]
+How to set host for session
+error codes in libssh
+ssh_options_set
+
+Apiza [6:10 PM]
+This method's signature is int ssh_options_set( ssh_session session, enum ssh_options_e type, const void * value )
+
+Programmer_7 [6:10 PM]
+ssh options host
+free ssh session
+
+Apiza [6:12 PM]
+To get options, use method ssh_options_get with signature: int ssh_options_get (ssh_session     session, enum ssh_options_e type, char **     value )
+
+Programmer_7 [6:13 PM]
+ssh_options_set host
+
+Apiza [6:13 PM]
+To deallocate a SSH session handle, use method ss_free with this signature: void ssh_free ( ssh_session session )
+This method's signature is int ssh_options_set( ssh_session session, enum ssh_options_e type, const void * value )
+
+Programmer_7 [6:13 PM]
+ssh_options enum
+SSH_OK
+
+Apiza [6:14 PM]
+Enum values: Parameters
+session: An allocated SSH session structure.
+type: The option type to set. This could be one of the following:
+SSH_OPTIONS_HOST: The hostname or ip address to connect to (const char *).
+SSH_OPTIONS_PORT: The port to connect to (unsigned int).
+SSH_OPTIONS_PORT_STR: The port to connect to (const char *).
+SSH_OPTIONS_FD: The file descriptor to use (socket_t).
+
+If you wish to open the socket yourself for a reason or another, set the file descriptor. Don't forget to set the hostname as the hostname is used as a key in the known_host mechanism.
+SSH_OPTIONS_BINDADDR: The address to bind the client to (const char *).
+SSH_OPTIONS_USER: The username for authentication (const char *).
+
+If the value is NULL, the username is set to the default username.
+SSH_OPTIONS_SSH_DIR: Set the ssh directory (const char *,format string).
+
+If the value is NULL, the directory is set to the default ssh directory.
+The ssh directory is used for files like known_hosts and identity (private and public key). It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_KNOWNHOSTS: Set the known hosts file name (const char *,format string).
+
+If the value is NULL, the directory is set to the default known hosts file, normally ~/.ssh/known_hosts.
+
+The known hosts file is used to certify remote hosts are genuine. It may include "%d" which will be replaced by the user home directory.
+SSH_OPTIONS_GLOBAL_KNOWNHOSTS: Set the global known hosts file name (const char *,format string).
+
+If the value is NULL, the directory is set to the default global known hosts file, normally /etc/ssh/ssh_known_hosts.
+
+The known hosts file is used to certify remote hosts are genuine.
+SSH_OPTIONS_ADD_IDENTITY (or SSH_OPTIONS_IDENTITY): Add a new identity file (const char *, format string) to the identity list.
+
+By default identity, id_dsa and id_rsa are checked.
+
+The identity used to authenticate with public key will be prepended to the list. It may include "%s" which will be replaced by the user home directory.
+SSH_OPTIONS_TIMEOUT: Set a timeout for the connection in seconds (long).
+SSH_OPTIONS_TIMEOUT_USEC: Set a timeout for the connection in micro seconds (long).
+SSH_OPTIONS_SSH1: Allow or deny the connection to SSH1 servers (int, 0 is false).
+SSH_OPTIONS_SSH2: Allow or deny the connection to SSH2 servers (int, 0 is false).
+SSH_OPTIONS_LOG_VERBOSITY: Set the session logging verbosity (int).
+
+The verbosity of the messages. Every log smaller or equal to verbosity will be shown.
+SSH_LOG_NOLOG: No logging
+SSH_LOG_RARE: Rare conditions or warnings
+SSH_LOG_ENTRY: API-accessible entrypoints
+SSH_LOG_PACKET: Packet id and size
+SSH_LOG_FUNCTIONS: Function entering and leaving
+SSH_OPTIONS_LOG_VERBOSITY_STR: Set the session logging verbosity (const char *).
+
+The verbosity of the messages. Every log smaller or equal to verbosity will be shown.
+SSH_LOG_NOLOG: No logging
+SSH_LOG_RARE: Rare conditions or warnings
+SSH_LOG_ENTRY: API-accessible entrypoints
+SSH_LOG_PACKET: Packet id and size
+SSH_LOG_FUNCTIONS: Function entering and leaving 
+See the corresponding numbers in libssh.h.
+SSH_OPTIONS_AUTH_CALLBACK: Set a callback to use your own authentication function (function pointer).
+SSH_OPTIONS_AUTH_USERDATA: Set the user data passed to the authentication function (generic pointer).
+SSH_OPTIONS_LOG_CALLBACK: Set a callback to use your own logging function (function pointer).
+SSH_OPTIONS_LOG_USERDATA: Set the user data passed to the logging function (generic pointer).
+SSH_OPTIONS_STATUS_CALLBACK: Set a callback to show connection status in realtime (function pointer).
+
+fn(void *arg, float status)
+During ssh_connect(), libssh will call the callback with status from 0.0 to 1.0.
+SSH_OPTIONS_STATUS_ARG: Set the status argument which should be passed to the status callback (generic pointer).
+SSH_OPTIONS_CIPHERS_C_S: Set the symmetric cipher client to server (const char *, comma-separated list).
+SSH_OPTIONS_CIPHERS_S_C: Set the symmetric cipher server to client (const char *, comma-separated list).
+SSH_OPTIONS_KEY_EXCHANGE: Set the key exchange method to be used (const char *, comma-separated list). ex: "ecdh-sha2-nistp256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1"
+SSH_OPTIONS_HOSTKEYS: Set the preferred server host key types (const char *, comma-separated list). ex: "ssh-rsa,ssh-dss,ecdh-sha2-nistp256"
+SSH_OPTIONS_COMPRESSION_C_S: Set the compression to use for client to server communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION_S_C: Set the compression to use for server to client communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION: Set the compression to use for both directions communication (const char *, "yes", "no" or a specific algorithm name if needed ("zlib","zlib@openssh.com","none").
+SSH_OPTIONS_COMPRESSION_LEVEL: Set the compression level to use for zlib functions. (int, value from 1 to 9, 9 being the most efficient but slower).
+SSH_OPTIONS_STRICTHOSTKEYCHECK: Set the parameter StrictHostKeyChecking to avoid asking about a fingerprint (int, 0 = false).
+SSH_OPTIONS_PROXYCOMMAND: Set the command to be executed in order to connect to server (const char *).
+SSH_OPTIONS_GSSAPI_SERVER_IDENTITY Set it to specify the GSSAPI server identity that libssh should expect when connecting to the server (const char *).
+SSH_OPTIONS_GSSAPI_CLIENT_IDENTITY Set it to specify the GSSAPI client identity that libssh should expect when connecting to the server (const char *).
+SSH_OPTIONS_GSSAPI_DELEGATE_CREDENTIALS Set it to specify that GSSAPI should delegate credentials to the server (int, 0 = false).
+SSH_OPTIONS_PASSWORD_AUTH Set it if password authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use password authentication).
+SSH_OPTIONS_PUBKEY_AUTH Set it if pubkey authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false).
+SSH_OPTIONS_KBDINT_AUTH Set it if keyboard-interactive authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use keyboard-interactive authentication).
+SSH_OPTIONS_GSSAPI_AUTH Set it if gssapi authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use gssapi authentication).
+SSH_OPTIONS_NODELAY Set it to disable Nagle's Algorithm (TCP_NODELAY) on the session socket. (int, 0=false)
+Parameters
+value: The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.
+
+Programmer_7 [6:17 PM]
+return values of ssh_connect
+
+Apiza [6:18 PM]
+Returns SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+Programmer_7 [6:19 PM]
+return values of ssh_is_server_known
+
+Apiza [6:19 PM]
+Returns SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+Programmer_7 [6:21 PM]
+ssh_server_is_known called without crytographic context
+
+Apiza [6:22 PM]
+I'm sorry, I don't understand your question
+
+Programmer_7 [6:22 PM]
+return values of ssh_userauth_password
+
+Apiza [6:23 PM]
+Returns
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+Note
+Most server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.
+
+Programmer_7 [6:27 PM]
+create new ssh_channel
+open ssh_channel
+who command on channel
+
+Apiza [6:28 PM]
+To allocate a new channel, use ssh_channel_new with signature: ssh_channel ssh_channel_new ( ssh_session session )
+
+Programmer_7 [6:29 PM]
+open an ssh channel
+
+Apiza [6:29 PM]
+To check if a channel is open, use ssh_channel_is_open with signature: int ssh_channel_is_open ( ssh_channel channel )
+
+Programmer_7 [6:30 PM]
+open a new ssh_channel
+
+Apiza [6:30 PM]
+To open a new session channel, use ssh_channel_open_session with signature: int ssh_channel_open_session ) ssh_channel channel
+
+Programmer_7 [6:31 PM]
+return codes of ssh_channel_open_session
+
+Apiza [6:31 PM]
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+Programmer_7 [6:32 PM]
+execute command on channel
+who command on channel
+close channel
+free channel
+
+Apiza [6:34 PM]
+To run a shell command without interactive shell, use ssh_channel_request_exec with signature: int ssh_channel_request_exec (    ssh_channel channel, const char * cmd )
+To close a channel, use ssh_channel_close with signature int ssh_channel_close ( ssh_channel channel )
+
+Programmer_7 [6:35 PM]
+read response from channel
+
+Apiza [6:37 PM]
+To read data from channel, use ssh_channel_read with signature int ssh_channel_read ( ssh_channel channel,
+void *     dest, uint32_t     count, int  is_stderr )
+
+Programmer_7 [6:38 PM]
+who command
+
+Apiza [6:38 PM]
+I'm sorry, I don't understand your question
+
+Programmer_7 [6:39 PM]
+print response to stdout
+print channel response to stdout
+ssh_channel_read response count
+
+Apiza [6:40 PM]
+Returns
+The number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.
+
+Programmer_7 [6:43 PM]
+return value of std_channel_read
+
+Apiza [6:43 PM]
+Returns
+The number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.
+
+Programmer_7 [6:44 PM]
+ssh_channel_read
+What does ssh_channel_read do?
+
+Apiza [6:45 PM]
+This signature for this method is int ssh_channel_read    ( ssh_channel     channel, void * dest, uint32_t count, int     is_stderr )
+ssh_channel_read reads data from a channel
+
+Programmer_7 [6:48 PM]
+send data to channel
+write data to channel
+send EOF
+
+Apiza [6:50 PM]
+To send an end of file on the channel, use ssh_channel_send_eof with signature: int ssh_channel_send_eof ( ssh_channel channel )
+
+Programmer_7 [6:52 PM]
+create sftp session
+
+Apiza [6:53 PM]
+To create a new sftp server session, use sftp_server_new with signature sftp_session sftp_server_new    ( ssh_session session, ssh_channel chan )
+
+Programmer_7 [6:53 PM]
+get open channel on ssh session
+initialize sftp session
+
+Apiza [6:55 PM]
+To allocate a new channel, use ssh_channel_new with signature: ssh_channel ssh_channel_new ( ssh_session session )
+
+Programmer_7 [6:55 PM]
+create a directory with sftp server
+
+Apiza [6:56 PM]
+To initialize a new sftp channel with the server, use sftp_init with signature: int sftp_init ( sftp_session sftp )
+
+Programmer_7 [6:56 PM]
+sftp_init return values
+
+Apiza [6:57 PM]
+To create a directory use sftp_mkdir with signature int sftp_mkdir ( sftp_session sftp, const char * directory, mode_t mode )
+Returns
+0 on success, < 0 on error with ssh error set.
+
+Programmer_7 [6:58 PM]
+mode_t values for mkdir
+
+Apiza [6:59 PM]
+mode: Specifies the permissions to use. It is modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask)
+
+Programmer_7 [6:59 PM]
+create sftp
+
+Apiza [7:00 PM]
+To create a new sftp server session, use sftp_server_new with signature sftp_session sftp_server_new    ( ssh_session session, ssh_channel chan )
+
+Programmer_7 [7:01 PM]
+file permissions enum
+
+Apiza [7:01 PM]
+I'm sorry, I don't understand your question
+
+Programmer_7 [7:04 PM]
+mode_t enum values
+create file with sftp
+write value to file with sftp
+
+Apiza [7:06 PM]
+To write to a file, use sftp_write with signature ssize_t sftp_write ( sftp_file file, const void * buf, size_t count )

@@ -1,0 +1,412 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "f547394a-364a-4153-ab28-b82c6f841ff4",
+            "type": "message",
+            "text": "It looks like you do. You can use\n\n int sftp_init\t(\tsftp_session \tsftp\t)\nReturns\n0 on success, &lt; 0 on error with ssh error set.",
+            "user": "UB659D0FM",
+            "ts": "1532282847.000003"
+        },
+        {
+            "client_msg_id": "3936a541-3825-44ed-807e-f69b9f0464cf",
+            "type": "message",
+            "text": "do I need to call any methods to initialize the sftp_session?",
+            "user": "UBW1N1YRL",
+            "ts": "1532282811.000035"
+        },
+        {
+            "client_msg_id": "abfdaeaf-e939-4998-b4d6-40aad9ce5da2",
+            "type": "message",
+            "text": "sftp_session sftp_new\t(\tssh_session \tsession\t)\n\nDescription\nStart a new sftp session.\n\nParameters\nsession: The ssh session to use.\n\nReturns\nA new sftp session or NULL on error.\n\nReferences ssh_channel_free(), ssh_channel_new(), and ssh_channel_open_session().\n\nSee also\nsftp_free()",
+            "user": "UB659D0FM",
+            "ts": "1532282677.000040"
+        },
+        {
+            "client_msg_id": "ab4e23fa-436f-49c7-9aa5-2ef7a7463e41",
+            "type": "message",
+            "text": "how do I create a new sftp_session on an existing ssh_session?",
+            "user": "UBW1N1YRL",
+            "ts": "1532282641.000064"
+        },
+        {
+            "client_msg_id": "c836a4e1-79c0-46f6-be8a-d82b9966d21c",
+            "type": "message",
+            "text": "I am glad to hear it!",
+            "user": "UB659D0FM",
+            "ts": "1532282587.000006"
+        },
+        {
+            "client_msg_id": "19c5130e-8632-4bff-993c-30d3f109c093",
+            "type": "message",
+            "text": "nevermind I figured it out",
+            "user": "UBW1N1YRL",
+            "ts": "1532282574.000023"
+        },
+        {
+            "client_msg_id": "6b60f5f7-4b6e-4642-af0c-1733b26852e5",
+            "type": "message",
+            "text": "ssh_channel_close only closes the channel. ssh_channel_free closes and frees the channel.",
+            "user": "UB659D0FM",
+            "ts": "1532282569.000029"
+        },
+        {
+            "client_msg_id": "1d7dc5e8-a798-4801-80be-886137172f89",
+            "type": "message",
+            "text": "does ssh_channel_close also free the channel?",
+            "user": "UBW1N1YRL",
+            "ts": "1532282503.000015"
+        },
+        {
+            "client_msg_id": "2cb0f520-5c50-47d2-863b-6a7a964f74d7",
+            "type": "message",
+            "text": "To send an eof, you may use int ssh_channel_send_eof\t(\tssh_channel \tchannel\t)",
+            "user": "UB659D0FM",
+            "ts": "1532282153.000033"
+        },
+        {
+            "client_msg_id": "fce3d79c-1826-490b-94aa-014faaa14afc",
+            "type": "message",
+            "text": "One of those methods may help:\n\nint ssh_channel_close\t(\tssh_channel \tchannel\t)\nDescription\nClose a channel.\nThis sends an end of file and then closes the channel. You won't be able to recover any data the server was going to send or was in buffers.\n\n\nvoid ssh_channel_free\t(\tssh_channel \tchannel\t)\nDescription\nClose and free a channel.",
+            "user": "UB659D0FM",
+            "ts": "1532282135.000051"
+        },
+        {
+            "client_msg_id": "5d0b99d6-5893-4878-9c87-b61b5c822a59",
+            "type": "message",
+            "text": "specifically by sending an eof?",
+            "user": "UBW1N1YRL",
+            "ts": "1532282099.000062"
+        },
+        {
+            "client_msg_id": "f14e2934-2a5b-46db-9b45-ed1536c731b4",
+            "type": "message",
+            "text": "how do I shut down a channel?",
+            "user": "UBW1N1YRL",
+            "ts": "1532282081.000049"
+        },
+        {
+            "client_msg_id": "a8066126-5fc2-4c77-9c91-0c60558f551b",
+            "type": "message",
+            "text": "The buffer variable used in ssh_channel_read is a void *\n\nint ssh_channel_read\t(\tssh_channel \tchannel,\nvoid * \tdest,\nuint32_t \tcount,\nint \tis_stderr \n)\n\nParameters\nchannel: The channel to read from.\ndest: The destination buffer which will get the data.\ncount: The count of bytes to be read.\nis_stderr: A boolean value to mark reading from the stderr flow.",
+            "user": "UB659D0FM",
+            "ts": "1532281991.000023"
+        },
+        {
+            "client_msg_id": "73691818-e731-439a-85fb-b71e3dd59ead",
+            "type": "message",
+            "text": "just a char *?",
+            "user": "UBW1N1YRL",
+            "ts": "1532281923.000009"
+        },
+        {
+            "client_msg_id": "2fb06519-c588-4553-bf3d-d375db9880be",
+            "type": "message",
+            "text": "what is buffer in that code sample?",
+            "user": "UBW1N1YRL",
+            "ts": "1532281911.000055"
+        },
+        {
+            "client_msg_id": "7101574a-f121-48c6-9f4c-6bf76afb7b1d",
+            "type": "message",
+            "text": "This method should work:\n\nint ssh_channel_request_exec\t(\tssh_channel \tchannel,\nconst char * \tcmd \n)\n\nDescription\nRun a shell command without an interactive shell.\nThis is similar to 'sh -c command'.\n\nParameters\nchannel: The channel to execute the command.\ncmd: The command to execute (e.g. \"ls ~\/ -al | grep -i reports\").\n\nReturns\nSSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.\n\nExample:\n\nrc = channel_request_exec(channel, \"ps aux\");\nif (rc &gt; 0) {\n    return -1;\n}\nwhile ((rc = channel_read(channel, buffer, sizeof(buffer), 0)) &gt; 0) {\n    if (fwrite(buffer, 1, rc, stdout) != (unsigned int) rc) {\n        return -1;\n    }\n}",
+            "user": "UB659D0FM",
+            "ts": "1532281717.000067"
+        },
+        {
+            "client_msg_id": "2bb0f708-0749-4b78-9755-9b0029fafba7",
+            "type": "message",
+            "text": "great, and how would I execute a command on an opened channel?",
+            "user": "UBW1N1YRL",
+            "ts": "1532281680.000007"
+        },
+        {
+            "client_msg_id": "59664895-db64-43c4-a1ac-05658280c7d9",
+            "type": "message",
+            "text": "Sure! I found the following example:\n\nint rc;\nssh_channel channel;\n...\nrc = ssh_channel_open_session(channel);\nif (rc != SSH_OK)\n{\n    ssh_channel_free(channel);\n    return rc;\n}",
+            "user": "UB659D0FM",
+            "ts": "1532281524.000008"
+        },
+        {
+            "client_msg_id": "c504aa4a-4cda-486c-9411-fd738a429691",
+            "type": "message",
+            "text": "I'm getting an SSH_ERROR.  Can you show me an example of how it's used?  Any parameters I need to set up?",
+            "user": "UBW1N1YRL",
+            "ts": "1532281448.000025"
+        },
+        {
+            "client_msg_id": "91f33667-49a1-493e-a768-57bb56eb69d2",
+            "type": "message",
+            "text": "Returns\nSSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.",
+            "user": "UB659D0FM",
+            "ts": "1532281312.000035"
+        },
+        {
+            "client_msg_id": "b728b735-6a5a-4e40-9118-1beba8765469",
+            "type": "message",
+            "text": "and what are the return codes for ssh_channel_open_session?",
+            "user": "UBW1N1YRL",
+            "ts": "1532281293.000081"
+        },
+        {
+            "client_msg_id": "63e25a49-7e67-4b9d-bded-8836752c1d35",
+            "type": "message",
+            "text": "ssh_channel_open_session seems to be the more popular function.",
+            "user": "UB659D0FM",
+            "ts": "1532281274.000045"
+        },
+        {
+            "client_msg_id": "cdd8143a-6d79-42f9-bf4e-85e0a876864f",
+            "type": "message",
+            "text": "ssh_channel_open_auth_agent:\n\nDescription\nOpen an agent authentication forwarding channel.\nThis type of channel can be opened by a server towards a client in order to provide SSH-Agent services to the server-side process. This channel can only be opened if the client claimed support by sending a channel request beforehand.\n\nssh_channel_open_session:\n\nDescription\nOpen a session channel (suited for a shell, not TCP forwarding).",
+            "user": "UB659D0FM",
+            "ts": "1532281212.000048"
+        },
+        {
+            "client_msg_id": "963dc5ed-3205-4f24-839a-96b75c59e03a",
+            "type": "message",
+            "text": "ok great, and whats the difference between ssh_channel_open_auth_agent and ssh_channel_open_session",
+            "user": "UBW1N1YRL",
+            "ts": "1532281157.000038"
+        },
+        {
+            "client_msg_id": "aff23d28-291c-44f1-bad3-cb0d6fb72333",
+            "type": "message",
+            "text": "Sure!\n\nssh_channel ssh_channel_new\t(\tssh_session \tsession\t)\n\nDescription\nAllocate a new channel.\n\nParameters\nsession: The ssh session to use.\n\nReturns\nA pointer to a newly allocated channel, NULL on error.\n\nReferences ssh_buffer_free(), and ssh_buffer_new().",
+            "user": "UB659D0FM",
+            "ts": "1532281100.000049"
+        },
+        {
+            "client_msg_id": "21267f66-9c6d-4d1c-a0ef-22cac8fc3dea",
+            "type": "message",
+            "text": "can you tell me more about ssh_channel_new().  how do I know if it executed successfully?",
+            "user": "UBW1N1YRL",
+            "ts": "1532281068.000033"
+        },
+        {
+            "client_msg_id": "413dd22d-862a-489e-bf2f-5464202c0df0",
+            "type": "message",
+            "text": "It looks like ssh_channel ssh_channel_new\t(\tssh_session \tsession\t) will help create a new ssh channel. \n\nDescription\nAllocate a new channel.\n\nThere are a few methods to open an ssh channel:\n\nint ssh_channel_open_auth_agent\t(\tssh_channel \tchannel\t)\n\nint ssh_channel_open_session\t(\tssh_channel \tchannel\t)\n\nint ssh_channel_open_forward\t(\tssh_channel \tchannel,\nconst char * \tremotehost,\nint \tremoteport,\nconst char * \tsourcehost,\nint \tlocalport \n)\n\nint ssh_channel_open_reverse_forward\t(\tssh_channel \tchannel,\nconst char * \tremotehost,\nint \tremoteport,\nconst char * \tsourcehost,\nint \tlocalport \n)\n\nint ssh_channel_open_x11\t(\tssh_channel \tchannel,\nconst char * \torig_addr,\nint \torig_port \n)\n\nWould you like to hear more about one of these?",
+            "user": "UB659D0FM",
+            "ts": "1532280984.000016"
+        },
+        {
+            "client_msg_id": "49745a02-969b-4360-9286-5fd17f4f7ca8",
+            "type": "message",
+            "text": "Ok, how would I create and open a new ssh channel in an existing ssh session?",
+            "user": "UBW1N1YRL",
+            "ts": "1532280819.000047"
+        },
+        {
+            "client_msg_id": "d898dcf1-e417-4ba4-a1c1-e9d7fdf47141",
+            "type": "message",
+            "text": "I'm glad to hear that!\n\nssh_disconnect and ssh_free both return void.",
+            "user": "UB659D0FM",
+            "ts": "1532280767.000051"
+        },
+        {
+            "client_msg_id": "3ed11a6f-0a56-462d-821e-b078ea9a7d3d",
+            "type": "message",
+            "text": "great, that works.  And do ssh_disconnect and ssh_free return anything?",
+            "user": "UBW1N1YRL",
+            "ts": "1532280704.000023"
+        },
+        {
+            "client_msg_id": "576a98b5-4c1c-4060-865f-ee518f7db5a0",
+            "type": "message",
+            "text": "Sure! I found the following example:\n\nint rc;\nchar * password;\nssh_session my_ssh_session;\n...\nrc = ssh_userauth_password(my_ssh_session, NULL, password);\nif (rc != SSH_AUTH_SUCCESS)\n{\n    fprintf(stderr, \"Error authenticating with password: %s\\n\",\n            ssh_get_error(my_ssh_session));\n    ssh_disconnect(my_ssh_session);\n    ssh_free(my_ssh_session);\n    exit(-1);\n}",
+            "user": "UB659D0FM",
+            "ts": "1532280613.000056"
+        },
+        {
+            "client_msg_id": "559c46b0-feb4-4acb-86bb-bfb75cc264a6",
+            "type": "message",
+            "text": "no, can you show me an example of ssh_userauth_password() being used?",
+            "user": "UBW1N1YRL",
+            "ts": "1532280505.000075"
+        },
+        {
+            "client_msg_id": "570d99f0-73e1-404c-9092-9c6b5d2240cd",
+            "type": "message",
+            "text": "A 1 denotes the enum SSH_AUTH_DENIED.",
+            "user": "UB659D0FM",
+            "ts": "1532280481.000086"
+        },
+        {
+            "client_msg_id": "2e4f63dc-0fb0-40fe-8bdb-00a09211e2ca",
+            "type": "message",
+            "text": "I found the following \"userauth\" methods that don't need a \"username\" or \"user\"  parameter:\n\nint ssh_userauth_gssapi\t(\tssh_session \tsession\t)\n\nconst char* ssh_userauth_kbdint_getanswer\t(\tssh_session \tsession,\nunsigned int \ti \n)\n\nconst char* ssh_userauth_kbdint_getinstruction\t(\tssh_session \tsession\t)\n\nconst char* ssh_userauth_kbdint_getname\t(\tssh_session \tsession\t)\n\nint ssh_userauth_kbdint_getnanswers\t(\tssh_session \tsession\t)\n\nint ssh_userauth_kbdint_getnprompts\t(\tssh_session \tsession\t)\n\nconst char* ssh_userauth_kbdint_getprompt\t(\tssh_session \tsession,\nunsigned int \ti,\nchar * \techo \n)\n\nint ssh_userauth_kbdint_setanswer\t(\tssh_session \tsession,\nunsigned int \ti,\nconst char * \tanswer \n)\n\nWould you like to know more about any of these?",
+            "user": "UB659D0FM",
+            "ts": "1532280436.000077"
+        },
+        {
+            "client_msg_id": "98eb8a93-4c76-4ba9-a639-11b86ee8101d",
+            "type": "message",
+            "text": "also, what does a return code of 1 signify from ssh_userauth_password()?",
+            "user": "UBW1N1YRL",
+            "ts": "1532280360.000014"
+        },
+        {
+            "client_msg_id": "60c3f35b-6a3c-4f1f-a5f0-b8bb58e4908d",
+            "type": "message",
+            "text": "nevermind, is it possible to authenticate a user without a username?",
+            "user": "UBW1N1YRL",
+            "ts": "1532280328.000039"
+        },
+        {
+            "client_msg_id": "62715800-95ad-49ed-9cc0-e427b00d073b",
+            "type": "message",
+            "text": "I couldn't find a function to \"authenticate the server\" but I found ones to \"Check if the server is known\" and \"verify [a hash of the public key]\". Would either of those be helpful?",
+            "user": "UB659D0FM",
+            "ts": "1532280240.000073"
+        },
+        {
+            "client_msg_id": "482d2214-6481-4b1f-95b4-80510b369d8f",
+            "type": "message",
+            "text": "what method should be used to authenticate the server?",
+            "user": "UBW1N1YRL",
+            "ts": "1532280111.000060"
+        },
+        {
+            "client_msg_id": "913a2750-9b64-4538-a330-a10d7ebb7d8a",
+            "type": "message",
+            "text": "Hmm, I am not certain about that. I may still be able to find an answer. Can you elaborate?",
+            "user": "UB659D0FM",
+            "ts": "1532280059.000043"
+        },
+        {
+            "client_msg_id": "5ec4759a-7489-4846-b903-67f57327e528",
+            "type": "message",
+            "text": "ok great.  What method should I use to authenticate the server?  Is it different from ssh_userauth_password() which authenticates the user?",
+            "user": "UBW1N1YRL",
+            "ts": "1532279869.000031"
+        },
+        {
+            "client_msg_id": "bfafab72-9282-4aab-93d8-82784a127b74",
+            "type": "message",
+            "text": "Sure thing, I was able to find one example that goes from ssh_new to ssh_connect:\n\n\/\/ Open session and set options\n  my_ssh_session = ssh_new();\n  if (my_ssh_session == NULL)\n    exit(-1);\n  ssh_options_set(my_ssh_session, SSH_OPTIONS_HOST, \"localhost\");\n  \/\/ Connect to server\n  rc = ssh_connect(my_ssh_session);",
+            "user": "UB659D0FM",
+            "ts": "1532279522.000007"
+        },
+        {
+            "client_msg_id": "077fc213-912a-4505-a2fd-b0c37775e0b9",
+            "type": "message",
+            "text": "can you tell me more about how to connect to localhost after an ssh_session is successfully created?",
+            "user": "UBW1N1YRL",
+            "ts": "1532279425.000041"
+        },
+        {
+            "client_msg_id": "f2089fc1-3567-498d-8105-04b9895fb77c",
+            "type": "message",
+            "text": "Sure!\n\nenum ssh_auth_e {\n   SSH_AUTH_SUCCESS=0,\n   SSH_AUTH_DENIED,\n   SSH_AUTH_PARTIAL,\n   SSH_AUTH_INFO,\n   SSH_AUTH_AGAIN,\n   SSH_AUTH_ERROR=-1\n };",
+            "user": "UB659D0FM",
+            "ts": "1532279116.000012"
+        },
+        {
+            "client_msg_id": "1d1df2e6-85db-4d68-b4e0-e6b4a5f4a84f",
+            "type": "message",
+            "text": "can you give me the int values for those codes?",
+            "user": "UBW1N1YRL",
+            "ts": "1532279052.000012"
+        },
+        {
+            "client_msg_id": "4a79e6ca-55a4-44e7-b453-d78e0ca88462",
+            "type": "message",
+            "text": "You must be connected to the server before using ssh_userauth_password. \n\nssh_userauth_password returns\n\nSSH_AUTH_ERROR: A serious error happened.\nSSH_AUTH_DENIED: Authentication failed: use another method\nSSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method\nSSH_AUTH_SUCCESS: Authentication success\nSSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.\nNote\nMost server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.",
+            "user": "UB659D0FM",
+            "ts": "1532278988.000034"
+        },
+        {
+            "client_msg_id": "4fdd26fe-026d-47c3-a7e3-ea15de96d466",
+            "type": "message",
+            "text": "and for the ssh_userauth_password() method, does that only tell you if the provided authentication is valid or will it connect to the server as well?",
+            "user": "UBW1N1YRL",
+            "ts": "1532278899.000031"
+        },
+        {
+            "client_msg_id": "a71206b9-08a5-499b-9174-fcd2da524e5a",
+            "type": "message",
+            "text": "Sure it looks like these are the \"Error return codes\":\n\n\/* Error return codes *\/\n #define SSH_OK 0     \/* No error *\/\n #define SSH_ERROR -1 \/* Error of some kind *\/\n #define SSH_AGAIN -2 \/* The nonblocking call must be repeated *\/\n #define SSH_EOF -127 \/* We have already a eof *\/",
+            "user": "UB659D0FM",
+            "ts": "1532278775.000034"
+        },
+        {
+            "client_msg_id": "bcad67a2-9b1e-4474-a86b-2defef97bfce",
+            "type": "message",
+            "text": "for the ssh_connect() method, can you tell me what the int values are for SSH_OK, SSH_ERROR and SSH_AGAIN?",
+            "user": "UBW1N1YRL",
+            "ts": "1532278737.000016"
+        },
+        {
+            "client_msg_id": "e80bd035-40d1-42d1-8c78-ff14aa74777d",
+            "type": "message",
+            "text": "The ssh_connect method doesn't seem to mention a username field or a password field. The function ssh_userauth_password may be appropriate:\n\nint ssh_userauth_password\t(\tssh_session \tsession,\nconst char * \tusername,\nconst char * \tpassword \n)\n\nDescription\nTry to authenticate by password.\nThis authentication method is normally disabled on SSHv2 server. You should use keyboard-interactive mode.\nThe 'password' value MUST be encoded UTF-8. It is up to the server how to interpret the password and validate it against the password database. However, if you read the password in some other encoding, you MUST convert the password to UTF-8.",
+            "user": "UB659D0FM",
+            "ts": "1532278576.000051"
+        },
+        {
+            "client_msg_id": "b8f52325-c36a-4c3f-9b77-57246f455f1b",
+            "type": "message",
+            "text": "for the ssh_connect() method, shouldn't I provide a username and password to connect to an ssh server?",
+            "user": "UBW1N1YRL",
+            "ts": "1532278510.000038"
+        },
+        {
+            "client_msg_id": "ea8e0c38-cc3a-4dd6-b99a-1fe070dcfc83",
+            "type": "message",
+            "text": "The only method I found involving \"localhost\" is ssh_options_getopt:\n\nint ssh_options_getopt\t(\tssh_session \tsession,\nint * \targcptr,\nchar ** \targv \n)\n\nDescription\nParse command line arguments.\nThis is a helper for your application to generate the appropriate options from the command line arguments.\nThe argv array and argc value are changed so that the parsed arguments wont appear anymore in them.\nThe single arguments (without switches) are not parsed. thus, myssh -l user localhost\nThe command wont set the hostname value of options to localhost.",
+            "user": "UB659D0FM",
+            "ts": "1532278444.000008"
+        },
+        {
+            "client_msg_id": "c60d2dd1-1696-4f9d-8c04-8550b465e4d6",
+            "type": "message",
+            "text": "This looks like the best method to connect:\n\nint ssh_connect\t(\tssh_session session\t)\n\nDescription \nConnect to the ssh server.\n\nParameters \nsession: The ssh session to connect.\n\nReturns \nSSH_OK on success, SSH_ERROR on error. \nSSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "UB659D0FM",
+            "ts": "1532278408.000031"
+        },
+        {
+            "client_msg_id": "b5cf7b8f-ac61-47c9-b3af-a31885b778ab",
+            "type": "message",
+            "text": "how do I connect to localhost once I've created a new ssh_session?",
+            "user": "UBW1N1YRL",
+            "ts": "1532278351.000072"
+        },
+        {
+            "client_msg_id": "a348f48f-c9dd-4fe0-b114-8fedecdbd804",
+            "type": "message",
+            "text": "This method returns an \"ssh_session\":\n\nReturns\nA new ssh_session pointer, NULL on error.",
+            "user": "UB659D0FM",
+            "ts": "1532277865.000045"
+        },
+        {
+            "client_msg_id": "281af0de-1664-447d-a834-787599f6dec5",
+            "type": "message",
+            "text": "is that a void method or does it return anything?",
+            "user": "UBW1N1YRL",
+            "ts": "1532277831.000048"
+        },
+        {
+            "client_msg_id": "c6bfcebe-8002-4f34-940e-f5f31436e3a6",
+            "type": "message",
+            "text": "Sure! It looks like the best way to create a new ssh session is with \n\nssh_session ssh_new\t(\tvoid \t\t)\n\nDescription\nCreate a new ssh session.",
+            "user": "UB659D0FM",
+            "ts": "1532277797.000035"
+        },
+        {
+            "client_msg_id": "7668ea17-acf7-46c9-8353-bfe7bd6c742f",
+            "type": "message",
+            "text": "Hi Apiza, can you explain how to create a new ssh session?",
+            "user": "UBW1N1YRL",
+            "ts": "1532277762.000030"
+        },
+        {
+            "client_msg_id": "4a3d113c-d4a1-4a72-b021-ad969fcbfca0",
+            "type": "message",
+            "text": "Hello! I am Apiza, an automated virtual assistant supervised by a human. I look forward to helping you today!",
+            "user": "UB659D0FM",
+            "ts": "1532277510.000085"
+        }
+    ],
+    "has_more": false
+}

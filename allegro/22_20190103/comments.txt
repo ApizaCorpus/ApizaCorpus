@@ -1,0 +1,17 @@
+Zack [3:24 PM]
+Those are all numerical questions in the survey. If you have any other feedback, I'd love to hear it here!
+
+...
+
+Programmer_22 [3:31 PM]
+So, some my additional comments: reading headers would be faster and easily at least for me. But I'm really impressing how system was understanding my requests.
+
+Zack [3:32 PM]
+If a system like this were to be used alongside regular documentation (instead of completely replacing it), are there any specific features you would expect or want to see in it?
+
+Programmer_22 [3:34 PM]
+it would nice to have some pre-session before this task, it would allow me to understand how to interact with it.
+Also, some command like example <function>, doc <function> would be more faster than "show me example of <function>" :slightly_smiling_face:
+
+Zack [3:35 PM]
+Haha, that's a good point, thank you!

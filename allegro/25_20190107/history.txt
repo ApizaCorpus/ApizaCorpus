@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/10463201/getch-and-arrow-codes
+https://www.google.com/search?q=how+to+capture+arrow+keys+in+c&rlz=1C1CHBF_enPK825PK825&oq=how+to+capture+arrow+keys+in+c&aqs=chrome..69i57j0l2.805j0j7&sourceid=chrome&ie=UTF-8
+https://stackoverflow.com/questions/190229/where-is-the-itoa-function-in-linux
+https://www.google.com/search?q=convert+into+to+string+in+c&rlz=1C1CHBF_enPK825PK825&oq=convert+into+to+string+in+c&aqs=chrome..69i57j69i60l5.3859j0j7&sourceid=chrome&ie=UTF-8

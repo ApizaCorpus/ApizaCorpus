@@ -1,0 +1,179 @@
+Programmer_25 [11:19 AM]
+Hi Apiza
+
+
+Apiza [11:20 AM]
+Hi Programmer_25!
+
+Programmer_25 [11:22 AM]
+How can i get arrow keys in Allegro?
+
+Apiza [11:23 AM]
+The key codes for the arrow keys are:
+
+ALLEGRO_KEY_LEFT
+ALLEGRO_KEY_RIGHT
+ALLEGRO_KEY_UP
+ALLEGRO_KEY_DOWN
+
+Programmer_25 [11:25 AM]
+Are these boolean values?
+they are enum, So, How can I use ALLEGRO_KEY_LEFT to get the status of this key?
+
+Apiza [11:27 AM]
+al_key_down will give you the status of a given key:
+
+bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)
+
+Programmer_25 [11:30 AM]
+what is the type of ALLEGRO_KEYBOARD_STATE?
+
+Apiza [11:31 AM]
+ALLEGRO_KEYBOARD_STATE
+
+typedef struct ALLEGRO_KEYBOARD_STATE ALLEGRO_KEYBOARD_STATE;
+
+This is a structure that is used to hold a "snapshot" of a keyboard's state at a particular instant. It contains the following publically readable fields:
+   • display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.
+
+Programmer_25 [11:42 AM]
+where can I get the keyboard state?
+
+Apiza [11:42 AM]
+al_get_keyboard_state will allow you to get the keyboard state:
+
+void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state)
+
+
+Save the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state.
+
+Programmer_25 [11:45 AM]
+getting this error
+allegro_tasks: /build/allegro5-LWhWgt/allegro5-5.2.4.0/src/keybdnu.c:241: al_get_keyboard_state: Assertion `new_keyboard_driver' failed.
+
+Apiza [11:47 AM]
+Have you called al_init()?
+
+Programmer_25 [11:49 AM]
+yes
+can you write a short snippet to get the arrow keys?
+
+Apiza [11:51 AM]
+What do you mean by get the arrow keys?
+
+Programmer_25 [11:54 AM]
+Get arrow keys when they are pressed on keyboard
+
+Apiza [11:55 AM]
+al_key_down should return true if the specified key is pressed:
+
+bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)
+
+Return true if the key specified was held down in the state specified.
+The key codes for the arrow keys are:
+
+ALLEGRO_KEY_LEFT
+ALLEGRO_KEY_RIGHT
+ALLEGRO_KEY_UP
+ALLEGRO_KEY_DOWN
+
+Programmer_25 [11:57 AM]
+what is the function the play a sound
+
+Apiza [11:58 AM]
+Use al_install_audio to initialize sound. To load any sample formats, you will need to initialise the acodec addon with al_init_acodec_addon.
+
+After that, you can simply use al_reserve_samples and pass the number of sound effects typically playing at the same time. Then load your sound effects with al_load_sample and play them with al_play_sample. To stream large pieces of music from disk, you can use al_load_audio_stream so the whole piece will not have to be pre-loaded into memory.
+
+If the above sounds too simple and you can't help but think about clipping and latency issues, don't worry. Allegro gives you full control over how much or little you want its sound system to do. The al_reserve_samples function mentioned above only sets up a default mixer and a number of sample instances but you don't need to use it.
+
+Instead, to get a "direct connection" to the sound system you would use an ALLEGRO_VOICE (but depending on the platform only one such voice is guaranteed to be available and it might require a specific format of audio data). Therefore all sound can be first routed through an ALLEGRO_MIXER which is connected to such a voice (or another mixer) and will mix together all sample data fed to it.
+
+You can then directly stream real-time sample data to a mixer or a voice using an ALLEGRO_AUDIO_STREAM or play complete sounds using an ALLEGRO_SAMPLE_INSTANCE. The latter simply points to an ALLEGRO_SAMPLE and will stream it for you.
+
+Programmer_25 [12:20 PM]
+how can i get ALLEGRO_SAMPLE * from .wav file?
+
+Apiza [12:22 PM]
+It looks like you’ll want to use al_init_acodec_addon:
+
+bool al_init_acodec_addon(void)
+
+This function registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.
+Depending on what libraries are available, the full set of recognised extensions is: .wav, .flac, .ogg, .opus, .it, .mod, .s3m, .xm, .voc.
+Limitations:
+   • Saving is only supported for wav files.
+   • The wav file loader currently only supports 8/16 bit little endian PCM files. 16 bits are used when saving wav files. Use flac files if more precision is required.
+   • Module files (.it, .mod, .s3m, .xm) are often composed with streaming in mind, and sometimes cannot be easily rendered into a finite length sample. Therefore they cannot be loaded with al_load_sample/al_load_sample_f and must be streamed with al_load_audio_stream or al_load_audio_stream_f.
+   • .voc file streaming is unimplemented.
+Return true on success.
+
+Programmer_25 [12:24 PM]
+what is this error for ?
+
+allegro_tasks: /build/allegro5-LWhWgt/allegro5-5.2.4.0/addons/font/text.c:79: al_draw_ustr: Assertion `font' failed.
+
+Apiza [12:26 PM]
+Have you called al_init_font_addon() and al_init_ttf_addon()?
+
+Programmer_25 [12:26 PM]
+no
+
+Apiza [12:27 PM]
+You’ll probably want to use al_init_font_addon:
+
+bool al_init_font_addon(void)
+
+Initialise the font addon.
+Note that if you intend to load bitmap fonts, you will need to initialise allegro_image separately (unless you are using another library to load images).
+Similarly, if you wish to load truetype-fonts, do not forget to also call al_init_ttf_addon.
+Returns true on success, false on failure. On the 5.0 branch, this function has no return value. You may wish to avoid checking the return value if your code needs to be compatible with Allegro 5.0. Currently, the function will never return false.
+
+Programmer_25 [12:30 PM]
+how can i use al_draw_text ?
+
+Apiza [12:31 PM]
+This should help with al_draw_text:
+
+void al_draw_text(const ALLEGRO_FONT *font,
+  ALLEGRO_COLOR color, float x, float y, int flags,
+  char const *text)
+Writes the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.
+The flags parameter can be 0 or one of the following flags:
+   • ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).
+   • ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.
+   • ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.
+It can also be combined with this flag:
+   • ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4
+This function does not support newline characters (\n), but you can use al_draw_multiline_text for multi line text output.
+
+Programmer_25 [12:34 PM]
+using al_load_font ?
+
+Apiza [12:35 PM]
+This should help with al_load_font:
+
+ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)
+
+Loads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.
+
+The flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.
+
+Programmer_25 [12:42 PM]
+how to load a .png bitmap
+
+Apiza [12:43 PM]
+It looks like you'll want to use al_init_image_addon:
+
+bool al_init_image_addon(void)
+
+Initializes the image addon. This registers bitmap format handlers for al_load_bitmap, al_load_bitmap_f, al_save_bitmap, al_save_bitmap_f.
+
+The following types are built into the Allegro image addon and guaranteed to be available: BMP, DDS, PCX, TGA. Every platform also supports JPEG and PNG via external dependencies.
+
+Other formats may be available depending on the operating system and installed libraries, but are not guaranteed and should not be assumed to be universally available.
+
+The DDS format is only supported to load from, and only if the DDS file contains textures compressed in the DXT1, DXT3 and DXT5 formats. Note that when loading a DDS file, the created bitmap will always be a video bitmap and will have the pixel format matching the format in the file.
+
+Programmer_25 [12:48 PM]
+can you guide me to  use a PNG format?

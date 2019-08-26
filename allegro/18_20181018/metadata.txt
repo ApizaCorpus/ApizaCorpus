@@ -1,0 +1,2 @@
+wizard	01
+programmer	18

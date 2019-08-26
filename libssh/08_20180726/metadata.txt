@@ -1,0 +1,2 @@
+wizard	05
+programmer	08

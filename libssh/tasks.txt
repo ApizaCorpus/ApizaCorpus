@@ -1,0 +1,13 @@
+In the main method, use the libssh API to create a new ssh_session. Ensure that the session is successfully created.
+Connect to the localhost. 
+Authenticate the server (check that it is in the known host file) and authenticate the user to the server.
+Disconnect from the server and free the session.
+Create and open a new ssh_channel in the ssh_session. 
+Execute the command "who" on the open channel.
+Read in response from the channel and print it to stdout.
+Shut down the channel by sending the eof and closing and freeing the channel.
+Create and initialize a new sftp_session on the connected ssh_session.
+Create a new directory "Dir1". Return any errors, but do not return if the directory already exists.
+Create a new file in Dir1 called "File1".
+Write the string "Hello, world!" to the file.
+Close the file, and free the sftp session.

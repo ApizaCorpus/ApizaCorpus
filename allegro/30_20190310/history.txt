@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/2162758/how-to-print-in-c
+https://softwareengineering.stackexchange.com/questions/286490/what-is-the-difference-between-function-and-functionvoid

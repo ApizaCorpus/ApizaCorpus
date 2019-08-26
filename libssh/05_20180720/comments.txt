@@ -1,0 +1,14 @@
+Programmer_5 [1:06 PM]
+gonna play a lil dumber to help flesh her out. I've written a lot of talking bots (eliza clones) so I know it's good for it.
+
+...
+
+Programmer_5 [2:31 PM]
+8. How often were the system responses frustrating, sluggish, or unhelpful? (5 stars = Never, 1 star = Always) <-- this hsould be 2 questions
+
+it was often laggy but never unhelpfuil
+
+...
+
+Programmer_5 [2:32 PM]
+I would add it was better than the documentation at return results I used that a lot to make my switch states

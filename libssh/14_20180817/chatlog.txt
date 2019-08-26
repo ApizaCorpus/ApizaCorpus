@@ -1,0 +1,405 @@
+Programmer_14 [10:18 AM]
+help on ssh_session
+
+man ssh_session
+help
+
+Apiza [10:19 AM]
+Hello! I have several functions relating to ssh_session. What can I help you with?
+
+Programmer_14 [10:19 AM]
+create a new ssh_session
+
+Apiza [10:19 AM]
+This function should work:
+
+ssh_session ssh_new    (    void         )
+
+Description
+Create a new ssh session.
+
+Returns
+A new ssh_session pointer, NULL on error.
+
+Programmer_14 [10:20 AM]
+manpage of ssh_new
+help on ssh_new
+
+Apiza [10:21 AM]
+Unfortunately I can't provide you with a manpage, but I can answer any specific questions you have!
+How can I help with ssh_new?
+Typical usage of ssh_new() looks something like this:
+
+ssh_session *session = ssh_new();
+
+Programmer_14 [10:27 AM]
+help on ssh_session connection
+
+Apiza [10:28 AM]
+I found two functions relating directly to ssh_session connection:
+
+int ssh_connect    (    ssh_session     session    )
+
+void ssh_disconnect    (    ssh_session     session    )
+
+Programmer_14 [10:28 AM]
+help on ssh_connect
+
+Apiza [10:28 AM]
+Here are the details about the function ssh_connect:
+
+int ssh_connect    (    ssh_session     session    )
+
+Description
+Connect to the ssh server.
+
+Parameters
+session: The ssh session to connect.
+
+Returns
+SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+See also
+ssh_new()
+ssh_disconnect()
+
+Programmer_14 [10:31 AM]
+list all ssh functions
+
+Apiza [10:32 AM]
+There are many function in the libssh library! Feel free to ask about a particular topic, and I will list all related functions.
+
+Programmer_14 [10:32 AM]
+list all ssh connection functions
+
+Apiza [10:33 AM]
+These are all of the functions I could find related to "connection":
+
+ssh_channel ssh_channel_accept_forward    (    ssh_session     session,
+int     timeout_ms,
+int *     destination_port
+)
+
+int ssh_channel_listen_forward    (    ssh_session     session,
+const char *     address,
+int     port,
+int *     bound_port
+)
+
+int ssh_connect    (    ssh_session     session    )
+
+void ssh_disconnect    (    ssh_session     session    )
+
+int ssh_event_add_connector    (    ssh_event     event,
+ssh_connector     connector
+)
+
+int ssh_event_remove_connector    (    ssh_event     event,
+ssh_connector     connector
+)
+
+const char* ssh_get_disconnect_message    (    ssh_session     session    )
+
+socket_t ssh_get_fd    (    ssh_session     session    )
+
+int ssh_is_connected    (    ssh_session     session    )
+
+int ssh_is_server_known    (    ssh_session     session    )
+
+int ssh_options_copy    (    ssh_session     src,
+ssh_session *     dest
+)
+
+void ssh_silent_disconnect    (    ssh_session     session    )
+It looks like ssh_connect() is the function most directly related to "connection."
+
+Programmer_14 [10:36 AM]
+help on ssh option functions
+
+Apiza [10:36 AM]
+The function ssh_options_copy works as follows:
+
+Description
+Duplicate the options of a session structure.
+If you make several sessions with the same options this is useful. You cannot use twice the same option structure in ssh_session_connect.
+
+Parameters
+src: The session to use to copy the options.
+dest: A pointer to store the allocated session with duplicated options. You have to free the memory.
+
+Returns
+0 on sucess, -1 on error with errno set.
+It appears to be related to the setter an getter functions ssh_options_set and ssh_options_get. Would you like to know more about either of these?
+
+Programmer_14 [10:37 AM]
+function to set ssh host
+
+Apiza [10:39 AM]
+The function ssh_options_set allows you to set the ssh host.
+
+int ssh_options_set    (    ssh_session     session,
+enum ssh_options_e     type,
+const void *     value
+)
+
+The type parameter can take the value SSH_OPTIONS_HOST, and value is then the hostname or ip address to connect to (const char *).
+
+Apiza [10:45 AM]
+Remember, I'm here to help – I can provide examples, suggestions, or function details. Don't hesitate to ask!
+
+Programmer_14 [10:45 AM]
+ssh authenticate example
+
+Apiza [10:46 AM]
+Sure, are you interested in authenticating the server or the user?
+
+Programmer_14 [10:46 AM]
+authenticate the user
+also authenticate the server (edited)
+
+Apiza [10:47 AM]
+I found the following code snippet:
+
+// Authenticate ourselves
+ password = getpass("Password: ");
+ rc = ssh_userauth_password(my_ssh_session, NULL, password);
+ if (rc != SSH_AUTH_SUCCESS)
+ {
+   fprintf(stderr, "Error authenticating with password: %s\n",
+           ssh_get_error(my_ssh_session));
+   ssh_disconnect(my_ssh_session);
+   ssh_free(my_ssh_session);
+   exit(-1);
+ }
+
+Programmer_14 [10:47 AM]
+example code of authenticate the server
+
+Apiza [10:48 AM]
+Sure, here's an example of authenticating the server:
+
+`enum ssh_known_hosts_e state;
+...
+state = ssh_session_is_known_server(session);
+   switch (state) {
+       case SSH_KNOWN_HOSTS_OK:
+           /* OK */
+           break;
+       case SSH_KNOWN_HOSTS_CHANGED:
+           fprintf(stderr, "Host key for server changed: it is now:\n");
+           ssh_print_hexa("Public key hash", hash, hlen);
+           fprintf(stderr, "For security reasons, connection will be stopped\n");
+           ssh_clean_pubkey_hash(&hash);
+           return -1;
+       case SSH_KNOWN_HOSTS_OTHER:
+           fprintf(stderr, "The host key for this server was not found but an other"
+                   "type of key exists.\n");
+           fprintf(stderr, "An attacker might change the default server key to"
+                   "confuse your client into thinking the key does not exist\n");
+           ssh_clean_pubkey_hash(&hash);
+           return -1;
+       case SSH_KNOWN_HOSTS_NOT_FOUND:
+           fprintf(stderr, "Could not find known host file.\n");
+           fprintf(stderr, "If you accept the host key here, the file will be"
+                   "automatically created.\n");
+           /* FALL THROUGH to SSH_SERVER_NOT_KNOWN behavior */
+       case SSH_KNOWN_HOSTS_UNKNOWN:
+           hexa = ssh_get_hexa(hash, hlen);
+           fprintf(stderr,"The server is unknown. Do you trust the host key?\n");
+           fprintf(stderr, "Public key hash: %s\n", hexa);
+           ssh_string_free_char(hexa);
+           ssh_clean_pubkey_hash(&hash);
+           p = fgets(buf, sizeof(buf), stdin);
+           if (p == NULL) {
+               return -1;
+           }
+           cmp = strncasecmp(buf, "yes", 3);
+           if (cmp != 0) {
+               return -1;
+           }
+           rc = ssh_session_update_known_hosts(session);
+           if (rc < 0) {
+               fprintf(stderr, "Error %s\n", strerror(errno));
+               return -1;
+           }
+           break;
+       case SSH_KNOWN_HOSTS_ERROR:
+           fprintf(stderr, "Error %s", ssh_get_error(session));
+           ssh_clean_pubkey_hash(&hash);
+           return -1;
+   }`
+
+Programmer_14 [10:54 AM]
+header file of SSH_OK
+
+Apiza [10:55 AM]
+I found SSH_OK listed as an Error return code:
+
+/* Error return codes */
+#define SSH_OK 0     /* No error */
+#define SSH_ERROR -1 /* Error of some kind */
+#define SSH_AGAIN -2 /* The nonblocking call must be repeated */
+#define SSH_EOF -127 /* We have already a eof */
+
+Programmer_14 [10:56 AM]
+SSH_OK is defined in which header file
+
+Apiza [10:57 AM]
+It is defined in libssh.h
+
+Programmer_14 [10:58 AM]
+SSH_KNOWN_HOSTS_OK is defined in which header file
+
+Apiza [11:01 AM]
+This may take a second, I can't find SSH_KNOWN_HOSTS_OK in the headers. I am searching for similar strings that serve a similar purpose.
+It appears SSH_KNOWN_HOSTS_OK may be deprecated. In libssh.h, I was able to find the following:
+
+enum ssh_server_known_e {
+    SSH_SERVER_ERROR=-1,
+    SSH_SERVER_NOT_KNOWN=0,
+    SSH_SERVER_KNOWN_OK,
+    SSH_SERVER_KNOWN_CHANGED,
+    SSH_SERVER_FOUND_OTHER,
+    SSH_SERVER_FILE_NOT_FOUND
+};
+
+This enum may serve the same purpose in the most up-to-date version of the library.
+
+Programmer_14 [11:16 AM]
+header file of ssh_session_is_known_server
+
+Apiza [11:19 AM]
+I found ssh_session_is_known_server in several examples, but it appears to be deprecated in the current library. The function int ssh_is_server_known    (ssh_session     session) is the up-to-date version of that function.
+
+Description
+Check if the server is known.
+Checks the user's known host file for a previous connection to the current server.
+
+Parameters
+session: The SSH session to use.
+
+Returns
+SSH_SERVER_KNOWN_OK: The server is known and has not changed.
+SSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.
+SSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.
+SSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.
+SSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.
+SSH_SERVER_ERROR: Some error happened.
+
+Programmer_14 [11:25 AM]
+ssh_is_server_known example code
+
+Apiza [11:27 AM]
+The function ssh_is_server_known should work something like this:
+
+int rc = ssh_is_server_known(session);
+if(rc!=SSH_SERVER_KNOWN_OK){
+   return -1;
+}
+
+Programmer_14 [11:28 AM]
+verify ssh server example code
+
+Apiza [11:31 AM]
+The code snippet above should "check that the server you just connected to is known and safe to use."
+
+The session variable must first be initialized and connected to the server.
+
+Programmer_14 [11:32 AM]
+get ssh public key  functions
+
+Apiza [11:33 AM]
+There are 21 public key functions:
+
+ssh_key_clean
+ssh_key_cmp
+ssh_key_free
+ssh_key_is_private
+ssh_key_is_public
+ssh_key_new
+ssh_key_type
+ssh_key_type_from_name
+ssh_key_type_to_char
+ssh_pki_copy_cert_to_privkey
+ssh_pki_export_privkey_file
+ssh_pki_export_privkey_to_pubkey
+ssh_pki_export_pubkey_base64
+ssh_pki_generate
+ssh_pki_import_cert_base64
+ssh_pki_import_cert_file
+ssh_pki_import_privkey_base64
+ssh_pki_import_privkey_file
+ssh_pki_import_pubkey_base64
+ssh_pki_import_pubkey_file
+ssh_pki_key_ecdsa_name
+
+Programmer_14 [11:34 AM]
+how to get ssh public key from host
+
+Apiza [11:34 AM]
+There are also the functions related to "public key" in the ssh_session module:
+
+ssh_get_publickey
+ssh_get_publickey_hash
+ssh_get_server_publickey
+
+Programmer_14 [11:34 AM]
+ssh_get_publickey example code
+
+Apiza [11:37 AM]
+I couldn't find any examples for
+
+int ssh_get_publickey    (    ssh_session     session,
+ssh_key *     key
+)
+
+and the documentation is limited. There is documentation for the related function:
+
+int ssh_get_publickey_hash    (    const ssh_key     key,
+enum ssh_publickey_hash_type     type,
+unsigned char **     hash,
+size_t *     hlen
+)
+
+Description
+Allocates a buffer with the hash of the public key.
+This function allows you to get a hash of the public key. You can then print this hash in a human-readable form to the user so that he is able to verify it. Use ssh_get_hexa() or ssh_print_hexa() to display it.
+
+Parameters
+key: The public key to create the hash for.
+type: The type of the hash you want.
+hash: A pointer to store the allocated buffer. It can be freed using ssh_clean_pubkey_hash().
+hlen: The length of the hash.
+
+Returns
+0 on success, -1 if an error occured.
+
+See also
+ssh_is_server_known()
+ssh_get_hexa()
+ssh_print_hexa()
+ssh_clean_pubkey_hash()
+As well as
+int ssh_get_server_publickey    (    ssh_session     session,
+ssh_key *     key
+)
+
+Description
+Get the server public key from a session.
+
+Parameters
+session: The session to get the key from.
+[out]: key: A pointer to store the allocated key. You need to free the key.
+
+Returns
+SSH_OK on success, SSH_ERROR on errror.
+
+See also
+ssh_key_free()
+
+Programmer_14 [1:34 PM]
+example code of ssh connection  authentication
+
+Programmer_14 [3:04 PM]
+ssh authentication example

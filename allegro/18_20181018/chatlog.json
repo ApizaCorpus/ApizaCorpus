@@ -1,0 +1,337 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "38b80851-adee-48d8-93ba-221db01cf777",
+            "type": "message",
+            "text": "what is the x y orientation of the display",
+            "user": "UDJHYMZ4P",
+            "ts": "1539902975.000100"
+        },
+        {
+            "client_msg_id": "a8778df6-e4b8-4042-b100-d3601276ae69",
+            "type": "message",
+            "text": "```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```\n\nThe flags can be 0 or\n\nALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.\n\nALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).\n\nALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2",
+            "user": "UB659D0FM",
+            "ts": "1539902335.000200"
+        },
+        {
+            "client_msg_id": "2d5649d2-51ae-4330-b114-8f2570fee6c7",
+            "type": "message",
+            "text": "what are the parameters for al_load_font",
+            "user": "UDJHYMZ4P",
+            "ts": "1539902264.000100"
+        },
+        {
+            "client_msg_id": "b34a2348-cc3b-4a20-b2b3-8106cf4e30a5",
+            "type": "message",
+            "text": "typedef struct ALLEGRO_COLOR ALLEGRO_COLOR;\n\nAn ALLEGRO_COLOR structure describes a color in a device independent way. Use al_map_rgb et al. and al_unmap_rgb et al. to translate from and to various color representations.",
+            "user": "UB659D0FM",
+            "ts": "1539901838.000100"
+        },
+        {
+            "client_msg_id": "84ec8607-80ff-41aa-a9e8-993f90f04283",
+            "type": "message",
+            "text": "define ALLEGRO_COLOR",
+            "user": "UDJHYMZ4P",
+            "ts": "1539901814.000100"
+        },
+        {
+            "client_msg_id": "70e6ae66-3b72-4008-9c88-17993158ef48",
+            "type": "message",
+            "text": "Sure, here it is:\n\nal_draw_text\n\n```\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) ```\n\nWrites the NUL-terminated string text onto the target bitmap at position  x, y, using the specified font.\n\nThe flags parameter can be 0 or one of the following flags:\n\nALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\nALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\nALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\nIt can also be combined with this flag:\n\nALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.\n\nSee also: al_draw_ustr, al_draw_textf, al_draw_justified_text, al_draw_multiline_text.",
+            "user": "UB659D0FM",
+            "ts": "1539901463.000100"
+        },
+        {
+            "client_msg_id": "4b65fc63-bda4-4a6f-930b-bb23881acccc",
+            "type": "message",
+            "text": "Three are several methods to Draw text on the display. The simplest is\n\n```void al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) ```\n\nThe font add-on must first be initialized.\n\n```bool al_init_font_addon(void)```\n\nAn ALLEGRO_FONT struct can be loaded with\n\n```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```",
+            "user": "UB659D0FM",
+            "ts": "1539901437.000100"
+        },
+        {
+            "client_msg_id": "f8d3c07c-a751-4516-b07a-3a4024443168",
+            "type": "message",
+            "text": "I need documentation for al_draw_text",
+            "user": "UDJHYMZ4P",
+            "ts": "1539901430.000100"
+        },
+        {
+            "client_msg_id": "ab812b41-1eb1-4e61-9b7b-17dc8af40a9d",
+            "type": "message",
+            "text": "How do I draw text on the display",
+            "user": "UDJHYMZ4P",
+            "ts": "1539901332.000100"
+        },
+        {
+            "client_msg_id": "1d4d6cf7-985a-4da6-92de-144f2fe43a25",
+            "type": "message",
+            "text": "Sure, here's the documentation:\n\nal_play_sample\n\n```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```\n\nPlays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.\n\nParameters:\n\ngain - relative volume at which the sample is played; 1.0 is normal.\npan - 0.0 is centred, -1.0 is left, 1.0 is right, or ALLEGRO_AUDIO_PAN_NONE.\nspeed - relative speed at which the sample is played; 1.0 is normal.\nloop - ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR\nret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.\n\nSee also: ALLEGRO_PLAYMODE, ALLEGRO_AUDIO_PAN_NONE, ALLEGRO_SAMPLE_ID, al_stop_sample, al_stop_samples, al_lock_sample_id.",
+            "user": "UB659D0FM",
+            "ts": "1539901171.000100"
+        },
+        {
+            "client_msg_id": "c5739e2c-466d-4c6e-b52a-8afc253f7d82",
+            "type": "message",
+            "text": "gain - relative volume at which the sample is played; 1.0 is normal.\ngain is a float",
+            "user": "UB659D0FM",
+            "ts": "1539901135.000100"
+        },
+        {
+            "client_msg_id": "90a2abb1-7210-416b-9b23-c306ca0f9aca",
+            "type": "message",
+            "text": "I need documentation for al_play_sample",
+            "user": "UDJHYMZ4P",
+            "ts": "1539901128.000100"
+        },
+        {
+            "client_msg_id": "7c3334ba-a277-4606-81d0-d35c22844253",
+            "type": "message",
+            "text": "what are the valid gain values for al_play_sample?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539901091.000100"
+        },
+        {
+            "client_msg_id": "6f1b8f33-e36e-44cb-9be0-00c2a0f4ae9a",
+            "type": "message",
+            "text": "int reserve_samples - refers to the number of sample instances to be reserved and attached to the default mixer",
+            "user": "UB659D0FM",
+            "ts": "1539900937.000100"
+        },
+        {
+            "client_msg_id": "06f02f28-fe58-4388-9938-ccaf863de06b",
+            "type": "message",
+            "text": "what is the parameter reserve_samples",
+            "user": "UDJHYMZ4P",
+            "ts": "1539900884.000100"
+        },
+        {
+            "client_msg_id": "70c96913-639f-477d-88a5-cf5babdda0db",
+            "type": "message",
+            "text": "To play sound, the audio add-on and audio codec add-on must be installed.\n\n```bool al_install_audio(void)```\n```bool al_init_acodec_addon(void)```\n\nThere are several functions to play audio samples. The simplest is al_play_sample\n:\n\n```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```\n\nAn ALLEGRO_SAMPLE must first be reserved and loaded.\n\n```bool al_reserve_samples(int reserve_samples)```\n```ALLEGRO_SAMPLE *al_load_sample(const char *filename)```",
+            "user": "UB659D0FM",
+            "ts": "1539900633.000100"
+        },
+        {
+            "client_msg_id": "0cde11e9-ac8a-412a-9999-87ee092d3162",
+            "type": "message",
+            "text": "How do I play sound files?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539900463.000100"
+        },
+        {
+            "client_msg_id": "5ad672a4-c26c-41d0-8eea-ee403661ab31",
+            "type": "message",
+            "text": "How do I add sound effects?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539900450.000100"
+        },
+        {
+            "client_msg_id": "599d7fc4-32d2-4d4b-a17b-212363b4a835",
+            "type": "message",
+            "text": "```bool al_install_keyboard(void)```\n\nInstall a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.",
+            "user": "UB659D0FM",
+            "ts": "1539900276.000100"
+        },
+        {
+            "client_msg_id": "49be2fc3-ad4e-4a87-9aad-4959b9f033db",
+            "type": "message",
+            "text": "How do I install the keyboard?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539900249.000100"
+        },
+        {
+            "client_msg_id": "de66ac5b-dcc2-48a8-934f-96417f7158fb",
+            "type": "message",
+            "text": "Keyboard errors may emerge if the keyboard driver is not successfully installed. You can call al_is_keyboard_installed to confirm that the driver has installed properly:\n\n```bool al_is_keyboard_installed(void)```",
+            "user": "UB659D0FM",
+            "ts": "1539900156.000300"
+        },
+        {
+            "client_msg_id": "5a9a7b0e-6c57-481e-8b86-4182ccf41fd7",
+            "type": "message",
+            "text": "keybdnu.c:190: al_get_keyboard: Assertion `new_keyboard_driver' failed.",
+            "user": "UDJHYMZ4P",
+            "ts": "1539899987.000100"
+        },
+        {
+            "client_msg_id": "5198c20b-327e-4353-8ee5-14e55329d2a5",
+            "type": "message",
+            "text": "false",
+            "user": "UDJHYMZ4P",
+            "ts": "1539899969.000100"
+        },
+        {
+            "client_msg_id": "3c7ff4eb-3756-4a00-8e0c-43535b19fa4e",
+            "type": "message",
+            "text": "Using the ALLEGRO_EVENT_QUEUE struct, multiple keys can be down at once. Every key press will add a new ALLEGRO_EVENT to the ALLEGRO_EVENT_QUEUE, even if other keys are being held.",
+            "user": "UB659D0FM",
+            "ts": "1539899796.000100"
+        },
+        {
+            "client_msg_id": "ca07f980-c6dc-4ce7-92c2-f880cc833ff3",
+            "type": "message",
+            "text": "can more then one key be down at once?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539899641.000100"
+        },
+        {
+            "client_msg_id": "102dd3a3-919c-4f08-9bd0-456fc692d13a",
+            "type": "message",
+            "text": "Once the keyboard has been installed with al_install_keyboard, the keyboard can be registered as an event source with\n\n```al_register_event_source(event_queue, al_get_keyboard_event_source());```",
+            "user": "UB659D0FM",
+            "ts": "1539899064.000100"
+        },
+        {
+            "client_msg_id": "70c2113c-b153-4460-a670-f3023a7e856b",
+            "type": "message",
+            "text": "How do I register for keyboard events?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539899061.000100"
+        },
+        {
+            "client_msg_id": "21c0c304-4b1f-4981-ab24-861bd1ee1bd3",
+            "type": "message",
+            "text": "How do I register for KEY_DOWN events",
+            "user": "UDJHYMZ4P",
+            "ts": "1539898963.000100"
+        },
+        {
+            "client_msg_id": "f6d89293-f799-4ff2-acab-ae829b24386b",
+            "type": "message",
+            "text": "There are three Event types relating to the keyboard:\n\nALLEGRO_EVENT_KEY_DOWN\nALLEGRO_EVENT_KEY_UP\nALLEGRO_EVENT_KEY_CHAR\n\nThey share the attributes\n\n\nstruct ALLEGRO_DISPLAY *display\nint keycode\nint unichar\nunsigned int modifiers\nbool repeat",
+            "user": "UB659D0FM",
+            "ts": "1539898844.000100"
+        },
+        {
+            "client_msg_id": "c2d0f844-80c1-4418-aab0-332a9a05bfa9",
+            "type": "message",
+            "text": "Does Allegro have an event for key press",
+            "user": "UDJHYMZ4P",
+            "ts": "1539898731.000100"
+        },
+        {
+            "client_msg_id": "45618b02-c5fd-49e5-9b11-3ea411ada138",
+            "type": "message",
+            "text": "I was able to find an example that may answer your question:\n```\nenum MYKEYS {\n   KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT\n};```",
+            "user": "UB659D0FM",
+            "ts": "1539898586.000100"
+        },
+        {
+            "client_msg_id": "87e8c7b7-1b7d-459e-b632-35bed6da26d6",
+            "type": "message",
+            "text": "determined by MYKEYS?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539898524.000100"
+        },
+        {
+            "client_msg_id": "80219bfc-fcf5-4ff3-960a-18b6967a5624",
+            "type": "message",
+            "text": "What order are the keys in the keys array?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539898486.000100"
+        },
+        {
+            "client_msg_id": "95c0b78e-6462-4e83-99a9-aa26f5aad021",
+            "type": "message",
+            "text": "```typedef struct ALLEGRO_DISPLAY ALLEGRO_DISPLAY```\nAn opaque type representing an open display or window.",
+            "user": "UB659D0FM",
+            "ts": "1539898424.000200"
+        },
+        {
+            "client_msg_id": "fd130f30-67d8-40a2-962d-24648a4f97bc",
+            "type": "message",
+            "text": "what is ALLEGRO_DISPLAY",
+            "user": "UDJHYMZ4P",
+            "ts": "1539898403.000100"
+        },
+        {
+            "client_msg_id": "593281c1-ffe6-4532-9c19-5db8e2881ac5",
+            "type": "message",
+            "text": "Allegro does not have a built-in physics engine.",
+            "user": "UB659D0FM",
+            "ts": "1539897839.000100"
+        },
+        {
+            "client_msg_id": "8e6a5ddd-96d6-459d-827d-a764b5ffa666",
+            "type": "message",
+            "text": "Does Allegro have a physics engine?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539897748.000100"
+        },
+        {
+            "client_msg_id": "bab2fd70-4428-435c-9f66-29a188cbc707",
+            "type": "message",
+            "text": "Allegro is a software library for video game development",
+            "user": "UB659D0FM",
+            "ts": "1539897726.000100"
+        },
+        {
+            "client_msg_id": "ffe6c65f-2494-4889-ae3c-79fd278031b9",
+            "type": "message",
+            "text": "What is the purpose of the Allegro API?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539897701.000100"
+        },
+        {
+            "client_msg_id": "590e0bdf-f575-4672-921d-04b9c56849b9",
+            "type": "message",
+            "text": "Allegro\nAllegro logo\nAllegro logo\nOriginal author(s)\tShawn Hargreaves\nDeveloper(s)\tAllegro developers\nInitial release\tearly 1990; 28 years ago\nStable release\t\n5.2.4 \/ February 25, 2018; 7 months ago\nRepository\t\n<https:\/\/github.com\/liballeg\/allegro5>\nEdit this at Wikidata\nWritten in\tC\nOperating system\tWindows, Linux, macOS, et al.\nType\tMultimedia and Games SDK\nLicense\tAllegro 4: Beerware[1]\nAllegro 5: zlib\nWebsite\t<http:\/\/liballeg.org|liballeg.org>\nAllegro is a software library for video game development",
+            "user": "UB659D0FM",
+            "ts": "1539897699.000100",
+            "attachments": [
+                {
+                    "service_name": "GitHub",
+                    "title": "liballeg\/allegro5",
+                    "title_link": "https:\/\/github.com\/liballeg\/allegro5",
+                    "text": "The official Allegro 5 git repository. Pull requests welcome! - liballeg\/allegro5",
+                    "fallback": "GitHub: liballeg\/allegro5",
+                    "from_url": "https:\/\/github.com\/liballeg\/allegro5",
+                    "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/7524022?s=400&v=4",
+                    "thumb_width": 48,
+                    "thumb_height": 48,
+                    "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                    "id": 1,
+                    "original_url": "https:\/\/github.com\/liballeg\/allegro5"
+                }
+            ]
+        },
+        {
+            "client_msg_id": "79444aab-a385-45f8-ae74-6cc313a603ec",
+            "type": "message",
+            "text": "What is the Allegro API?",
+            "user": "UDJHYMZ4P",
+            "ts": "1539897663.000100"
+        },
+        {
+            "client_msg_id": "ea0a5438-bf46-4b96-a687-d421bae6dfa0",
+            "type": "message",
+            "text": "Hi, Programmer_18!",
+            "user": "UB659D0FM",
+            "ts": "1539897654.000100"
+        },
+        {
+            "client_msg_id": "e9aef6e1-34da-4dc1-a6b2-e3c2e253f38b",
+            "type": "message",
+            "text": "Hi! I am Apiza, a virtual assistant built to help you navigate the Allegro API. How can I help you?",
+            "user": "UB659D0FM",
+            "ts": "1539897644.000100"
+        },
+        {
+            "client_msg_id": "c21fe010-e70c-4671-b325-87eac94d7fc1",
+            "type": "message",
+            "text": "I am Programmer_18",
+            "user": "UDJHYMZ4P",
+            "ts": "1539897638.000100"
+        },
+        {
+            "client_msg_id": "a2401771-5211-4ec3-b99b-d8691e1e7542",
+            "type": "message",
+            "text": "Hi Apiza",
+            "user": "UDJHYMZ4P",
+            "ts": "1539897632.000100"
+        }
+    ],
+    "has_more": false
+}

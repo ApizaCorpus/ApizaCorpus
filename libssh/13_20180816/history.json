@@ -1,0 +1,616 @@
+{ 
+    "sites": [
+    {
+        "id": "56725",
+        "lastVisitTime": "8/16/2018, 4:34:54 PM",
+        "lastVisitTimeTimestamp": 1534451694120.869,
+        "title": "Structures in C - GeeksforGeeks",
+        "typedCount": 0,
+        "url": "https://www.geeksforgeeks.org/structures-c/",
+        "visitCount": 1
+    },
+    {
+        "id": "56724",
+        "lastVisitTime": "8/16/2018, 4:34:50 PM",
+        "lastVisitTimeTimestamp": 1534451690887.869,
+        "title": "how to make a variable using a struct in c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=how+to+make+a+variable+using+a+struct+in+c&rlz=1C1CHBF_enCA761CA761&oq=how+to+make+a+variable+using+a+struct+in+c&aqs=chrome..69i57.6352j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56723",
+        "lastVisitTime": "8/16/2018, 4:21:24 PM",
+        "lastVisitTimeTimestamp": 1534450884477.48,
+        "title": "c - Should I return 0 or 1 for successful function? - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/9549342/should-i-return-0-or-1-for-successful-function/9549375",
+        "visitCount": 1
+    },
+    {
+        "id": "56722",
+        "lastVisitTime": "8/16/2018, 4:21:22 PM",
+        "lastVisitTimeTimestamp": 1534450882936.48,
+        "title": "C default status code - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=C+default+status+code&rlz=1C1CHBF_enCA761CA761&oq=C+default+status+code&aqs=chrome..69i57j69i64l3.5031j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56721",
+        "lastVisitTime": "8/16/2018, 4:14:23 PM",
+        "lastVisitTimeTimestamp": 1534450463471.801,
+        "title": "input - What is EOF in the C programming language? - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/1782080/what-is-eof-in-the-c-programming-language",
+        "visitCount": 1
+    },
+    {
+        "id": "56720",
+        "lastVisitTime": "8/16/2018, 4:14:22 PM",
+        "lastVisitTimeTimestamp": 1534450462017.801,
+        "title": "c programming EOF - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=c+programming+EOF&rlz=1C1CHBF_enCA761CA761&oq=c+programming+EOF&aqs=chrome..69i57j0l5.3679j0j4&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56719",
+        "lastVisitTime": "8/16/2018, 4:14:12 PM",
+        "lastVisitTimeTimestamp": 1534450452340.801,
+        "title": "bash - Put file contents on stdin without sending eof - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/14086738/put-file-contents-on-stdin-without-sending-eof",
+        "visitCount": 1
+    },
+    {
+        "id": "56717",
+        "lastVisitTime": "8/16/2018, 4:05:13 PM",
+        "lastVisitTimeTimestamp": 1534449913773.202,
+        "title": "reddit.com: search results - apiza",
+        "typedCount": 0,
+        "url": "https://www.reddit.com/search?q=apiza",
+        "visitCount": 1
+    },
+    {
+        "id": "56716",
+        "lastVisitTime": "8/16/2018, 4:05:01 PM",
+        "lastVisitTimeTimestamp": 1534449901189.2021,
+        "title": "reddit.com: search results - libssh",
+        "typedCount": 0,
+        "url": "https://www.reddit.com/search?q=libssh",
+        "visitCount": 1
+    },
+    {
+        "id": "56715",
+        "lastVisitTime": "8/16/2018, 4:04:57 PM",
+        "lastVisitTimeTimestamp": 1534449897677.202,
+        "title": "reddit.com: search results - libssh ai",
+        "typedCount": 0,
+        "url": "https://www.reddit.com/search?q=libssh%20ai",
+        "visitCount": 1
+    },
+    {
+        "id": "56714",
+        "lastVisitTime": "8/16/2018, 4:04:53 PM",
+        "lastVisitTimeTimestamp": 1534449893927.202,
+        "title": "reddit.com: search results - libssh apiza",
+        "typedCount": 0,
+        "url": "https://www.reddit.com/search?q=libssh%20apiza",
+        "visitCount": 1
+    },
+    {
+        "id": "40918",
+        "lastVisitTime": "8/16/2018, 4:04:48 PM",
+        "lastVisitTimeTimestamp": 1534449888840.931,
+        "title": "reddit: the front page of the internet",
+        "typedCount": 46,
+        "url": "https://www.reddit.com/",
+        "visitCount": 298
+    },
+    {
+        "id": "56713",
+        "lastVisitTime": "8/16/2018, 4:00:10 PM",
+        "lastVisitTimeTimestamp": 1534449610221.731,
+        "title": "C Programming/String manipulation - Wikibooks, open books for an open world",
+        "typedCount": 0,
+        "url": "https://en.wikibooks.org/wiki/C_Programming/String_manipulation",
+        "visitCount": 1
+    },
+    {
+        "id": "56712",
+        "lastVisitTime": "8/16/2018, 4:00:07 PM",
+        "lastVisitTimeTimestamp": 1534449607490.731,
+        "title": "c string programming - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=wdd1W_XkA42w_Qak2aSYBg&q=c+string+programming&oq=c+string+programming&gs_l=psy-ab.3..0l2j0i22i30k1l8.2417.4462.0.4526.16.12.1.0.0.0.248.1210.5j2j2.9.0....0...1c.1.64.psy-ab..6.10.1212...0i67k1j0i20i263k1j0i22i10i30k1.0.vKfh71ZCsL0",
+        "visitCount": 1
+    },
+    {
+        "id": "56711",
+        "lastVisitTime": "8/16/2018, 4:00:01 PM",
+        "lastVisitTimeTimestamp": 1534449601974.731,
+        "title": "c string - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=c+string&rlz=1C1CHBF_enCA761CA761&oq=c+string&aqs=chrome..69i57j69i60l3j0l2.1128j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56709",
+        "lastVisitTime": "8/16/2018, 3:55:47 PM",
+        "lastVisitTimeTimestamp": 1534449347151.126,
+        "title": "What does error 'expected expression before int' mean in C? - Quora",
+        "typedCount": 0,
+        "url": "https://www.quora.com/What-does-error-expected-expression-before-int-mean-in-C",
+        "visitCount": 1
+    },
+    {
+        "id": "56707",
+        "lastVisitTime": "8/16/2018, 3:55:44 PM",
+        "lastVisitTimeTimestamp": 1534449344485.126,
+        "title": "error: expected expression before - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=error%3A+expected+expression+before&rlz=1C1CHBF_enCA761CA761&oq=error%3A+expected+expression+before&aqs=chrome..69i57j69i58.8896j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 2
+    },
+    {
+        "id": "56661",
+        "lastVisitTime": "8/16/2018, 3:52:48 PM",
+        "lastVisitTimeTimestamp": 1534449168994.599,
+        "title": "libssh: Chapter 1: A typical SSH session",
+        "typedCount": 0,
+        "url": "http://api.libssh.org/stable/libssh_tutor_guided_tour.html",
+        "visitCount": 2
+    },
+    {
+        "id": "56706",
+        "lastVisitTime": "8/16/2018, 3:52:43 PM",
+        "lastVisitTimeTimestamp": 1534449163425.945,
+        "title": "how to use ssh_get_error - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=how+to+use+ssh_get_error&rlz=1C1CHBF_enCA761CA761&oq=how+to+use+ssh_get_error&aqs=chrome..69i57j0.4887j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56705",
+        "lastVisitTime": "8/16/2018, 3:50:07 PM",
+        "lastVisitTimeTimestamp": 1534449007098.48,
+        "title": "c - Why is printf with a single argument (without conversion specifiers) deprecated? - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/31290850/why-is-printf-with-a-single-argument-without-conversion-specifiers-deprecated",
+        "visitCount": 1
+    },
+    {
+        "id": "56704",
+        "lastVisitTime": "8/16/2018, 3:50:05 PM",
+        "lastVisitTimeTimestamp": 1534449005441.48,
+        "title": "c printf with one argument - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=c+printf+with+one+argument&rlz=1C1CHBF_enCA761CA761&oq=c+printf+with+one+argument&aqs=chrome..69i57j69i64l3.19233j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56702",
+        "lastVisitTime": "8/16/2018, 3:48:43 PM",
+        "lastVisitTimeTimestamp": 1534448923969.5078,
+        "title": "double equals c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=double+equals+c&rlz=1C1CHBF_enCA761CA761&oq=double+equals+c&aqs=chrome..69i57j0l5.5176j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 2
+    },
+    {
+        "id": "56703",
+        "lastVisitTime": "8/16/2018, 3:48:41 PM",
+        "lastVisitTimeTimestamp": 1534448921070.508,
+        "title": "Double vs. Single Equal Sign - Developer.com",
+        "typedCount": 0,
+        "url": "https://www.developer.com/lang/other/article.php/604441/Double-vs-Single-Equal-Sign.htm",
+        "visitCount": 1
+    },
+    {
+        "id": "56701",
+        "lastVisitTime": "8/16/2018, 3:47:37 PM",
+        "lastVisitTimeTimestamp": 1534448857740.222,
+        "title": "c - what is Segmentation fault (core dumped)? - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/19641597/what-is-segmentation-fault-core-dumped",
+        "visitCount": 1
+    },
+    {
+        "id": "56700",
+        "lastVisitTime": "8/16/2018, 3:47:34 PM",
+        "lastVisitTimeTimestamp": 1534448854270.222,
+        "title": "segmentation fault core dumped c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=09R1W5vAAsKc_QbT2aWAAQ&q=segmentation+fault+core+dumped+c&oq=segmentation+fault+core+dumped+c&gs_l=psy-ab.3..0i67k1j0i20i263k1j0l3j0i22i30k1l5.1208.1208.0.1408.1.1.0.0.0.0.105.105.0j1.1.0....0...1c.1.64.psy-ab..0.1.104....0.QdVLrR2IAHE",
+        "visitCount": 1
+    },
+    {
+        "id": "56699",
+        "lastVisitTime": "8/16/2018, 3:47:31 PM",
+        "lastVisitTimeTimestamp": 1534448851981.222,
+        "title": "segmentation fault core dumped c++ - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=segmentation+fault+core+dumped+c%2B%2B&rlz=1C1CHBF_enCA761CA761&oq=segmentation+fault+core+dumped+c&aqs=chrome.0.0j69i57j0l4.6807j0j9&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56698",
+        "lastVisitTime": "8/16/2018, 3:46:07 PM",
+        "lastVisitTimeTimestamp": 1534448767049.261,
+        "title": "printf - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=printf&rlz=1C1CHBF_enCA761CA761&oq=printf&aqs=chrome..69i57j0l2j69i59j69i60l2.896j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56696",
+        "lastVisitTime": "8/16/2018, 3:40:10 PM",
+        "lastVisitTimeTimestamp": 1534448410875.198,
+        "title": "sshlib ssh_channel_open_auth_agent examples - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=sshlib+ssh_channel_open_auth_agent+examples&rlz=1C1CHBF_enCA761CA761&oq=sshlib+ssh_channel_open_auth_agent+examples&aqs=chrome..69i57.18016j0j4&sourceid=chrome&ie=UTF-8",
+        "visitCount": 2
+    },
+    {
+        "id": "56697",
+        "lastVisitTime": "8/16/2018, 3:40:08 PM",
+        "lastVisitTimeTimestamp": 1534448408332.198,
+        "title": "libssh: The SSH channel functions",
+        "typedCount": 0,
+        "url": "http://api.libssh.org/master/group__libssh__channel.html",
+        "visitCount": 1
+    },
+    {
+        "id": "56695",
+        "lastVisitTime": "8/16/2018, 3:38:32 PM",
+        "lastVisitTimeTimestamp": 1534448312539.763,
+        "title": "c - How to access a structure variable inside another structure? - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/31344335/how-to-access-a-structure-variable-inside-another-structure",
+        "visitCount": 1
+    },
+    {
+        "id": "56692",
+        "lastVisitTime": "8/16/2018, 3:38:30 PM",
+        "lastVisitTimeTimestamp": 1534448310683.763,
+        "title": "struct call variable c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=l9J1W_H5GuukggezubTYDQ&q=struct+call+variable+c&oq=struct+call+variable+c&gs_l=psy-ab.3..33i22i29i30k1l6.569.696.0.864.2.2.0.0.0.0.118.222.0j2.2.0....0...1c.1.64.psy-ab..0.1.104....0.uTe8ukuvFUY",
+        "visitCount": 2
+    },
+    {
+        "id": "56694",
+        "lastVisitTime": "8/16/2018, 3:38:11 PM",
+        "lastVisitTimeTimestamp": 1534448291581.763,
+        "title": "C Language Online Training - tutorialspoint",
+        "typedCount": 0,
+        "url": "https://www.tutorialspoint.com/c_language_online_training/index.asp",
+        "visitCount": 1
+    },
+    {
+        "id": "56693",
+        "lastVisitTime": "8/16/2018, 3:38:08 PM",
+        "lastVisitTimeTimestamp": 1534448288677.763,
+        "title": "Structures in C",
+        "typedCount": 0,
+        "url": "https://www.tutorialspoint.com/cprogramming/c_structures.htm",
+        "visitCount": 2
+    },
+    {
+        "id": "56690",
+        "lastVisitTime": "8/16/2018, 3:38:03 PM",
+        "lastVisitTimeTimestamp": 1534448283043.763,
+        "title": "struct call variable - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=struct+call+variable&rlz=1C1CHBF_enCA761CA761&oq=struct+call+variable&aqs=chrome..69i57.9920j0j4&sourceid=chrome&ie=UTF-8",
+        "visitCount": 2
+    },
+    {
+        "id": "56691",
+        "lastVisitTime": "8/16/2018, 3:38:01 PM",
+        "lastVisitTimeTimestamp": 1534448281954.763,
+        "title": "c++ - Accessing variables from a struct - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/1371710/accessing-variables-from-a-struct",
+        "visitCount": 1
+    },
+    {
+        "id": "56689",
+        "lastVisitTime": "8/16/2018, 3:35:32 PM",
+        "lastVisitTimeTimestamp": 1534448132683.017,
+        "title": "c++ - What is the difference between function() and function(void)? - Software Engineering Stack Exchange",
+        "typedCount": 0,
+        "url": "https://softwareengineering.stackexchange.com/questions/286490/what-is-the-difference-between-function-and-functionvoid",
+        "visitCount": 1
+    },
+    {
+        "id": "56688",
+        "lastVisitTime": "8/16/2018, 3:35:30 PM",
+        "lastVisitTimeTimestamp": 1534448130326.0168,
+        "title": "void* c function param - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=1dF1W_eGEcTUzwL75aqwAw&q=void*+c+function+param&oq=void*+c+function+param&gs_l=psy-ab.3..0i22i30k1l5.6845.17428.0.21036.24.24.0.0.0.0.175.2542.12j12.24.0....0...1c.1.64.psy-ab..0.24.2539...0j0i30k1j0i5i30k1j0i8i30k1j0i8i13i30k1j35i39k1j0i7i30k1j0i8i7i30k1j0i13i30k1j0i13k1j0i7i10i30k1.0.BV_RAZnjngI",
+        "visitCount": 1
+    },
+    {
+        "id": "56684",
+        "lastVisitTime": "8/16/2018, 3:35:08 PM",
+        "lastVisitTimeTimestamp": 1534448108804.017,
+        "title": "void error c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=09F1W_72LIuSzwKQ_IvwAw&q=void+error+c&oq=void+error+c&gs_l=psy-ab.3..0i22i30k1l6j0i22i10i30k1j0i22i30k1l3.435.435.0.668.1.1.0.0.0.0.222.222.2-1.1.0....0...1c.1.64.psy-ab..0.1.222....0.JtSKhR2kBkw",
+        "visitCount": 3
+    },
+    {
+        "id": "56685",
+        "lastVisitTime": "8/16/2018, 3:34:56 PM",
+        "lastVisitTimeTimestamp": 1534448096334.017,
+        "title": "What is the difference between void main(), int main (void), int main() and void main (void)? - Quora",
+        "typedCount": 0,
+        "url": "https://www.quora.com/What-is-the-difference-between-void-main-int-main-void-int-main-and-void-main-void",
+        "visitCount": 3
+    },
+    {
+        "id": "56686",
+        "lastVisitTime": "8/16/2018, 3:34:54 PM",
+        "lastVisitTimeTimestamp": 1534448094065.017,
+        "title": "",
+        "typedCount": 0,
+        "url": "https://www.quora.com/What-is-the-difference-between-void-main-int-main-void-int-main-and-void-main-void#",
+        "visitCount": 1
+    },
+    {
+        "id": "56683",
+        "lastVisitTime": "8/16/2018, 3:34:44 PM",
+        "lastVisitTimeTimestamp": 1534448084669.879,
+        "title": "void error c# - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=void+error+c%23&rlz=1C1CHBF_enCA761CA761&oq=void+*+error&aqs=chrome.2.69i57j0l5.1819j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56682",
+        "lastVisitTime": "8/16/2018, 3:34:07 PM",
+        "lastVisitTimeTimestamp": 1534448047332.8792,
+        "title": "c - Strings and character with printf - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/8019615/strings-and-character-with-printf",
+        "visitCount": 1
+    },
+    {
+        "id": "56681",
+        "lastVisitTime": "8/16/2018, 3:34:06 PM",
+        "lastVisitTimeTimestamp": 1534448046206.879,
+        "title": "printf character* - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=printf+character*&rlz=1C1CHBF_enCA761CA761&oq=printf+character*&aqs=chrome..69i57j0l5.3695j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56679",
+        "lastVisitTime": "8/16/2018, 3:31:06 PM",
+        "lastVisitTimeTimestamp": 1534447866711.7432,
+        "title": "How to Compile and Run a C Program on Ubuntu Linux",
+        "typedCount": 0,
+        "url": "http://www.akira.ruc.dk/~keld/teaching/CAN_e14/Readings/How%20to%20Compile%20and%20Run%20a%20C%20Program%20on%20Ubuntu%20Linux.pdf",
+        "visitCount": 1
+    },
+    {
+        "id": "56678",
+        "lastVisitTime": "8/16/2018, 3:31:03 PM",
+        "lastVisitTimeTimestamp": 1534447863359.7432,
+        "title": "how to run a program in c after make command - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=19B1W6q9JYGYzwLF66_oAw&q=how+to+run+a+program+in+c+after+make+command&oq=how+to+run+a+program+in+c+after+make+command&gs_l=psy-ab.3..33i22i29i30k1l10.515.1544.0.1602.8.8.0.0.0.0.156.551.0j4.4.0....0...1c.1.64.psy-ab..4.4.551....0.OgsjgvSA6M4",
+        "visitCount": 2
+    },
+    {
+        "id": "56654",
+        "lastVisitTime": "8/16/2018, 3:30:37 PM",
+        "lastVisitTimeTimestamp": 1534447837443.472,
+        "title": "Walkthrough: Compile a C program on the command line",
+        "typedCount": 0,
+        "url": "https://msdn.microsoft.com/en-us/library/bb384838.aspx",
+        "visitCount": 2
+    },
+    {
+        "id": "56677",
+        "lastVisitTime": "8/16/2018, 3:30:32 PM",
+        "lastVisitTimeTimestamp": 1534447832538.472,
+        "title": "how to run a program in c after make - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=how+to+run+a+program+in+c+after+make&rlz=1C1CHBF_enCA761CA761&oq=how+to+run+a+program+in+c+after+make&aqs=chrome..69i57.8535j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56675",
+        "lastVisitTime": "8/16/2018, 3:28:50 PM",
+        "lastVisitTimeTimestamp": 1534447730245.99,
+        "title": "c stdio - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=XNB1W4rdB4iTzwLLu5zwAw&q=c+stdio&oq=c+stdio&gs_l=psy-ab.3..0i67k1j0j0i20i263k1l2j0l6.2585.9497.0.9762.13.8.3.2.3.0.121.722.7j1.8.0....0...1c.1.64.psy-ab..0.13.733...35i39k1j0i10i67k1j0i131k1j0i131i67k1j0i22i30k1.0.3WhyRDiXYHQ",
+        "visitCount": 1
+    },
+    {
+        "id": "56673",
+        "lastVisitTime": "8/16/2018, 3:28:40 PM",
+        "lastVisitTimeTimestamp": 1534447720001.813,
+        "title": "how to log in c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=VdB1W5naGMzxzgLQ066ABA&q=how+to+log+in+c&oq=how+to+log+in+c&gs_l=psy-ab.3..0i20i263k1j0l3j0i10k1j0l5.2994.4609.0.4785.15.13.0.0.0.0.184.1420.5j7.12.0....0...1c.1.64.psy-ab..3.12.1418...35i39k1j0i131k1j0i67k1.0.YQE_P5Bi2tY",
+        "visitCount": 3
+    },
+    {
+        "id": "56674",
+        "lastVisitTime": "8/16/2018, 3:28:37 PM",
+        "lastVisitTimeTimestamp": 1534447717682.813,
+        "title": "C Language: log function (Natural Logarithm)",
+        "typedCount": 0,
+        "url": "https://www.techonthenet.com/c_language/standard_library_functions/math_h/log.php",
+        "visitCount": 1
+    },
+    {
+        "id": "56666",
+        "lastVisitTime": "8/16/2018, 3:28:30 PM",
+        "lastVisitTimeTimestamp": 1534447710499.813,
+        "title": "C library function log()",
+        "typedCount": 0,
+        "url": "https://www.tutorialspoint.com/c_standard_library/c_function_log.htm",
+        "visitCount": 2
+    },
+    {
+        "id": "56672",
+        "lastVisitTime": "8/16/2018, 3:28:22 PM",
+        "lastVisitTimeTimestamp": 1534447702328.813,
+        "title": "std:log c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=TNB1W-KMPIm6zwKitpnwAw&q=std%3Alog+c&oq=std%3Alog+c&gs_l=psy-ab.3...1388.1532.0.1635.2.2.0.0.0.0.6.10.2.2.0....0...1c.1.64.psy-ab..0.0.0....0.onA3_f-Zvq4",
+        "visitCount": 1
+    },
+    {
+        "id": "56670",
+        "lastVisitTime": "8/16/2018, 3:28:20 PM",
+        "lastVisitTimeTimestamp": 1534447700243.813,
+        "title": "std:log - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=QdB1W--DJ8-XzwLJ6bywAw&q=std%3Alog&oq=std%3Alog&gs_l=psy-ab.3...4573.7035.0.7261.7.7.0.0.0.0.107.598.6j1.7.0....0...1c.1.64.psy-ab..0.4.382...0j35i39k1j0i67k1j0i131k1j0i131i67k1.0.L0H2UnqfJc0",
+        "visitCount": 2
+    },
+    {
+        "id": "56671",
+        "lastVisitTime": "8/16/2018, 3:28:16 PM",
+        "lastVisitTimeTimestamp": 1534447696981.813,
+        "title": "std::log - cppreference.com",
+        "typedCount": 0,
+        "url": "https://en.cppreference.com/w/cpp/numeric/math/log",
+        "visitCount": 1
+    },
+    {
+        "id": "56668",
+        "lastVisitTime": "8/16/2018, 3:28:06 PM",
+        "lastVisitTimeTimestamp": 1534447686138.813,
+        "title": "c log output - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=MNB1W6jwIJHWzgKgq4igAw&q=c+log+output&oq=c+log+output&gs_l=psy-ab.3..0i22i30k1.1805.7237.0.7333.12.11.0.1.1.0.150.1092.9j2.11.0....0...1c.1.64.psy-ab..0.12.1090...0j35i39k1j0i67k1j0i10i67k1j0i131i67k1j0i20i263k1j0i131k1j0i22i10i30k1j0i8i13i10i30k1j0i13i5i10i30k1j0i13i5i30k1.0.-FdlfGFCUQA",
+        "visitCount": 2
+    },
+    {
+        "id": "56669",
+        "lastVisitTime": "8/16/2018, 3:28:04 PM",
+        "lastVisitTimeTimestamp": 1534447684533.813,
+        "title": "How to create \".log\" file in C? - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/23856306/how-to-create-log-file-in-c",
+        "visitCount": 1
+    },
+    {
+        "id": "56665",
+        "lastVisitTime": "8/16/2018, 3:27:54 PM",
+        "lastVisitTimeTimestamp": 1534447674753.813,
+        "title": "log in c - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=log+in+c&rlz=1C1CHBF_enCA761CA761&oq=log+in+c&aqs=chrome..69i57j69i60l3j0l2.1856j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 3
+    },
+    {
+        "id": "56667",
+        "lastVisitTime": "8/16/2018, 3:27:52 PM",
+        "lastVisitTimeTimestamp": 1534447672308.813,
+        "title": "C log()",
+        "typedCount": 0,
+        "url": "https://www.programiz.com/c-programming/library-function/math.h/log",
+        "visitCount": 1
+    },
+    {
+        "id": "56604",
+        "lastVisitTime": "8/16/2018, 3:19:16 PM",
+        "lastVisitTimeTimestamp": 1534447156031.884,
+        "title": "C Reference Cheat Sheet by Ashlyn Black - Download free from Cheatography - Cheatography.com: Cheat Sheets For Every Occasion",
+        "typedCount": 0,
+        "url": "https://www.cheatography.com/ashlyn-black/cheat-sheets/c-reference/",
+        "visitCount": 2
+    },
+    {
+        "id": "56664",
+        "lastVisitTime": "8/16/2018, 3:19:14 PM",
+        "lastVisitTimeTimestamp": 1534447154509.884,
+        "title": "c syntax cheat sheet calling functions - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=Lc51W6vAD46xzwLjwrLIBA&q=c+syntax+cheat+sheet+calling+functions&oq=c+syntax+cheat+sheet+calling+functions&gs_l=psy-ab.3...2320.3247.0.3416.8.8.0.0.0.0.152.674.5j2.7.0....0...1c.1.64.psy-ab..3.0.0....0.9uLZFPAiu9c",
+        "visitCount": 1
+    },
+    {
+        "id": "56663",
+        "lastVisitTime": "8/16/2018, 3:19:10 PM",
+        "lastVisitTimeTimestamp": 1534447150184.884,
+        "title": "c syntax cheat sheet functions - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=KM51W_nBJ8yizwLGh7vQAw&q=c+syntax+cheat+sheet+functions&oq=c+syntax+cheat+sheet+functions&gs_l=psy-ab.3...1381.2940.0.3773.10.10.0.0.0.0.141.962.6j3.9.0....0...1c.1.64.psy-ab..1.8.819...0i22i30k1j33i22i29i30k1j33i160k1j33i21k1.0.r2BYW7u1zS8",
+        "visitCount": 1
+    },
+    {
+        "id": "56662",
+        "lastVisitTime": "8/16/2018, 3:19:05 PM",
+        "lastVisitTimeTimestamp": 1534447145583.884,
+        "title": "c syntax cheat sheet - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=c+syntax+cheat+sheet&rlz=1C1CHBF_enCA761CA761&oq=c+synt&aqs=chrome.0.69i59l2j69i57j69i60l3.2256j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56660",
+        "lastVisitTime": "8/16/2018, 3:16:57 PM",
+        "lastVisitTimeTimestamp": 1534447017848.126,
+        "title": "libssh ssh_connect examples - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=m811W_qqMsnszgKQybeQBQ&q=libssh+ssh_connect+examples&oq=libssh+ssh_connect+examples&gs_l=psy-ab.3...4837.6531.0.6613.11.9.1.0.0.0.131.913.4j5.9.0....0...1c.1.64.psy-ab..1.8.732...0i22i30k1j33i160k1j33i21k1.0.qgdvpcqOvTc",
+        "visitCount": 1
+    },
+    {
+        "id": "56658",
+        "lastVisitTime": "8/16/2018, 3:16:50 PM",
+        "lastVisitTimeTimestamp": 1534447010719.126,
+        "title": "libssh ssh_connect - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=libssh+ssh_connect&rlz=1C1CHBF_enCA761CA761&oq=lib+ssh+connect&aqs=chrome.1.69i57j0l3.6680j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 2
+    },
+    {
+        "id": "56657",
+        "lastVisitTime": "8/16/2018, 3:14:05 PM",
+        "lastVisitTimeTimestamp": 1534446845991.67,
+        "title": "c - Makefile: make run command - Stack Overflow",
+        "typedCount": 0,
+        "url": "https://stackoverflow.com/questions/42699110/makefile-make-run-command",
+        "visitCount": 1
+    },
+    {
+        "id": "56655",
+        "lastVisitTime": "8/16/2018, 3:13:57 PM",
+        "lastVisitTimeTimestamp": 1534446837642.67,
+        "title": "make run command - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=make+run+command&rlz=1C1CHBF_enCA761CA761&oq=make+run+command+&aqs=chrome..69i57j0l5.5257j0j9&sourceid=chrome&ie=UTF-8",
+        "visitCount": 1
+    },
+    {
+        "id": "56653",
+        "lastVisitTime": "8/16/2018, 3:13:50 PM",
+        "lastVisitTimeTimestamp": 1534446830268.6702,
+        "title": "run a c program console - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?q=run+a+c+program+console&rlz=1C1CHBF_enCA761CA761&oq=run+a+c+program+console&aqs=chrome..69i57j0l2.3768j0j7&sourceid=chrome&ie=UTF-8",
+        "visitCount": 2
+    },
+    {
+        "id": "56651",
+        "lastVisitTime": "8/16/2018, 3:05:08 PM",
+        "lastVisitTimeTimestamp": 1534446308969.785,
+        "title": "c syntax cheat sheet - Google Search",
+        "typedCount": 0,
+        "url": "https://www.google.com/search?rlz=1C1CHBF_enCA761CA761&ei=3sp1W9LUFsv8tAW634uoAg&q=c+syntax+cheat+sheet&oq=c+syntax+cheat+sheet&gs_l=psy-ab.3..0j0i22i30k1l4.1323.2898.0.2953.12.12.0.0.0.0.149.1077.7j4.11.0....0...1c.1.64.psy-ab..1.11.1076...0i67k1j0i20i263k1.0.ARUEfgGWdYQ",
+        "visitCount": 1
+    }
+    ]
+}

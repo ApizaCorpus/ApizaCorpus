@@ -1,0 +1,388 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "252e9f0f-76b5-4016-b805-57e238e67910",
+            "type": "message",
+            "text": "Here is a web resource on SFTP errors:\n\n<https:\/\/winscp.net\/eng\/docs\/sftp_codes>",
+            "user": "UB659D0FM",
+            "ts": "1533433185.000022",
+            "attachments": [
+                {
+                    "title": "SFTP Status\/Error Codes :: WinSCP",
+                    "title_link": "https:\/\/winscp.net\/eng\/docs\/sftp_codes",
+                    "text": "Open source freeware SFTP, SCP and FTP client for Windows.",
+                    "fallback": "SFTP Status\/Error Codes :: WinSCP",
+                    "from_url": "https:\/\/winscp.net\/eng\/docs\/sftp_codes",
+                    "service_icon": "https:\/\/winscp.net\/favicon.ico",
+                    "service_name": "winscp.net",
+                    "id": 1,
+                    "original_url": "https:\/\/winscp.net\/eng\/docs\/sftp_codes"
+                }
+            ]
+        },
+        {
+            "client_msg_id": "4e59aa9b-46c5-4ab8-a2b9-2561678c87ca",
+            "type": "message",
+            "text": "Which kind of SFTP errors exist?",
+            "user": "UC23491PS",
+            "ts": "1533433033.000020"
+        },
+        {
+            "client_msg_id": "1fbb6899-8e48-4e29-b0ff-3eec04e11288",
+            "type": "message",
+            "text": "Here is a function that might help with that:\n\n```\nint sftp_get_error\t(\tsftp_session \tsftp\t)\n\nDescription\nGet the last sftp error.\nUse this function to get the latest error set by a posix like sftp function.\n\nParameters\nsftp: The sftp session where the error is saved.\n\nReturns\nThe saved error (see server responses), &lt; 0 if an error in the function occured.\n\nSee also\nServer responses\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533432987.000019"
+        },
+        {
+            "client_msg_id": "edefbe61-a376-4b9e-be8f-f3b20ee7570c",
+            "type": "message",
+            "text": "Which is the error of existing directory?",
+            "user": "UC23491PS",
+            "ts": "1533432922.000041"
+        },
+        {
+            "client_msg_id": "20d6293f-10d7-4548-9d1a-885764f3e14f",
+            "type": "message",
+            "text": "Perfect with this one",
+            "user": "UC23491PS",
+            "ts": "1533432894.000032"
+        },
+        {
+            "client_msg_id": "40450d00-010a-4006-a43b-71151ed44ed6",
+            "type": "message",
+            "text": "Here is another struct definition that might help:\n\n```\n\/* file handler *\/\nstruct sftp_file_struct {\n    sftp_session sftp;\n    char *name;\n    uint64_t offset;\n    ssh_string handle;\n    int eof;\n    int nonblocking;\n};\n```",
+            "user": "UB659D0FM",
+            "ts": "1533432870.000030"
+        },
+        {
+            "client_msg_id": "dc878cd7-df7b-4822-8265-7fc20fea811b",
+            "type": "message",
+            "text": "Which is the error of existing directory?",
+            "user": "UC23491PS",
+            "ts": "1533432849.000048"
+        },
+        {
+            "client_msg_id": "e18c12f0-7088-4179-9f48-cbb4a524779f",
+            "type": "message",
+            "text": "Here is a struct definition that might help:\n\n```\nstruct sftp_session_struct {\n    ssh_session session;\n    ssh_channel channel;\n    int server_version;\n    int client_version;\n    int version;\n    sftp_request_queue queue;\n    uint32_t id_counter;\n    int errnum;\n    void **handles;\n    sftp_ext ext;\n};\n```",
+            "user": "UB659D0FM",
+            "ts": "1533432795.000008"
+        },
+        {
+            "client_msg_id": "4dd2dbc3-9de8-4f78-9e35-948830e1be7c",
+            "type": "message",
+            "text": "Is there a type for a file of a sftp connection?",
+            "user": "UC23491PS",
+            "ts": "1533432734.000038"
+        },
+        {
+            "client_msg_id": "9c6202d5-dfe2-4fa5-986c-929dbb9e0279",
+            "type": "message",
+            "text": "The `mode` parameter of `sftp_mkdir` is a Unix permission number for the created file.",
+            "user": "UB659D0FM",
+            "ts": "1533432561.000034"
+        },
+        {
+            "client_msg_id": "64538e2d-e420-441b-a4be-cadbc2da2a98",
+            "type": "message",
+            "text": "The third parameter of the `sftp_mkdir` method is:\n\n```\nmode_t mode\n```",
+            "user": "UB659D0FM",
+            "ts": "1533432389.000050"
+        },
+        {
+            "client_msg_id": "01332d78-00a3-4a7b-8e48-63a2b87aa0a0",
+            "type": "message",
+            "text": "What about the third parameter of the sftp_mkdir method?",
+            "user": "UC23491PS",
+            "ts": "1533432339.000030"
+        },
+        {
+            "client_msg_id": "a549fe63-e2a1-4029-9da6-4a67d0832663",
+            "type": "message",
+            "text": "Here is some documentation about `sftp_open`:\n\n```\nsftp_file sftp_open\t(\tsftp_session \tsession,\nconst char * \tfile,\nint \taccesstype,\nmode_t \tmode \n)\n\nDescription\nOpen a file on the server.\n\nParameters\nsession: The sftp session handle.\nfile: The file to be opened.\naccesstype: Is one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read\/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated.\nmode: Mode specifies the permissions to use if a new file is created. It is modified by the process's umask in the usual way: The permissions of the created file are (mode &amp; ~umask)\n\nReturns\nA sftp file handle, NULL on error with ssh and sftp error set.\n\nSee also\nsftp_get_error()\n\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533432155.000019"
+        },
+        {
+            "client_msg_id": "cfb55bbc-407c-496f-a76e-f0027ac5c639",
+            "type": "message",
+            "text": "Here is the definition of `mode_t`:\n\n```\n typedef int mode_t;\n```",
+            "user": "UB659D0FM",
+            "ts": "1533432113.000041"
+        },
+        {
+            "client_msg_id": "c6cae39b-f368-4fd5-abe2-cee07ec1c031",
+            "type": "message",
+            "text": "And about the method sftp_open?",
+            "user": "UC23491PS",
+            "ts": "1533432095.000021"
+        },
+        {
+            "client_msg_id": "852efe42-b027-4f99-b468-ad8d05564e14",
+            "type": "message",
+            "text": "Can you tell me more about the modes of sftp_mkdir method?",
+            "user": "UC23491PS",
+            "ts": "1533431949.000038"
+        },
+        {
+            "client_msg_id": "6cbc1e7c-04c7-4fdd-afea-4dac29699885",
+            "type": "message",
+            "text": "Here is the complete documentation for `sftp_mkdir`:\n\n```\nint sftp_mkdir\t(\tsftp_session \tsftp,\nconst char * \tdirectory,\nmode_t \tmode \n)\n\nDescription\nCreate a directory.\n\nParameters\nsftp: The sftp session handle.\ndirectory: The directory to create.\nmode: Specifies the permissions to use. It is modified by the process's umask in the usual way: The permissions of the created file are (mode &amp; ~umask)\n\nReturns\n0 on success, &lt; 0 on error with ssh and sftp error set.\n\nSee also\nsftp_get_error()\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533431898.000009"
+        },
+        {
+            "client_msg_id": "6d37544f-e23a-4980-919a-00fd57cdd03d",
+            "type": "message",
+            "text": "Can you give me the complete documentation about the method sftp_mkdir?",
+            "user": "UC23491PS",
+            "ts": "1533431839.000014"
+        },
+        {
+            "client_msg_id": "0d72b029-b25c-47f8-81ba-6d61c8698b1c",
+            "type": "message",
+            "text": "Try this function:\n\n```\nint sftp_init\t(\tsftp_session \tsftp\t)\n\nDescription\nInitialize the sftp session with the server.\n\nParameters\nsftp: The sftp session to initialize.\n\nReturns\n0 on success, &lt; 0 on error with ssh error set.\n\nSee also\nsftp_new()\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533431634.000003"
+        },
+        {
+            "client_msg_id": "b9ad67ee-046d-49e1-a68d-cdac088e6ded",
+            "type": "message",
+            "text": "And to initialize a sftp connection?",
+            "user": "UC23491PS",
+            "ts": "1533431620.000010"
+        },
+        {
+            "client_msg_id": "7ddac0c7-1fef-4242-a3ac-f5f2364916d9",
+            "type": "message",
+            "text": "Try this function:\n\n```\nsftp_session sftp_new\t(\tssh_session \tsession\t)\n\nDescription\nStart a new sftp session.\n\nParameters\nsession: The ssh session to use.\n\nReturns\nA new sftp session or NULL on error.\n\nSee also\nsftp_free()\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533431566.000037"
+        },
+        {
+            "client_msg_id": "ecad7202-a845-46c1-9b02-5b1e6e22b273",
+            "type": "message",
+            "text": "sftp connection, sorry",
+            "user": "UC23491PS",
+            "ts": "1533431510.000029"
+        },
+        {
+            "client_msg_id": "0d3c531d-b267-4ebd-a467-11da835cc5b6",
+            "type": "message",
+            "text": "How can I start a sftp session?",
+            "user": "UC23491PS",
+            "ts": "1533431497.000017"
+        },
+        {
+            "client_msg_id": "0e0b8714-aa40-49fa-b7ad-a2c9c2eec86f",
+            "type": "message",
+            "text": "Does this documentation help?\n\n```\nint ssh_channel_read\t(\tssh_channel \tchannel,\nvoid * \tdest,\nuint32_t \tcount,\nint \tis_stderr \n)\n\nDescription\nReads data from a channel.\n\nParameters\nchannel: The channel to read from.\ndest: The destination buffer which will get the data.\ncount: The count of bytes to be read.\nis_stderr: A boolean value to mark reading from the stderr flow.\n\nReturns\nThe number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533430609.000044"
+        },
+        {
+            "client_msg_id": "892643f9-7e7f-4455-a37f-ee168195b633",
+            "type": "message",
+            "text": "Ok, nothing, I have seen it in the previous one",
+            "user": "UC23491PS",
+            "ts": "1533430587.000035"
+        },
+        {
+            "client_msg_id": "23ee7471-ab50-45c9-9df7-72950bd1088d",
+            "type": "message",
+            "text": "How is the syntax of the read of a channel method?",
+            "user": "UC23491PS",
+            "ts": "1533430545.000038"
+        },
+        {
+            "client_msg_id": "fb665063-ed1e-48b0-87b9-3c1eafffcbed",
+            "type": "message",
+            "text": "Try this function to execute a command:\n\n```\nint ssh_channel_request_exec\t(\tssh_channel \tchannel,\nconst char * \tcmd \n)\n\nDescription\nRun a shell command without an interactive shell.\nThis is similar to 'sh -c command'.\n\nParameters\nchannel: The channel to execute the command.\ncmd: The command to execute (e.g. \"ls ~\/ -al | grep -i reports\").\n\nReturns\nSSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.\nExample:\n\nrc = channel_request_exec(channel, \"ps aux\");\nif (rc &gt; 0) {\n    return -1;\n}\nwhile ((rc = channel_read(channel, buffer, sizeof(buffer), 0)) &gt; 0) {\n    if (fwrite(buffer, 1, rc, stdout) != (unsigned int) rc) {\n        return -1;\n    }\n}\n\nSee also\nssh_channel_request_shell()\n\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533430362.000025"
+        },
+        {
+            "client_msg_id": "c7679423-3768-4c5b-a310-2f7a083f5cbe",
+            "type": "message",
+            "text": "Try this function to open a new session in a channel:\n\n```\nint ssh_channel_open_session\t(\tssh_channel \tchannel\t)\n\nDescription\nOpen a session channel (suited for a shell, not TCP forwarding).\n\nParameters\nchannel: An allocated channel.\n\nReturns\nSSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.\n\nSee also\nssh_channel_open_forward()\nssh_channel_request_env()\nssh_channel_request_shell()\nssh_channel_request_exec()\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533430331.000004"
+        },
+        {
+            "client_msg_id": "aa2d8ed1-6d98-43e0-8c6f-722c2b395c52",
+            "type": "message",
+            "text": "How do I open a new session in a channel? And how do I execute a command?",
+            "user": "UC23491PS",
+            "ts": "1533430266.000052"
+        },
+        {
+            "client_msg_id": "9e85d8ba-94b0-4cc5-97e3-e3858be5a05d",
+            "type": "message",
+            "text": "Try this function:\n\n```\nssh_channel ssh_channel_new\t(\tssh_session \tsession\t)\n\nDescription\nAllocate a new channel.\n\nParameters\nsession: The ssh session to use.\n\nReturns\nA pointer to a newly allocated channel, NULL on error.\n\n```",
+            "user": "UB659D0FM",
+            "ts": "1533430136.000031"
+        },
+        {
+            "client_msg_id": "a0d2c012-5ed1-4763-bb3a-3b922d2236b7",
+            "type": "message",
+            "text": "Sorry, how do I create a ssh_channel?",
+            "user": "UC23491PS",
+            "ts": "1533430093.000031"
+        },
+        {
+            "client_msg_id": "dea2daaf-983a-4ad3-ac6d-11d8b02b059b",
+            "type": "message",
+            "text": "Try this function:\n\n```\nsftp_session sftp_new_channel\t(\tssh_session \tsession,\nssh_channel \tchannel \n)\n\nDescription\nStart a new sftp session with an existing channel.\n\nParameters\nsession: The ssh session to use.\nchannel: An open session channel with subsystem already allocated\n\nReturns\nA new sftp session or NULL on error.\n\nSee also\nsftp_free()\n```",
+            "user": "UB659D0FM",
+            "ts": "1533430015.000057"
+        },
+        {
+            "client_msg_id": "b098e201-1f1d-4a61-b955-7b7290c6f120",
+            "type": "message",
+            "text": "How do I create a new channel?",
+            "user": "UC23491PS",
+            "ts": "1533429877.000014"
+        },
+        {
+            "client_msg_id": "fef52448-e74e-45e8-b414-9976d69568e4",
+            "type": "message",
+            "text": "Perfect",
+            "user": "UC23491PS",
+            "ts": "1533429816.000026"
+        },
+        {
+            "client_msg_id": "15f1b816-dfa6-43fd-99c7-f210e2084b81",
+            "type": "message",
+            "text": "Here is some documentation that might help:\n\n```\nint ssh_is_server_known\t(\tssh_session \tsession\t)\n\nDescription\nCheck if the server is known.\nChecks the user's known host file for a previous connection to the current server.\n\nParameters\nsession: The SSH session to use.\n\nReturns\nSSH_SERVER_KNOWN_OK: The server is known and has not changed.\nSSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.\nSSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.\nSSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.\nSSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.\nSSH_SERVER_ERROR: Some error happened.\n\nSee also\nssh_get_pubkey_hash()\nBug:\nThere is no current way to remove or modify an entry into the known host table.\n```",
+            "user": "UB659D0FM",
+            "ts": "1533429731.000043"
+        },
+        {
+            "client_msg_id": "8eb0ec5e-7140-4eb8-b7a0-f10e230df8c1",
+            "type": "message",
+            "text": "Does this information about `ssh_options_set` help?\n\nParameters\nvalue: The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.",
+            "user": "UB659D0FM",
+            "ts": "1533429646.000011"
+        },
+        {
+            "client_msg_id": "a9d8465e-4a15-41fd-b96b-621d726733ff",
+            "type": "message",
+            "text": "I want to know the constant when the server is known",
+            "user": "UC23491PS",
+            "ts": "1533429477.000028"
+        },
+        {
+            "client_msg_id": "f37ba735-5530-4f69-83e9-69bf62abadb8",
+            "type": "message",
+            "text": "I'm not sure what you mean by that. Which constant are you wondering about?",
+            "user": "UB659D0FM",
+            "ts": "1533429396.000051"
+        },
+        {
+            "client_msg_id": "3544fb60-9a21-46bc-ae7c-6275e9a202fb",
+            "type": "message",
+            "text": "And the constant of the server when it is known?",
+            "user": "UC23491PS",
+            "ts": "1533429309.000009"
+        },
+        {
+            "client_msg_id": "dc23e613-eda3-4f33-9751-bc9333230e8c",
+            "type": "message",
+            "text": "Ok, I have seen it",
+            "user": "UC23491PS",
+            "ts": "1533429292.000006"
+        },
+        {
+            "client_msg_id": "3e025eda-bec0-4da3-8c7e-4c06b54f0452",
+            "type": "message",
+            "text": "What about the parameters of the function?",
+            "user": "UC23491PS",
+            "ts": "1533429220.000056"
+        },
+        {
+            "type": "message",
+            "text": "",
+            "files": [
+                {
+                    "id": "FC2BYG6DP",
+                    "created": 1533429202,
+                    "timestamp": 1533429202,
+                    "name": "-.txt",
+                    "title": "Untitled",
+                    "mimetype": "text\/plain",
+                    "filetype": "text",
+                    "pretty_type": "Plain Text",
+                    "user": "UB659D0FM",
+                    "editable": true,
+                    "size": 7032,
+                    "mode": "snippet",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FC2BYG6DP\/-.txt",
+                    "url_private_download": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FC2BYG6DP\/download\/-.txt",
+                    "permalink": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FC2BYG6DP\/-.txt",
+                    "permalink_public": "https:\/\/slack-files.com\/T9H4718E4-FC2BYG6DP-546ae45e6c",
+                    "edit_link": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FC2BYG6DP\/-.txt\/edit",
+                    "preview": "```\r\nint ssh_options_set(ssh_session session,\r\nenum ssh_options_e type,\r\nconst void * value \r\n)\r",
+                    "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>```<\/pre><\/div>\n<div><pre>int ssh_options_set(ssh_session session,<\/pre><\/div>\n<div><pre>enum ssh_options_e type,<\/pre><\/div>\n<div><pre>const void * value <\/pre><\/div>\n<div><pre>)<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                    "lines": 97,
+                    "lines_more": 92,
+                    "preview_is_truncated": true
+                }
+            ],
+            "upload": true,
+            "user": "UB659D0FM",
+            "display_as_bot": false,
+            "ts": "1533429203.000001"
+        },
+        {
+            "client_msg_id": "13e48746-eac8-4f11-95a1-c4cd53fbb4cd",
+            "type": "message",
+            "text": "Please, show me the complete documentation of this function",
+            "user": "UC23491PS",
+            "ts": "1533429109.000007"
+        },
+        {
+            "client_msg_id": "348f2b41-a09b-4719-a69d-17bb7c7edac0",
+            "type": "message",
+            "text": "How about this function?\n\n```\nint ssh_options_set ( ssh_session session,\nenum ssh_options_e type,\nconst void * value \n)\n```\n\nDescription\nThis function can set all possible ssh options.\n\nLet me know if you would like to see the complete documentation.",
+            "user": "UB659D0FM",
+            "ts": "1533429086.000015"
+        },
+        {
+            "client_msg_id": "d410e5c4-433b-456b-8973-a8557c34755f",
+            "type": "message",
+            "text": "And which is the code if the server is known?",
+            "user": "UC23491PS",
+            "ts": "1533428964.000037"
+        },
+        {
+            "client_msg_id": "ca9d9a89-8f5e-44d8-b20e-c739ae306cbc",
+            "type": "message",
+            "text": "Is there a function to set the options of the connection in LibSSH",
+            "user": "UC23491PS",
+            "ts": "1533428824.000064"
+        },
+        {
+            "client_msg_id": "b8281150-2232-4724-8b73-84e96d5bd1fe",
+            "type": "message",
+            "text": "Hi Programmer_11. Most of the functions of LibSSH are preceded by `ssh`. An example is `ssh_basename`. Some functions are not preceded by `ssh`, for example, `channel_read_buffer`.",
+            "user": "UB659D0FM",
+            "ts": "1533428412.000038"
+        },
+        {
+            "client_msg_id": "d05cd41f-d3de-4df5-bf4f-6333cadde6d9",
+            "type": "message",
+            "text": "Hello Apiza, are the functions of libssh preceeded by 'ssh'?",
+            "user": "UC23491PS",
+            "ts": "1533428221.000006"
+        }
+    ],
+    "has_more": false
+}

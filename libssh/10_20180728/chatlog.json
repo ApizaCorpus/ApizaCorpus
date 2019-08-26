@@ -1,0 +1,594 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "5b54ce7b-6205-4b28-a621-33945241dbba",
+            "type": "message",
+            "text": "int ssh_channel_request_exec ( ssh_channel channel, const char * cmd )",
+            "user": "UB659D0FM",
+            "ts": "1532810049.000006"
+        },
+        {
+            "client_msg_id": "3c8cdd63-dd7d-41af-8f66-58a93e1abb5c",
+            "type": "message",
+            "text": "what is the signature of ssh_channel_request_exec?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532810016.000063"
+        },
+        {
+            "client_msg_id": "1497d95b-1254-46ee-9681-f06b578eb1c1",
+            "type": "message",
+            "text": "This is similar to 'sh -c command'",
+            "user": "UB659D0FM",
+            "ts": "1532809996.000009"
+        },
+        {
+            "client_msg_id": "b6290350-025f-4eac-9b11-87078184a1cd",
+            "type": "message",
+            "text": "To run a shell command without an interactive shell, use ssh_channel_request_exec",
+            "user": "UB659D0FM",
+            "ts": "1532809978.000008"
+        },
+        {
+            "client_msg_id": "f6f212f2-e780-4666-8785-33f4ecd0b191",
+            "type": "message",
+            "text": "how to execute a command in the channel?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532809928.000012"
+        },
+        {
+            "client_msg_id": "a64f2099-4609-4780-a0b1-fc0a329d801c",
+            "type": "message",
+            "text": "To create a new ssh session, use ssh_new",
+            "user": "UB659D0FM",
+            "ts": "1532809872.000012"
+        },
+        {
+            "client_msg_id": "48f4cd41-5551-46d5-95b2-72a987b28852",
+            "type": "message",
+            "text": "how to open a new ssh session?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532809833.000044"
+        },
+        {
+            "client_msg_id": "f1d634ef-9712-43b7-899f-6039079c1ad2",
+            "type": "message",
+            "text": "It does not return a value",
+            "user": "UB659D0FM",
+            "ts": "1532809676.000076"
+        },
+        {
+            "client_msg_id": "e25237ef-fd50-495f-bdbc-dd14cc00f2e0",
+            "type": "message",
+            "text": "what value does it return?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532809661.000008"
+        },
+        {
+            "client_msg_id": "78302210-df78-4074-b802-9a03487fdf74",
+            "type": "message",
+            "text": "To disconnect, use ssh_disconnect with signature: void ssh_disconnect(ssh_session session)",
+            "user": "UB659D0FM",
+            "ts": "1532809563.000051"
+        },
+        {
+            "client_msg_id": "8f6397f3-c82b-4c3f-aad3-55b150856587",
+            "type": "message",
+            "text": "how to disconnect from the server?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532809479.000023"
+        },
+        {
+            "client_msg_id": "62cf1949-8f19-4c2c-9e4a-394c724d6d3e",
+            "type": "message",
+            "text": "SSH_OPTIONS_USER: The username for authentication (const char *).\n\nIf the value is NULL, the username is set to the default username.",
+            "user": "UB659D0FM",
+            "ts": "1532809094.000047"
+        },
+        {
+            "client_msg_id": "2778f80e-085a-44e9-bd22-8c8f5f4d8a41",
+            "type": "message",
+            "text": "?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532809022.000048"
+        },
+        {
+            "client_msg_id": "e602f086-aa60-49c5-9e82-4641fb64f409",
+            "type": "message",
+            "text": "what should be the value for SSH_OPTIONS_USER&gt;",
+            "user": "UBYJRRMMZ",
+            "ts": "1532809021.000034"
+        },
+        {
+            "client_msg_id": "c1d735fd-a620-4dc3-8434-4f7930bf7b52",
+            "type": "message",
+            "text": "ssh_options_set takes in an enum ssh_options_e. One of the values of that enum is SSH_OPTIONS_USER",
+            "user": "UB659D0FM",
+            "ts": "1532808977.000062"
+        },
+        {
+            "client_msg_id": "6cf5de97-07e6-4050-a10d-785180f18ac8",
+            "type": "message",
+            "text": "how to set the username in ssh_options_set()?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808902.000047"
+        },
+        {
+            "client_msg_id": "7214d6b6-aa82-413b-8fec-922fc80428e5",
+            "type": "message",
+            "text": "Returns:\nSSH_AUTH_ERROR: A serious error happened.\nSSH_AUTH_DENIED: Authentication failed: use another method\nSSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method\nSSH_AUTH_SUCCESS: Authentication success\nSSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.\nNote\nMost server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.",
+            "user": "UB659D0FM",
+            "ts": "1532808824.000029"
+        },
+        {
+            "client_msg_id": "14c8e4c7-7966-43d4-b3c2-cabb31636e30",
+            "type": "message",
+            "text": "and the return value?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808808.000069"
+        },
+        {
+            "client_msg_id": "3d591af0-7d4d-43fd-a0b5-37f8fccd15f2",
+            "type": "message",
+            "text": "The signature is int ssh_userauth_password(ssh_session session, const char * username, const char * password)",
+            "user": "UB659D0FM",
+            "ts": "1532808795.000054"
+        },
+        {
+            "client_msg_id": "ffd747a1-f07b-47f6-8f16-e24e6a59ae26",
+            "type": "message",
+            "text": "how to call ssh_userauth_password?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808745.000004"
+        },
+        {
+            "client_msg_id": "23fa6515-0133-4d38-97c5-a2747a698dfb",
+            "type": "message",
+            "text": "ssh_connect returns an integer representing the status of the action: SSH_OK on success, SSH_ERROR on error.\nSSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "UB659D0FM",
+            "ts": "1532808691.000075"
+        },
+        {
+            "client_msg_id": "095adb41-1122-4973-8728-f2a19f1acd5a",
+            "type": "message",
+            "text": "what does -1 means as a return value of ssh_connect?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808672.000059"
+        },
+        {
+            "client_msg_id": "7242e5e0-d034-437d-9b0a-2b1190a0d51f",
+            "type": "message",
+            "text": "ssh_connect returns an integer representing the status of the action: SSH_OK on success, SSH_ERROR on error.\nSSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "UB659D0FM",
+            "ts": "1532808354.000015"
+        },
+        {
+            "client_msg_id": "9942a7ec-f908-450d-a0d6-de60ebba3ee6",
+            "type": "message",
+            "text": "how to know i connected to the server?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808239.000055"
+        },
+        {
+            "client_msg_id": "d1195e6a-2e70-4306-8cf4-738b501aaa43",
+            "type": "message",
+            "text": "I'm sorry, I can only answer API questions",
+            "user": "UB659D0FM",
+            "ts": "1532808209.000026"
+        },
+        {
+            "client_msg_id": "8dd3b2e1-6d46-4e93-b30c-a6bc759b3a47",
+            "type": "message",
+            "text": "what is the \"gssapi-with-mic\"?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808189.000015"
+        },
+        {
+            "client_msg_id": "cc4ed70d-67c2-42c5-a7c3-4c4c2c4fe426",
+            "type": "message",
+            "text": "ssh_userauth_gssapi method tries to authenticate through the \"gssapi-with-mic\" method",
+            "user": "UB659D0FM",
+            "ts": "1532808164.000044"
+        },
+        {
+            "client_msg_id": "0ce1ab28-cac4-469e-9c67-778eeb87b824",
+            "type": "message",
+            "text": "what does the method ssh_userauth_gssapi do?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808128.000029"
+        },
+        {
+            "client_msg_id": "5a111db1-a27c-4ce1-9b70-9153a1c08732",
+            "type": "message",
+            "text": "The signature is int ssh_userauth_gssapi (ssh_session session)",
+            "user": "UB659D0FM",
+            "ts": "1532808115.000031"
+        },
+        {
+            "client_msg_id": "51d152ed-859b-4e72-8b1a-02f3537e6939",
+            "type": "message",
+            "text": "what is the signature of ssh_userauth_gssapi?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808086.000006"
+        },
+        {
+            "client_msg_id": "e32da400-7896-44a5-b10d-31008a7ef37f",
+            "type": "message",
+            "text": "The signature is int ssh_userauth_agent (ssh_session session, const char * username)",
+            "user": "UB659D0FM",
+            "ts": "1532808061.000063"
+        },
+        {
+            "client_msg_id": "ba0da294-a323-4e8e-acdf-bdc4f065513d",
+            "type": "message",
+            "text": "The signature is ssh_userauth_agent (ssh_session session, const char * username)",
+            "user": "UB659D0FM",
+            "ts": "1532808047.000057"
+        },
+        {
+            "client_msg_id": "529e814f-8922-463b-901a-ba126fa34860",
+            "type": "message",
+            "text": "what is the signature of ssh_userauth_agent?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532808011.000043"
+        },
+        {
+            "client_msg_id": "2e8678b8-7db0-47ce-9e51-cf0c99549ea3",
+            "type": "message",
+            "text": "The none method does not perform any authentication",
+            "user": "UB659D0FM",
+            "ts": "1532807986.000039"
+        },
+        {
+            "client_msg_id": "cd3fe22d-8f6a-4fb6-aee9-944d73a5c7c4",
+            "type": "message",
+            "text": "what is the \"none\" method?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807921.000038"
+        },
+        {
+            "client_msg_id": "933e535e-086b-4d54-a4f3-bb0588300292",
+            "type": "message",
+            "text": "ssh_userauth_none method tries to authenticate through the \"none\" method",
+            "user": "UB659D0FM",
+            "ts": "1532807892.000058"
+        },
+        {
+            "client_msg_id": "448a13a2-be2a-4a7d-954f-46c4bd473b42",
+            "type": "message",
+            "text": "ssh_userauth_none",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807849.000039"
+        },
+        {
+            "client_msg_id": "0161d253-c3d1-4865-914b-929ad69cb94c",
+            "type": "message",
+            "text": "Would you like to know more about one?",
+            "user": "UB659D0FM",
+            "ts": "1532807831.000038"
+        },
+        {
+            "client_msg_id": "bd7cd7ad-bf25-45c9-88eb-10691f7550e8",
+            "type": "message",
+            "text": "Authentication can be performed with one of the following methods:\nssh_userauth_agent\nssh_userauth_gssapi\nssh_userauth_kbdint\nssh_userauth_kbdint_getanswer\nssh_userauth_kbdint_getinstruction\nssh_userauth_kbdint_getname\nssh_userauth_kbdint_getnanswers\nssh_userauth_kbdint_getnprompts\nssh_userauth_kbdint_getprompt\nssh_userauth_kbdint_setanswer\nssh_userauth_list\nssh_userauth_none\nssh_userauth_password\nssh_userauth_publickey\nssh_userauth_publickey_auto\nssh_userauth_try_publickey",
+            "user": "UB659D0FM",
+            "ts": "1532807812.000027"
+        },
+        {
+            "client_msg_id": "db3624c9-beda-4787-bd45-137bcfdda60b",
+            "type": "message",
+            "text": "how to authenticate the user?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807750.000034"
+        },
+        {
+            "client_msg_id": "f471f71c-3cc4-4ffc-afed-d3adbd5c21f8",
+            "type": "message",
+            "text": "There are many different types of authentication, would you like me to list them?",
+            "user": "UB659D0FM",
+            "ts": "1532807537.000069"
+        },
+        {
+            "client_msg_id": "6aa007c1-e75d-479e-96f9-c7369ee54df7",
+            "type": "message",
+            "text": "authenticating ssh server?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807525.000052"
+        },
+        {
+            "client_msg_id": "6581c223-f0e3-4d97-87d5-76e4287598fe",
+            "type": "message",
+            "text": "There are many ways to authenticate, they are listed above",
+            "user": "UB659D0FM",
+            "ts": "1532807399.000048"
+        },
+        {
+            "client_msg_id": "1288c8d0-6a3a-4f92-b6a7-4c8295ca9e62",
+            "type": "message",
+            "text": "what is server authentication?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807380.000016"
+        },
+        {
+            "client_msg_id": "1210375d-9bbd-4669-91f8-bafb2169923c",
+            "type": "message",
+            "text": "ssh_userauth_agent is used to try to do public key authentication with ssh agent",
+            "user": "UB659D0FM",
+            "ts": "1532807339.000055"
+        },
+        {
+            "client_msg_id": "458f7e9e-db08-43ba-819f-517b360cb80a",
+            "type": "message",
+            "text": "what does ssh_userauth_agent do?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807288.000045"
+        },
+        {
+            "client_msg_id": "67a1221b-ac72-438b-b603-6bf6ba6398b6",
+            "type": "message",
+            "text": "There are many ways to authenticate, they are listed above",
+            "user": "UB659D0FM",
+            "ts": "1532807267.000060"
+        },
+        {
+            "client_msg_id": "4589857d-59b5-42ac-bd46-937e0e7e7ecc",
+            "type": "message",
+            "text": "what is the method for server authentication?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807237.000028"
+        },
+        {
+            "client_msg_id": "d23abd16-2b99-4892-87ee-420c64bfe776",
+            "type": "message",
+            "text": "ssh_userauth_agent\nssh_userauth_gssapi\nssh_userauth_kbdint\nssh_userauth_kbdint_getanswer\nssh_userauth_kbdint_getinstruction\nssh_userauth_kbdint_getname\nssh_userauth_kbdint_getnanswers\nssh_userauth_kbdint_getnprompts\nssh_userauth_kbdint_getprompt\nssh_userauth_kbdint_setanswer\nssh_userauth_list\nssh_userauth_none\nssh_userauth_password\nssh_userauth_publickey\nssh_userauth_publickey_auto\nssh_userauth_try_publickey",
+            "user": "UB659D0FM",
+            "ts": "1532807144.000056"
+        },
+        {
+            "client_msg_id": "b0f536d0-1b2f-40f9-a499-716a4e79e892",
+            "type": "message",
+            "text": "yes",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807126.000019"
+        },
+        {
+            "client_msg_id": "21935d2d-5551-4c74-8347-6a38e3c56dd6",
+            "type": "message",
+            "text": "There are many different types of authentication, would you like me to list them?",
+            "user": "UB659D0FM",
+            "ts": "1532807119.000053"
+        },
+        {
+            "client_msg_id": "c367d845-3c5b-4404-85c3-2bd8fe65e4d8",
+            "type": "message",
+            "text": "how to authenticate the server?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532807083.000077"
+        },
+        {
+            "client_msg_id": "fc56f8c5-696c-4203-97be-cebbacdbe1b2",
+            "type": "message",
+            "text": "To connect to the ssh server, use ssh_connect",
+            "user": "UB659D0FM",
+            "ts": "1532806857.000030"
+        },
+        {
+            "client_msg_id": "c453fcff-984f-4a9a-8a07-aba920bf505a",
+            "type": "message",
+            "text": "how to connect to the local host?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806828.000086"
+        },
+        {
+            "client_msg_id": "5f52d457-2ee9-4ee4-9954-1bf4bdd815d7",
+            "type": "message",
+            "text": "value: The value to set. This is a generic pointer and the datatype which is used should be set according to the type set.",
+            "user": "UB659D0FM",
+            "ts": "1532806719.000075"
+        },
+        {
+            "client_msg_id": "ca48f3cd-f6fb-4905-a0df-88b3a81e6bba",
+            "type": "message",
+            "text": "what is the third parameter in ssh_options?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806670.000035"
+        },
+        {
+            "client_msg_id": "cbb35513-0920-4735-994a-0d97f3d035ac",
+            "type": "message",
+            "text": "I'm sorry, I'm only able to respond to API questions",
+            "user": "UB659D0FM",
+            "ts": "1532806641.000002"
+        },
+        {
+            "client_msg_id": "37ddd311-83e2-456c-a7e8-df9c3dd7483c",
+            "type": "message",
+            "text": "the right order is ssh_options then ssh_connect, right?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806578.000072"
+        },
+        {
+            "client_msg_id": "5d72aa4d-4e5f-4a9c-b7ec-24d17a03a8b6",
+            "type": "message",
+            "text": "The method ssh_options_set sets the options.",
+            "user": "UB659D0FM",
+            "ts": "1532806532.000002"
+        },
+        {
+            "client_msg_id": "45ca87e5-eace-44f9-8447-4029d0bce3d5",
+            "type": "message",
+            "text": "or i should use it first then use ssh_connect?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806491.000067"
+        },
+        {
+            "client_msg_id": "bba55b51-8bc8-4c23-bb7a-9f5536e6600c",
+            "type": "message",
+            "text": "is ssh_options enough by itself to connect to the server?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806465.000026"
+        },
+        {
+            "client_msg_id": "401a8c83-aaa5-44e4-b7de-c21bf00c2902",
+            "type": "message",
+            "text": "The enum ssh_options_e can be values such as SSH_OPTIONS_HOST and SSH_OPTIONS_PORT",
+            "user": "UB659D0FM",
+            "ts": "1532806430.000019"
+        },
+        {
+            "client_msg_id": "d6c74ab9-56ac-4ed2-8be6-2358b95fad84",
+            "type": "message",
+            "text": "ssh_options_set is a function that can set all possible ssh options",
+            "user": "UB659D0FM",
+            "ts": "1532806392.000034"
+        },
+        {
+            "client_msg_id": "2f0a1a0e-46b5-47cc-afe8-9606ae72feca",
+            "type": "message",
+            "text": "what is the relationship between ssh_connect and ssh_options?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806363.000099"
+        },
+        {
+            "client_msg_id": "d5844723-de37-42d1-9010-637c303bd846",
+            "type": "message",
+            "text": "The method signature is int ssh_options_set(ssh_session session, enum ssh_options_e type, const void * value)",
+            "user": "UB659D0FM",
+            "ts": "1532806298.000060"
+        },
+        {
+            "client_msg_id": "9d74b361-f7ee-4487-af05-e2028a56cb51",
+            "type": "message",
+            "text": "You can use the method ssh_options_set for that",
+            "user": "UB659D0FM",
+            "ts": "1532806249.000043"
+        },
+        {
+            "client_msg_id": "fbd7430b-1701-4825-84ef-d67d30c92b10",
+            "type": "message",
+            "text": "how to specify the exact server i want to connect to?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806189.000046"
+        },
+        {
+            "client_msg_id": "b023724b-2bdc-4503-8ffb-3ac1b1f2541f",
+            "type": "message",
+            "text": "ok iunderstand",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806168.000072"
+        },
+        {
+            "client_msg_id": "28f3d756-6164-43b2-950f-dd4f9cf2e0ea",
+            "type": "message",
+            "text": "what value does it return?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806154.000052"
+        },
+        {
+            "client_msg_id": "e9898d46-f207-4e96-af8d-923a7c698e4e",
+            "type": "message",
+            "text": "The method signature is int ssh_connect(ssh_session session)",
+            "user": "UB659D0FM",
+            "ts": "1532806153.000032"
+        },
+        {
+            "client_msg_id": "b1c78a29-1c81-44d7-8c86-b8e946573da6",
+            "type": "message",
+            "text": "It takes in one parameter: a session with data type ssh_session",
+            "user": "UB659D0FM",
+            "ts": "1532806128.000015"
+        },
+        {
+            "client_msg_id": "f0635e32-79ad-4f2d-b145-aa0143c6cb55",
+            "type": "message",
+            "text": "what parameters does it take?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806090.000006"
+        },
+        {
+            "client_msg_id": "7c0d519a-5728-448f-906e-d42bfdf6410f",
+            "type": "message",
+            "text": "yes",
+            "user": "UB659D0FM",
+            "ts": "1532806081.000012"
+        },
+        {
+            "client_msg_id": "87e4c9c8-6cd3-4de9-89e6-249cdde13453",
+            "type": "message",
+            "text": "is ssh_connect a function?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532806067.000056"
+        },
+        {
+            "client_msg_id": "3bb78250-af21-498d-bb2f-49d3efa35884",
+            "type": "message",
+            "text": "To connect to the ssh server, use ssh_connect",
+            "user": "UB659D0FM",
+            "ts": "1532806018.000028"
+        },
+        {
+            "client_msg_id": "4cb8681b-48a5-48df-8e2d-4ae7c132c84d",
+            "type": "message",
+            "text": "How to connect to the server?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532805972.000090"
+        },
+        {
+            "client_msg_id": "a462e90d-a396-445d-bbb3-b278c692f214",
+            "type": "message",
+            "text": "ssh_new return ssh_session or NULL on error.",
+            "user": "UB659D0FM",
+            "ts": "1532805701.000054"
+        },
+        {
+            "client_msg_id": "f70bad73-0b03-4a55-85e3-2b981470ef86",
+            "type": "message",
+            "text": "what type of values does it return?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532805645.000032"
+        },
+        {
+            "client_msg_id": "86f33df9-be31-4d1a-93a2-7755e033500b",
+            "type": "message",
+            "text": "There are no parameters for ssh_new",
+            "user": "UB659D0FM",
+            "ts": "1532805605.000035"
+        },
+        {
+            "client_msg_id": "8f023bb3-f13f-4302-93fb-9124d4e6645c",
+            "type": "message",
+            "text": "what parameters has the method ssh_new()?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532805576.000082"
+        },
+        {
+            "client_msg_id": "64b3be3a-2e54-4f1d-8a6b-456d10dcd314",
+            "type": "message",
+            "text": "The method signature explains how to call the method",
+            "user": "UB659D0FM",
+            "ts": "1532805536.000083"
+        },
+        {
+            "client_msg_id": "22ca7be8-ca26-464a-ab4d-b332dd97bbe2",
+            "type": "message",
+            "text": "what is the signature?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532805499.000043"
+        },
+        {
+            "client_msg_id": "7839a606-1c76-4bfe-bbc1-eff02caae0e4",
+            "type": "message",
+            "text": "To  create a new session, use ssh_new with signature ssh_session ssh_new()",
+            "user": "UB659D0FM",
+            "ts": "1532805465.000037"
+        },
+        {
+            "client_msg_id": "4d417614-c8bb-4476-b23a-23f87d307785",
+            "type": "message",
+            "text": "How to create a new ssh session?",
+            "user": "UBYJRRMMZ",
+            "ts": "1532805400.000092"
+        }
+    ],
+    "has_more": false
+}

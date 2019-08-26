@@ -1,0 +1,16 @@
+Programmer_4 [9:06 PM]
+On the last task now, but quick question - can I ask questions in parallel? There's a little lag between the question and answer.
+
+
+Zack [9:21 PM]
+Oh apologies, just saw this message! Yeah, you can ask questions in parallel, they will be processed in order
+
+...
+
+Zack [9:39 PM]
+Wonderful, thanks again Matthew!
+
+Programmer_4 [9:40 PM]
+No problem, glad I could help. It was actually kinda cool what it can do, surprised the heck outta me!
+
+Unrelated technical question: what's its scope? Can I ask it any math question, or theorem, or API?

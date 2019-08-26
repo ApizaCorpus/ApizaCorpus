@@ -1,0 +1,9 @@
+Zack [11:08 AM]
+Good luck, and if you run into any problems, feel free to ask me!
+
+
+Programmer_3 [11:36 AM]
+apiza is confused on my latest question
+
+Zack [11:37 AM]
+That is okay! We are interested in how it tries to recover from confusion and how users try to help it understand

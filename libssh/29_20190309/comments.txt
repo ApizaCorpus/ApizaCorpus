@@ -1,0 +1,52 @@
+Zack [1:49 PM]
+Perfect, thanks! There weren't any comment boxes on the survey, but if you have any specific thoughts on the experience interacting with Apiza, I'd love to hear them here.
+
+
+Michael [1:50 PM]
+Hmm, I guess I wasn't sure where to start
+
+With a page of documentation, it's all there
+
+I can start at the top, read a table of contents, and search for keywords
+
+I found it difficult to understand a typical "user flow" of the ssh library
+
+I realize now I should have asked for a simple end to end example (I'm not sure if Apiza would have provided one) as that is one of the best quick intros to the basic use case of an unfamiliar library
+
+It was a pleasant surprise when Apiza asked if I wanted to see the function signature
+
+(until that point I had been trying to ask more simple questions)
+
+I did always feel like I needed more information than was available
+
+It was rather difficult to debug segfaults and the "ERROR" type issues because the error did not seem to be populated
+
+I wasted a bit of time (as mentioned above) trying to call ssh_get_error() as a method of the ssh_session rather than as a free function that takes an ssh_session as an argument
+
+(I think I would not have made that mistake looking at an example code usage)
+
+
+Zack [1:55 PM]
+Ah, gotcha. Yeah, that definitely sounds frustrating!
+
+
+Michael [1:55 PM]
+It was a nice suprise when Apiza listed out the list of related functions and list of enums
+
+and then at the very end 10:36
+
+I got a huge info dump that I would have loved to see at the beginning
+
+I don't really know what I did to trigger this (I asked for preconditions of a function -- which I had done before -- and Apiza asked if i'd like to know more, I said yes, and got all this info)
+
+you have a copy of my logs with Apiza, right?
+
+I think that's most of my thoughts
+
+
+Zack [1:58 PM]
+Yup! And thank you Michael, that was extremely informative.
+
+
+Michael [1:59 PM]
+I'm impressed at how much it is able to understand, but TBH I don't think any AI is near replacing a large searchable document of examples and precise pre&post conditions

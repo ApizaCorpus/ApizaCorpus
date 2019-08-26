@@ -1,0 +1,895 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "2bcfe0d5-f729-48dc-8c7f-418356335b37",
+            "type": "message",
+            "text": "void al_draw_rotated_bitmap(ALLEGRO_BITMAP *bitmap,\n   float cx, float cy, float dx, float dy, float angle, int flags)",
+            "user": "UB659D0FM",
+            "ts": "1546709832.028600"
+        },
+        {
+            "client_msg_id": "b49bdf2b-2305-450c-ad2e-54bdb01281f0",
+            "type": "message",
+            "text": "The method draws a rotated version of the given bitmap to the target bitmap. The bitmap is rotated by 'angle' radians clockwise.\nThe point at cx\/cy relative to the upper left corner of the bitmap will be drawn at dx\/dy and the bitmap is rotated around this point. If cx,cy is 0,0 the bitmap will rotate around its upper left corner.\n\t\u2022\tcx - center x (relative to the bitmap)\n\t\u2022\tcy - center y (relative to the bitmap)\n\t\u2022\tdx - destination x\n\t\u2022\tdy - destination y\n\t\u2022\tangle - angle by which to rotate (radians)\n\t\u2022\tflags - same as for al_draw_bitmap",
+            "user": "UB659D0FM",
+            "ts": "1546709823.028400"
+        },
+        {
+            "client_msg_id": "97bd7b83-0e03-4d00-acdc-7d36f4ad0092",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546709818.028200"
+        },
+        {
+            "client_msg_id": "8729bacb-69be-45d0-aa55-59740e9cdd08",
+            "type": "message",
+            "text": "Are you asking about al_draw_rotated_bitmap?",
+            "user": "UB659D0FM",
+            "ts": "1546709802.028000"
+        },
+        {
+            "client_msg_id": "57df83e4-e898-42d9-a8f5-f46c6ce49d1a",
+            "type": "message",
+            "text": "rotate a bitmap?",
+            "user": "UF6GJF0RE",
+            "ts": "1546709777.027800"
+        },
+        {
+            "client_msg_id": "290433f8-6935-4e24-84e5-02347a6ce1c6",
+            "type": "message",
+            "text": "void al_draw_scaled_bitmap(ALLEGRO_BITMAP *bitmap,\n   float sx, float sy, float sw, float sh,\n   float dx, float dy, float dw, float dh, int flags)",
+            "user": "UB659D0FM",
+            "ts": "1546709477.027600"
+        },
+        {
+            "client_msg_id": "c6223720-c9ad-4ac1-b5a2-7703dcc154ac",
+            "type": "message",
+            "text": "The method draws a scaled version of the given bitmap to the target bitmap.\n\t\u2022\tsx - source x\n\t\u2022\tsy - source y\n\t\u2022\tsw - source width\n\t\u2022\tsh - source height\n\t\u2022\tdx - destination x\n\t\u2022\tdy - destination y\n\t\u2022\tdw - destination width\n\t\u2022\tdh - destination height\n\t\u2022\tflags - same as for al_draw_bitmap\nSee al_draw_bitmap for a note on restrictions on which bitmaps can be drawn where.",
+            "user": "UB659D0FM",
+            "ts": "1546709471.027400"
+        },
+        {
+            "client_msg_id": "c06f920f-bae0-4c03-9794-0f8b1cf7c438",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546709451.027200"
+        },
+        {
+            "client_msg_id": "90d76352-d7e1-42ce-9415-d9f5d11710cb",
+            "type": "message",
+            "text": "Are you asking about al_draw_scaled_bitmap?",
+            "user": "UB659D0FM",
+            "ts": "1546709443.027000"
+        },
+        {
+            "client_msg_id": "d64ccffc-ab0b-45e3-a545-2f181f74917b",
+            "type": "message",
+            "text": "how to scale a bitmap?",
+            "user": "UF6GJF0RE",
+            "ts": "1546709372.026800"
+        },
+        {
+            "client_msg_id": "b88d0219-20cf-4038-9517-ffa5a0c22b8d",
+            "type": "message",
+            "text": "bool al_init_image_addon(void)",
+            "user": "UB659D0FM",
+            "ts": "1546709286.026600"
+        },
+        {
+            "client_msg_id": "1c51f111-a1ff-4cc7-87cc-236c0d8b48c1",
+            "type": "message",
+            "text": "The method initializes the image addon. This registers bitmap format handlers for al_load_bitmap, al_load_bitmap_f, al_save_bitmap, al_save_bitmap_f.\nThe following types are built into the Allegro image addon and guaranteed to be available: BMP, DDS, PCX, TGA. Every platform also supports JPEG and PNG via external dependencies.\nOther formats may be available depending on the operating system and installed libraries, but are not guaranteed and should not be assumed to be universally available.\nThe DDS format is only supported to load from, and only if the DDS file contains textures compressed in the DXT1, DXT3 and DXT5 formats. Note that when loading a DDS file, the created bitmap will always be a video bitmap and will have the pixel format matching the format in the file.",
+            "user": "UB659D0FM",
+            "ts": "1546709280.026400"
+        },
+        {
+            "client_msg_id": "bc174dc2-5763-4021-be24-49300c8961f6",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546709263.026200"
+        },
+        {
+            "client_msg_id": "a6d12675-0c9e-4f5c-a0f0-3b03aa4cdc9a",
+            "type": "message",
+            "text": "Are you asking about al_init_image_addon?",
+            "user": "UB659D0FM",
+            "ts": "1546709255.026000"
+        },
+        {
+            "client_msg_id": "12c3e8f8-813d-4eeb-a8a2-735f1dd13bc3",
+            "type": "message",
+            "text": "initialize image addon?",
+            "user": "UF6GJF0RE",
+            "ts": "1546709234.025800"
+        },
+        {
+            "client_msg_id": "f86509f2-8da2-40ce-b361-e545f8602deb",
+            "type": "message",
+            "text": "bool al_register_bitmap_loader(const char *extension,\n   ALLEGRO_BITMAP *(*loader)(const char *filename, int flags))",
+            "user": "UB659D0FM",
+            "ts": "1546709212.025200"
+        },
+        {
+            "client_msg_id": "47c86204-3a13-4327-bf32-7b9fd164d78f",
+            "type": "message",
+            "text": "The method registers a handler for al_load_bitmap. The given function will be used to handle the loading of bitmaps files with the given extension.\nThe extension should include the leading dot ('.') character. It will be matched case-insensitively.\nThe loader argument may be NULL to unregister an entry.\nReturns true on success, false on error. Returns false if unregistering an entry that doesn't exist.",
+            "user": "UB659D0FM",
+            "ts": "1546709204.025000"
+        },
+        {
+            "client_msg_id": "116743ba-b92f-448c-8ca8-83663bc2b1e8",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546709187.024800"
+        },
+        {
+            "client_msg_id": "5aadb4c0-2a5c-4189-a4b3-3aadc183f2ba",
+            "type": "message",
+            "text": "Are you asking about al_register_bitmap_loader?",
+            "user": "UB659D0FM",
+            "ts": "1546709178.024600"
+        },
+        {
+            "client_msg_id": "d7f25ab4-9d01-42d7-b0f9-e22d6195a3f7",
+            "type": "message",
+            "text": "how do I initialize image loaders",
+            "user": "UF6GJF0RE",
+            "ts": "1546709150.024400"
+        },
+        {
+            "client_msg_id": "29c3032b-999d-4e38-b9eb-2741057842c4",
+            "type": "message",
+            "text": "ALLEGRO_BITMAP *al_load_bitmap(const char *filename)",
+            "user": "UB659D0FM",
+            "ts": "1546708981.024100"
+        },
+        {
+            "client_msg_id": "f0834740-e8c4-4c30-b4af-1f8a7b27140d",
+            "type": "message",
+            "text": "The method loads an image file into a new ALLEGRO_BITMAP. The file type is determined by the extension, except if the file has no extension in which case al_identify_bitmap is used instead.\nReturns NULL on error.\nThis is the same as calling al_load_bitmap_flags with a flags parameter of 0.",
+            "user": "UB659D0FM",
+            "ts": "1546708980.023900"
+        },
+        {
+            "client_msg_id": "bce284ad-7fe1-4c3e-a968-a6d074f4ae12",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546708955.023700"
+        },
+        {
+            "client_msg_id": "1aad1958-5fe3-4521-b9b9-e72187bc15ff",
+            "type": "message",
+            "text": "Are you asking about al_load_bitmap?",
+            "user": "UB659D0FM",
+            "ts": "1546708939.023500"
+        },
+        {
+            "client_msg_id": "c2c867a7-86f7-48f9-aad6-db6dcb352141",
+            "type": "message",
+            "text": "how do I load png?",
+            "user": "UF6GJF0RE",
+            "ts": "1546708871.023300"
+        },
+        {
+            "client_msg_id": "f0d4f35d-40f7-4456-a1a4-5c313488e66c",
+            "type": "message",
+            "text": "bool al_init_font_addon(void)",
+            "user": "UB659D0FM",
+            "ts": "1546708330.023000"
+        },
+        {
+            "client_msg_id": "021be5d4-8001-4988-a47c-1a2cd163036a",
+            "type": "message",
+            "text": "The method initialises the font addon.\nNote that if you intend to load bitmap fonts, you will need to initialise allegro_image separately (unless you are using another library to load images).\nSimilarly, if you wish to load truetype-fonts, do not forget to also call al_init_ttf_addon.\nReturns true on success, false on failure. On the 5.0 branch, this function has no return value. You may wish to avoid checking the return value if your code needs to be compatible with Allegro 5.0. Currently, the function will never return false.",
+            "user": "UB659D0FM",
+            "ts": "1546708322.022800"
+        },
+        {
+            "client_msg_id": "5fb9fa52-b1d8-4b0f-907b-e759bc968a2f",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546708318.022500"
+        },
+        {
+            "client_msg_id": "d9177e7a-55a6-4383-97f9-082ff7d79912",
+            "type": "message",
+            "text": "Are you asking about al_init_font_addon?",
+            "user": "UB659D0FM",
+            "ts": "1546708274.022300"
+        },
+        {
+            "client_msg_id": "6d080037-8934-427f-9fd7-b367c63c2e0a",
+            "type": "message",
+            "text": "how do I initialize fonts?",
+            "user": "UF6GJF0RE",
+            "ts": "1546708222.022100"
+        },
+        {
+            "client_msg_id": "b4d49762-4e76-4da6-9600-773b612daf0b",
+            "type": "message",
+            "text": "The following flags are supported:\n\nALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.\n\nALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).\n\nALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2",
+            "user": "UB659D0FM",
+            "ts": "1546708199.021900"
+        },
+        {
+            "client_msg_id": "973178f8-172e-4c7e-b1b6-4883abd39bd0",
+            "type": "message",
+            "text": "what's the flags parameter in al_load_ttf_font",
+            "user": "UF6GJF0RE",
+            "ts": "1546708171.021700"
+        },
+        {
+            "client_msg_id": "bb9d598d-8e2d-47d2-861c-077810efd068",
+            "type": "message",
+            "text": "ALLEGRO_FONT *al_load_ttf_font(char const *filename, int size, int flags)",
+            "user": "UB659D0FM",
+            "ts": "1546708097.021300"
+        },
+        {
+            "client_msg_id": "f45e46bf-5149-42a0-8487-2099a9a1283e",
+            "type": "message",
+            "text": "The method loads a TrueType font from a file using the FreeType library. Quoting from the FreeType FAQ this means support for many different font formats:\nTrueType, OpenType, Type1, CID, CFF, Windows FON\/FNT, X11 PCF, and others\nThe size parameter determines the size the font will be rendered at, specified in pixels. The standard font size is measured in units per EM, if you instead want to specify the size as the total height of glyphs in pixels, pass it as a negative value.",
+            "user": "UB659D0FM",
+            "ts": "1546708088.021100"
+        },
+        {
+            "client_msg_id": "b55f7e0d-f789-4ad2-bec2-b853261484ef",
+            "type": "message",
+            "text": "tell me about al_load_ttf_font",
+            "user": "UF6GJF0RE",
+            "ts": "1546708064.020900"
+        },
+        {
+            "client_msg_id": "82214af0-c98f-48ac-ae08-75a609c2af89",
+            "type": "message",
+            "text": "ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)",
+            "user": "UB659D0FM",
+            "ts": "1546708014.020500"
+        },
+        {
+            "client_msg_id": "323a20ca-d466-4824-bc40-cef0d2c1da4c",
+            "type": "message",
+            "text": "The method loads a font from disk. This will use al_load_bitmap_font_flagsif you pass the name of a known bitmap format, or else al_load_ttf_font.\nThe flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.",
+            "user": "UB659D0FM",
+            "ts": "1546708005.020300"
+        },
+        {
+            "client_msg_id": "dadff5f8-8956-4027-8321-f33c5e986699",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546707987.020100"
+        },
+        {
+            "client_msg_id": "f85876e2-42ba-4fbc-8454-54d4c2b9db28",
+            "type": "message",
+            "text": "Are you asking about al_load_font?",
+            "user": "UB659D0FM",
+            "ts": "1546707975.019900"
+        },
+        {
+            "client_msg_id": "554a67cc-6347-41e8-b3f7-ebd3900f26ac",
+            "type": "message",
+            "text": "how do I load a font?",
+            "user": "UF6GJF0RE",
+            "ts": "1546707945.019700"
+        },
+        {
+            "client_msg_id": "f6d47c1c-fbe6-4933-b9dc-56c7f50a59a1",
+            "type": "message",
+            "text": "void al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text)",
+            "user": "UB659D0FM",
+            "ts": "1546707931.019500"
+        },
+        {
+            "client_msg_id": "8ae1ec07-dc85-4b46-9706-6341e1f781ad",
+            "type": "message",
+            "text": "The method writes the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.\nThe flags parameter can be 0 or one of the following flags:\n\t\u2022\tALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\n\t\u2022\tALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\n\t\u2022\tALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\nIt can also be combined with this flag:\n\t\u2022\tALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.",
+            "user": "UB659D0FM",
+            "ts": "1546707923.019300"
+        },
+        {
+            "client_msg_id": "2552558f-ddda-41e0-8d04-bd3f4441cdda",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546707890.019100"
+        },
+        {
+            "client_msg_id": "84ffd96a-02a2-410c-8a75-c0ffe2b97b42",
+            "type": "message",
+            "text": "Are you asking about al_draw_text?",
+            "user": "UB659D0FM",
+            "ts": "1546707885.018900"
+        },
+        {
+            "client_msg_id": "24bd496e-b6a2-4f2b-a28b-6384a92abc0b",
+            "type": "message",
+            "text": "how do I draw text?",
+            "user": "UF6GJF0RE",
+            "ts": "1546707811.018700"
+        },
+        {
+            "client_msg_id": "2fe15340-6fa0-491c-a6c1-a6254fc94afc",
+            "type": "message",
+            "text": "bool al_reserve_samples(int reserve_samples)",
+            "user": "UB659D0FM",
+            "ts": "1546707737.018500"
+        },
+        {
+            "client_msg_id": "0c639f52-1131-40c6-8037-a53897bcbef4",
+            "type": "message",
+            "text": "The method reserves a number of sample instances, attaching them to the default mixer. If no default mixer is set when this function is called, then it will create one and attach it to the default voice. If no default voice has been set, it, too, will be created.\nIf you call this function a second time with a smaller number of samples, then the excess internal sample instances will be destroyed causing some sounds to stop and some instances returned by al_lock_sample_id to be invalidated.",
+            "user": "UB659D0FM",
+            "ts": "1546707729.018300"
+        },
+        {
+            "client_msg_id": "7ce9caba-c172-4ad3-b024-564e0d617823",
+            "type": "message",
+            "text": "tell me more about al_reserve_samples",
+            "user": "UF6GJF0RE",
+            "ts": "1546707695.018100"
+        },
+        {
+            "client_msg_id": "7df3fbd5-ec87-4eba-a24c-781436bee467",
+            "type": "message",
+            "text": "bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UB659D0FM",
+            "ts": "1546707622.017700"
+        },
+        {
+            "client_msg_id": "8bfe7458-3916-4a24-bee7-cef10dd8249d",
+            "type": "message",
+            "text": "The method plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.",
+            "user": "UB659D0FM",
+            "ts": "1546707614.017500"
+        },
+        {
+            "client_msg_id": "67980200-553a-4fa8-a156-6d80cbb8d116",
+            "type": "message",
+            "text": "tell me more about al_play_sample",
+            "user": "UF6GJF0RE",
+            "ts": "1546707579.017300"
+        },
+        {
+            "client_msg_id": "7ade1dbc-0497-4b1e-bc3e-cb3ed60a7cc6",
+            "type": "message",
+            "text": "Sample and stream playback mode.\n\nALLEGRO_PLAYMODE_ONCE\nALLEGRO_PLAYMODE_LOOP\nALLEGRO_PLAYMODE_BIDIR",
+            "user": "UB659D0FM",
+            "ts": "1546707491.016900"
+        },
+        {
+            "client_msg_id": "a3c2f7e5-d651-4655-b8ec-a36534dcdfa5",
+            "type": "message",
+            "text": "tell me about ALLEGRO_PLAYMODE",
+            "user": "UF6GJF0RE",
+            "ts": "1546707464.016700"
+        },
+        {
+            "client_msg_id": "3031110c-e6ba-4c73-bdfb-1433e04ba65a",
+            "type": "message",
+            "text": "Limitations:\n\nSaving is only supported for wav files.\n\nThe wav file loader currently only supports 8\/16 bit little endian PCM files. 16 bits are used when saving wav files. Use flac files if more precision is required.\n\nModule files (.it, .mod, .s3m, .xm) are often composed with streaming in mind, and sometimes cannot be easily rendered into a finite length sample. Therefore they cannot be loaded with al_load_sample\/al_load_sample_f and must be streamed with al_load_audio_stream or al_load_audio_stream_f.\n\n.voc file streaming is unimplemented.",
+            "user": "UB659D0FM",
+            "ts": "1546707278.016300"
+        },
+        {
+            "client_msg_id": "e248cd6e-bec7-4aea-84ae-0d6e5433ba58",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546707270.016100"
+        },
+        {
+            "client_msg_id": "6b7217ff-01e8-44ff-a754-5ec18a9ef2be",
+            "type": "message",
+            "text": "Would you like to learn the limitations of this method?",
+            "user": "UB659D0FM",
+            "ts": "1546707245.015900"
+        },
+        {
+            "client_msg_id": "812da581-89fb-4273-9dbd-02115cbd282a",
+            "type": "message",
+            "text": "The method registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.\nDepending on what libraries are available, the full set of recognised extensions is: .wav, .flac, .ogg, .opus, .it, .mod, .s3m, .xm, .voc.",
+            "user": "UB659D0FM",
+            "ts": "1546707215.015700"
+        },
+        {
+            "client_msg_id": "b37ac607-c965-4b0d-a8bc-230ead374c7f",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546707189.015500"
+        },
+        {
+            "client_msg_id": "2be37c84-98fa-490b-9b35-b50d4ec59e74",
+            "type": "message",
+            "text": "Are you asking about al_init_acodec_addon?",
+            "user": "UB659D0FM",
+            "ts": "1546707167.015300"
+        },
+        {
+            "client_msg_id": "0b41a2df-b594-43cf-bfe4-ad566e490e58",
+            "type": "message",
+            "text": "how do I initialize the allegro_acodec addon?",
+            "user": "UF6GJF0RE",
+            "ts": "1546707124.015100"
+        },
+        {
+            "client_msg_id": "3f6ee92a-771c-42da-a885-10a8db8ce0a8",
+            "type": "message",
+            "text": "the allegro_audio library does not support any audio file formats by default. You must use the allegro_acodec addon, or register your own format handler.",
+            "user": "UB659D0FM",
+            "ts": "1546707083.014700"
+        },
+        {
+            "client_msg_id": "cac07622-5999-4301-a229-60618adbadc5",
+            "type": "message",
+            "text": "why would al_load_sample crash?",
+            "user": "UF6GJF0RE",
+            "ts": "1546707021.014500"
+        },
+        {
+            "client_msg_id": "1122defa-93f8-492b-97e3-9a233dbd7a5a",
+            "type": "message",
+            "text": "bool al_init_acodec_addon(void)",
+            "user": "UB659D0FM",
+            "ts": "1546706919.014100"
+        },
+        {
+            "client_msg_id": "7f47d6c1-3cd1-47a9-a766-09c0f9657d68",
+            "type": "message",
+            "text": "The method registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.",
+            "user": "UB659D0FM",
+            "ts": "1546706918.013900"
+        },
+        {
+            "client_msg_id": "f9b75640-a2da-4964-b9f4-51d4b1405394",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546706904.013700"
+        },
+        {
+            "client_msg_id": "7a262ee4-085a-46ae-b48f-9be434ab94f7",
+            "type": "message",
+            "text": "Are you asking about al_init_acodec_addon?",
+            "user": "UB659D0FM",
+            "ts": "1546706863.013400"
+        },
+        {
+            "client_msg_id": "7e2472f2-d2a1-47c7-a36e-6039c1fb1227",
+            "type": "message",
+            "text": "how do I initialize audio?",
+            "user": "UF6GJF0RE",
+            "ts": "1546706826.013200"
+        },
+        {
+            "client_msg_id": "6d06efe7-022d-47d1-8601-8e320cad79f2",
+            "type": "message",
+            "text": "ALLEGRO_SAMPLE *al_load_sample(const char *filename)",
+            "user": "UB659D0FM",
+            "ts": "1546706616.013000"
+        },
+        {
+            "client_msg_id": "5fff19c3-36b6-40ad-b21e-6126eedb5d27",
+            "type": "message",
+            "text": "The method loads a few different audio file formats based on their extension.\nNote that this stores the entire file in memory at once, which may be time consuming. To read the file as it is needed, use al_load_audio_stream.\nReturns the sample on success, NULL on failure.",
+            "user": "UB659D0FM",
+            "ts": "1546706609.012800"
+        },
+        {
+            "client_msg_id": "1be7d14a-ffa2-4f9a-a9a5-58886c2f91f6",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546706575.012600"
+        },
+        {
+            "client_msg_id": "63571f10-66fe-44b7-a4fd-fea4c404722a",
+            "type": "message",
+            "text": "Are you asking about al_load_sample?",
+            "user": "UB659D0FM",
+            "ts": "1546706546.012300"
+        },
+        {
+            "client_msg_id": "ba11fe8f-b75f-4c98-a136-c59982108556",
+            "type": "message",
+            "text": "no",
+            "user": "UF6GJF0RE",
+            "ts": "1546706517.012100"
+        },
+        {
+            "client_msg_id": "3ef873ce-7149-44d9-9088-379f5176b774",
+            "type": "message",
+            "text": "Are you asking about al_play_sample?",
+            "user": "UB659D0FM",
+            "ts": "1546706506.011800"
+        },
+        {
+            "client_msg_id": "1f7c440a-a50e-43ff-8b0f-a66bad52fe93",
+            "type": "message",
+            "text": "how do I play a sound file ?",
+            "user": "UF6GJF0RE",
+            "ts": "1546706360.011600"
+        },
+        {
+            "client_msg_id": "92f22e36-b2fb-4e6a-bf71-5822a28c901e",
+            "type": "message",
+            "text": "ALLEGRO_SAMPLE *al_get_sample(ALLEGRO_SAMPLE_INSTANCE *spl)",
+            "user": "UB659D0FM",
+            "ts": "1546706334.011400"
+        },
+        {
+            "client_msg_id": "a8714003-946b-4a15-af11-2343d7535b13",
+            "type": "message",
+            "text": "The method returns the sample data that the sample instance plays.\nNote this returns a pointer to an internal structure, not the ALLEGRO_SAMPLE that you may have passed to al_set_sample. However, the sample buffer of the returned ALLEGRO_SAMPLE will be the same as the one that was used to create the sample (passed to al_create_sample). You can use al_get_sample_data on the return value to retrieve and compare it.",
+            "user": "UB659D0FM",
+            "ts": "1546706325.011200"
+        },
+        {
+            "client_msg_id": "5d9c7f57-badf-471c-9f71-008129b3f3cb",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546706291.011000"
+        },
+        {
+            "client_msg_id": "ddf4413b-88dd-40f1-8c54-2ee8648fb3fc",
+            "type": "message",
+            "text": "Are you asking about al_get_sample?",
+            "user": "UB659D0FM",
+            "ts": "1546706272.010800"
+        },
+        {
+            "client_msg_id": "e6070383-5c5a-45e4-a320-d6f39b533676",
+            "type": "message",
+            "text": "how to load a sample from a wav?",
+            "user": "UF6GJF0RE",
+            "ts": "1546706229.010600"
+        },
+        {
+            "client_msg_id": "ad593eb8-c5d0-4b9b-b55a-2ddd8f545599",
+            "type": "message",
+            "text": "I\u2019m not sure I understand",
+            "user": "UB659D0FM",
+            "ts": "1546706216.010400"
+        },
+        {
+            "client_msg_id": "ff41e569-37d9-4f13-ab8f-8f36a1d229c6",
+            "type": "message",
+            "text": "how to load a wav file?",
+            "user": "UF6GJF0RE",
+            "ts": "1546706168.010200"
+        },
+        {
+            "client_msg_id": "40fec434-6d29-4252-9876-f54cccfd89a3",
+            "type": "message",
+            "text": "A sample that is referred to by the samples parameter refers to a sequence channel intensities. E.g. if you're making a stereo sample with the samples set to 4, then the layout of the data in buf will be: LRLRLRLR\nWhere L and R are the intensities for the left and right channels respectively. A single sample, then, refers to the LR pair in this example.\nTo allocate a buffer of the correct size, you can use something like this:\nint sample_size = al_get_channel_count(chan_conf)\n                  * al_get_audio_depth_size(depth);\nint bytes = samples * sample_size;\nvoid *buffer = al_malloc(bytes);",
+            "user": "UB659D0FM",
+            "ts": "1546706114.010000"
+        },
+        {
+            "client_msg_id": "c70a58de-eb69-4c9e-94bc-5b01255d05df",
+            "type": "message",
+            "text": "ALLEGRO_SAMPLE *al_create_sample(void *buf, unsigned int samples,\n   unsigned int freq, ALLEGRO_AUDIO_DEPTH depth,\n   ALLEGRO_CHANNEL_CONF chan_conf, bool free_buf)",
+            "user": "UB659D0FM",
+            "ts": "1546706079.009800"
+        },
+        {
+            "client_msg_id": "5eed076f-cfee-4cd3-b960-8acfbf1bb4e9",
+            "type": "message",
+            "text": "The method creates a sample data structure from the supplied buffer. If free_buf is true then the buffer will be freed with al_free when the sample data structure is destroyed. For portability (especially Windows), the buffer should have been allocated with al_malloc. Otherwise you should free the sample data yourself.",
+            "user": "UB659D0FM",
+            "ts": "1546706071.009600"
+        },
+        {
+            "client_msg_id": "8af3178c-a820-441b-a451-e8b8845e122c",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546706041.009400"
+        },
+        {
+            "client_msg_id": "ba701558-dabc-472a-9d48-45e67dcd6f9b",
+            "type": "message",
+            "text": "Are you asking about al_create_sample?",
+            "user": "UB659D0FM",
+            "ts": "1546706036.009200"
+        },
+        {
+            "client_msg_id": "8d41a048-c8b0-453f-b240-90ffe9cc6784",
+            "type": "message",
+            "text": "how do I load a sample from a file ?",
+            "user": "UF6GJF0RE",
+            "ts": "1546705975.009000"
+        },
+        {
+            "client_msg_id": "33c39fb9-02f4-4109-8898-b484f26d0137",
+            "type": "message",
+            "text": "void *al_get_sample_data(const ALLEGRO_SAMPLE *spl)",
+            "user": "UB659D0FM",
+            "ts": "1546705966.008900"
+        },
+        {
+            "client_msg_id": "4c4c2c17-6241-4a68-966b-16fc5f117fbc",
+            "type": "message",
+            "text": "The method return a pointer to the raw sample data.",
+            "user": "UB659D0FM",
+            "ts": "1546705959.008600"
+        },
+        {
+            "client_msg_id": "e1adb81f-6e72-4768-a1c6-aabf4e6ed08d",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546705950.008400"
+        },
+        {
+            "client_msg_id": "62654544-0ee2-4ddb-b905-055097aeafa7",
+            "type": "message",
+            "text": "Are you asking about al_get_sample_data?",
+            "user": "UB659D0FM",
+            "ts": "1546705923.008200"
+        },
+        {
+            "client_msg_id": "501782b3-864b-44f9-9e85-f9840007f77a",
+            "type": "message",
+            "text": "how do I get an ALLEGRO_SAMPLE",
+            "user": "UF6GJF0RE",
+            "ts": "1546705887.008000"
+        },
+        {
+            "client_msg_id": "8ee024cb-103e-4122-9296-bf189fe8c2db",
+            "type": "message",
+            "text": "bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UB659D0FM",
+            "ts": "1546705856.007700"
+        },
+        {
+            "client_msg_id": "adab3f94-8cab-439b-8e92-2f9624c5e6be",
+            "type": "message",
+            "text": "The method plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.",
+            "user": "UB659D0FM",
+            "ts": "1546705848.007500"
+        },
+        {
+            "client_msg_id": "2722f7d0-19cb-4820-8bf4-7e93d3c44d2e",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546705811.007300"
+        },
+        {
+            "client_msg_id": "dc45d3fb-d7c1-414e-b99d-b09016d62cd5",
+            "type": "message",
+            "text": "Are you interested in al_play_sample?",
+            "user": "UB659D0FM",
+            "ts": "1546705759.007100"
+        },
+        {
+            "client_msg_id": "57b2df3f-850e-4d8d-b509-b2448d234ffa",
+            "type": "message",
+            "text": "An ALLEGRO_SAMPLE_INSTANCE object represents a playable instance of a predefined sound effect. It holds information about how the effect should be played: These playback parameters consist of the looping mode, loop start\/end points, playing position, speed, gain, pan and the playmode. Whether a sample instance is currently playing or paused is also one of its properties.\n\nAn instance uses the data from an ALLEGRO_SAMPLE object. Multiple instances may be created from the same ALLEGRO_SAMPLE. An ALLEGRO_SAMPLE must not be destroyed while there are instances which reference it.\n\nTo actually produce audio output, an ALLEGRO_SAMPLE_INSTANCE must be attached to an ALLEGRO_MIXER which eventually reaches an ALLEGRO_VOICE object.",
+            "user": "UB659D0FM",
+            "ts": "1546705726.006900"
+        },
+        {
+            "client_msg_id": "48e5e93e-cb24-4be5-9cdb-9338e137bd91",
+            "type": "message",
+            "text": "how do I get an ALLEGRO_SAMPLE_INSTANCE  ?",
+            "user": "UF6GJF0RE",
+            "ts": "1546705654.006700"
+        },
+        {
+            "client_msg_id": "61a9f5ba-8ba8-4749-9dd2-2f4312102f2d",
+            "type": "message",
+            "text": "bool al_play_sample_instance(ALLEGRO_SAMPLE_INSTANCE *spl)",
+            "user": "UB659D0FM",
+            "ts": "1546705645.006500"
+        },
+        {
+            "client_msg_id": "8a7b9b19-0d14-4a27-9033-dd8fb3f4315e",
+            "type": "message",
+            "text": "The method plays the sample instance. Returns true on success, false on failure.",
+            "user": "UB659D0FM",
+            "ts": "1546705636.006300"
+        },
+        {
+            "client_msg_id": "5486605b-12a1-4107-9d3a-d2d4e3a4893e",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546705590.006100"
+        },
+        {
+            "client_msg_id": "15490dd2-46a3-4d2b-b34a-b71604ee2e58",
+            "type": "message",
+            "text": "Are you asking about al_play_sample_instance?",
+            "user": "UB659D0FM",
+            "ts": "1546705584.005900"
+        },
+        {
+            "client_msg_id": "4257aa62-c50a-4c26-93d8-1029c74d1b1a",
+            "type": "message",
+            "text": "how do I play a sound ?",
+            "user": "UF6GJF0RE",
+            "ts": "1546705503.005700"
+        },
+        {
+            "client_msg_id": "18ad7d3d-2ac3-411b-8fea-cdc176fb04b8",
+            "type": "message",
+            "text": "bool al_install_keyboard(void)",
+            "user": "UB659D0FM",
+            "ts": "1546705362.005500"
+        },
+        {
+            "client_msg_id": "fb61790e-b08e-4cb8-a396-8a0b5b0ecbd7",
+            "type": "message",
+            "text": "The method installs a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.",
+            "user": "UB659D0FM",
+            "ts": "1546705354.005300"
+        },
+        {
+            "client_msg_id": "54eda603-e6b8-43f8-bdce-d366cf725a61",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546705329.005100"
+        },
+        {
+            "client_msg_id": "a2bd5890-8224-4127-918c-8e2ceb740490",
+            "type": "message",
+            "text": "Are you asking about the method al_install_keyboard?",
+            "user": "UB659D0FM",
+            "ts": "1546705324.004900"
+        },
+        {
+            "client_msg_id": "36fb7a7b-0b15-48b4-95ac-8b9a5801a64d",
+            "type": "message",
+            "text": "how do I initialize the keyboard?",
+            "user": "UF6GJF0RE",
+            "ts": "1546705294.004700"
+        },
+        {
+            "client_msg_id": "036f2de9-dd7c-4229-92a4-160abd356d2f",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546705191.004500"
+        },
+        {
+            "client_msg_id": "987dac79-c47c-4091-8fbc-0bf8aa3832dd",
+            "type": "message",
+            "text": "Are you asking about ALLEGRO_KEY_LEFT and ALLEGRO_KEY_RIGHT?",
+            "user": "UB659D0FM",
+            "ts": "1546705184.004200"
+        },
+        {
+            "client_msg_id": "4e3c79d7-212c-48c4-ae64-5f60dd3d1abb",
+            "type": "message",
+            "text": "what are the keycode for the arrow keys?",
+            "user": "UF6GJF0RE",
+            "ts": "1546705095.004000"
+        },
+        {
+            "client_msg_id": "f146e62e-4854-42bd-8877-8e885146c39d",
+            "type": "message",
+            "text": "void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state",
+            "user": "UB659D0FM",
+            "ts": "1546705053.003600"
+        },
+        {
+            "client_msg_id": "c922f80f-4f2a-48f0-a3a1-d4251cde69a7",
+            "type": "message",
+            "text": "This method saves the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state.",
+            "user": "UB659D0FM",
+            "ts": "1546705040.003400"
+        },
+        {
+            "client_msg_id": "e466209f-1d2f-452e-8f09-e17c6e003125",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546705015.003200"
+        },
+        {
+            "client_msg_id": "37395411-815f-4f8d-881d-c281a4477c07",
+            "type": "message",
+            "text": "Are you asking about the method al_get_keyboard_state?",
+            "user": "UB659D0FM",
+            "ts": "1546705010.003000"
+        },
+        {
+            "client_msg_id": "0f65b8a7-84d8-4047-bc8a-3f3944fc016d",
+            "type": "message",
+            "text": "how do I get a ALLEGRO_KEYBOARD_STATE?",
+            "user": "UF6GJF0RE",
+            "ts": "1546704963.002800"
+        },
+        {
+            "client_msg_id": "f552ecbe-8781-4f1a-ad51-01d23812e510",
+            "type": "message",
+            "text": "This is a structure that is used to hold a \"snapshot\" of a keyboard's state at a particular instant. It contains the following publically readable fields: display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.",
+            "user": "UB659D0FM",
+            "ts": "1546704930.002600"
+        },
+        {
+            "client_msg_id": "5a345af7-2f0b-4d02-8b4d-37057a3848e0",
+            "type": "message",
+            "text": "yes",
+            "user": "UF6GJF0RE",
+            "ts": "1546704903.002400"
+        },
+        {
+            "client_msg_id": "8f863a81-6897-4cfb-96d1-fe5b213e8fef",
+            "type": "message",
+            "text": "Would you like to know about ALLEGRO_KEYBOARD_STATE?",
+            "user": "UB659D0FM",
+            "ts": "1546704897.002200"
+        },
+        {
+            "client_msg_id": "cfb41008-be47-43c6-9e84-190477feadad",
+            "type": "message",
+            "text": "The method signature is bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)",
+            "user": "UB659D0FM",
+            "ts": "1546704867.002000"
+        },
+        {
+            "client_msg_id": "4250e842-c7eb-42d1-be06-4fb4c617f99f",
+            "type": "message",
+            "text": "can you give me details on how to use al_key_down ?",
+            "user": "UF6GJF0RE",
+            "ts": "1546704830.001800"
+        },
+        {
+            "client_msg_id": "6ae0f5a6-507b-49e9-b616-41e4e5fc92e7",
+            "type": "message",
+            "text": "I would like to know how to know if a key was pressed",
+            "user": "UF6GJF0RE",
+            "ts": "1546704795.001500"
+        },
+        {
+            "client_msg_id": "cb81f14b-a82a-4fc3-a1c8-adffd2edc79e",
+            "type": "message",
+            "text": "This method returns true if the key specified was held down in the state specified.",
+            "user": "UB659D0FM",
+            "ts": "1546704775.001200"
+        },
+        {
+            "client_msg_id": "b5a9c665-9649-43d6-bc6c-13cda16df228",
+            "type": "message",
+            "text": "Are you asking about the al_key_down method?",
+            "user": "UB659D0FM",
+            "ts": "1546704751.001000"
+        },
+        {
+            "client_msg_id": "2220e73f-8583-4c9e-bd39-52fff405ac33",
+            "type": "message",
+            "text": "Hey, how do I get key press events?",
+            "user": "UF6GJF0RE",
+            "ts": "1546704710.000800"
+        },
+        {
+            "client_msg_id": "82911953-cc58-4aa1-8c9f-4cd4fc3aaa63",
+            "type": "message",
+            "text": "Hello!",
+            "user": "UB659D0FM",
+            "ts": "1546704451.000400"
+        },
+        {
+            "client_msg_id": "46e1acc2-1c3d-42b6-8bb3-e74c94d9fb15",
+            "type": "message",
+            "text": "Hello",
+            "user": "UF6GJF0RE",
+            "ts": "1546704445.000200"
+        }
+    ],
+    "has_more": false
+}

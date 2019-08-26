@@ -1,0 +1,426 @@
+Programmer_17 [2:54 PM]
+Anyone there?
+
+Apiza [2:54 PM]
+Hi! I am Apiza, a virtual assistant built to help you navigate the Allegro API. How can I help you?
+
+Programmer_17 [2:56 PM]
+What functions are provided for keyboard input?
+
+Apiza [2:57 PM]
+I found the following functions labelled as “Keyboard routines”:
+
+al_install_keyboard
+al_is_keyboard_installed
+al_uninstall_keyboard
+al_get_keyboard_state
+al_clear_keyboard_state
+al_key_down
+al_keycode_to_name
+al_set_keyboard_leds
+al_get_keyboard_event_source
+
+Programmer_17 [2:58 PM]
+what is the parameter list of ai_install_keyboard
+
+Apiza [2:58 PM]
+bool al_install_keyboard(void)
+
+Programmer_17 [2:59 PM]
+When does ai_install_keyboard return true?
+
+Apiza [2:59 PM]
+Returns true if successful. If a driver was already installed, nothing happens and true is returned.
+
+Programmer_17 [3:00 PM]
+What is the parameter list of al_uninstall_keyboard
+
+Apiza [3:01 PM]
+void al_uninstall_keyboard(void)
+
+Programmer_17 [3:01 PM]
+How can I implement keyboard input?
+
+Apiza [3:03 PM]
+To get keyboard input, you can utilize the ALLEGRO_EVENT struct. The event types ALLEGRO_EVENT_KEY_DOWN, ALLEGRO_EVENT_KEY_UP, and ALLEGRO_EVENT_KEY_CHAR allow you to get keys pressed or released in event.keyboard.keycode
+
+Programmer_17 [3:04 PM]
+What is the parameter list for al_get_keyboard_event_source?
+
+Apiza [3:05 PM]
+ALLEGRO_EVENT_SOURCE *al_get_keyboard_event_source(void)
+
+Programmer_17 [3:07 PM]
+What type is event.keyboard.keycode
+
+Apiza [3:09 PM]
+keyboard.keycode (int)
+The code corresponding to the physical key which was pressed.
+
+Programmer_17 [3:14 PM]
+How can I play sound effects?
+
+Apiza [3:16 PM]
+The simplest method to Play Sound is al_play_sample:
+
+```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```
+
+To use al_play_sample, you must first install the audio subsystem, the audio codec addon, reserve samples, and load sample
+
+Programmer_17 [3:17 PM]
+How do I install the audio subsystem?
+
+Apiza [3:18 PM]
+This should install the audio subsystem:
+
+```bool al_install_audio(void)```
+
+Install the audio subsystem.
+
+Programmer_17 [3:19 PM]
+How can I install an audio codec addon?
+
+Apiza [3:19 PM]
+```bool al_init_acodec_addon(void)```
+
+This function registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.
+
+Programmer_17 [3:20 PM]
+How can I reserve and load audio samples?
+
+Apiza [3:20 PM]
+*Reserve audio samples:
+
+```bool al_reserve_samples(int reserve_samples)```
+Reserves a number of sample instances, attaching them to the default mixer.
+
+*Load audio samples:
+
+```ALLEGRO_SAMPLE *al_load_sample(const char *filename)```
+Loads a few different audio file formats based on their extension.
+
+Programmer_17 [3:22 PM]
+Where are the samples allocated?
+
+Apiza [3:23 PM]
+Audio samples are contained within the ALLEGRO_SAMPLE struct.
+plauy
+
+Programmer_17 [3:24 PM]
+Is this created by al_reserve_samples?
+
+Apiza [3:25 PM]
+al_reserve_samples Returns true on success, false on error.
+
+al_load_sample Returns the sample on success, NULL on failure.
+
+Programmer_17 [3:26 PM]
+is there a function to free samples?
+
+Apiza [3:26 PM]
+al_destroy_sample should work:
+
+```void al_destroy_sample(ALLEGRO_SAMPLE *spl)```
+
+Free the sample data structure.
+
+Programmer_17 [3:27 PM]
+What are possible values for ALLEGRO_PLAYNODE?
+
+Apiza [3:28 PM]
+enum ALLEGRO_PLAYMODE
+
+Description: Sample and stream playback mode.
+
+Values:
+ALLEGRO_PLAYMODE_ONCE
+ALLEGRO_PLAYMODE_LOOP
+ALLEGRO_PLAYMODE_BIDIR
+
+Programmer_17 [3:28 PM]
+What is the purpose of the last parameter in al_play_sample? (ALLEGRO_SAMPLE_ID *ret_id)
+
+Apiza [3:28 PM]
+ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.
+
+Programmer_17 [3:30 PM]
+How can I display text within the window frame?
+
+Apiza [3:31 PM]
+The simplest method to Display text in window frame is al_draw_text:
+
+```void al_draw_text(const ALLEGRO_FONT *font,
+   ALLEGRO_COLOR color, float x, float y, int flags,
+   char const *text)``` 
+
+This requires the ALLEGRO_FONT add-on.
+
+Programmer_17 [3:31 PM]
+How can I initialize the ALLEGRO_FONT add-on?
+
+Apiza [3:32 PM]
+```bool al_init_font_addon(void)```
+
+Initialise the font addon.
+
+Programmer_17 [3:33 PM]
+How can I load a font?
+
+Apiza [3:33 PM]
+The simplest method to Load a font is al_load_font:
+
+```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```
+
+Loads a font from disk.
+
+Programmer_17 [3:34 PM]
+What are the parameters size and flags?
+
+Apiza [3:35 PM]
+The size parameter is an int.
+
+The flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.
+
+Programmer_17 [3:36 PM]
+What is the size of a font?
+What are possible values for flags?
+
+Apiza [3:37 PM]
+I found a description of the int size for the similar method al_load_ttf_font:
+
+The size parameter determines the size the font will be rendered at, specified in pixels.
+I found this list of supported values for the int flags:
+
+ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.
+
+ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).
+
+ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2
+
+Programmer_17 [3:38 PM]
+How can I free a font?
+
+Apiza [3:39 PM]
+al_destroy_font
+
+```void al_destroy_font(ALLEGRO_FONT *f)```
+
+Frees the memory being used by a font structure. Does nothing if passed NULL.
+
+Programmer_17 [3:40 PM]
+What are the values x and y in al_draw_text?
+What are possible values for ALLEGRO_COLOR?
+
+Apiza [3:42 PM]
+The x and y variables are floats. The function al_draw_text Writes the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.
+
+Programmer_17 [3:42 PM]
+What is the coordinate system for x and y?
+
+Apiza [3:42 PM]
+```typedef struct ALLEGRO_COLOR ALLEGRO_COLOR;```
+
+An ALLEGRO_COLOR structure describes a color in a device independent way. Use al_map_rgb et al. and al_unmap_rgb et al. to translate from and to various color representations.
+
+Programmer_17 [3:43 PM]
+What are the parameters for al_map_rgb?
+
+Apiza [3:44 PM]
+I am not sure about the coordinate system for x and y .
+
+Programmer_17 [3:44 PM]
+What is the minimum and maximum value for x and y?
+
+Apiza [3:44 PM]
+```ALLEGRO_COLOR al_map_rgb(
+   unsigned char r, unsigned char g, unsigned char b)```
+
+Convert r, g, b (ranging from 0-255) into an ALLEGRO_COLOR, using 255 for alpha.
+x and y refer to the pixel coordinates within the display. The coordinate (0,0) refers to the upper-left-most pixel of the display.
+
+Programmer_17 [3:46 PM]
+How can I get the height and width of the window?
+
+Apiza [3:46 PM]
+These methods should work:
+
+```int al_get_display_width(ALLEGRO_DISPLAY *display)```
+
+Gets the width of the display.
+
+```int al_get_display_height(ALLEGRO_DISPLAY *display)```
+
+Gets the height of the display.
+
+Programmer_17 [3:47 PM]
+How can I convert an integer from al_get_display_width to a float for coordinate x?
+
+Apiza [3:49 PM]
+al_get_display_width returns an int. This value can cast to a float
+
+Programmer_17 [3:50 PM]
+What is the return type of al_draw_text?
+
+Apiza [3:50 PM]
+void al_draw_text
+
+Void return
+
+Programmer_17 [3:54 PM]
+Can you give me an example to render text?
+
+Apiza [3:55 PM]
+Sure, I will try to put together an example.
+
+Programmer_17 [3:55 PM]
+How can I stop a timer?
+How can I register mouse events?
+
+Apiza [3:56 PM]
+al_stop_timer should work:
+
+```void al_stop_timer(ALLEGRO_TIMER *timer)```
+
+Stop the timer specified.
+I was able to put together an example to Render text:
+
+```al_init_font_addon(); // initialize the font addon
+al_init_ttf_addon();// initialize the ttf (True Type Font) addon
+...
+ALLEGRO_DISPLAY *display = al_create_display(640,480);
+...
+ALLEGRO_FONT *font = al_load_ttf_font("pirulen.ttf",72,0 );
+...
+al_draw_text(font, al_map_rgb(255,255,255), 640/2, (480/4),ALLEGRO_ALIGN_CENTRE, "Your Text Here!");```
+
+Does this look useful?
+There are several Mouse event types:
+
+ALLEGRO_EVENT_MOUSE_AXES
+ALLEGRO_EVENT_MOUSE_BUTTON_DOWN
+ALLEGRO_EVENT_MOUSE_BUTTON_UP
+ALLEGRO_EVENT_MOUSE_WARPED
+ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY
+ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY
+
+Programmer_17 [4:00 PM]
+How can I get the state of a timer?
+How can I resume a timer after stopping it?
+
+Apiza [4:01 PM]
+I found a few methods to get information about an ALLEGRO_TIMER :
+
+al_get_timer_started
+al_get_timer_count
+al_get_timer_speed
+al_get_timer_event_source
+
+I could not find any that return an ALLEGRO_STATE .
+
+Programmer_17 [4:01 PM]
+What is the return type of al_get_timer_started?
+
+Apiza [4:01 PM]
+ ```void al_resume_timer(ALLEGRO_TIMER *timer)```
+
+Resume the timer specified.
+```bool al_get_timer_started(const ALLEGRO_TIMER *timer)```
+
+Return true if the timer specified is currently started.
+
+Programmer_17 [4:03 PM]
+How can I install the mouse driver?
+
+Apiza [4:03 PM]
+al_install_mouse
+
+```bool al_install_mouse(void)```
+
+Install a mouse driver.
+
+Returns true if successful. If a driver was already installed, nothing happens and true is returned.
+
+Programmer_17 [4:04 PM]
+How can I load a bitmap?
+
+Apiza [4:05 PM]
+The simplest function is al_load_bitmap:
+
+```ALLEGRO_BITMAP *al_load_bitmap(const char *filename)```
+
+Loads an image file into a new ALLEGRO_BITMAP.
+
+Programmer_17 [4:08 PM]
+How can I scale and draw a bitmap?
+
+Apiza [4:09 PM]
+There are a few methods that fit:
+
+al_draw_scaled_rotated_bitmap
+al_draw_tinted_scaled_rotated_bitmap
+al_draw_tinted_scaled_rotated_bitmap_region
+al_draw_scaled_bitmap
+al_draw_tinted_scaled_bitmap
+
+The simplest method is al_draw_scaled_bitmap:
+
+```void al_draw_scaled_bitmap(ALLEGRO_BITMAP *bitmap,
+   float sx, float sy, float sw, float sh,
+   float dx, float dy, float dw, float dh, int flags)```
+
+Draws a scaled version of the given bitmap to the target bitmap.
+
+Programmer_17 [4:09 PM]
+What are the parameters sx, sy, sw, sh, etc.?
+
+Apiza [4:09 PM]
+The parameters for al_draw_scaled_bitmap:
+
+sx - source x
+sy - source y
+sw - source width
+sh - source height
+dx - destination x
+dy - destination y
+dw - destination width
+dh - destination height
+flags - same as for al_draw_bitmap
+
+Programmer_17 [4:10 PM]
+What does al_set_target_bitmap do?
+
+Apiza [4:11 PM]
+To summarize:
+
+This function selects the bitmap to which all subsequent drawing operations in the calling thread will draw to.
+
+Would you like the full description?
+
+Programmer_17 [4:12 PM]
+How can I draw a bitmap onto another bitmap?
+How can I get the width of a bitmap?
+
+Apiza [4:13 PM]
+All al_draw_* functions draw onto the target bitmap. The target bitmap defaults to the display, unless otherwise specified. The target bitmap can be set with al_set_target_bitmap.
+al_get_bitmap_width
+
+```int al_get_bitmap_width(ALLEGRO_BITMAP *bitmap)```
+
+Returns the width of a bitmap in pixels.
+
+Programmer_17 [4:18 PM]
+Do I need to initialize bitmap before calling al_load_bitmap?
+
+Apiza [4:22 PM]
+I do not think so. I found the following example in which al_load_bitmap without al_create_bitmap:
+
+```ALLEGRO_BITMAP  *image   = NULL;
+
+...
+
+al_init_image_addon()
+
+...
+
+image = al_load_bitmap("image.png");```

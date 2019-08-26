@@ -1,0 +1,407 @@
+Programmer_23 [11:07 AM]
+Hello
+
+Apiza [11:07 AM]
+Hello!
+
+Programmer_23 [11:11 AM]
+Hey, how do I get key press events?
+
+Apiza [11:12 AM]
+Are you asking about the al_key_down method?
+This method returns true if the key specified was held down in the state specified.
+
+Programmer_23 [11:13 AM]
+I would like to know how to know if a key was pressed
+can you give me details on how to use al_key_down ?
+
+Apiza [11:14 AM]
+The method signature is bool al_key_down(const ALLEGRO_KEYBOARD_STATE *state, int keycode)
+Would you like to know about ALLEGRO_KEYBOARD_STATE?
+
+Programmer_23 [11:15 AM]
+yes
+
+Apiza [11:15 AM]
+This is a structure that is used to hold a "snapshot" of a keyboard's state at a particular instant. It contains the following publically readable fields: display - points to the display that had keyboard focus at the time the state was saved. If no display was focused, this points to NULL.
+
+Programmer_23 [11:16 AM]
+how do I get a ALLEGRO_KEYBOARD_STATE?
+
+Apiza [11:16 AM]
+Are you asking about the method al_get_keyboard_state?
+
+Programmer_23 [11:16 AM]
+yes
+
+Apiza [11:17 AM]
+This method saves the state of the keyboard specified at the time the function is called into the structure pointed to by ret_state.
+void al_get_keyboard_state(ALLEGRO_KEYBOARD_STATE *ret_state
+
+Programmer_23 [11:18 AM]
+what are the keycode for the arrow keys?
+
+Apiza [11:19 AM]
+Are you asking about ALLEGRO_KEY_LEFT and ALLEGRO_KEY_RIGHT?
+
+Programmer_23 [11:19 AM]
+yes
+how do I initialize the keyboard?
+
+Apiza [11:22 AM]
+Are you asking about the method al_install_keyboard?
+
+Programmer_23 [11:22 AM]
+yes
+
+Apiza [11:22 AM]
+The method installs a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.
+bool al_install_keyboard(void)
+
+Programmer_23 [11:25 AM]
+how do I play a sound ?
+
+Apiza [11:26 AM]
+Are you asking about al_play_sample_instance?
+
+Programmer_23 [11:26 AM]
+yes
+
+Apiza [11:27 AM]
+The method plays the sample instance. Returns true on success, false on failure.
+bool al_play_sample_instance(ALLEGRO_SAMPLE_INSTANCE *spl)
+
+Programmer_23 [11:27 AM]
+how do I get an ALLEGRO_SAMPLE_INSTANCE  ?
+
+Apiza [11:28 AM]
+An ALLEGRO_SAMPLE_INSTANCE object represents a playable instance of a predefined sound effect. It holds information about how the effect should be played: These playback parameters consist of the looping mode, loop start/end points, playing position, speed, gain, pan and the playmode. Whether a sample instance is currently playing or paused is also one of its properties.
+
+An instance uses the data from an ALLEGRO_SAMPLE object. Multiple instances may be created from the same ALLEGRO_SAMPLE. An ALLEGRO_SAMPLE must not be destroyed while there are instances which reference it.
+
+To actually produce audio output, an ALLEGRO_SAMPLE_INSTANCE must be attached to an ALLEGRO_MIXER which eventually reaches an ALLEGRO_VOICE object.
+Are you interested in al_play_sample?
+
+Programmer_23 [11:30 AM]
+yes
+
+Apiza [11:30 AM]
+The method plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+
+Programmer_23 [11:31 AM]
+how do I get an ALLEGRO_SAMPLE
+
+Apiza [11:32 AM]
+Are you asking about al_get_sample_data?
+
+Programmer_23 [11:32 AM]
+yes
+
+Apiza [11:32 AM]
+The method return a pointer to the raw sample data.
+void *al_get_sample_data(const ALLEGRO_SAMPLE *spl)
+
+Programmer_23 [11:32 AM]
+how do I load a sample from a file ?
+
+Apiza [11:33 AM]
+Are you asking about al_create_sample?
+
+Programmer_23 [11:34 AM]
+yes
+
+Apiza [11:34 AM]
+The method creates a sample data structure from the supplied buffer. If free_buf is true then the buffer will be freed with al_free when the sample data structure is destroyed. For portability (especially Windows), the buffer should have been allocated with al_malloc. Otherwise you should free the sample data yourself.
+ALLEGRO_SAMPLE *al_create_sample(void *buf, unsigned int samples,
+  unsigned int freq, ALLEGRO_AUDIO_DEPTH depth,
+  ALLEGRO_CHANNEL_CONF chan_conf, bool free_buf)
+A sample that is referred to by the samples parameter refers to a sequence channel intensities. E.g. if you're making a stereo sample with the samples set to 4, then the layout of the data in buf will be: LRLRLRLR
+Where L and R are the intensities for the left and right channels respectively. A single sample, then, refers to the LR pair in this example.
+To allocate a buffer of the correct size, you can use something like this:
+int sample_size = al_get_channel_count(chan_conf)
+                 * al_get_audio_depth_size(depth);
+int bytes = samples * sample_size;
+void *buffer = al_malloc(bytes);
+
+Programmer_23 [11:36 AM]
+how to load a wav file?
+
+Apiza [11:36 AM]
+I’m not sure I understand
+
+Programmer_23 [11:37 AM]
+how to load a sample from a wav?
+
+Apiza [11:37 AM]
+Are you asking about al_get_sample?
+
+Programmer_23 [11:38 AM]
+yes
+
+Apiza [11:38 AM]
+The method returns the sample data that the sample instance plays.
+Note this returns a pointer to an internal structure, not the ALLEGRO_SAMPLE that you may have passed to al_set_sample. However, the sample buffer of the returned ALLEGRO_SAMPLE will be the same as the one that was used to create the sample (passed to al_create_sample). You can use al_get_sample_data on the return value to retrieve and compare it.
+ALLEGRO_SAMPLE *al_get_sample(ALLEGRO_SAMPLE_INSTANCE *spl)
+
+Programmer_23 [11:39 AM]
+how do I play a sound file ?
+
+Apiza [11:41 AM]
+Are you asking about al_play_sample?
+
+Programmer_23 [11:41 AM]
+no
+
+Apiza [11:42 AM]
+Are you asking about al_load_sample?
+
+Programmer_23 [11:42 AM]
+yes
+
+Apiza [11:43 AM]
+The method loads a few different audio file formats based on their extension.
+Note that this stores the entire file in memory at once, which may be time consuming. To read the file as it is needed, use al_load_audio_stream.
+Returns the sample on success, NULL on failure.
+ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+
+Programmer_23 [11:47 AM]
+how do I initialize audio?
+
+Apiza [11:47 AM]
+Are you asking about al_init_acodec_addon?
+
+Programmer_23 [11:48 AM]
+yes
+
+Apiza [11:48 AM]
+The method registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.
+bool al_init_acodec_addon(void)
+
+Programmer_23 [11:50 AM]
+why would al_load_sample crash?
+
+Apiza [11:51 AM]
+the allegro_audio library does not support any audio file formats by default. You must use the allegro_acodec addon, or register your own format handler.
+
+Programmer_23 [11:52 AM]
+how do I initialize the allegro_acodec addon?
+
+Apiza [11:52 AM]
+Are you asking about al_init_acodec_addon?
+
+Programmer_23 [11:53 AM]
+yes
+
+Apiza [11:53 AM]
+The method registers all the known audio file type handlers for al_load_sample, al_save_sample, al_load_audio_stream, etc.
+Depending on what libraries are available, the full set of recognised extensions is: .wav, .flac, .ogg, .opus, .it, .mod, .s3m, .xm, .voc.
+Would you like to learn the limitations of this method?
+
+Programmer_23 [11:54 AM]
+yes
+
+Apiza [11:54 AM]
+Limitations:
+
+Saving is only supported for wav files.
+
+The wav file loader currently only supports 8/16 bit little endian PCM files. 16 bits are used when saving wav files. Use flac files if more precision is required.
+
+Module files (.it, .mod, .s3m, .xm) are often composed with streaming in mind, and sometimes cannot be easily rendered into a finite length sample. Therefore they cannot be loaded with al_load_sample/al_load_sample_f and must be streamed with al_load_audio_stream or al_load_audio_stream_f.
+
+.voc file streaming is unimplemented.
+
+Programmer_23 [11:57 AM]
+tell me about ALLEGRO_PLAYMODE
+
+Apiza [11:58 AM]
+Sample and stream playback mode.
+
+ALLEGRO_PLAYMODE_ONCE
+ALLEGRO_PLAYMODE_LOOP
+ALLEGRO_PLAYMODE_BIDIR
+
+Programmer_23 [11:59 AM]
+tell me more about al_play_sample
+
+Apiza [12:00 PM]
+The method plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+
+Programmer_23 [12:01 PM]
+tell me more about al_reserve_samples
+
+Apiza [12:02 PM]
+The method reserves a number of sample instances, attaching them to the default mixer. If no default mixer is set when this function is called, then it will create one and attach it to the default voice. If no default voice has been set, it, too, will be created.
+If you call this function a second time with a smaller number of samples, then the excess internal sample instances will be destroyed causing some sounds to stop and some instances returned by al_lock_sample_id to be invalidated.
+bool al_reserve_samples(int reserve_samples)
+
+Programmer_23 [12:03 PM]
+how do I draw text?
+
+Apiza [12:04 PM]
+Are you asking about al_draw_text?
+
+Programmer_23 [12:04 PM]
+yes
+
+Apiza [12:05 PM]
+The method writes the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.
+The flags parameter can be 0 or one of the following flags:
+    •    ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).
+    •    ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.
+    •    ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.
+It can also be combined with this flag:
+    •    ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4
+This function does not support newline characters (\n), but you can use al_draw_multiline_text for multi line text output.
+void al_draw_text(const ALLEGRO_FONT *font,
+  ALLEGRO_COLOR color, float x, float y, int flags,
+  char const *text)
+
+Programmer_23 [12:05 PM]
+how do I load a font?
+
+Apiza [12:06 PM]
+Are you asking about al_load_font?
+
+Programmer_23 [12:06 PM]
+yes
+
+Apiza [12:06 PM]
+The method loads a font from disk. This will use al_load_bitmap_font_flagsif you pass the name of a known bitmap format, or else al_load_ttf_font.
+The flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.
+ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)
+
+Programmer_23 [12:07 PM]
+tell me about al_load_ttf_font
+
+Apiza [12:08 PM]
+The method loads a TrueType font from a file using the FreeType library. Quoting from the FreeType FAQ this means support for many different font formats:
+TrueType, OpenType, Type1, CID, CFF, Windows FON/FNT, X11 PCF, and others
+The size parameter determines the size the font will be rendered at, specified in pixels. The standard font size is measured in units per EM, if you instead want to specify the size as the total height of glyphs in pixels, pass it as a negative value.
+ALLEGRO_FONT *al_load_ttf_font(char const *filename, int size, int flags)
+
+Programmer_23 [12:09 PM]
+what's the flags parameter in al_load_ttf_font
+
+Apiza [12:09 PM]
+The following flags are supported:
+
+ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.
+
+ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).
+
+ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2
+
+Programmer_23 [12:10 PM]
+how do I initialize fonts?
+
+Apiza [12:11 PM]
+Are you asking about al_init_font_addon?
+
+Programmer_23 [12:11 PM]
+yes
+
+Apiza [12:12 PM]
+The method initialises the font addon.
+Note that if you intend to load bitmap fonts, you will need to initialise allegro_image separately (unless you are using another library to load images).
+Similarly, if you wish to load truetype-fonts, do not forget to also call al_init_ttf_addon.
+Returns true on success, false on failure. On the 5.0 branch, this function has no return value. You may wish to avoid checking the return value if your code needs to be compatible with Allegro 5.0. Currently, the function will never return false.
+bool al_init_font_addon(void)
+
+Programmer_23 [12:21 PM]
+how do I load png?
+
+Apiza [12:22 PM]
+Are you asking about al_load_bitmap?
+
+Programmer_23 [12:22 PM]
+yes
+
+Apiza [12:23 PM]
+The method loads an image file into a new ALLEGRO_BITMAP. The file type is determined by the extension, except if the file has no extension in which case al_identify_bitmap is used instead.
+Returns NULL on error.
+This is the same as calling al_load_bitmap_flags with a flags parameter of 0.
+ALLEGRO_BITMAP *al_load_bitmap(const char *filename)
+
+Programmer_23 [12:25 PM]
+how do I initialize image loaders
+
+Apiza [12:26 PM]
+Are you asking about al_register_bitmap_loader?
+
+Programmer_23 [12:26 PM]
+yes
+
+Apiza [12:26 PM]
+The method registers a handler for al_load_bitmap. The given function will be used to handle the loading of bitmaps files with the given extension.
+The extension should include the leading dot ('.') character. It will be matched case-insensitively.
+The loader argument may be NULL to unregister an entry.
+Returns true on success, false on error. Returns false if unregistering an entry that doesn't exist.
+bool al_register_bitmap_loader(const char *extension,
+  ALLEGRO_BITMAP *(*loader)(const char *filename, int flags))
+
+Programmer_23 [12:27 PM]
+initialize image addon?
+
+Apiza [12:27 PM]
+Are you asking about al_init_image_addon?
+
+Programmer_23 [12:27 PM]
+yes
+
+Apiza [12:28 PM]
+The method initializes the image addon. This registers bitmap format handlers for al_load_bitmap, al_load_bitmap_f, al_save_bitmap, al_save_bitmap_f.
+The following types are built into the Allegro image addon and guaranteed to be available: BMP, DDS, PCX, TGA. Every platform also supports JPEG and PNG via external dependencies.
+Other formats may be available depending on the operating system and installed libraries, but are not guaranteed and should not be assumed to be universally available.
+The DDS format is only supported to load from, and only if the DDS file contains textures compressed in the DXT1, DXT3 and DXT5 formats. Note that when loading a DDS file, the created bitmap will always be a video bitmap and will have the pixel format matching the format in the file.
+bool al_init_image_addon(void)
+
+Programmer_23 [12:29 PM]
+how to scale a bitmap?
+
+Apiza [12:30 PM]
+Are you asking about al_draw_scaled_bitmap?
+
+Programmer_23 [12:30 PM]
+yes
+
+Apiza [12:31 PM]
+The method draws a scaled version of the given bitmap to the target bitmap.
+    •    sx - source x
+    •    sy - source y
+    •    sw - source width
+    •    sh - source height
+    •    dx - destination x
+    •    dy - destination y
+    •    dw - destination width
+    •    dh - destination height
+    •    flags - same as for al_draw_bitmap
+See al_draw_bitmap for a note on restrictions on which bitmaps can be drawn where.
+void al_draw_scaled_bitmap(ALLEGRO_BITMAP *bitmap,
+  float sx, float sy, float sw, float sh,
+  float dx, float dy, float dw, float dh, int flags)
+
+Programmer_23 [12:36 PM]
+rotate a bitmap?
+
+Apiza [12:36 PM]
+Are you asking about al_draw_rotated_bitmap?
+
+Programmer_23 [12:36 PM]
+yes
+
+Apiza [12:37 PM]
+The method draws a rotated version of the given bitmap to the target bitmap. The bitmap is rotated by 'angle' radians clockwise.
+The point at cx/cy relative to the upper left corner of the bitmap will be drawn at dx/dy and the bitmap is rotated around this point. If cx,cy is 0,0 the bitmap will rotate around its upper left corner.
+    •    cx - center x (relative to the bitmap)
+    •    cy - center y (relative to the bitmap)
+    •    dx - destination x
+    •    dy - destination y
+    •    angle - angle by which to rotate (radians)
+    •    flags - same as for al_draw_bitmap
+void al_draw_rotated_bitmap(ALLEGRO_BITMAP *bitmap,
+  float cx, float cy, float dx, float dy, float angle, int flags)

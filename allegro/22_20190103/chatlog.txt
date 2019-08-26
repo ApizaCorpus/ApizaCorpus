@@ -1,0 +1,506 @@
+Programmer_22 [1:45 PM]
+Hello, so the first question:
+Is there keyboard event type?
+
+
+Apiza [1:45 PM]
+Hi! My name is Apiza, a brand new virtual assistant, I look forward to helping you today.
+
+Programmer_22 [1:46 PM]
+Is there keyboard event type?
+
+Apiza [1:46 PM]
+Yes, there is a keyboard event type, would you like the type name?
+
+Programmer_22 [1:46 PM]
+What is keyboard event type name? (edited) 
+
+Apiza [1:47 PM]
+you can register a keyboard callback with al_register_event_source(event_queue, al_get_keyboard_event_source());
+
+Programmer_22 [1:48 PM]
+What is keyboard event constant name?
+
+Apiza [1:49 PM]
+a keyboard event can be inferred via an enum contained by the "type" field of an ALLEGO_EVENT object
+
+Programmer_22 [1:50 PM]
+Describe ALLEGO_EVENT object
+
+Apiza [1:51 PM]
+an ALLEGRO_EVENT object is a data type containing information regarding an event that has been recorded from a variety of input sources. The most notable use of this type is to specify what type of event occurred.
+
+Programmer_22 [1:51 PM]
+Show me declaration of ALLEGO_EVENT
+
+Apiza [1:52 PM]
+one second, parsing source code...
+from source file events.h:
+
+typedef union ALLEGRO_EVENT ALLEGRO_EVENT;
+
+union ALLEGRO_EVENT
+{
+  /* This must be the same as the first field of _AL_EVENT_HEADER.  */
+  ALLEGRO_EVENT_TYPE type;
+  /* `any' is to allow the user to access the other fields which are
+   * common to all event types, without using some specific type
+   * structure.
+   */
+  ALLEGRO_ANY_EVENT      any;
+  ALLEGRO_DISPLAY_EVENT  display;
+  ALLEGRO_JOYSTICK_EVENT joystick;
+  ALLEGRO_KEYBOARD_EVENT keyboard;
+  ALLEGRO_MOUSE_EVENT    mouse;
+  ALLEGRO_TIMER_EVENT    timer;
+  ALLEGRO_TOUCH_EVENT    touch;
+  ALLEGRO_USER_EVENT     user;
+};
+
+Programmer_22 [1:54 PM]
+Show me declaration of ALLEGRO_EVENT_TYPE
+
+Apiza [1:54 PM]
+from source file events.h:
+
+/* Type: ALLEGRO_EVENT_TYPE
+*/
+typedef unsigned int ALLEGRO_EVENT_TYPE;
+
+enum
+{
+  ALLEGRO_EVENT_JOYSTICK_AXIS               =  1,
+  ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN        =  2,
+  ALLEGRO_EVENT_JOYSTICK_BUTTON_UP          =  3,
+  ALLEGRO_EVENT_JOYSTICK_CONFIGURATION      =  4,
+
+  ALLEGRO_EVENT_KEY_DOWN                    = 10,
+  ALLEGRO_EVENT_KEY_CHAR                    = 11,
+  ALLEGRO_EVENT_KEY_UP                      = 12,
+
+  ALLEGRO_EVENT_MOUSE_AXES                  = 20,
+  ALLEGRO_EVENT_MOUSE_BUTTON_DOWN           = 21,
+  ALLEGRO_EVENT_MOUSE_BUTTON_UP             = 22,
+  ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY         = 23,
+  ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY         = 24,
+  ALLEGRO_EVENT_MOUSE_WARPED                = 25,
+
+  ALLEGRO_EVENT_TIMER                       = 30,
+
+  ALLEGRO_EVENT_DISPLAY_EXPOSE              = 40,
+  ALLEGRO_EVENT_DISPLAY_RESIZE              = 41,
+  ALLEGRO_EVENT_DISPLAY_CLOSE               = 42,
+  ALLEGRO_EVENT_DISPLAY_LOST                = 43,
+  ALLEGRO_EVENT_DISPLAY_FOUND               = 44,
+  ALLEGRO_EVENT_DISPLAY_SWITCH_IN           = 45,
+  ALLEGRO_EVENT_DISPLAY_SWITCH_OUT          = 46,
+  ALLEGRO_EVENT_DISPLAY_ORIENTATION         = 47,
+  ALLEGRO_EVENT_DISPLAY_HALT_DRAWING        = 48,
+  ALLEGRO_EVENT_DISPLAY_RESUME_DRAWING      = 49,
+
+  ALLEGRO_EVENT_TOUCH_BEGIN                 = 50,
+  ALLEGRO_EVENT_TOUCH_END                   = 51,
+  ALLEGRO_EVENT_TOUCH_MOVE                  = 52,
+  ALLEGRO_EVENT_TOUCH_CANCEL                = 53,
+
+  ALLEGRO_EVENT_DISPLAY_CONNECTED           = 60,
+  ALLEGRO_EVENT_DISPLAY_DISCONNECTED        = 61
+};
+
+Programmer_22 [1:55 PM]
+Show me declaration of ALLEGRO_KEYBOARD_EVENT
+
+Apiza [1:55 PM]
+from source file events.h:
+
+typedef struct ALLEGRO_KEYBOARD_EVENT
+{
+  _AL_EVENT_HEADER(struct ALLEGRO_KEYBOARD)
+  struct ALLEGRO_DISPLAY *display; /* the window the key was pressed in */
+  int keycode;                 /* the physical key pressed */
+  int unichar;                 /* unicode character or negative */
+  unsigned int modifiers;      /* bitfield */
+  bool repeat;                 /* auto-repeated or not */
+} ALLEGRO_KEYBOARD_EVENT;
+
+Programmer_22 [2:01 PM]
+What does mean  al_get_keyboard: Assertion `new_keyboard_driver' failed.
+
+Apiza [2:02 PM]
+I am unsure, scanning source files...
+I believe the assertion comes from this function defined in src/keybdnu.c:
+
+
+/* Function: al_is_keyboard_installed
+*/
+bool al_is_keyboard_installed(void)
+{
+  return (new_keyboard_driver ? true : false);
+}
+
+Programmer_22 [2:04 PM]
+How to install keyboard?
+
+Apiza [2:05 PM]
+keyboards can be initialized using the function al_install_keyboard();
+
+Programmer_22 [2:06 PM]
+Show me declaration for al_install_keyboard function
+
+Apiza [2:07 PM]
+one second, scanning source files...
+would you like the declaration or definition of al_install_keyboard()?
+
+Programmer_22 [2:09 PM]
+I would like to get declaration al_install_keyboard
+
+Apiza [2:09 PM]
+bool al_install_keyboard(void);
+
+Programmer_22 [2:10 PM]
+Show me documentation for al_install_keyboard
+
+Apiza [2:11 PM]
+from doc file docs/src/refman/keyboard.txt:
+
+## API: al_install_keyboard
+
+Install a keyboard driver. Returns true if successful. If a driver
+was already installed, nothing happens and true is returned.
+
+See also: [al_uninstall_keyboard], [al_is_keyboard_installed]
+
+Programmer_22 [2:15 PM]
+What is values available for keyboard keycode
+
+Apiza [2:16 PM]
+from doc file docs/src/refman/keyboard.txt:
+
+## Key codes
+
+The constant ALLEGRO_KEY_MAX is always one higher than
+the highest key code. So if you want to use the key code as array index
+you can do something like this:
+
+~~~~c
+bool pressed_keys[ALLEGRO_KEY_MAX];
+//...
+pressed_keys[key_code] = true;
+~~~~
+
+These are the list of key codes used by Allegro, which are returned in
+the event.keyboard.keycode field of the ALLEGRO_KEY_DOWN and
+ALLEGRO_KEY_UP events and which you can pass to [al_key_down]:
+
+   ALLEGRO_KEY_A ... ALLEGRO_KEY_Z
+   ALLEGRO_KEY_0 ... ALLEGRO_KEY_9
+   ALLEGRO_KEY_PAD_0 ... ALLEGRO_KEY_PAD_9
+   ALLEGRO_KEY_F1 ... ALLEGRO_KEY_F12
+   ALLEGRO_KEY_ESCAPE
+   ALLEGRO_KEY_TILDE
+   ALLEGRO_KEY_MINUS
+   ALLEGRO_KEY_EQUALS
+   ALLEGRO_KEY_BACKSPACE
+   ALLEGRO_KEY_TAB
+   ALLEGRO_KEY_OPENBRACE
+   ALLEGRO_KEY_CLOSEBRACE
+   ALLEGRO_KEY_ENTER
+   ALLEGRO_KEY_SEMICOLON
+   ALLEGRO_KEY_QUOTE
+   ALLEGRO_KEY_BACKSLASH
+   ALLEGRO_KEY_BACKSLASH2
+   ALLEGRO_KEY_COMMA
+   ALLEGRO_KEY_FULLSTOP
+   ALLEGRO_KEY_SLASH
+   ALLEGRO_KEY_SPACE
+   ALLEGRO_KEY_INSERT
+   ALLEGRO_KEY_DELETE
+   ALLEGRO_KEY_HOME
+   ALLEGRO_KEY_END
+   ALLEGRO_KEY_PGUP
+   ALLEGRO_KEY_PGDN
+   ALLEGRO_KEY_LEFT
+   ALLEGRO_KEY_RIGHT
+   ALLEGRO_KEY_UP
+   ALLEGRO_KEY_DOWN
+   ALLEGRO_KEY_PAD_SLASH
+   ALLEGRO_KEY_PAD_ASTERISK
+   ALLEGRO_KEY_PAD_MINUS
+   ALLEGRO_KEY_PAD_PLUS
+   ALLEGRO_KEY_PAD_DELETE
+   ALLEGRO_KEY_PAD_ENTER
+   ALLEGRO_KEY_PRINTSCREEN
+   ALLEGRO_KEY_PAUSE
+   ALLEGRO_KEY_ABNT_C1
+   ALLEGRO_KEY_YEN
+   ALLEGRO_KEY_KANA
+   ALLEGRO_KEY_CONVERT
+   ALLEGRO_KEY_NOCONVERT
+   ALLEGRO_KEY_AT
+   ALLEGRO_KEY_CIRCUMFLEX
+   ALLEGRO_KEY_COLON2
+   ALLEGRO_KEY_KANJI
+   ALLEGRO_KEY_LSHIFT
+   ALLEGRO_KEY_RSHIFT
+   ALLEGRO_KEY_LCTRL
+   ALLEGRO_KEY_RCTRL
+   ALLEGRO_KEY_ALT
+   ALLEGRO_KEY_ALTGR
+   ALLEGRO_KEY_LWIN
+   ALLEGRO_KEY_RWIN
+   ALLEGRO_KEY_MENU
+   ALLEGRO_KEY_SCROLLLOCK
+   ALLEGRO_KEY_NUMLOCK
+   ALLEGRO_KEY_CAPSLOCK
+   ALLEGRO_KEY_PAD_EQUALS
+   ALLEGRO_KEY_BACKQUOTE
+   ALLEGRO_KEY_SEMICOLON2
+   ALLEGRO_KEY_COMMAND
+
+   /* Since: 5.1.1 */
+   /* Android only for now */
+   ALLEGRO_KEY_BACK
+
+   /* Since: 5.1.2 */
+   /* Android only for now */
+   ALLEGRO_KEY_VOLUME_UP
+   ALLEGRO_KEY_VOLUME_DOWN
+
+   /* Since: 5.1.6 */
+   /* Android only for now */
+   ALLEGRO_KEY_SEARCH
+   ALLEGRO_KEY_DPAD_CENTER
+   ALLEGRO_KEY_BUTTON_X
+   ALLEGRO_KEY_BUTTON_Y
+   ALLEGRO_KEY_DPAD_UP
+   ALLEGRO_KEY_DPAD_DOWN
+   ALLEGRO_KEY_DPAD_LEFT
+   ALLEGRO_KEY_DPAD_RIGHT
+   ALLEGRO_KEY_SELECT
+   ALLEGRO_KEY_START
+   ALLEGRO_KEY_L1
+   ALLEGRO_KEY_R1
+
+## Keyboard modifier flags
+
+   ALLEGRO_KEYMOD_SHIFT
+   ALLEGRO_KEYMOD_CTRL
+   ALLEGRO_KEYMOD_ALT
+   ALLEGRO_KEYMOD_LWIN
+   ALLEGRO_KEYMOD_RWIN
+   ALLEGRO_KEYMOD_MENU
+   ALLEGRO_KEYMOD_ALTGR
+   ALLEGRO_KEYMOD_COMMAND
+   ALLEGRO_KEYMOD_SCROLLLOCK
+   ALLEGRO_KEYMOD_NUMLOCK
+   ALLEGRO_KEYMOD_CAPSLOCK
+   ALLEGRO_KEYMOD_INALTSEQ
+   ALLEGRO_KEYMOD_ACCENT1
+   ALLEGRO_KEYMOD_ACCENT2
+   ALLEGRO_KEYMOD_ACCENT3
+   ALLEGRO_KEYMOD_ACCENT4
+
+The event field 'keyboard.modifiers' is a bitfield composed of these constants.
+These indicate the modifier keys which were pressed at the time a character was
+typed.
+
+Programmer_22 [2:24 PM]
+How to play music?
+How to play wav file?
+
+Apiza [2:26 PM]
+you can play a sample using the function:
+
+bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+  ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)
+
+Programmer_22 [2:27 PM]
+Play the wav file?
+
+Apiza [2:28 PM]
+to load an audio file, you can use the function:
+
+/* Function: al_load_sample
+*/
+ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+
+Programmer_22 [2:34 PM]
+definition of ALLEGRO_PLAYMODE
+
+Apiza [2:35 PM]
+from source file addons/audio/allegro5/allegro_audio.h:
+
+
+/* Enum: ALLEGRO_PLAYMODE
+*/
+enum ALLEGRO_PLAYMODE
+{
+  ALLEGRO_PLAYMODE_ONCE   = 0x100,
+  ALLEGRO_PLAYMODE_LOOP   = 0x101,
+  ALLEGRO_PLAYMODE_BIDIR  = 0x102,
+  _ALLEGRO_PLAYMODE_STREAM_ONCE   = 0x103,   /* internal */
+  _ALLEGRO_PLAYMODE_STREAM_ONEDIR = 0x104    /* internal */
+};
+
+Programmer_22 [2:35 PM]
+example of ALLEGRO_SAMPLE_ID
+
+Apiza [2:36 PM]
+NULL
+
+Programmer_22 [2:36 PM]
+example of  al_play_sample
+
+Apiza [2:36 PM]
+al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);
+
+Programmer_22 [2:41 PM]
+how to use al_load_sample
+
+Apiza [2:42 PM]
+al_load_sample( "footstep.wav" );
+
+Programmer_22 [2:42 PM]
+declaration of al_load_sample (edited) 
+
+Apiza [2:42 PM]
+you can use the following function:/* Function: al_load_sample
+*/
+ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+
+Programmer_22 [2:43 PM]
+How to check error of al_load_sample
+
+Apiza [2:43 PM]
+al_load_sample returns a pointer, on error it returns NULL
+
+Programmer_22 [2:44 PM]
+How to get error message in case of error in al_load_sample
+
+Apiza [2:44 PM]
+I do not believe al_load_sample returns an error message
+
+Programmer_22 [2:45 PM]
+possible errors in al_load_sample
+
+Apiza [2:46 PM]
+here is the source code for al_load_sample:
+
+/* Function: al_load_sample
+*/
+ALLEGRO_SAMPLE *al_load_sample(const char *filename)
+{
+  const char *ext;
+  ACODEC_TABLE *ent;
+
+  ASSERT(filename);
+  ext = strrchr(filename, '.');
+  if (ext == NULL) {
+     ALLEGRO_ERROR("Unable to determine extension for %s.\n", filename);
+     return NULL;
+  }
+
+  ent = find_acodec_table_entry(ext);
+  if (ent && ent->loader) {
+     return (ent->loader)(filename);
+  }
+  else {
+     ALLEGRO_ERROR("No handler for audio file extension %s - "
+        "therefore not trying to load %s.\n", ext, filename);
+  }
+
+  return NULL;
+}
+
+Programmer_22 [2:47 PM]
+How to set handler for wav file?
+
+Apiza [2:47 PM]
+I am sorry, I do not understand your question
+
+Programmer_22 [2:48 PM]
+How to add acodec table entry?
+
+Apiza [2:49 PM]
+here is the declaration for add_acodec_table_entry:
+
+static ACODEC_TABLE *add_acodec_table_entry(const char *ext)
+
+Programmer_22 [2:51 PM]
+How to play audio file, example?
+
+Apiza [2:52 PM]
+here is a rough example:
+
+ALLEGRO_SAMPLE *sample=NULL;
+if(!al_install_audio()){
+   fprintf(stderr, "failed to initialize audio!\n");
+   return -1;
+}
+sample = al_load_sample( "footstep.wav" );
+if (!sample){
+   printf( "Audio clip sample not loaded!\n" );
+   return -1;
+}
+al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);
+al_destroy_sample(sample);
+
+Programmer_22 [2:55 PM]
+How to enable ALLEGRO_ERROR messages?
+
+Apiza [2:56 PM]
+I am unsure, they should be erroring by default
+
+Programmer_22 [2:57 PM]
+How to get  ALLEGRO_ERROR messages printed?
+
+Apiza [2:58 PM]
+I am unsure
+
+Programmer_22 [3:01 PM]
+How to enable debug mode for library
+
+Apiza [3:02 PM]
+I believe initializing allegro using al_init(void) will enable debug mode
+
+Programmer_22 [3:03 PM]
+I do not see error messages from library how to fix it?
+
+Apiza [3:03 PM]
+what do you see?
+
+Programmer_22 [3:04 PM]
+I want get error messages from library?
+
+Apiza [3:05 PM]
+I am unsure, maybe they are not being triggered?
+
+Programmer_22 [3:09 PM]
+al_load_sample is not loading wav file
+
+Apiza [3:09 PM]
+is the file in the same directory as the source code?
+
+Programmer_22 [3:09 PM]
+Yes
+
+Apiza [3:09 PM]
+what is al_load_sample() returning?
+
+Programmer_22 [3:09 PM]
+NULL
+
+Apiza [3:10 PM]
+is allegro initialized and the audio driver installed?
+
+Programmer_22 [3:10 PM]
+How to install audio driver?
+
+Apiza [3:11 PM]
+function bool al_install_audio(void)
+
+Programmer_22 [3:13 PM]
+allegro initialized and the audio driver installed but al_load_sample cannot load wav file
+
+Apiza [3:14 PM]
+There are a few more steps that I can see: the first is to initialize the acodec table. This can be done with the function bool al_init_acodec_addon(void)

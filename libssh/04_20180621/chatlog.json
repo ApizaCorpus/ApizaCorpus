@@ -1,0 +1,560 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "c735a113-e0f6-461d-85f1-2237c22f4633",
+            "type": "message",
+            "text": "sftp_open() can be used to create a file inside a directory, using the \"O_CREAT\" option for the \"accesstype\" parameter.",
+            "user": "UB659D0FM",
+            "ts": "1529631165.000072"
+        },
+        {
+            "client_msg_id": "dc496069-eb38-4f8a-9b9d-bc9b5e5075a1",
+            "type": "message",
+            "text": "How do I create a file inside a directory via SFTP?",
+            "user": "UBBV2KK8B",
+            "ts": "1529631070.000136"
+        },
+        {
+            "client_msg_id": "b7b2840f-58be-44e3-b34b-57febf5bd418",
+            "type": "message",
+            "text": "Hmm, I can't find anything to \"switch\" SFTP directory, but I see functions to \"close\", \"create\", \"open\", \"move\", or \"remove\" a directory.",
+            "user": "UB659D0FM",
+            "ts": "1529631050.000291"
+        },
+        {
+            "client_msg_id": "84b99c38-b8cc-4c97-8faf-99e8ec056611",
+            "type": "message",
+            "text": "\"void sftp_free(sftp_session sftp)\" will close a sftp session.",
+            "user": "UB659D0FM",
+            "ts": "1529630927.000171"
+        },
+        {
+            "client_msg_id": "7633cb09-0d65-4bfd-a9ee-fbce803b6db6",
+            "type": "message",
+            "text": "And how do I switch SFTP directory?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630871.000161"
+        },
+        {
+            "client_msg_id": "5b4310a4-ab1c-40db-9b53-8ce8847d1863",
+            "type": "message",
+            "text": "How do I close a sftp_session?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630858.000304"
+        },
+        {
+            "client_msg_id": "7ed74ef8-3bc3-4e4d-ba1d-e4365a90d842",
+            "type": "message",
+            "text": "I can't find anything to \"disconnect\" a sftp_session, only to \"close\".",
+            "user": "UB659D0FM",
+            "ts": "1529630844.000055"
+        },
+        {
+            "client_msg_id": "254c3b27-b6ef-4702-9d17-34f990d0af26",
+            "type": "message",
+            "text": "In the function sftp_open(), the parameter \"int accesstype\" can regulate whether the file is opened based on file existance: \"accesstype\tIs one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read\/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated.\"",
+            "user": "UB659D0FM",
+            "ts": "1529630756.000117"
+        },
+        {
+            "client_msg_id": "b6581034-200f-4a69-ae6a-204443cd2e5b",
+            "type": "message",
+            "text": "How do I disconnect a sftp_session?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630647.000267"
+        },
+        {
+            "client_msg_id": "24888830-efa4-440c-8b3f-39ebd94ff872",
+            "type": "message",
+            "text": "How do I know if a sftp_file already exists?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630627.000059"
+        },
+        {
+            "client_msg_id": "680a9d33-74c3-4eb2-b678-f22f46e957e9",
+            "type": "message",
+            "text": "\"int sftp_close(sftp_file file)\" can be used to close an open file handle.",
+            "user": "UB659D0FM",
+            "ts": "1529630591.000276"
+        },
+        {
+            "client_msg_id": "e7018a9d-4f3d-4ba1-8b28-aeeab6897b69",
+            "type": "message",
+            "text": "sftp_write() Returns type \"ssize_t\": number of bytes written, &lt; 0 on error with ssh and sftp error set.",
+            "user": "UB659D0FM",
+            "ts": "1529630544.000151"
+        },
+        {
+            "client_msg_id": "00c87a7c-2693-4251-875a-18acefafaa0e",
+            "type": "message",
+            "text": "How do I close a sftp_file?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630503.000112"
+        },
+        {
+            "client_msg_id": "e0b5820e-1764-49db-881d-ac626653d773",
+            "type": "message",
+            "text": "What are the possible return values of sftp_write?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630462.000267"
+        },
+        {
+            "client_msg_id": "7d6d7c36-64a2-4e08-8e92-569ee88d2d03",
+            "type": "message",
+            "text": "I was able to find the following definitions for possible values of mode_t:\n\n#define S_IRWXU 0000700    \/* RWX mask for owner *\/\n#define S_IRUSR 0000400    \/* R for owner *\/\n#define S_IWUSR 0000200    \/* W for owner *\/\n#define S_IXUSR 0000100    \/* X for owner *\/\n\n#define S_IRWXG 0000070    \/* RWX mask for group *\/\n#define S_IRGRP 0000040    \/* R for group *\/\n#define S_IWGRP 0000020    \/* W for group *\/\n#define S_IXGRP 0000010    \/* X for group *\/\n\n#define S_IRWXO 0000007    \/* RWX mask for other *\/\n#define S_IROTH 0000004    \/* R for other *\/\n#define S_IWOTH 0000002    \/* W for other *\/\n#define S_IXOTH 0000001    \/* X for other *\/\n\n#define S_ISUID 0004000    \/* set user id on execution *\/\n#define S_ISGID 0002000    \/* set group id on execution *\/\n#define S_ISVTX 0001000    \/* save swapped text even after use *\/",
+            "user": "UB659D0FM",
+            "ts": "1529630327.000209"
+        },
+        {
+            "client_msg_id": "0381a16d-46b8-48db-b587-b4614eab11b7",
+            "type": "message",
+            "text": "What are the possible types of mode_t?",
+            "user": "UBBV2KK8B",
+            "ts": "1529630170.000247"
+        },
+        {
+            "client_msg_id": "3375d8ba-bf37-457a-809a-9ce49817e622",
+            "type": "message",
+            "text": "The third parameter of sftp_mkdir must be of type \"mode_t\".",
+            "user": "UB659D0FM",
+            "ts": "1529630037.000008"
+        },
+        {
+            "client_msg_id": "b7017517-f080-4c21-86ac-8e8969afc337",
+            "type": "message",
+            "text": "What are the possible types for the third parameter of sftp_mkdir?",
+            "user": "UBBV2KK8B",
+            "ts": "1529629963.000161"
+        },
+        {
+            "client_msg_id": "9f6a62ce-24aa-4a64-bc49-a72f3d0b82be",
+            "type": "message",
+            "text": "Sorry, I am not sure. I found this code snippet that may be useful regarding ssh_channel_send_eof:\n\nrc = ssh_channel_send_eof(channel);\nif (rc == SSH_ERROR) {\n    return -1;\n}\n\nwhile(!ssh_channel_is_eof(channel)) {\n    rc = ssh_channel_read(channel, buf, sizeof(buf), 0);\n    if (rc == SSH_ERROR) {\n        return -1;\n    }\n}\n\nssh_channel_close(channel);",
+            "user": "UB659D0FM",
+            "ts": "1529629900.000143"
+        },
+        {
+            "client_msg_id": "7689eda9-f5af-4036-9886-c6c4e48cee3d",
+            "type": "message",
+            "text": "Does ssh_channel_read NULL-terminate the buffer?",
+            "user": "UBBV2KK8B",
+            "ts": "1529629722.000136"
+        },
+        {
+            "client_msg_id": "46e7f3c7-ee55-4ce4-b42e-c8faa6aa41ee",
+            "type": "message",
+            "text": "ssh_channel_send_eof is not necessary, but you should use it before ssh_channel_close if no errors have occurred.",
+            "user": "UB659D0FM",
+            "ts": "1529629685.000200"
+        },
+        {
+            "client_msg_id": "d42fcea2-0e88-4657-9cb3-bd5ed62a9248",
+            "type": "message",
+            "text": "Is ssh_channel_send_eof necessary before ssh_channel_close?",
+            "user": "UBBV2KK8B",
+            "ts": "1529629540.000146"
+        },
+        {
+            "client_msg_id": "7e888a64-6ae3-4a89-b47a-f27d737d2b73",
+            "type": "message",
+            "text": "int ssh_channel_close(ssh_channel channel) will close a channel.This sends an end of file and then closes the channel. You won't be able to recover any data the server was going to send or was in buffers.",
+            "user": "UB659D0FM",
+            "ts": "1529629508.000010"
+        },
+        {
+            "client_msg_id": "cd5d13c2-fc89-451f-b1d6-9ca015f8fafe",
+            "type": "message",
+            "text": "How do I close a channel cleanly?",
+            "user": "UBBV2KK8B",
+            "ts": "1529629457.000038"
+        },
+        {
+            "client_msg_id": "99f1f842-e5eb-4e8a-a1c4-929220dcd2c9",
+            "type": "message",
+            "text": "ssh_channel_read_buffer reads data from a channel into a buffer and has parameter ssh_buffer buffer, while ssh_channel_read reads data from a channel and has parameter void *dest.",
+            "user": "UB659D0FM",
+            "ts": "1529629403.000280"
+        },
+        {
+            "client_msg_id": "aa7cb6b3-cf2a-47a3-9a6a-287a197b6c2d",
+            "type": "message",
+            "text": "What is the difference between ssh_channel_read_buffer and ssh_channel_read?",
+            "user": "UBBV2KK8B",
+            "ts": "1529629292.000217",
+            "edited": {
+                "user": "UBBV2KK8B",
+                "ts": "1529629298.000000"
+            }
+        },
+        {
+            "client_msg_id": "c0712778-4b21-4a1f-931c-829b656f0e71",
+            "type": "message",
+            "text": "The ssh_buffer_struct consists of the following fields:\nchar *data, uint32_t used, uint32_t allocated, uint32_t pos, int secure;",
+            "user": "UB659D0FM",
+            "ts": "1529629262.000133"
+        },
+        {
+            "client_msg_id": "df912c19-44ed-4fec-be68-1750d9998d56",
+            "type": "message",
+            "text": "What is the actual type of ssh_buffer?",
+            "user": "UBBV2KK8B",
+            "ts": "1529629178.000186"
+        },
+        {
+            "client_msg_id": "3af01b41-b8a7-4c4b-8f38-eb5d0dc38dc1",
+            "type": "message",
+            "text": "For example, if you have ssh_channel channel and ssh_buffer buffer, you could use\n\"int nbytes = ssh_channel_read_buffer(channel, buffer, sizeof(buffer), 0);\"",
+            "user": "UB659D0FM",
+            "ts": "1529629149.000005"
+        },
+        {
+            "client_msg_id": "9ff1528b-fa16-42ea-8c4d-37c3ddc3080f",
+            "type": "message",
+            "text": "How do I use channel_read_buffer?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628971.000090"
+        },
+        {
+            "client_msg_id": "a44a8615-20f9-4be2-b3ca-1450fc39f924",
+            "type": "message",
+            "text": "There are a lot of common functions that take ssh_channel as a parameter, including\n\"void ssh_channel_free (ssh_channel channel)\", \n\"int channel_read_buffer (ssh_channel channel, ssh_buffer buffer, uint32_t count, int is_stderr)\", \n\"int ssh_channel_poll (ssh_channel channel, int is_stderr)\", and\n\"int ssh_channel_write (ssh_channel channel, const void *data, uint32_t len)\".",
+            "user": "UB659D0FM",
+            "ts": "1529628942.000160"
+        },
+        {
+            "client_msg_id": "8fc84e7d-d163-4c63-8859-39a136840b44",
+            "type": "message",
+            "text": "What are the commonly used functions taking ssh_channel as a parameter?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628807.000039"
+        },
+        {
+            "client_msg_id": "3c11bc3c-da40-4bef-90c6-a7f22b9b444f",
+            "type": "message",
+            "text": "ssh_userauth_password() returns an int:\n\nSSH_AUTH_ERROR: A serious error happened.\nSSH_AUTH_DENIED: Authentication failed: use another method\nSSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method\nSSH_AUTH_SUCCESS: Authentication success\nSSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.",
+            "user": "UB659D0FM",
+            "ts": "1529628653.000058"
+        },
+        {
+            "client_msg_id": "627fc892-eb0d-4081-a0bc-5f745c1c0f8a",
+            "type": "message",
+            "text": "What values does ssh_userauth_password return?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628607.000254"
+        },
+        {
+            "client_msg_id": "0de0e9ec-ec95-43e3-b334-9f25692bc05b",
+            "type": "message",
+            "text": "Default is port 22",
+            "user": "UB659D0FM",
+            "ts": "1529628492.000043"
+        },
+        {
+            "client_msg_id": "523611c3-75ce-4f50-9901-a2e6e0c34323",
+            "type": "message",
+            "text": "What port does libssh default to?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628466.000298"
+        },
+        {
+            "client_msg_id": "771db3d9-3f8f-4ac9-bd8e-46e13ea0bcce",
+            "type": "message",
+            "text": "2",
+            "user": "UB659D0FM",
+            "ts": "1529628371.000018"
+        },
+        {
+            "client_msg_id": "278e459a-d77d-44b7-b9bc-a8f2034cd257",
+            "type": "message",
+            "text": "What's 1 + 1?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628356.000125"
+        },
+        {
+            "client_msg_id": "c4ff68ea-0b02-4ed6-a88d-20b6deb51345",
+            "type": "message",
+            "text": "I'm not sure about that. I was able to find that the known host file is in ~\/.ssh\/known_hosts on Unix.",
+            "user": "UB659D0FM",
+            "ts": "1529628324.000107"
+        },
+        {
+            "client_msg_id": "a083702f-87cb-4751-9302-461610a29c6a",
+            "type": "message",
+            "text": "Is there a libssh function to get the location of the public key file?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628202.000349"
+        },
+        {
+            "client_msg_id": "8020eaef-2847-4812-ade6-8d4fb86c4c48",
+            "type": "message",
+            "text": "The function \"ssh_get_publickey_hash()\" may be useful. It Allocates a buffer with the hash of the public key.",
+            "user": "UB659D0FM",
+            "ts": "1529628166.000197"
+        },
+        {
+            "client_msg_id": "9a3c6b2f-2e7f-4835-b4fa-716285b1541b",
+            "type": "message",
+            "text": "How do I determine which type of SSH key exists?",
+            "user": "UBBV2KK8B",
+            "ts": "1529628047.000113"
+        },
+        {
+            "client_msg_id": "85681f87-d2bb-4913-9ac7-0e9029980438",
+            "type": "message",
+            "text": "It looks like there are several possible SSH keys. Some examples are \"ssh-rsa,ssh-dss,ecdh-sha2-nistp256\".",
+            "user": "UB659D0FM",
+            "ts": "1529627996.000281"
+        },
+        {
+            "client_msg_id": "07f35024-69f9-4600-8c35-a35466e1993e",
+            "type": "message",
+            "text": "What are the possible types of SSH keys?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627852.000117"
+        },
+        {
+            "client_msg_id": "b6171759-597e-43ee-a296-2551a7e69c47",
+            "type": "message",
+            "text": "It looks like SSH_SERVER_FOUND_OTHER indicates that \"The host key for this server was not found but an other type of key exists.\"",
+            "user": "UB659D0FM",
+            "ts": "1529627816.000225"
+        },
+        {
+            "client_msg_id": "910996ed-20fb-4362-964b-b952082b1b34",
+            "type": "message",
+            "text": "What does SSH_SERVER_FOUND_OTHER mean?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627744.000290"
+        },
+        {
+            "client_msg_id": "cc094e28-c39b-4108-9020-274d494c8778",
+            "type": "message",
+            "text": "ssh_is_server_known returns an int. The value of this int can be SSH_SERVER_KNOWN_OK, SSH_SERVER_KNOWN_CHANGED, SSH_SERVER_FOUND_OTHER, SSH_SERVER_FILE_NOT_FOUND, or SSH_SERVER_NOT_KNOWN.",
+            "user": "UB659D0FM",
+            "ts": "1529627687.000143"
+        },
+        {
+            "client_msg_id": "ad81b48e-257a-4c87-84b0-18297f39737f",
+            "type": "message",
+            "text": "What values can ssh_is_server_known return?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627538.000164"
+        },
+        {
+            "client_msg_id": "caf7e0d1-8bae-4c12-bc27-5e96c9c153d4",
+            "type": "message",
+            "text": "I'm sorry, I can't help you with that. Is there anything else I can answer?",
+            "user": "UB659D0FM",
+            "ts": "1529627512.000081"
+        },
+        {
+            "client_msg_id": "071e5ed7-c64a-49ab-93f5-7caba6840cba",
+            "type": "message",
+            "text": "Where is ssh_session_is_known_server defined?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627443.000250",
+            "edited": {
+                "user": "UBBV2KK8B",
+                "ts": "1529627446.000000"
+            }
+        },
+        {
+            "client_msg_id": "efea1d07-ecf1-48bc-b142-fe40581fea06",
+            "type": "message",
+            "text": "I'm sorry, I can't help you with that. Is there anything else I can answer?",
+            "user": "UB659D0FM",
+            "ts": "1529627428.000052"
+        },
+        {
+            "client_msg_id": "398dc795-ecf8-451c-b10c-7ef2ab615387",
+            "type": "message",
+            "text": "Which header file is ssh_session_is_known_server in?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627320.000241"
+        },
+        {
+            "client_msg_id": "0ccfd0eb-cf45-4510-be30-9bc5c981cb13",
+            "type": "message",
+            "text": "It looks like these are all of the different values:\n\n\/* These are the different states a SSH session can be into its life *\/\n enum ssh_session_state_e {\n   SSH_SESSION_STATE_NONE=0,\n   SSH_SESSION_STATE_CONNECTING,\n   SSH_SESSION_STATE_SOCKET_CONNECTED,\n   SSH_SESSION_STATE_BANNER_RECEIVED,\n   SSH_SESSION_STATE_INITIAL_KEX,\n   SSH_SESSION_STATE_KEXINIT_RECEIVED,\n   SSH_SESSION_STATE_DH,\n   SSH_SESSION_STATE_AUTHENTICATING,\n   SSH_SESSION_STATE_AUTHENTICATED,\n   SSH_SESSION_STATE_ERROR,\n   SSH_SESSION_STATE_DISCONNECTED\n };",
+            "user": "UB659D0FM",
+            "ts": "1529627300.000067"
+        },
+        {
+            "client_msg_id": "ffcc7cfe-411d-4c71-8e9b-e381a3fa8a38",
+            "type": "message",
+            "text": "What values can ssh_session_is_known_server return?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627233.000070"
+        },
+        {
+            "client_msg_id": "3d47108b-d331-4206-92b0-9f93353add4d",
+            "type": "message",
+            "text": "\"ssh_session_is_known_server()\" returns an int describing the state of the server.",
+            "user": "UB659D0FM",
+            "ts": "1529627206.000166"
+        },
+        {
+            "client_msg_id": "a15744a6-8a14-4600-ac9c-17a81ee749b8",
+            "type": "message",
+            "text": "What does ssh_session_is_known_server return?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627141.000184"
+        },
+        {
+            "client_msg_id": "c2ec0c2d-d70d-4fd6-b2eb-7322a365acb7",
+            "type": "message",
+            "text": "ssh_session_is_known_server takes an \"ssh_session\" as a parameter.",
+            "user": "UB659D0FM",
+            "ts": "1529627128.000098"
+        },
+        {
+            "client_msg_id": "ff0be5c6-6dc2-4175-9456-d63f2ed75a1d",
+            "type": "message",
+            "text": "What parameters does ssh_session_is_known_server take?",
+            "user": "UBBV2KK8B",
+            "ts": "1529627087.000221"
+        },
+        {
+            "client_msg_id": "f392d6f7-a09e-4d5d-8cdd-d2495d9c4941",
+            "type": "message",
+            "text": "The best alternative would be \"ssh_session_is_known_server()\", but I can't find much information about that.",
+            "user": "UB659D0FM",
+            "ts": "1529627010.000004"
+        },
+        {
+            "client_msg_id": "b5f897d2-0e3e-4ea3-ae37-bb65bdb596cd",
+            "type": "message",
+            "text": "What is the alternative to ssh_is_server_known?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626921.000012"
+        },
+        {
+            "client_msg_id": "ad833bb9-a71d-4543-83f5-f53be15b1a63",
+            "type": "message",
+            "text": "The function int ssh_is_server_known (ssh_session session) returns an int, but it is deprecated.",
+            "user": "UB659D0FM",
+            "ts": "1529626872.000008"
+        },
+        {
+            "client_msg_id": "cd1c4227-9984-4c1a-819b-74bb00d83290",
+            "type": "message",
+            "text": "What are the possible states of ssh_is_server_known",
+            "user": "UBBV2KK8B",
+            "ts": "1529626772.000092"
+        },
+        {
+            "client_msg_id": "667f5aad-a4d1-497f-83f8-ec989e937902",
+            "type": "message",
+            "text": "The function ssh_options_set takes an enum \"type\" as a parameter. One value for \"type\" is \"SSH_OPTIONS_PASSWORD_AUTH\": \"Set it if password authentication should be used in ssh_userauth_auto_pubkey(). (int, 0=false). Currently without effect (ssh_userauth_auto_pubkey doesn't use password authentication).\"",
+            "user": "UB659D0FM",
+            "ts": "1529626733.000603"
+        },
+        {
+            "client_msg_id": "72a9caa8-32e2-40d3-84d6-a7f6dae81f2e",
+            "type": "message",
+            "text": "How do I pass the SSH password?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626607.000303"
+        },
+        {
+            "client_msg_id": "57f2c04c-09cd-405f-bb56-595272d597bd",
+            "type": "message",
+            "text": "The function \"const char* ssh_get_error(void * error)\". This should return \"A static string describing the error.\"",
+            "user": "UB659D0FM",
+            "ts": "1529626566.000231"
+        },
+        {
+            "client_msg_id": "b6a6919e-37c2-4a19-8a5a-9d4bb264c1da",
+            "type": "message",
+            "text": "How do I get an SSH error message?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626494.000099"
+        },
+        {
+            "client_msg_id": "e8f4f51d-81de-4db9-ae6a-f846b17b5411",
+            "type": "message",
+            "text": "ssh_options_set returns an int: \"0 on success, &lt; 0 on error.\"",
+            "user": "UB659D0FM",
+            "ts": "1529626434.000135"
+        },
+        {
+            "client_msg_id": "947774ef-8d18-4922-9c9e-e770b7c1f1c7",
+            "type": "message",
+            "text": "What is the return value of ssh_options_set?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626403.000174"
+        },
+        {
+            "client_msg_id": "eaf54899-d448-4cfe-a540-8c6f136fb0cd",
+            "type": "message",
+            "text": "To connect, I'd reccomend using \"int ssh_connect(ssh_session session)\". It looks like you can set an IP and Port using \n\"int ssh_options_set(ssh_session session,\nenum ssh_options_e type,\nconst void * value \n)",
+            "user": "UB659D0FM",
+            "ts": "1529626385.000018"
+        },
+        {
+            "client_msg_id": "75846de1-cbd2-4c2d-ad3d-e1a0b2e71be0",
+            "type": "message",
+            "text": "How do I connect to an IP and port?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626267.000145"
+        },
+        {
+            "client_msg_id": "496c1fed-8b8e-4ee9-8924-741340610e2b",
+            "type": "message",
+            "text": "Try using the function \"void ssh_free (ssh_session session)\"",
+            "user": "UB659D0FM",
+            "ts": "1529626206.000251"
+        },
+        {
+            "client_msg_id": "ffbb9190-b2dd-4798-8f8a-86b59d5a7504",
+            "type": "message",
+            "text": "How to I free a ssh session?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626167.000080"
+        },
+        {
+            "client_msg_id": "ca78034e-52f5-493a-b72f-4b59165cefba",
+            "type": "message",
+            "text": "The function \"ssh_session ssh_new(void)\" should create a new ssh_session.",
+            "user": "UB659D0FM",
+            "ts": "1529626081.000029"
+        },
+        {
+            "client_msg_id": "aded8e14-89ec-46c3-ad72-a1515a4aacaf",
+            "type": "message",
+            "text": "How do I create a new ssh_session?",
+            "user": "UBBV2KK8B",
+            "ts": "1529626048.000045"
+        },
+        {
+            "client_msg_id": "d086290b-a9c4-486f-9e44-a7dab964c39b",
+            "type": "message",
+            "text": "Hmm, I don't know about that, sorry! Is there anything else I can do?",
+            "user": "UB659D0FM",
+            "ts": "1529626032.000215"
+        },
+        {
+            "client_msg_id": "036fe7d7-fad8-4671-892b-0cf927b39988",
+            "type": "message",
+            "text": "When was libssh Version 1.x released?",
+            "user": "UBBV2KK8B",
+            "ts": "1529625951.000171"
+        },
+        {
+            "client_msg_id": "2b5ea19e-3efe-4765-99a9-bd4273e049b8",
+            "type": "message",
+            "text": "Hello! I am Apiza. How may I help you?",
+            "user": "UB659D0FM",
+            "ts": "1529625909.000211"
+        },
+        {
+            "client_msg_id": "b9087d6e-4d88-4703-b11b-f9bacdab6026",
+            "type": "message",
+            "text": "hello",
+            "user": "UBBV2KK8B",
+            "ts": "1529625890.000306"
+        }
+    ],
+    "has_more": false
+}

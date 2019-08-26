@@ -1,0 +1,22 @@
+Programmer_14 [11:38 AM]
+the help is too slow ..
+
+It takes a lot of time to search and reply ..
+it takes 1-2 min to reply to a query ..
+And I didn't know like what kind of queries I could ask the assistant
+
+Zack [11:40 AM]
+Definitely, the process is unoptimized, this technology would need to be way snappier in a commercial product
+
+Programmer_14 [11:41 AM]
+May be if you could post example converstaions with Apiza before taking the session it would have been great
+I mostly avoided google and was just trying to test Apiza
+
+Zack [11:42 AM]
+That's a good point! These are early tests, so we've been interested to see how programmers would organically interact without being given specific prompts
+
+...
+
+Programmer_14 [11:43 AM]
+But initially it gave me a deprecated example code of server authentication .. which cost me lot of time
+no I did not use google at all

@@ -1,0 +1,628 @@
+Programmer_13 [3:09 PM]
+hello Apiza
+
+
+Apiza [3:10 PM]
+Hi Programmer_13. Let me know if you have any questions about the LibSSH API.
+
+Programmer_13 [3:10 PM]
+how can I connect to the localhost using LibSSH
+
+Apiza [3:11 PM]
+Here is a function that might help:
+
+```int ssh_connect    (    ssh_session     session    )
+
+Description
+Connect to the ssh server.
+
+Parameters
+session: The ssh session to connect.
+
+Returns
+SSH_OK on success, SSH_ERROR on error.
+SSH_AGAIN, if the session is in nonblocking mode, and call must be done again.
+
+See also
+ssh_new()
+ssh_disconnect()```
+
+
+Programmer_13 [3:15 PM]
+Do you have any examples of this function in use cases Apiza
+
+Apiza [3:16 PM]
+Sorry, the LibSSH documentation doesn't come with examples.
+
+Programmer_13 [3:17 PM]
+can you show me the function ssh_new
+
+Apiza [3:19 PM]
+Here is the documentation for `ssh_new`:
+
+```ssh_session ssh_new    (    void         )
+
+Description
+Create a new ssh session.
+
+
+
+Returns
+A new ssh_session pointer, NULL on error.```
+
+
+
+
+Programmer_13 [3:19 PM]
+can you show me the documentation on ssh_session
+
+Apiza [3:21 PM]
+I couldn't find anything exactly like that. Here is a struct definition that might help:
+
+```struct ssh_session_struct {
+    struct error_struct error;
+    struct ssh_socket_struct *socket;
+    char *serverbanner;
+    char *clientbanner;
+    int protoversion;
+    int server;
+    int client;
+    int openssh;
+    uint32_t send_seq;
+    uint32_t recv_seq;
+/* status flags */
+    int closed;
+    int closed_by_except;
+
+    int connected;
+    /* !=0 when the user got a session handle */
+    int alive;
+    /* two previous are deprecated */
+    /* int auth_service_asked; */
+
+    /* session flags (SSH_SESSION_FLAG_*) */
+    int flags;
+
+    ssh_string banner; /* that's the issue banner from
+                       the server */
+    char *discon_msg; /* disconnect message from
+                         the remote host */
+    ssh_buffer in_buffer;
+    PACKET in_packet;
+    ssh_buffer out_buffer;
+
+    /* the states are used by the nonblocking stuff to remember */
+    /* where it was before being interrupted */
+    enum ssh_pending_call_e pending_call_state;
+    enum ssh_session_state_e session_state;
+    int packet_state;
+    enum ssh_dh_state_e dh_handshake_state;
+    enum ssh_auth_service_state_e auth_service_state;
+    enum ssh_auth_state_e auth_state;
+    enum ssh_channel_request_state_e global_req_state;
+    ssh_string dh_server_signature; /* information used by dh_handshake. */
+    KEX server_kex;
+    KEX client_kex;
+    ssh_buffer in_hashbuf;
+    ssh_buffer out_hashbuf;
+    struct ssh_crypto_struct *current_crypto;
+    struct ssh_crypto_struct *next_crypto;  /* next_crypto is going to be used after a SSH2_MSG_NEWKEYS */
+
+    ssh_channel channels; /* linked list of channels */
+    int maxchannel;
+    int exec_channel_opened; /* version 1 only. more
+                                info in channels1.c */
+    ssh_agent agent; /* ssh agent */
+
+/* keyb interactive data */
+    struct ssh_kbdint_struct *kbdint;
+    int version; /* 1 or 2 */
+    /* server host keys */
+    ssh_private_key rsa_key;
+    ssh_private_key dsa_key;
+    /* auths accepted by server */
+    int auth_methods;
+    int hostkeys; /* contains type of host key wanted by client, in server impl */
+    struct ssh_list *ssh_message_list; /* list of delayed SSH messages */
+    int (*ssh_message_callback)( struct ssh_session_struct *session, ssh_message msg, void *userdata);
+    void *ssh_message_callback_data;
+    int log_verbosity; /*cached copy of the option structure */
+    int log_indent; /* indentation level in enter_function logs */
+
+    void (*ssh_connection_callback)( struct ssh_session_struct *session);
+    ssh_callbacks callbacks; /* Callbacks to user functions */
+    struct ssh_packet_callbacks_struct default_packet_callbacks;
+    struct ssh_list *packet_callbacks;
+    struct ssh_socket_callbacks_struct socket_callbacks;
+    ssh_poll_ctx default_poll_ctx;
+    /* options */
+#ifdef WITH_PCAP
+    ssh_pcap_context pcap_ctx; /* pcap debugging context */
+#endif
+    char *username;
+    char *host;
+    char *bindaddr; /* bind the client to an ip addr */
+    char *xbanner; /* TODO: looks like it is not needed */
+    struct ssh_list *identity;
+    char *sshdir;
+    char *knownhosts;
+    char *wanted_methods[10];
+    char compressionlevel;
+    unsigned long timeout; /* seconds */
+    unsigned long timeout_usec;
+    unsigned int port;
+    socket_t fd;
+    int ssh2;
+    int ssh1;
+    int StrictHostKeyChecking;
+    char *ProxyCommand;
+};```
+
+
+Programmer_13 [3:23 PM]
+how can I authenticate the server after I have created it
+
+Apiza [3:24 PM]
+Here is a function that might help:
+
+```int ssh_channel_open_auth_agent    (    ssh_channel     channel    )
+
+Description
+Open an agent authentication forwarding channel.
+This type of channel can be opened by a server towards a client in order to provide SSH-Agent services to the server-side process. This channel can only be opened if the client claimed support by sending a channel request beforehand.
+
+Parameters
+channel: An allocated channel.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+
+See also
+ssh_channel_open_forward()```
+
+
+
+Programmer_13 [3:26 PM]
+how can I report errors with this library
+
+Apiza [3:27 PM]
+Here is a function that might help:
+
+```const char* ssh_get_error    (    void *     error    )
+
+Description
+Retrieve the error text message from the last error.
+
+Parameters
+error: An ssh_session or ssh_bind.
+
+Returns
+A static string describing the error.```
+
+
+
+Programmer_13 [3:36 PM]
+can you show me the ssh_channel documentation
+
+Apiza [3:38 PM]
+Here is a struct definition that might help:
+
+```struct ssh_channel_struct {
+    struct ssh_channel_struct *prev;
+    struct ssh_channel_struct *next;
+    ssh_session session; /* SSH_SESSION pointer */
+    uint32_t local_channel;
+    uint32_t local_window;
+    int local_eof;
+    uint32_t local_maxpacket;
+
+    uint32_t remote_channel;
+    uint32_t remote_window;
+    int remote_eof; /* end of file received */
+    uint32_t remote_maxpacket;
+    enum ssh_channel_state_e state;
+    int delayed_close;
+    ssh_buffer stdout_buffer;
+    ssh_buffer stderr_buffer;
+    void *userarg;
+    int version;
+    int blocking;
+    int exit_status;
+    enum ssh_channel_request_state_e request_state;
+    ssh_channel_callbacks callbacks;
+};```
+
+
+
+Programmer_13 [3:40 PM]
+how can I get a channel from a session?
+
+Apiza [3:41 PM]
+Here is a function that might help:
+
+```ssh_session ssh_channel_get_session    (    ssh_channel     channel    )
+
+Description
+Recover the session in which belongs a channel.
+
+Parameters
+channel: The channel to recover the session from.
+
+Returns
+The session pointer.```
+
+
+
+Programmer_13 [3:43 PM]
+how can I authenticate the user to the server
+
+Apiza [3:44 PM]
+Here is a function that might help:
+
+```int ssh_userauth_none    (    ssh_session     session,
+const char *     username 
+)
+
+Description
+Try to authenticate through the "none" method.
+
+Parameters
+session: The ssh session to use.
+username: The username, this SHOULD be NULL.
+
+Returns
+SSH_AUTH_ERROR: A serious error happened.
+SSH_AUTH_DENIED: Authentication failed: use another method
+SSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method
+SSH_AUTH_SUCCESS: Authentication success
+SSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.
+Note
+Most server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.```
+
+
+
+Programmer_13 [3:57 PM]
+Apiza I am running into this error when attempting to use the ssh_get_error method error: expected expression before 'ssh_session' do you know how to help me with that error?
+
+Apiza [3:58 PM]
+I'm not sure how to help with that. Sorry!
+
+Programmer_13 [3:59 PM]
+Do you have any additional information on the ssh_get_error function
+
+Apiza [4:00 PM]
+Here is the complete documentation for `ssh_get_error`:
+
+```const char* ssh_get_error    (    void *     error    )
+
+Description
+Retrieve the error text message from the last error.
+
+Parameters
+error: An ssh_session or ssh_bind.
+
+Returns
+A static string describing the error.```
+
+
+There is also a related function `ssh_get_error_code`:
+
+```int ssh_get_error_code    (    void *     error    )
+
+Description
+Retrieve the error code from the last error.
+
+Parameters
+error: An ssh_session or ssh_bind.
+
+Returns
+SSH_NO_ERROR No error occurred
+SSH_REQUEST_DENIED The last request was denied but situation is recoverable
+SSH_FATAL A fatal error occurred. This could be an unexpected disconnection
+Other error codes are internal but can be considered same than SSH_FATAL.```
+
+Programmer_13 [4:04 PM]
+how can I open a new ssh_channel
+
+Apiza [4:04 PM]
+Here is a function that might help:
+
+```ssh_channel ssh_channel_new    (    ssh_session     session    )
+
+Description
+Allocate a new channel.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A pointer to a newly allocated channel, NULL on error.```
+
+
+Programmer_13 [4:07 PM]
+how do I excecute the who command on the open channel
+
+Apiza [4:07 PM]
+Here is a function that might help:
+
+```int ssh_channel_request_exec    (    ssh_channel     channel,
+const char *     cmd 
+)
+
+Description
+Run a shell command without an interactive shell.
+This is similar to 'sh -c command'.
+
+Parameters
+channel: The channel to execute the command.
+cmd: The command to execute (e.g. "ls ~/ -al | grep -i reports").
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.
+Example:
+
+rc = channel_request_exec(channel, "ps aux");
+if (rc > 0) {
+    return -1;
+}
+while ((rc = channel_read(channel, buffer, sizeof(buffer), 0)) > 0) {
+    if (fwrite(buffer, 1, rc, stdout) != (unsigned int) rc) {
+        return -1;
+    }
+}
+
+See also
+ssh_channel_request_shell()```
+
+
+
+
+Programmer_13 [4:12 PM]
+how do I close a channel
+
+Apiza [4:13 PM]
+Here is a function that might help:
+
+```int ssh_channel_close    (    ssh_channel     channel    )
+
+Description
+Close a channel.
+This sends an end of file and then closes the channel. You won't be able to recover any data the server was going to send or was in buffers.
+
+Parameters
+channel: The channel to close.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred.
+
+See also
+ssh_channel_free()
+ssh_channel_is_eof()```
+
+
+
+Programmer_13 [4:16 PM]
+apiza can you show me ssh_channel_free() and ssh_channel_is_eof()
+
+Apiza [4:17 PM]
+Here is the documentation for those functions:
+
+```void ssh_channel_free    (    ssh_channel     channel    )
+
+Description
+Close and free a channel.
+
+Parameters
+channel: The channel to free.```
+
+
+
+```int ssh_channel_is_eof    (    ssh_channel     channel    )
+
+Description
+Check if remote has sent an EOF.
+
+Parameters
+channel: The channel to check.
+
+Returns
+0 if there is no EOF, nonzero otherwise.```
+
+
+Programmer_13 [4:18 PM]
+how can I send the eof
+
+Apiza [4:19 PM]
+Here is a function that might help:
+
+```int ssh_channel_send_eof    (    ssh_channel     channel    )
+
+Description
+Send an end of file on the channel.
+This doesn't close the channel. You may still read from it but not write.
+
+Parameters
+channel: The channel to send the eof to.
+
+Returns
+SSH_OK on success, SSH_ERROR if an error occurred.
+Example:
+
+rc = ssh_channel_send_eof(channel);
+if (rc == SSH_ERROR) {
+    return -1;
+}
+while(!ssh_channel_is_eof(channel)) {
+    rc = ssh_channel_read(channel, buf, sizeof(buf), 0);
+    if (rc == SSH_ERROR) {
+        return -1;
+    }
+}
+ssh_channel_close(channel);
+
+See also
+ssh_channel_close()
+ssh_channel_free()
+ssh_channel_is_eof()```
+
+
+
+Programmer_13 [4:24 PM]
+how can I create and initialize a new sftp_session
+
+Apiza [4:25 PM]
+Here is a function that might help:
+
+```sftp_session sftp_new    (    ssh_session     session    )
+
+Description
+Start a new sftp session.
+
+Parameters
+session: The ssh session to use.
+
+Returns
+A new sftp session or NULL on error.
+
+See also
+sftp_free()```
+
+
+
+Programmer_13 [4:25 PM]
+where is buffer defined for the ssh_channel_request_exec function
+how can I create a new direction on the remote host
+can I see the ssh_channel_read function
+
+Apiza [4:27 PM]
+Here is a struct definition that might help:
+
+```struct ssh_buffer_struct {
+    char *data;
+    uint32_t used;
+    uint32_t allocated;
+    uint32_t pos;
+};```
+
+Here is the documentation for `ssh_channel_read`:
+
+```int ssh_channel_read    (    ssh_channel     channel,
+void *     dest,
+uint32_t     count,
+int     is_stderr 
+)
+
+Description
+Reads data from a channel.
+
+Parameters
+channel: The channel to read from.
+dest: The destination buffer which will get the data.
+count: The count of bytes to be read.
+is_stderr: A boolean value to mark reading from the stderr flow.
+
+Returns
+The number of bytes read, 0 on end of file or SSH_ERROR on error. In nonblocking mode it Can return 0 if no data is available or SSH_AGAIN.```
+
+
+
+Programmer_13 [4:28 PM]
+how can I declare a destination buffer for the read function
+how can I create a new directory on the remote host
+
+Apiza [4:29 PM]
+Here is a function that might help:
+
+```struct ssh_buffer_struct* ssh_buffer_new    (    void         )
+
+Description
+Create a new SSH buffer.
+
+
+
+Returns
+A newly initialized SSH buffer, NULL on error.```
+
+
+Here is a function that might help:
+
+```int sftp_mkdir    (    sftp_session     sftp,
+const char *     directory,
+mode_t     mode 
+)
+
+Description
+Create a directory.
+
+Parameters
+sftp: The sftp session handle.
+directory: The directory to create.
+mode: Specifies the permissions to use. It is modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask)
+
+Returns
+0 on success, < 0 on error with ssh and sftp error set.
+
+See also
+sftp_get_error()```
+
+
+
+Programmer_13 [4:32 PM]
+can you show me the definition of mode_t
+can you show me how to write to a file
+
+Apiza [4:33 PM]
+Here is the definition of `mode_t`:
+
+```typedef int mode_t;```
+Here is a function that might help:
+
+```ssize_t sftp_write    (    sftp_file     file,
+const void *     buf,
+size_t     count 
+)
+
+Description
+Write to a file using an opened sftp file handle.
+
+Parameters
+file: Open sftp file handle to write to.
+buf: Pointer to buffer to write data.
+count: Size of buffer in bytes.
+
+Returns
+Number of bytes written, < 0 on error with ssh and sftp error set.
+
+See also
+sftp_open()
+sftp_read()
+sftp_close()```
+
+
+
+Programmer_13 [4:34 PM]
+how do I create a file
+
+Apiza [4:34 PM]
+Here is a function that might help:
+
+```sftp_file sftp_open    (    sftp_session     session,
+const char *     file,
+int     accesstype,
+mode_t     mode 
+)
+
+Description
+Open a file on the server.
+
+Parameters
+session: The sftp session handle.
+file: The file to be opened.
+accesstype: Is one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated.
+mode: Mode specifies the permissions to use if a new file is created. It is modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask)
+
+Returns
+A sftp file handle, NULL on error with ssh and sftp error set.
+
+See also
+sftp_get_error()```

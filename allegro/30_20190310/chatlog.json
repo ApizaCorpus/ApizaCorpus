@@ -1,0 +1,622 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "bbea6f8a-6f2b-46bf-ae7f-596193cc5387",
+            "type": "message",
+            "text": "I am unsure, please specify",
+            "user": "UB659D0FM",
+            "ts": "1552257030.023100"
+        },
+        {
+            "client_msg_id": "70282d9c-9267-42f3-9e98-da44998fc65e",
+            "type": "message",
+            "text": "My al_draw_text is not drawing",
+            "user": "UGTTQM082",
+            "ts": "1552257003.022900"
+        },
+        {
+            "client_msg_id": "e6be7ec0-b913-4b11-9b9a-47ac926c203d",
+            "type": "message",
+            "text": "One such utility is:\n\nALLEGRO_COLOR al_map_rgb(float r, float g, float b)",
+            "user": "UB659D0FM",
+            "ts": "1552256933.022600"
+        },
+        {
+            "client_msg_id": "63b3ff16-025d-4b1b-a105-3623bd7a7483",
+            "type": "message",
+            "text": "Can you show my the utility functions?",
+            "user": "UGTTQM082",
+            "ts": "1552256888.022400"
+        },
+        {
+            "client_msg_id": "e125efa6-0e0f-473c-9ea7-e0e36b8edd27",
+            "type": "message",
+            "text": "rgb are typically within [0,255]. Allegro5 supports utility functions to map rbg values to an ALLEGRO_COLOR struct instance",
+            "user": "UB659D0FM",
+            "ts": "1552256831.021900"
+        },
+        {
+            "client_msg_id": "dea83537-440c-4e04-96fd-c3f4622f28bb",
+            "type": "message",
+            "text": "How big are the numbers r, g, b, and a typically are for ALLEGRO_COLOR",
+            "user": "UGTTQM082",
+            "ts": "1552256782.021700"
+        },
+        {
+            "client_msg_id": "73e84576-9532-4a35-bda0-7a2dd6e1915f",
+            "type": "message",
+            "text": "It depends on your screen. I would suggest trying a bunch of values. Typically, I would suggest 72",
+            "user": "UB659D0FM",
+            "ts": "1552256749.021300"
+        },
+        {
+            "client_msg_id": "3a32522a-dbb2-43a3-8649-d961cd0cc017",
+            "type": "message",
+            "text": "What is a typical font size for ALLEGRO_FONT",
+            "user": "UGTTQM082",
+            "ts": "1552256691.021100"
+        },
+        {
+            "client_msg_id": "d762798d-2ebc-4529-8161-449f675e2b3a",
+            "type": "message",
+            "text": "The `flags` parameter can be 0 or one of the following flags:\n\n- ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\n- ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\n- ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.",
+            "user": "UB659D0FM",
+            "ts": "1552256492.020800"
+        },
+        {
+            "client_msg_id": "c3dcfc12-0571-4fac-8893-803aa11c90e5",
+            "type": "message",
+            "text": "Can you give more more information about the flags parameter?",
+            "user": "UGTTQM082",
+            "ts": "1552256377.020600"
+        },
+        {
+            "client_msg_id": "b1d8f67e-b87a-425c-8f29-96233f8ed702",
+            "type": "message",
+            "text": "* Type: ALLEGRO_COLOR\n *\/\ntypedef struct ALLEGRO_COLOR ALLEGRO_COLOR;\n\nstruct ALLEGRO_COLOR\n{\n   float r, g, b, a;\n};",
+            "user": "UB659D0FM",
+            "ts": "1552256334.020300"
+        },
+        {
+            "client_msg_id": "f01cf781-674a-498a-bbe7-b81b86af11f3",
+            "type": "message",
+            "text": "Yes",
+            "user": "UGTTQM082",
+            "ts": "1552256250.020100"
+        },
+        {
+            "client_msg_id": "0883f9ad-61c5-49dc-8aad-dc876c4abb55",
+            "type": "message",
+            "text": "ALLEGRO_COLOR is a struct containing rgba values. Would you like the declaration",
+            "user": "UB659D0FM",
+            "ts": "1552256196.019900"
+        },
+        {
+            "client_msg_id": "5db90604-5aab-4ae7-92bb-4f7b890eee24",
+            "type": "message",
+            "text": "Can you give me more information about the color parameter",
+            "user": "UGTTQM082",
+            "ts": "1552256133.019700"
+        },
+        {
+            "client_msg_id": "8406f1d8-014e-429d-9f3a-89b7e61f14c5",
+            "type": "message",
+            "text": "You can draw text using the following function:\n\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text)",
+            "user": "UB659D0FM",
+            "ts": "1552256039.019400"
+        },
+        {
+            "client_msg_id": "b3786d82-071a-4fc9-9293-2d004a6161e2",
+            "type": "message",
+            "text": "Then?",
+            "user": "UGTTQM082",
+            "ts": "1552255914.019200"
+        },
+        {
+            "client_msg_id": "c59eda4c-2c5c-4550-aa55-b3d6b05337b5",
+            "type": "message",
+            "text": "Here is flag information:\n\nThe following flags are supported:\n\n* ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file\n  supports it.\n\n* ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no\n  anti-aliasing of the font is done).\n\n* ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default\n  in newer versions of FreeType. Since: 5.0.6, 5.1.2",
+            "user": "UB659D0FM",
+            "ts": "1552255816.019000"
+        },
+        {
+            "client_msg_id": "6aa093dd-e5a4-4627-9fb8-37b4b3598f90",
+            "type": "message",
+            "text": "Can you elaborate on the flags parameter?",
+            "user": "UGTTQM082",
+            "ts": "1552255754.018800"
+        },
+        {
+            "client_msg_id": "72fbe6ee-0fb6-4781-a7d2-8d2c4a3ea24f",
+            "type": "message",
+            "text": "you can first load in a font using the function:\n\nALLEGRO_FONT* al_load_ttf_font(const char* fpath, int size, int flags);",
+            "user": "UB659D0FM",
+            "ts": "1552255741.018500"
+        },
+        {
+            "client_msg_id": "899b3e6d-fdcd-4379-bac4-843d2d67206a",
+            "type": "message",
+            "text": "Yes",
+            "user": "UGTTQM082",
+            "ts": "1552255685.018300"
+        },
+        {
+            "client_msg_id": "9aa989dd-c0d5-45e0-a7af-9e306f37beb1",
+            "type": "message",
+            "text": "Have you created a display?",
+            "user": "UB659D0FM",
+            "ts": "1552255680.018100"
+        },
+        {
+            "client_msg_id": "bc13d5bb-3663-47d1-94b9-707f7dfb2bb0",
+            "type": "message",
+            "text": "Then?",
+            "user": "UGTTQM082",
+            "ts": "1552255656.017900"
+        },
+        {
+            "client_msg_id": "a7e82992-b0ae-4390-9a41-82008c2e0a94",
+            "type": "message",
+            "text": "Great! You can start by initializing fonts. This can be done via the functions:\n\nbool al_init_font_addon(void);\nbool al_init_ttf_addon(void);",
+            "user": "UB659D0FM",
+            "ts": "1552255613.017700"
+        },
+        {
+            "client_msg_id": "fda3ba78-93ae-423b-bfae-9f9b085a2d9f",
+            "type": "message",
+            "text": "Yes",
+            "user": "UGTTQM082",
+            "ts": "1552255570.017500"
+        },
+        {
+            "client_msg_id": "36d30286-04d7-494b-a76a-2ce9e9a4a56b",
+            "type": "message",
+            "text": "Would you like to draw a font?",
+            "user": "UB659D0FM",
+            "ts": "1552255567.017300"
+        },
+        {
+            "client_msg_id": "369608af-657c-448b-bc0c-5575fbb7dc3c",
+            "type": "message",
+            "text": "I would like to display a score on the corner of the screen",
+            "user": "UGTTQM082",
+            "ts": "1552255546.017100"
+        },
+        {
+            "client_msg_id": "5de71ee8-0d9d-4874-9879-415af4b7c345",
+            "type": "message",
+            "text": "I am sorry, there are multiple ways to show text, specifically to which do you refer?",
+            "user": "UB659D0FM",
+            "ts": "1552255515.016700"
+        },
+        {
+            "client_msg_id": "5f5610ab-0c9a-4f6a-9dd1-88375682d7a0",
+            "type": "message",
+            "text": "How would I display text?",
+            "user": "UGTTQM082",
+            "ts": "1552255472.016500"
+        },
+        {
+            "client_msg_id": "bef123ef-5ac7-4d4c-a5f5-3afbd7d942a4",
+            "type": "message",
+            "text": "Here are the options for ALLEGRO_PLAYMODE:\n\nSample and stream playback mode.\n\n* ALLEGRO_PLAYMODE_ONCE\n* ALLEGRO_PLAYMODE_LOOP\n* ALLEGRO_PLAYMODE_BIDIR",
+            "user": "UB659D0FM",
+            "ts": "1552255331.016100"
+        },
+        {
+            "client_msg_id": "3c5c7d32-d6a9-48a9-b7d6-a10ef64567b7",
+            "type": "message",
+            "text": "And you explain more about ALLEGRO_PLAYMODE",
+            "user": "UGTTQM082",
+            "ts": "1552255301.015900"
+        },
+        {
+            "client_msg_id": "ce898adf-6804-401b-bf21-9656e9cadea5",
+            "type": "message",
+            "text": "Sure! Here is a description of the parameters:\n\nALLEGRO_SAMPLE* spl:        The sample file data\nfloat gain:                 The gain of the played sample\nfloat pan:                  The pan of the played sample\nfloat speed:                The speed to play the file\nALLEGRO_PLAYMODE loop:      whether to loop the file or not\nALLEGRO_SAMPLE_ID* ret_id:  Typically NULL, however this is the return id to be used",
+            "user": "UB659D0FM",
+            "ts": "1552255261.015600"
+        },
+        {
+            "client_msg_id": "0a36fb1f-c8c1-473b-936c-dba8829193ea",
+            "type": "message",
+            "text": "Can you explain to me the parameters of that function?",
+            "user": "UGTTQM082",
+            "ts": "1552255136.015400"
+        },
+        {
+            "client_msg_id": "fa65aeeb-d555-4536-ab88-3ee1e82e2845",
+            "type": "message",
+            "text": "The next step is to play the loaded ALLEGRO_SAMPLE* object using the function:\n\nbool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UB659D0FM",
+            "ts": "1552255083.015100"
+        },
+        {
+            "client_msg_id": "542cc681-0920-4dc7-9b22-26e529377392",
+            "type": "message",
+            "text": "Okay, what's the next step?",
+            "user": "UGTTQM082",
+            "ts": "1552254974.014900"
+        },
+        {
+            "client_msg_id": "6758f5d4-3aeb-46b3-8ca1-0cfd98205646",
+            "type": "message",
+            "text": "int num_samples in reference to function:\n\nbool al_reserve_samples(int num_samples)\n\nrefers to the number of sound files you want to load into memory.",
+            "user": "UB659D0FM",
+            "ts": "1552254938.014600"
+        },
+        {
+            "client_msg_id": "087e8b9a-3d80-4ea4-bb9d-a6c0a0ed9987",
+            "type": "message",
+            "text": "What is the parameter num_samples",
+            "user": "UGTTQM082",
+            "ts": "1552254897.014400"
+        },
+        {
+            "client_msg_id": "9abda849-2289-47bc-8d10-bea4aac8d02b",
+            "type": "message",
+            "text": "The first step to playing a sound file is to reserve the sample in memory. This can be done using two functions:\n\nbool al_reserve_samples(int num_samples);\nALLEGRO_SAMPLE* sample = al_load_sample(const char* filepath);",
+            "user": "UB659D0FM",
+            "ts": "1552254861.014100"
+        },
+        {
+            "client_msg_id": "bcbf8170-90f3-41a8-87eb-d82ba924fc0b",
+            "type": "message",
+            "text": "Play a pre-recorded sample",
+            "user": "UGTTQM082",
+            "ts": "1552254806.013900"
+        },
+        {
+            "client_msg_id": "a57fdedf-2391-4c0e-b612-7ed73235d986",
+            "type": "message",
+            "text": "There are several branches at this point that a user can take. What are you attempting to do?\n\n1) Play a pre-recorded sample\n2) Play a sample recorded from a microphone",
+            "user": "UB659D0FM",
+            "ts": "1552254795.013600"
+        },
+        {
+            "client_msg_id": "cdeaadbf-61df-4c53-99cc-237544b9b110",
+            "type": "message",
+            "text": "What's the next step?",
+            "user": "UGTTQM082",
+            "ts": "1552254736.013400"
+        },
+        {
+            "client_msg_id": "3b1774ad-517e-42e1-9561-0acd95b45bde",
+            "type": "message",
+            "text": "You can do this using the function:\n\nbool al_init_acodec_addon(void)",
+            "user": "UB659D0FM",
+            "ts": "1552254708.013100"
+        },
+        {
+            "client_msg_id": "8a7e3227-524a-4f63-a7d9-b41a579294aa",
+            "type": "message",
+            "text": "How do I initialize audio codecs?",
+            "user": "UGTTQM082",
+            "ts": "1552254703.012900"
+        },
+        {
+            "client_msg_id": "165dca11-042a-4848-a697-02420183b37b",
+            "type": "message",
+            "text": "The second step to playing audio is to initialize audio codecs",
+            "user": "UB659D0FM",
+            "ts": "1552254685.012500"
+        },
+        {
+            "client_msg_id": "c541b0cc-0d83-4ef4-83b2-43beadbdcdc1",
+            "type": "message",
+            "text": "What's the next step?",
+            "user": "UGTTQM082",
+            "ts": "1552254662.012300"
+        },
+        {
+            "client_msg_id": "b9167705-c8f1-4b9d-816b-373f24d576d3",
+            "type": "message",
+            "text": "You can use the function:\n\nbool al_install_audio(void)\n\nto initialize an audio driver",
+            "user": "UB659D0FM",
+            "ts": "1552254628.012100"
+        },
+        {
+            "client_msg_id": "68c46c49-406a-4409-949a-90cb597d2e12",
+            "type": "message",
+            "text": "How do I initialize an audio driver?",
+            "user": "UGTTQM082",
+            "ts": "1552254608.011900"
+        },
+        {
+            "client_msg_id": "bad11362-33a9-4717-a1d2-38ff38729a78",
+            "type": "message",
+            "text": "The first step to playing audio is to initialize an audio driver",
+            "user": "UB659D0FM",
+            "ts": "1552254593.011600"
+        },
+        {
+            "client_msg_id": "bd07a744-c9df-4814-9c57-c09e4063294d",
+            "type": "message",
+            "text": "How can I play sound?",
+            "user": "UGTTQM082",
+            "ts": "1552254589.011400"
+        },
+        {
+            "client_msg_id": "3a5bc132-583f-46ae-ae04-4b9164e94f17",
+            "type": "message",
+            "text": "How can I play soudn?",
+            "user": "UGTTQM082",
+            "ts": "1552254555.011100"
+        },
+        {
+            "client_msg_id": "6e285a29-9807-46cd-ab41-65907c0c7c8f",
+            "type": "message",
+            "text": "Sorry, please clarify",
+            "user": "UB659D0FM",
+            "ts": "1552254523.010800"
+        },
+        {
+            "client_msg_id": "08926036-7779-4c11-9407-7c3cb8b38e2f",
+            "type": "message",
+            "text": "How can I tell if the user is holding the key?",
+            "user": "UGTTQM082",
+            "ts": "1552254507.010600"
+        },
+        {
+            "client_msg_id": "5c468bf8-5f2b-4d50-92c8-512cfc5358a0",
+            "type": "message",
+            "text": "I am unsure. I assume no events would be fired then and the event queue would be always empty",
+            "user": "UB659D0FM",
+            "ts": "1552254479.010400"
+        },
+        {
+            "client_msg_id": "2ea85be1-d9b1-465c-a6d8-a89ea0e3355c",
+            "type": "message",
+            "text": "How can I tell if the user isn't touching anything on the keyboard?",
+            "user": "UGTTQM082",
+            "ts": "1552254447.010200"
+        },
+        {
+            "client_msg_id": "d7fd268f-2488-4ff1-a76e-f23096f71764",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_QUEUE* q = NULL;\nal_init();\nq = al_create_event_queue();\nal_install_keyboard();\nal_register_event_source(q, al_get_keyboard_event_source());",
+            "user": "UB659D0FM",
+            "ts": "1552254050.009500"
+        },
+        {
+            "client_msg_id": "8a3b54fa-e9cc-408f-853f-73dc07fd2bd4",
+            "type": "message",
+            "text": "Yes",
+            "user": "UGTTQM082",
+            "ts": "1552253984.009300"
+        },
+        {
+            "client_msg_id": "4571a3a4-1477-47a2-806a-c575017420d0",
+            "type": "message",
+            "text": "you can use al_register_event_source(ALLEGRO_EVENT_QUEUE* q, EVENT_SOURCE* src). Would you like an example?",
+            "user": "UB659D0FM",
+            "ts": "1552253978.009100"
+        },
+        {
+            "client_msg_id": "614d43e8-0a0a-4c25-b350-eae99bc35936",
+            "type": "message",
+            "text": "I don't think so, what would that look like?",
+            "user": "UGTTQM082",
+            "ts": "1552253882.008900"
+        },
+        {
+            "client_msg_id": "ceb62956-521e-446b-b95b-a099d9799ca3",
+            "type": "message",
+            "text": "Great! Have you connected the event queue and devices?",
+            "user": "UB659D0FM",
+            "ts": "1552253853.008600"
+        },
+        {
+            "client_msg_id": "890dcfd2-e01a-4b63-9753-304f2d7be0cc",
+            "type": "message",
+            "text": "I have done al_init(), al_create_display(), al_create_event_queue(), al_create_timer, and al_create_bitmap",
+            "user": "UGTTQM082",
+            "ts": "1552253816.008400"
+        },
+        {
+            "client_msg_id": "da14b9c4-1230-4f87-9438-3edcc75293bc",
+            "type": "message",
+            "text": "What else have you done to initialize allegro?",
+            "user": "UB659D0FM",
+            "ts": "1552253777.007800"
+        },
+        {
+            "client_msg_id": "b4b08201-6b4b-45f9-84d6-05ff642a5750",
+            "type": "message",
+            "text": "It does not seem to have had any affect",
+            "user": "UGTTQM082",
+            "ts": "1552253756.007600"
+        },
+        {
+            "client_msg_id": "17b950a1-2f71-462c-9a8a-82bab0797639",
+            "type": "message",
+            "text": "you can use the function:\n\nbool al_install_keyboard(void)\n\nto initialize the keyboard",
+            "user": "UB659D0FM",
+            "ts": "1552253606.007400"
+        },
+        {
+            "client_msg_id": "0870950c-ebce-40c4-b2f3-6d867363a1c2",
+            "type": "message",
+            "text": "How would I initialize the keyboard?",
+            "user": "UGTTQM082",
+            "ts": "1552253576.007200"
+        },
+        {
+            "client_msg_id": "06b3d1a8-b8ef-4e97-bb99-3ecc44da9c60",
+            "type": "message",
+            "text": "I believe that may have something to do with it",
+            "user": "UB659D0FM",
+            "ts": "1552253526.006900"
+        },
+        {
+            "client_msg_id": "90a91595-a099-4c6e-9bf1-a67f085caf81",
+            "type": "message",
+            "text": "I have not initialized the keyboard",
+            "user": "UGTTQM082",
+            "ts": "1552253505.006700"
+        },
+        {
+            "client_msg_id": "573d9a9d-e7f7-438d-8b93-51dda895675d",
+            "type": "message",
+            "text": "I am unsure. What have you done to initialize the keyboard and allegro?",
+            "user": "UB659D0FM",
+            "ts": "1552253490.006500"
+        },
+        {
+            "client_msg_id": "09672f0b-676b-4bd6-880b-962d2b064d6b",
+            "type": "message",
+            "text": "Yes",
+            "user": "UGTTQM082",
+            "ts": "1552253468.006300"
+        },
+        {
+            "client_msg_id": "6847d23f-0b3a-49fb-b7d4-2e998bfe3a3b",
+            "type": "message",
+            "text": "are you pressing the up arrow key and not getting ALLEGRO_KEY_UP?",
+            "user": "UB659D0FM",
+            "ts": "1552253448.006100"
+        },
+        {
+            "client_msg_id": "b208c5db-e1d1-40f4-952b-ac13078f14fe",
+            "type": "message",
+            "text": "ev.keyboard,keycode is returned large numbers, while ALLGRO_KEY_UP is simply 85",
+            "user": "UGTTQM082",
+            "ts": "1552253393.005900"
+        },
+        {
+            "client_msg_id": "b7fa8229-42ed-4d87-b7f6-2a0b94e7c4f9",
+            "type": "message",
+            "text": "I am unsure, can you provide me an example?",
+            "user": "UB659D0FM",
+            "ts": "1552253311.005500"
+        },
+        {
+            "client_msg_id": "dd5c4e89-3f81-4da7-9261-e98999bb412e",
+            "type": "message",
+            "text": "It seems that the ALLEGRO_KEY_UP does not match ev.keyboard.keycode for some reason",
+            "user": "UGTTQM082",
+            "ts": "1552253291.005300"
+        },
+        {
+            "client_msg_id": "dd3ad64f-e0ff-4f33-ae78-f690d97c7b7a",
+            "type": "message",
+            "text": "I believe allegro5 has predefined enum values for keycodes. For instance, you could compare ev.keyboard.keycode == ALLEGRO_KEY_UP",
+            "user": "UB659D0FM",
+            "ts": "1552252389.004900"
+        },
+        {
+            "client_msg_id": "577e070b-fdd5-4a99-a54f-70f22a5810f6",
+            "type": "message",
+            "text": "Do you know what the keycodes are for the arrow keys?",
+            "user": "UGTTQM082",
+            "ts": "1552252342.004700"
+        },
+        {
+            "client_msg_id": "f340e2c0-a74a-45de-916d-4f0922b6a5ff",
+            "type": "message",
+            "text": "typedef struct ALLEGRO_KEYBOARD_EVENT\n{\n   _AL_EVENT_HEADER(struct ALLEGRO_KEYBOARD)\n   struct ALLEGRO_DISPLAY *display; \/* the window the key was pressed in *\/\n   int keycode;                 \/* the physical key pressed *\/\n   int unichar;                 \/* unicode character or negative *\/\n   unsigned int modifiers;      \/* bitfield *\/\n   bool repeat;                 \/* auto-repeated or not *\/\n} ALLEGRO_KEYBOARD_EVENT;",
+            "user": "UB659D0FM",
+            "ts": "1552252301.004400"
+        },
+        {
+            "client_msg_id": "b5339a95-8ccb-42cd-97ef-428164ab9e19",
+            "type": "message",
+            "text": "Can I see the definition?",
+            "user": "UGTTQM082",
+            "ts": "1552252292.004200"
+        },
+        {
+            "client_msg_id": "6b92efc4-f26e-41d9-8614-1ff024fe171a",
+            "type": "message",
+            "text": "Sure! ALLEGRO_KEYBOARD_EVENT is a struct that contains a display pointer, the keycode of the physical key pressed, and other information",
+            "user": "UB659D0FM",
+            "ts": "1552252267.003800"
+        },
+        {
+            "client_msg_id": "0c232dae-d1c1-4e17-b4c8-e0e5c0e938a9",
+            "type": "message",
+            "text": "Can I have more information about the ALLEGRO_KEYBOARD_EVENT object?",
+            "user": "UGTTQM082",
+            "ts": "1552252211.003600"
+        },
+        {
+            "client_msg_id": "f2152481-b5f2-4de9-839c-50d108873bc6",
+            "type": "message",
+            "text": "union ALLEGRO_EVENT\n{\n   \/* This must be the same as the first field of _AL_EVENT_HEADER.  *\/\n   ALLEGRO_EVENT_TYPE type;\n   \/* `any' is to allow the user to access the other fields which are\n    * common to all event types, without using some specific type\n    * structure.\n    *\/\n   ALLEGRO_ANY_EVENT      any;\n   ALLEGRO_DISPLAY_EVENT  display;\n   ALLEGRO_JOYSTICK_EVENT joystick;\n   ALLEGRO_KEYBOARD_EVENT keyboard;\n   ALLEGRO_MOUSE_EVENT    mouse;\n   ALLEGRO_TIMER_EVENT    timer;\n   ALLEGRO_TOUCH_EVENT    touch;\n   ALLEGRO_USER_EVENT     user;\n};",
+            "user": "UB659D0FM",
+            "ts": "1552252190.003200"
+        },
+        {
+            "client_msg_id": "778764bf-08df-44bb-a447-b20ae3b6e628",
+            "type": "message",
+            "text": "Yes",
+            "user": "UGTTQM082",
+            "ts": "1552252162.003000"
+        },
+        {
+            "client_msg_id": "fbf8bd3d-4330-40de-b99a-f1210bb4d114",
+            "type": "message",
+            "text": "would you like the entire union declaration?",
+            "user": "UB659D0FM",
+            "ts": "1552252157.002800"
+        },
+        {
+            "client_msg_id": "6057d01c-0c51-4eca-bc14-2875e78a416c",
+            "type": "message",
+            "text": "What variables does the ALLEGRO_EVENT* object have?",
+            "user": "UGTTQM082",
+            "ts": "1552252128.002600"
+        },
+        {
+            "client_msg_id": "7cbcf180-4172-4587-accd-43c540f81c59",
+            "type": "message",
+            "text": "al_wait_for_event(ALLEGRO_EVENT_QUEUE* q, ALLEGRO_EVENT* ev) will populate the ALLEGRO_EVENT* object upon success",
+            "user": "UB659D0FM",
+            "ts": "1552252073.001900"
+        },
+        {
+            "client_msg_id": "b506d3d5-2a09-4b32-a1cb-0f55aac08683",
+            "type": "message",
+            "text": "What kind of data type does that return?",
+            "user": "UGTTQM082",
+            "ts": "1552252043.001700"
+        },
+        {
+            "client_msg_id": "33554e2a-d596-43e1-b856-85a664c0b35b",
+            "type": "message",
+            "text": "you can use the al_wait_for_event(ALLEGRO_EVENT_QUEUE* q, ALLEGRO_EVENT* ev) function to get input from the user",
+            "user": "UB659D0FM",
+            "ts": "1552251938.001300"
+        },
+        {
+            "client_msg_id": "01c3b4db-9983-442d-8e50-9da888a5b9b2",
+            "type": "message",
+            "text": "Hi! I'm Apiza, a virtual assistant designed to help you with api questions! I look forward to helping you today.",
+            "user": "UB659D0FM",
+            "ts": "1552251933.001100"
+        },
+        {
+            "client_msg_id": "fff05cf2-f295-4d38-b9a2-3718753fa20a",
+            "type": "message",
+            "text": "Okay, how would I get key input from the user?",
+            "user": "UGTTQM082",
+            "ts": "1552251878.000900"
+        },
+        {
+            "client_msg_id": "8fcf30ee-5e0c-4809-bc14-4319a98cc863",
+            "type": "message",
+            "text": "Hi! I'm Apiza, a virtual assistant designed to help you with api questions! I look forward to helping you today.",
+            "user": "UB659D0FM",
+            "ts": "1552251845.000500"
+        },
+        {
+            "client_msg_id": "2c6cfdca-56ab-44a1-a3eb-5a1e3e1d62e6",
+            "type": "message",
+            "text": "How would I get key input from the user?",
+            "user": "UGTTQM082",
+            "ts": "1552251838.000300"
+        }
+    ],
+    "has_more": false
+}

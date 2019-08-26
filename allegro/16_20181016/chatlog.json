@@ -1,0 +1,475 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "9941b84d-8117-459c-b6f2-c6308983476c",
+            "type": "message",
+            "text": "al_load_font example please",
+            "user": "UDFECTDHS",
+            "ts": "1539725874.000100"
+        },
+        {
+            "client_msg_id": "d121ffb8-7cad-42db-a7e1-cf381dd53240",
+            "type": "message",
+            "text": "```\nal_color_cmyk\nal_color_cmyk_to_rgb\nal_color_hsl\nal_color_hsl_to_rgb\nal_color_hsv\nal_color_hsv_to_rgb\nal_color_html\nal_color_html_to_rgb\nal_color_rgb_to_html\nal_color_name\nal_color_name_to_rgb\nal_color_rgb_to_cmyk\nal_color_rgb_to_hsl\nal_color_rgb_to_hsv\nal_color_rgb_to_name\nal_color_rgb_to_xyz\nal_color_xyz\nal_color_xyz_to_rgb\nal_color_rgb_to_xyy\nal_color_xyy\nal_color_xyy_to_rgb\nal_color_rgb_to_lab\nal_color_lab\nal_color_lab_to_rgb\nal_color_rgb_to_lch\nal_color_lch\nal_color_lch_to_rgb\nal_color_distance_ciede2000_lab\nal_color_rgb_to_yuv\nal_color_yuv\nal_color_yuv_to_rgb\nal_get_allegro_color_version\nal_is_color_valid\n```",
+            "user": "UB659D0FM",
+            "ts": "1539725809.000100"
+        },
+        {
+            "client_msg_id": "240dbf9c-76fb-412f-a919-3c47537b3571",
+            "type": "message",
+            "text": "YES please",
+            "user": "UDFECTDHS",
+            "ts": "1539725794.000100"
+        },
+        {
+            "client_msg_id": "1073de36-2440-4444-8bf5-97f9d2ea234e",
+            "type": "message",
+            "text": "Would you like me to list all of the functions related to ALLEGRO_COLOR?",
+            "user": "UB659D0FM",
+            "ts": "1539725786.000100"
+        },
+        {
+            "client_msg_id": "2a334ac0-8880-477a-91af-626413dba448",
+            "type": "message",
+            "text": "```ALLEGRO_COLOR al_color_cmyk(float c, float m, float y, float k)```\n\nReturn an ALLEGRO_COLOR structure from CMYK values (cyan, magenta, yellow, black).",
+            "user": "UB659D0FM",
+            "ts": "1539725610.000100"
+        },
+        {
+            "client_msg_id": "fab62603-570d-42bb-bafb-3a3ab9d8bd0c",
+            "type": "message",
+            "text": "Sure thing!\n\n```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```\n\nLoads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.\n\nThe flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.",
+            "user": "UB659D0FM",
+            "ts": "1539725587.000100"
+        },
+        {
+            "client_msg_id": "934cbfa4-41b7-4718-957c-e8d63ed2d9ea",
+            "type": "message",
+            "text": "more information about al_color_cmyk please",
+            "user": "UDFECTDHS",
+            "ts": "1539725548.000100"
+        },
+        {
+            "client_msg_id": "38ef6502-cfb6-47fd-8aa2-f53bff5120ca",
+            "type": "message",
+            "text": "more information about al_load_font please",
+            "user": "UDFECTDHS",
+            "ts": "1539725532.000100"
+        },
+        {
+            "client_msg_id": "804706d8-987a-4ac9-a9fa-23df10fc6cde",
+            "type": "message",
+            "text": "al_load_font flags",
+            "user": "UDFECTDHS",
+            "ts": "1539725523.000100"
+        },
+        {
+            "client_msg_id": "fd22c77e-7fc4-4b19-8a2d-16c7d4c29426",
+            "type": "message",
+            "text": "I could not find a function to load ALLEGRO_COLOR, but there are several functions that take primitive parameters and return ALLEGRO_COLOR, such as\n\n```ALLEGRO_COLOR al_color_cmyk(float c, float m, float y, float k)```",
+            "user": "UB659D0FM",
+            "ts": "1539725460.000100"
+        },
+        {
+            "client_msg_id": "da9d7f70-d973-4f7b-b1f6-12b04526ebfc",
+            "type": "message",
+            "text": "This function should work:\n\n```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```",
+            "user": "UB659D0FM",
+            "ts": "1539725353.000100"
+        },
+        {
+            "client_msg_id": "82155698-adee-48bb-9d28-d731d10b44b7",
+            "type": "message",
+            "text": "load ALLEGRO_COLOR",
+            "user": "UDFECTDHS",
+            "ts": "1539725321.000100"
+        },
+        {
+            "client_msg_id": "394c05e2-4a52-4ba8-8496-c1c4a5728162",
+            "type": "message",
+            "text": "load ALLEGRO_FONT",
+            "user": "UDFECTDHS",
+            "ts": "1539725317.000100"
+        },
+        {
+            "client_msg_id": "594f8022-5c14-4e09-bd29-c68af16dd8c2",
+            "type": "message",
+            "text": "There are several functions to display text, the simplest is al_draw_text\n\n```void al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) ```\n\nWrites the NUL-terminated string text onto the target bitmap at position  x, y, using the specified font.\n\nThe flags parameter can be 0 or one of the following flags:\n\nALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\nALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\nALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\nIt can also be combined with this flag:\n\nALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.",
+            "user": "UB659D0FM",
+            "ts": "1539725257.000100"
+        },
+        {
+            "client_msg_id": "30543fdc-10f5-44a1-9dd5-4be5eb848adc",
+            "type": "message",
+            "text": "how to display text with allegro",
+            "user": "UDFECTDHS",
+            "ts": "1539725178.000100"
+        },
+        {
+            "client_msg_id": "f7a6ab2d-8ea0-42f9-b549-4420bef6b4f3",
+            "type": "message",
+            "text": "If it helps, I was able to extract the following example that should Play an audio file.\n\n```ALLEGRO_SAMPLE *sample=NULL;\n\n...\n\nif(!al_install_audio()){\n      fprintf(stderr, \"failed to initialize audio!\\n\");\n      return -1;\n}\n\nif(!al_init_acodec_addon()){\n      fprintf(stderr, \"failed to initialize audio codecs!\\n\");\n      return -1;\n}\n\t\nif (!al_reserve_samples(1)){\n      fprintf(stderr, \"failed to reserve samples!\\n\");\n      return -1;\n}\n\n...\n\t\nsample = al_load_sample( \"footstep.wav\" );\n\n...\n\nal_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);```",
+            "user": "UB659D0FM",
+            "ts": "1539725068.000100"
+        },
+        {
+            "client_msg_id": "d777a8b8-f570-4642-9b0e-414f4d8e19b6",
+            "type": "message",
+            "text": "```bool al_init_acodec_addon(void)```",
+            "user": "UB659D0FM",
+            "ts": "1539724847.000100"
+        },
+        {
+            "client_msg_id": "31bb1e45-9ecc-4efc-b99c-176c24d78296",
+            "type": "message",
+            "text": "```bool al_install_audio(void)```",
+            "user": "UB659D0FM",
+            "ts": "1539724827.000100"
+        },
+        {
+            "client_msg_id": "47995224-8a75-41e0-a5c0-55a0086edd81",
+            "type": "message",
+            "text": "function signature for al_init_acodec_addon()",
+            "user": "UDFECTDHS",
+            "ts": "1539724807.000100"
+        },
+        {
+            "client_msg_id": "2c31927b-0484-4732-9ccb-eed22e02b79e",
+            "type": "message",
+            "text": "finction signature for al_install_audio()",
+            "user": "UDFECTDHS",
+            "ts": "1539724797.000100"
+        },
+        {
+            "client_msg_id": "78e9c9c3-04ba-489a-968c-f670764ca492",
+            "type": "message",
+            "text": "There a couple of other reasons this function might not work. Have you called al_install_audio() and al_init_acodec_addon()?",
+            "user": "UB659D0FM",
+            "ts": "1539724777.000200"
+        },
+        {
+            "client_msg_id": "66b5d886-dec0-4aa2-83e1-4212d9d58d22",
+            "type": "message",
+            "text": "If AUDIO_SAMPLE_PATH is a valid path, this call should return a sample.",
+            "user": "UB659D0FM",
+            "ts": "1539724769.000100"
+        },
+        {
+            "client_msg_id": "65001e89-bc34-4bf0-adc2-1dcac8217ee7",
+            "type": "message",
+            "text": "spl = al_load_sample( AUDIO_SAMPLE_PATH );",
+            "user": "UDFECTDHS",
+            "ts": "1539724674.000100"
+        },
+        {
+            "client_msg_id": "792ff72b-db09-41a1-b2f0-7b6c8154edd5",
+            "type": "message",
+            "text": "It looks like al_load_sample only returns NULL on failure. Could I see how you are calling the function?",
+            "user": "UB659D0FM",
+            "ts": "1539724658.000100"
+        },
+        {
+            "client_msg_id": "a7d0ffe3-7da5-4a1a-abf7-f7cbbfc466bd",
+            "type": "message",
+            "text": "al_load_sample is returning NULL",
+            "user": "UDFECTDHS",
+            "ts": "1539724579.000100"
+        },
+        {
+            "client_msg_id": "ccf9d182-61f7-408b-a4c2-26d15f469327",
+            "type": "message",
+            "text": "The function al_destroy_sample should work:\n\n```void al_destroy_sample(ALLEGRO_SAMPLE *spl)```",
+            "user": "UB659D0FM",
+            "ts": "1539724379.000100"
+        },
+        {
+            "client_msg_id": "f014bdd7-bda2-4290-b820-cbb62b6bd568",
+            "type": "message",
+            "text": "how to free ALLEGRO_SAMPLE",
+            "user": "UDFECTDHS",
+            "ts": "1539724346.000100"
+        },
+        {
+            "client_msg_id": "801b41fa-8ab4-4d71-b9af-85bb69b3c172",
+            "type": "message",
+            "text": "how to free pointers allegro",
+            "user": "UDFECTDHS",
+            "ts": "1539724336.000100"
+        },
+        {
+            "client_msg_id": "1e64a061-c346-4fd0-a2cf-858160cb6cea",
+            "type": "message",
+            "text": "An ALLEGRO_SAMPLE object stores the data necessary for playing pre-defined digital audio. It holds a user-specified PCM data buffer and information about its format (data length, depth, frequency, channel configuration). You can have the same ALLEGRO_SAMPLE playing multiple times simultaneously.\n\nSamples are often initialized with the function al_load_sample:\n\n```ALLEGRO_SAMPLE *al_load_sample(const char *filename)```",
+            "user": "UB659D0FM",
+            "ts": "1539724257.000100"
+        },
+        {
+            "client_msg_id": "3653635a-6e0a-4639-95b8-7dec5134a0a2",
+            "type": "message",
+            "text": "What is an ALLEGRO_SAMPLE",
+            "user": "UDFECTDHS",
+            "ts": "1539724161.000100"
+        },
+        {
+            "client_msg_id": "fae49520-02b5-469e-8238-910619747450",
+            "type": "message",
+            "text": "I was able to find an example function call:\n\n```al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);```",
+            "user": "UB659D0FM",
+            "ts": "1539724120.000100"
+        },
+        {
+            "client_msg_id": "1d856751-e62d-4b23-9ae0-d90e189fd707",
+            "type": "message",
+            "text": "Regarding ALLEGRO_SAMPLE_ID variable ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns  false, then the contents of ret_id are invalid and must not be used as argument to other functions.",
+            "user": "UB659D0FM",
+            "ts": "1539724069.000100"
+        },
+        {
+            "client_msg_id": "0e5b4813-31c1-4e7b-a7de-179be65cdc36",
+            "type": "message",
+            "text": "That refers to an enum. Options are ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR",
+            "user": "UB659D0FM",
+            "ts": "1539724033.000200"
+        },
+        {
+            "client_msg_id": "0eca3f7a-0d6a-47b7-acf0-2e6e478f6421",
+            "type": "message",
+            "text": "What is ALLEGRO_SAMPLE_ID",
+            "user": "UDFECTDHS",
+            "ts": "1539723981.000100"
+        },
+        {
+            "client_msg_id": "adc00552-e65f-4d58-b8c8-85dee441f61f",
+            "type": "message",
+            "text": "What is ALLEGRO_PLAYMODE",
+            "user": "UDFECTDHS",
+            "ts": "1539723974.000100"
+        },
+        {
+            "client_msg_id": "416ba734-12d1-4420-b2ab-2bfaf763aac5",
+            "type": "message",
+            "text": "The simplest method is al_play_sample\n\n```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```\n\nPlays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.",
+            "user": "UB659D0FM",
+            "ts": "1539723924.000100"
+        },
+        {
+            "client_msg_id": "4d9a0fc1-57c7-4e54-941c-b1ac291d0fa2",
+            "type": "message",
+            "text": "How to play a sound with Allegro?",
+            "user": "UDFECTDHS",
+            "ts": "1539723875.000100"
+        },
+        {
+            "client_msg_id": "7a94131a-b66a-4c60-b9b6-b5e7428e0363",
+            "type": "message",
+            "text": "how to play a sound with allegro'",
+            "user": "UDFECTDHS",
+            "ts": "1539723866.000100"
+        },
+        {
+            "client_msg_id": "b546e25d-a703-4f46-8e82-f6db964de3fd",
+            "type": "message",
+            "text": "The event types related to Key Events are ALLEGRO_EVENT_KEY_DOWN and ALLEGRO_EVENT_KEY_UP.",
+            "user": "UB659D0FM",
+            "ts": "1539723411.000100"
+        },
+        {
+            "client_msg_id": "f9b68525-6b5f-48c2-84be-6b100466969b",
+            "type": "message",
+            "text": "There are about 27 event types, related to KEY, MOUSE, JOYSTICK, TIME, DISPLAY, and TOUCH. The event types related to Key Events are ALLEGRO_EVENT_KEY_DOWN and ALLEGRO_EVENT_KEY_UP.",
+            "user": "UB659D0FM",
+            "ts": "1539723373.000200"
+        },
+        {
+            "client_msg_id": "4f1bed89-0956-46e6-8532-d2f1592325be",
+            "type": "message",
+            "text": "What are the allegro keyboard input event types",
+            "user": "UDFECTDHS",
+            "ts": "1539723372.000100"
+        },
+        {
+            "client_msg_id": "0cb59e23-afd9-4d7d-8bb0-5b20e120c8ae",
+            "type": "message",
+            "text": "what are all the possible allegro event types?",
+            "user": "UDFECTDHS",
+            "ts": "1539723276.000100"
+        },
+        {
+            "client_msg_id": "b02b4027-7053-4745-8d58-17ff0301a7e0",
+            "type": "message",
+            "text": "al_wait_for_event_timed:\n\nWait until the event queue specified is non-empty. If ret_event is not NULL, the first event in the queue will be copied into ret_event and removed from the queue. If ret_event is NULL the first event is left at the head of the queue.\n\nsecs determines approximately how many seconds to wait. If the call times out, false is returned. Otherwise, if an event ocurred, true is returned.\n\nFor compatibility with all platforms, secs must be 2,147,483.647 seconds or less.",
+            "user": "UB659D0FM",
+            "ts": "1539722901.000100"
+        },
+        {
+            "client_msg_id": "6380dcb9-269f-4c08-9637-3c0969cdf800",
+            "type": "message",
+            "text": "please provide more information about al_wait_for_event_timed",
+            "user": "UDFECTDHS",
+            "ts": "1539722872.000100"
+        },
+        {
+            "client_msg_id": "ee57badf-efdc-49f2-a9d7-a42b4c96f2ef",
+            "type": "message",
+            "text": "Correction:\n```ALLEGRO_EVENT_SOURCE *al_get_timer_event_source(ALLEGRO_TIMER *timer)```",
+            "user": "UB659D0FM",
+            "ts": "1539722807.000200"
+        },
+        {
+            "client_msg_id": "e47324e9-e35f-4b9b-ac75-0ba67d642df3",
+            "type": "message",
+            "text": "```void al_set_timer_speed(ALLEGRO_TIMER *timer, double new_speed_secs)```",
+            "user": "UB659D0FM",
+            "ts": "1539722741.000200"
+        },
+        {
+            "client_msg_id": "c9059361-aaa7-4b97-a340-74fb01510b34",
+            "type": "message",
+            "text": "what is the function signature of al_get_timer_event_source",
+            "user": "UDFECTDHS",
+            "ts": "1539722700.000100"
+        },
+        {
+            "client_msg_id": "b0c90a6b-1596-4c72-ae47-3a2290348603",
+            "type": "message",
+            "text": "ALLEGRO_TIMEOUT\n\n```typedef struct ALLEGRO_TIMEOUT ALLEGRO_TIMEOUT;```\n\nRepresent a timeout value. The size of the structure is known so it can be statically allocated. The contents are private.\n\nInitialized with\n\n```void al_init_timeout(ALLEGRO_TIMEOUT *timeout, double seconds)```",
+            "user": "UB659D0FM",
+            "ts": "1539722656.000100"
+        },
+        {
+            "client_msg_id": "f3e32d2f-56d3-43d4-b472-dc68e0463a6c",
+            "type": "message",
+            "text": "What is ALLEGRO_TIMEOUT",
+            "user": "UDFECTDHS",
+            "ts": "1539722619.000100"
+        },
+        {
+            "client_msg_id": "030de005-89d1-4b17-871c-5667b8942514",
+            "type": "message",
+            "text": "Do either of these functions look useful?\n\n```bool al_wait_for_event_timed(ALLEGRO_EVENT_QUEUE *queue,\n   ALLEGRO_EVENT *ret_event, float secs)```\n\n```bool al_wait_for_event_until(ALLEGRO_EVENT_QUEUE *queue,\n   ALLEGRO_EVENT *ret_event, ALLEGRO_TIMEOUT *timeout)```",
+            "user": "UB659D0FM",
+            "ts": "1539722555.000100"
+        },
+        {
+            "client_msg_id": "95979583-33f4-4656-98af-17f13365aa33",
+            "type": "message",
+            "text": "Is there a timeout to wait for an event?",
+            "user": "UDFECTDHS",
+            "ts": "1539722455.000100"
+        },
+        {
+            "client_msg_id": "7fa3ec7f-85b7-41f5-9f38-1b95567ad37f",
+            "type": "message",
+            "text": "The function\n\n```void al_wait_for_event(ALLEGRO_EVENT_QUEUE *queue, ALLEGRO_EVENT *ret_event)\t```\n\nDescription: Wait until the event queue specified is non-empty. If ret_event is not NULL, the first event in the queue will be copied into ret_event and removed from the queue. If ret_event is NULL the first event is left at the head of the queue.",
+            "user": "UB659D0FM",
+            "ts": "1539722265.000100"
+        },
+        {
+            "client_msg_id": "15fa4ba1-4141-4ab5-9f69-9b6966cbbaff",
+            "type": "message",
+            "text": "how to pop elements off the allegro event queue",
+            "user": "UDFECTDHS",
+            "ts": "1539722178.000100"
+        },
+        {
+            "client_msg_id": "0285981f-85c2-4d01-8973-2c48b39cc8ee",
+            "type": "message",
+            "text": "ALLEGRO_KEY_LEFT and ALLEGRO_KEY_RIGHT are key codes, which are returned in the event.keyboard.keycode field of the ALLEGRO_KEY_DOWN and ALLEGRO_KEY_UP events.",
+            "user": "UB659D0FM",
+            "ts": "1539721847.000100"
+        },
+        {
+            "client_msg_id": "e88f6f60-cb13-4103-a7aa-5bcc85c20c13",
+            "type": "message",
+            "text": "What are the allegro event key right and allegro event key left variables called",
+            "user": "UDFECTDHS",
+            "ts": "1539721761.000100"
+        },
+        {
+            "client_msg_id": "898b5a2a-915f-41df-9199-9cc87235bc83",
+            "type": "message",
+            "text": "Events and keyboard input are included in the allegro.h header.",
+            "user": "UB659D0FM",
+            "ts": "1539721688.000200"
+        },
+        {
+            "client_msg_id": "3d56808a-25b8-4c41-a5ed-8a2f12a55643",
+            "type": "message",
+            "text": "?",
+            "user": "UDFECTDHS",
+            "ts": "1539721629.000200"
+        },
+        {
+            "client_msg_id": "427e4f3a-83aa-499b-bd33-3aabf0088e92",
+            "type": "message",
+            "text": "What header do i need to include for the allegro key events",
+            "user": "UDFECTDHS",
+            "ts": "1539721627.000100"
+        },
+        {
+            "client_msg_id": "8eb623e5-3454-4f69-b888-c55a6aab8d23",
+            "type": "message",
+            "text": "You do not need to specifically register the keyboard, though it should be installed with\n```bool al_install_keyboard(void)```",
+            "user": "UB659D0FM",
+            "ts": "1539721158.000100"
+        },
+        {
+            "client_msg_id": "87ada5ff-804a-420e-8936-3523e1f33586",
+            "type": "message",
+            "text": "Something like ALLEGRO_EVENT_KEY_DOWN? If you have an event ```ev```, you can check the value of ```ev.keyboard.keycode```.",
+            "user": "UB659D0FM",
+            "ts": "1539721088.000200"
+        },
+        {
+            "client_msg_id": "53b1531b-af66-4dca-a5e6-e230110681dc",
+            "type": "message",
+            "text": "How do I register keyboard events with allegro?",
+            "user": "UDFECTDHS",
+            "ts": "1539721065.000100"
+        },
+        {
+            "client_msg_id": "12e71b1f-6138-4006-9583-8fb97727ac1f",
+            "type": "message",
+            "text": "<@UB659D0FM> do you hear me",
+            "user": "UDFECTDHS",
+            "ts": "1539721002.000100"
+        },
+        {
+            "client_msg_id": "3b043187-6649-4a44-a5a6-2d099fb217ac",
+            "type": "message",
+            "text": "Apiza are you there",
+            "user": "UDFECTDHS",
+            "ts": "1539720982.000100"
+        },
+        {
+            "client_msg_id": "b16b0224-d8bb-4e0c-822d-5888643945aa",
+            "type": "message",
+            "text": "How do I register keyboard events?",
+            "user": "UDFECTDHS",
+            "ts": "1539720944.000100"
+        },
+        {
+            "client_msg_id": "29065618-4249-48db-be58-f1724aca52a7",
+            "type": "message",
+            "text": "How do I get keyboard events",
+            "user": "UDFECTDHS",
+            "ts": "1539720905.000100"
+        },
+        {
+            "client_msg_id": "e392a66c-47db-48de-871d-ffd302e64b42",
+            "type": "message",
+            "text": "Hi! I\u2019m Apiza, a virtual assistant designed to help you use a new API. How can I help you?",
+            "user": "UB659D0FM",
+            "ts": "1539720680.000200"
+        },
+        {
+            "client_msg_id": "9a6f1118-4702-466e-b709-f35494371ece",
+            "type": "message",
+            "text": "Hello Apiza",
+            "user": "UDFECTDHS",
+            "ts": "1539720672.000100"
+        }
+    ],
+    "has_more": false
+}

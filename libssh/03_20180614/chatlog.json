@@ -1,0 +1,573 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "c2d5a854-7439-421f-be0d-4a5f43d599f4",
+            "type": "message",
+            "text": "Great! Please contact my administrator for further instructions.",
+            "user": "UB659D0FM",
+            "ts": "1528993909.000581"
+        },
+        {
+            "client_msg_id": "24855674-b0da-4daf-b124-33ddab0625e6",
+            "type": "message",
+            "text": "okay I think my job is done",
+            "user": "UB6TBU716",
+            "ts": "1528993887.000194"
+        },
+        {
+            "client_msg_id": "63408f62-169f-4bbf-9ff0-5b2f6bfa11ff",
+            "type": "message",
+            "text": "To close an ssh_session, you can use the \"void ssh_disconnect(ssh_session session)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528993815.000815"
+        },
+        {
+            "client_msg_id": "d0db6a24-92d1-42f4-921b-0fa084ab86e9",
+            "type": "message",
+            "text": "how to disconnect from the server?",
+            "user": "UB6TBU716",
+            "ts": "1528993742.000523"
+        },
+        {
+            "client_msg_id": "c4f68c78-b523-4033-bfb2-189997ecc486",
+            "type": "message",
+            "text": "an example for error checking when creating a directory is \"if (sftp_get_error(session) != SSH_FX_FILE_ALREADY_EXISTS) { ... }\"",
+            "user": "UB659D0FM",
+            "ts": "1528993707.000623"
+        },
+        {
+            "client_msg_id": "710793fa-e32c-407e-9fc3-cbd1dfa64e75",
+            "type": "message",
+            "text": "can you give me example of output of sftp_get_error ?",
+            "user": "UB6TBU716",
+            "ts": "1528993616.000839"
+        },
+        {
+            "client_msg_id": "6ce46b43-c1a3-4496-bfe8-e7cef182ec35",
+            "type": "message",
+            "text": "You can use the \"int sftp_get_error(sftp_session session)\" function to get the latest error set by a posix like sftp function.",
+            "user": "UB659D0FM",
+            "ts": "1528993574.000240"
+        },
+        {
+            "client_msg_id": "a87c1533-9085-4970-bc9f-f39c8c9e16de",
+            "type": "message",
+            "text": "yes from sftp_sessions",
+            "user": "UB6TBU716",
+            "ts": "1528993545.000270"
+        },
+        {
+            "client_msg_id": "cb23fc57-0cea-4077-972f-455b5b876a2e",
+            "type": "message",
+            "text": "There are several function used to get errors from different data types, are you referring to getting errors from sftp_sessions?",
+            "user": "UB659D0FM",
+            "ts": "1528993531.000409"
+        },
+        {
+            "client_msg_id": "f4bc9d60-9063-487b-bc9c-87bb0bfa100f",
+            "type": "message",
+            "text": "how to return errors?",
+            "user": "UB6TBU716",
+            "ts": "1528993490.000627"
+        },
+        {
+            "client_msg_id": "3b1bd7d1-7ebc-45ca-9b04-3a68761b3b1d",
+            "type": "message",
+            "text": "I am sorry, I am confused.",
+            "user": "UB659D0FM",
+            "ts": "1528993481.000065"
+        },
+        {
+            "client_msg_id": "ca76bab9-fc19-40ec-9c8a-d9b3ed342374",
+            "type": "message",
+            "text": "?",
+            "user": "UB6TBU716",
+            "ts": "1528993461.000217"
+        },
+        {
+            "client_msg_id": "5887cefd-2b56-4fdc-8308-0eb6bfe08447",
+            "type": "message",
+            "text": "how to return errors",
+            "user": "UB6TBU716",
+            "ts": "1528993458.000849"
+        },
+        {
+            "client_msg_id": "4e0372d1-5f0c-45b6-b068-7e8571b5ddb0",
+            "type": "message",
+            "text": "To free a sftp_session, use the \"void sftp_free(sftp_session session)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528993416.000799"
+        },
+        {
+            "client_msg_id": "a22a4566-49d1-457f-8e07-0418c4e5c5a3",
+            "type": "message",
+            "text": "how to free the session?",
+            "user": "UB6TBU716",
+            "ts": "1528993325.000214"
+        },
+        {
+            "client_msg_id": "74bc8958-dc31-49d3-9d23-e8c893fd13fb",
+            "type": "message",
+            "text": "You can close a file using the \"int sftp_close(sftp_file file)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528993286.000105"
+        },
+        {
+            "client_msg_id": "1a1ab232-41ea-48b1-a158-bf6bba2fa899",
+            "type": "message",
+            "text": "how to close the file?",
+            "user": "UB6TBU716",
+            "ts": "1528993255.000486"
+        },
+        {
+            "client_msg_id": "5fe40831-0419-4e51-92c8-be2e4de76c5a",
+            "type": "message",
+            "text": "\"count\" is the number of bytes to be written to the file. In the example where the buffer is \"hello world!\", count would be sizeof(buffer).",
+            "user": "UB659D0FM",
+            "ts": "1528993182.000264"
+        },
+        {
+            "client_msg_id": "f2bd1c57-8767-4069-ac63-55e9499e94ad",
+            "type": "message",
+            "text": "an example of count ?",
+            "user": "UB6TBU716",
+            "ts": "1528993128.000289"
+        },
+        {
+            "client_msg_id": "5c8de3ef-c5f2-4a19-8108-35d71f5e4cc0",
+            "type": "message",
+            "text": "In this specific case, \"const void* buffer\" is the contents of the file to be written. An example would to write a static message \"hello world!\" where const char* buff = \"hello world!\";.",
+            "user": "UB659D0FM",
+            "ts": "1528993087.000182"
+        },
+        {
+            "client_msg_id": "b1f95ffa-d503-4754-9a2d-e1f8cc65d2ef",
+            "type": "message",
+            "text": "can you give me an example of const void* buffer ?",
+            "user": "UB6TBU716",
+            "ts": "1528992993.000429"
+        },
+        {
+            "client_msg_id": "ba3bd4d6-47bb-4cc3-afcb-c5c7667f4215",
+            "type": "message",
+            "text": "You can write to an open file using the \"ssize_t sftp_write(sftp_file file, const void* buffer, size_t count)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528992913.000811"
+        },
+        {
+            "client_msg_id": "60f82d68-5eb8-4c22-9c70-d58ce74840fd",
+            "type": "message",
+            "text": "how to write  a string to the file ?",
+            "user": "UB6TBU716",
+            "ts": "1528992821.000025"
+        },
+        {
+            "client_msg_id": "4ad7b77e-aa92-4182-8b71-9672251ec413",
+            "type": "message",
+            "text": "An example of an access type would be \"int access_type = O_WRONLY | O_CREAT | O_TRUNC;\"",
+            "user": "UB659D0FM",
+            "ts": "1528992766.000017"
+        },
+        {
+            "client_msg_id": "1ea53108-2f06-4301-90eb-343620e8c329",
+            "type": "message",
+            "text": "can you give me an example of accesstype?",
+            "user": "UB6TBU716",
+            "ts": "1528992708.000191"
+        },
+        {
+            "client_msg_id": "069dcf9f-5dbd-4e0f-9c6b-96f1cd384491",
+            "type": "message",
+            "text": "You can create a new directory using the \"int sftp_mkdir(sftp_session session, const char* dirpath, mode_t mode)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528992619.000936"
+        },
+        {
+            "client_msg_id": "3a9aa095-c5ba-4414-9c7f-ae96ac44a44e",
+            "type": "message",
+            "text": "how to create a new directory?",
+            "user": "UB6TBU716",
+            "ts": "1528992565.000326"
+        },
+        {
+            "client_msg_id": "aa8c3327-1763-40ca-b3d2-0267a75071be",
+            "type": "message",
+            "text": "An example mode_t mode value would be \"S_IRWXU\".",
+            "user": "UB659D0FM",
+            "ts": "1528992465.000350"
+        },
+        {
+            "client_msg_id": "ebaf32dc-3ed7-414c-b76f-8f24d7a7869e",
+            "type": "message",
+            "text": "can you give me an example of mode?",
+            "user": "UB6TBU716",
+            "ts": "1528992386.000178"
+        },
+        {
+            "client_msg_id": "38d71dbc-85eb-45ac-9262-b7177f3fcab8",
+            "type": "message",
+            "text": "To open a new file using sftp, you can use the \"sftp_file sftp_open(sftp_session session, const char* filepath, int accesstype, mode_t mode)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528992345.000646"
+        },
+        {
+            "client_msg_id": "6c2a10b0-5f86-4a77-ae0e-148f3c5cef7e",
+            "type": "message",
+            "text": "how to Create a new file in Dir1?",
+            "user": "UB6TBU716",
+            "ts": "1528992243.000921"
+        },
+        {
+            "client_msg_id": "bb69f775-afa7-4d10-8eff-23348787df76",
+            "type": "message",
+            "text": "Excuse me \"sftp_session sftp_new(ssh_session session)\"",
+            "user": "UB659D0FM",
+            "ts": "1528992155.000536"
+        },
+        {
+            "client_msg_id": "9046569d-4e20-43a9-af44-a04d39f68687",
+            "type": "message",
+            "text": "You can use the \"ssftp_session sftp_new(ssh_session session)\" to start a new sftp session.",
+            "user": "UB659D0FM",
+            "ts": "1528992134.000376"
+        },
+        {
+            "client_msg_id": "24113b5a-5164-4573-8b6f-0ff2d21f9645",
+            "type": "message",
+            "text": "how to Create and initialize a new sftp session on the connected ssh session ?",
+            "user": "UB6TBU716",
+            "ts": "1528992048.000785"
+        },
+        {
+            "client_msg_id": "fddef42b-b043-4aeb-a38a-f7582649b26e",
+            "type": "message",
+            "text": "You can use the function \"int ssh_channel_send_eof(ssh_channel channel)\" to send an end of file on the channel.",
+            "user": "UB659D0FM",
+            "ts": "1528991909.000771"
+        },
+        {
+            "client_msg_id": "c30b1ab6-ee68-4dff-a291-6059c53ae2a4",
+            "type": "message",
+            "text": "how to send eof?",
+            "user": "UB6TBU716",
+            "ts": "1528991862.000492"
+        },
+        {
+            "client_msg_id": "001658f7-759d-4c3f-9fce-fc243c3d0946",
+            "type": "message",
+            "text": "There are two functions that refer to the functionality you are requestion. The first is \"int ssh_channel_close(ssh_channel channel)\" and the second is \"void ssh_channel_free(ssh_channel channel).\"",
+            "user": "UB659D0FM",
+            "ts": "1528991805.000215"
+        },
+        {
+            "client_msg_id": "888cc784-6463-43da-8492-5a1484d25f6e",
+            "type": "message",
+            "text": "how to shutdown the channel ?",
+            "user": "UB6TBU716",
+            "ts": "1528991742.000670"
+        },
+        {
+            "client_msg_id": "9d55eb78-1de3-4488-864f-c5685606a296",
+            "type": "message",
+            "text": "I'm sorry, I am not authorized to answer API questions regarding APIs other than libssh.",
+            "user": "UB659D0FM",
+            "ts": "1528991548.000076"
+        },
+        {
+            "client_msg_id": "10be8dff-c687-4be4-af4e-cdf975d60d41",
+            "type": "message",
+            "text": "how to print to stdout ?",
+            "user": "UB6TBU716",
+            "ts": "1528991495.000488"
+        },
+        {
+            "client_msg_id": "f6bc034a-c217-47cd-ab0d-6ad40968279b",
+            "type": "message",
+            "text": "A statically allocated buffer would use the following command \"char my_buffer[512];\"",
+            "user": "UB659D0FM",
+            "ts": "1528991224.000960"
+        },
+        {
+            "client_msg_id": "2ecf999c-5672-407d-9f0e-5a7e1b1ba5d1",
+            "type": "message",
+            "text": "can you give me an example of my_buffer or buffer?",
+            "user": "UB6TBU716",
+            "ts": "1528991135.000337"
+        },
+        {
+            "client_msg_id": "9f1fc99e-8160-4145-a488-c0ee24549f5e",
+            "type": "message",
+            "text": "Excuse me, \"sizeof(buffer)\" should be \"sizeof(my_buffer)\" in the above example.",
+            "user": "UB659D0FM",
+            "ts": "1528990941.000424"
+        },
+        {
+            "client_msg_id": "8a812be6-6bf4-4764-a22b-00784aa99c6f",
+            "type": "message",
+            "text": "An example usage of ssh_channel_read would be \"ssh_channel_read(my_channel, my_buffer, sizeof(buffer), 0);\" to read 512 bytes from the channel stdout if my_buffer is an array of type \"char\" of size 512.",
+            "user": "UB659D0FM",
+            "ts": "1528990897.000820"
+        },
+        {
+            "client_msg_id": "bdeee05e-42c0-4358-9cd0-ab1edd2ee60c",
+            "type": "message",
+            "text": "can you give me example use of ssh_channel_read?",
+            "user": "UB6TBU716",
+            "ts": "1528990800.000423"
+        },
+        {
+            "client_msg_id": "85b5922f-3e49-4df5-895a-6e694e2b5860",
+            "type": "message",
+            "text": "I am sorry, I am confused.",
+            "user": "UB659D0FM",
+            "ts": "1528990579.000219"
+        },
+        {
+            "client_msg_id": "d2cbede1-42ca-45df-8d2d-623511375936",
+            "type": "message",
+            "text": "what values should i give ?",
+            "user": "UB6TBU716",
+            "ts": "1528990551.000352"
+        },
+        {
+            "client_msg_id": "4e8fd758-efa2-420d-ae38-b01176ef588b",
+            "type": "message",
+            "text": "According to the API documentation, void* buff is a destination buffer where the read data will be transferred to. unit32_t count is the number of bytes to be read, and int is_stderr is a boolean value to mark reading from the stderr flow.",
+            "user": "UB659D0FM",
+            "ts": "1528990522.000801"
+        },
+        {
+            "client_msg_id": "b3f41fab-6896-496c-84cb-278e3b336d4d",
+            "type": "message",
+            "text": "what are these ? ```void* buff, uint32_t count, int is_stderr```",
+            "user": "UB6TBU716",
+            "ts": "1528990453.000781"
+        },
+        {
+            "client_msg_id": "71d9b2ae-dd2b-4d23-8e9e-52f2961de6b7",
+            "type": "message",
+            "text": "You can read data from a channel using the \"int ssh_channel_read(ssh_channel channel, void* buff, uint32_t count, int is_stderr)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528990383.000846"
+        },
+        {
+            "client_msg_id": "440adf66-c519-4b52-9b53-d9cded3deb5c",
+            "type": "message",
+            "text": "how to read response from channel?",
+            "user": "UB6TBU716",
+            "ts": "1528990319.000067"
+        },
+        {
+            "client_msg_id": "f98197c4-a552-4c42-ac12-c92ee89b7629",
+            "type": "message",
+            "text": "The function \"int ssh_channel_request_exec(ssh_channel channel, const char* cmd)\" executes a shell command without an interactive shell on the host machine.",
+            "user": "UB659D0FM",
+            "ts": "1528990237.000492"
+        },
+        {
+            "client_msg_id": "f8a90d17-b9af-46fb-94d1-8b4397b8177a",
+            "type": "message",
+            "text": "how to Execute the command \"who\" on the open channel?",
+            "user": "UB6TBU716",
+            "ts": "1528990178.000719"
+        },
+        {
+            "client_msg_id": "a2daa934-c8ed-4d69-8daa-0a1555cbea51",
+            "type": "message",
+            "text": "\"int ssh_channel_open_session(ssh_channel channel)\" seems to be the function that opens a channel that has the least amount of configuration.",
+            "user": "UB659D0FM",
+            "ts": "1528990082.000855"
+        },
+        {
+            "client_msg_id": "076e148a-677c-46b3-863f-49e7c718b559",
+            "type": "message",
+            "text": "tell the easiest one",
+            "user": "UB6TBU716",
+            "ts": "1528990028.000273"
+        },
+        {
+            "client_msg_id": "36ca8add-e4a6-4c48-896a-faea77981572",
+            "type": "message",
+            "text": "There are a few functions that can open a ssh_channel depending upon settings such as protocol, purpose, etc. Would you like me to list them all?",
+            "user": "UB659D0FM",
+            "ts": "1528989999.000587"
+        },
+        {
+            "client_msg_id": "017e7704-3a59-4f87-a079-56f76238294a",
+            "type": "message",
+            "text": "\"ssh_channel ssh_channel_new(ssh_session session)\" function can be used to create a new channel from a session.",
+            "user": "UB659D0FM",
+            "ts": "1528989936.000617"
+        },
+        {
+            "client_msg_id": "b4297fcf-d4d8-4cb1-a208-fac720c3518d",
+            "type": "message",
+            "text": "how to Create and open a new ssh_channel in the ssh_session ?",
+            "user": "UB6TBU716",
+            "ts": "1528989883.000081"
+        },
+        {
+            "client_msg_id": "02487d3b-5c4f-438a-8954-a9a199ebdf77",
+            "type": "message",
+            "text": "\"ssh_disconnect(ssh_session session)\" and \"ssh_free(ssh_session session)\" functions can be used to clean up resources.",
+            "user": "UB659D0FM",
+            "ts": "1528989812.000639"
+        },
+        {
+            "client_msg_id": "48e701ed-2909-4af9-8d1d-66f8b78f7bd9",
+            "type": "message",
+            "text": "howt to \"Disconnect from the server and free the session.\" ?",
+            "user": "UB6TBU716",
+            "ts": "1528989759.000399"
+        },
+        {
+            "client_msg_id": "429eb93c-6668-487b-9fef-e6afb407d18d",
+            "type": "message",
+            "text": "Would you like me to list the parameters?",
+            "user": "UB659D0FM",
+            "ts": "1528989685.000107"
+        },
+        {
+            "client_msg_id": "7fcfff04-8c78-4713-a041-b2d9d0a80475",
+            "type": "message",
+            "text": "\"int ssh_userauth_publickey_auto(ssh_session session, const char* username, const char* passphrase)\" will attempt to automatically authenticate with public key and \"none\".",
+            "user": "UB659D0FM",
+            "ts": "1528989658.000588"
+        },
+        {
+            "client_msg_id": "6fbfcc47-f4a7-4eab-b54c-012078527ec4",
+            "type": "message",
+            "text": "tell me the easiest one",
+            "user": "UB6TBU716",
+            "ts": "1528989593.000969"
+        },
+        {
+            "client_msg_id": "ec1daf33-2538-44bf-9171-fa3631fbc7c5",
+            "type": "message",
+            "text": "There are several functions to authenticate a session, would you like me to enumerate them all?",
+            "user": "UB659D0FM",
+            "ts": "1528989571.000539"
+        },
+        {
+            "client_msg_id": "efc23638-1a65-4f32-aead-e5b94ab26ce7",
+            "type": "message",
+            "text": "You can set properties of a session using the \"ssh_options_set(session, option, char*)\" function. An example would be to set the host options, which can be done with the following statement \"ssh_options_set(my_ssh_session, SSH_OPTIONS_HOST, \"129.0.0.1\");\"",
+            "user": "UB659D0FM",
+            "ts": "1528989532.000298"
+        },
+        {
+            "client_msg_id": "0980a3eb-77c5-4aa5-9e2a-95e2381d9e74",
+            "type": "message",
+            "text": "how to authenticate the server?",
+            "user": "UB6TBU716",
+            "ts": "1528989478.000703"
+        },
+        {
+            "client_msg_id": "d1c94e60-33cb-4cc6-b4ec-cdaf161c4ca8",
+            "type": "message",
+            "text": "where to give username and password?",
+            "user": "UB6TBU716",
+            "ts": "1528989400.000196"
+        },
+        {
+            "client_msg_id": "142203e2-ad87-4ca8-acc2-ed8f03c60b9e",
+            "type": "message",
+            "text": "You can connect to a session by using the \"int ssh_connect(ssh_session session)\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528989346.000151"
+        },
+        {
+            "client_msg_id": "a21de1dc-c758-468d-9ce2-b5a9162fd06b",
+            "type": "message",
+            "text": "how to connect to localhost?",
+            "user": "UB6TBU716",
+            "ts": "1528989314.000523"
+        },
+        {
+            "client_msg_id": "f7cdcd9e-9d19-4755-81b2-eca003c52843",
+            "type": "message",
+            "text": "I believe so.",
+            "user": "UB659D0FM",
+            "ts": "1528989271.000376"
+        },
+        {
+            "client_msg_id": "52529fbf-698a-4ba4-a74e-7b17c74d5d26",
+            "type": "message",
+            "text": "```session = ssh_new()``` like this?",
+            "user": "UB6TBU716",
+            "ts": "1528989253.000444"
+        },
+        {
+            "client_msg_id": "ef879cc1-dbbb-4246-9910-7a4b2e0117a3",
+            "type": "message",
+            "text": "You have created an unitialized session, please use the \"ssh_session ssh_new()\" function to fully intialize a new session. It returns a new ssh_session pointer, or NULL on error.",
+            "user": "UB659D0FM",
+            "ts": "1528989217.000300"
+        },
+        {
+            "client_msg_id": "0672b2bb-f26d-428f-a3cd-08c561b95e7e",
+            "type": "message",
+            "text": "has a new session been created?",
+            "user": "UB6TBU716",
+            "ts": "1528989156.000138"
+        },
+        {
+            "client_msg_id": "28dc4015-34d5-4cf6-9372-8b81125d4faa",
+            "type": "message",
+            "text": "```ssh_session session;```",
+            "user": "UB6TBU716",
+            "ts": "1528989144.000124"
+        },
+        {
+            "client_msg_id": "408cac20-18fb-4c56-8cea-594815892953",
+            "type": "message",
+            "text": "I have written this,",
+            "user": "UB6TBU716",
+            "ts": "1528989138.000635"
+        },
+        {
+            "client_msg_id": "2acd3333-a9cd-4c95-9684-14f238583493",
+            "type": "message",
+            "text": "You can create a new ssh session using the \"ssh_session ssh_new()\" function.",
+            "user": "UB659D0FM",
+            "ts": "1528989091.001004"
+        },
+        {
+            "client_msg_id": "6d91edde-50fa-41c8-8305-516d61dbcf99",
+            "type": "message",
+            "text": "okay habibi..now give me the answer",
+            "user": "UB6TBU716",
+            "ts": "1528988970.000064"
+        },
+        {
+            "client_msg_id": "8b5f435b-a9b2-4962-90c4-6fb6d99d3514",
+            "type": "message",
+            "text": "Hi! I'm apiza, a virtual assistant designed to programmers with APIs. I look forward to working with you today!",
+            "user": "UB659D0FM",
+            "ts": "1528988955.000825"
+        },
+        {
+            "client_msg_id": "57c1cd08-0429-4df3-8121-fd2586a7d6d3",
+            "type": "message",
+            "text": "how to create a new ssh_session?",
+            "user": "UB6TBU716",
+            "ts": "1528988926.000913"
+        },
+        {
+            "client_msg_id": "f4748f8f-b5fa-4a7f-949e-a0cac2a98ddc",
+            "type": "message",
+            "text": "\"In the main method, use the libssh API to create a new ssh_session. Ensure that the session is successfully created\"",
+            "user": "UB6TBU716",
+            "ts": "1528988918.000455"
+        },
+        {
+            "client_msg_id": "534f94a2-c392-4d1e-af51-7187d14affec",
+            "type": "message",
+            "text": "hello",
+            "user": "UB6TBU716",
+            "ts": "1528988856.000795"
+        }
+    ],
+    "has_more": false
+}

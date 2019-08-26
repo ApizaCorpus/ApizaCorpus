@@ -1,0 +1,29 @@
+Programmer_7 [5:58 PM]
+If ask multiple questions in a row will it respond to each one or just the "last" one?
+
+Zack [6:02 PM]
+It will tackle them in order, feel free to do so
+
+Programmer_7 [6:02 PM]
+Cool
+How should I proceed if I can't figure out the proper question to ask for a particular task?
+Cant get it to respond to setting host
+
+...
+
+Zack [6:10 PM]
+Right, has apiza suggested the method "ssh_options_set" yet?
+
+Programmer_7 [6:10 PM]
+No, I haven't been able to trigger it with the right question
+
+Zack [6:11 PM]
+That's alright, that's what we're hoping to improve :slightly_smiling_face:
+
+I'd suggest asking about ssh_options_set directly
+
+Programmer_7 [6:12 PM]
+Hmm... it gives me the function signature, but I can't get it to give me a list of the option values
+
+Zack [6:14 PM]
+Strange, shouldn't have too much trouble with that. Keep communicating and see if it will deliver

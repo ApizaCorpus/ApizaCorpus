@@ -1,0 +1,231 @@
+Programmer_18 [5:20 PM]
+Hi Apiza
+I am Programmer_18
+
+Apiza [5:20 PM]
+Hi! I am Apiza, a virtual assistant built to help you navigate the Allegro API. How can I help you?
+Hi, Programmer_18!
+
+Programmer_18 [5:21 PM]
+What is the Allegro API?
+
+Apiza [5:21 PM]
+Allegro
+Allegro logo
+Allegro logo
+Original author(s)    Shawn Hargreaves
+Developer(s)    Allegro developers
+Initial release    early 1990; 28 years ago
+Stable release    
+5.2.4 / February 25, 2018; 7 months ago
+Repository    
+https://github.com/liballeg/allegro5
+Edit this at Wikidata
+Written in    C
+Operating system    Windows, Linux, macOS, et al.
+Type    Multimedia and Games SDK
+License    Allegro 4: Beerware[1]
+Allegro 5: zlib
+Website    liballeg.org
+Allegro is a software library for video game development
+GitHub
+liballeg/allegro5
+The official Allegro 5 git repository. Pull requests welcome! - liballeg/allegro5
+
+Programmer_18 [5:21 PM]
+What is the purpose of the Allegro API?
+
+Apiza [5:22 PM]
+Allegro is a software library for video game development
+
+Programmer_18 [5:22 PM]
+Does Allegro have a physics engine?
+
+Apiza [5:23 PM]
+Allegro does not have a built-in physics engine.
+
+Programmer_18 [5:33 PM]
+what is ALLEGRO_DISPLAY
+
+Apiza [5:33 PM]
+```typedef struct ALLEGRO_DISPLAY ALLEGRO_DISPLAY```
+An opaque type representing an open display or window.
+
+Programmer_18 [5:34 PM]
+What order are the keys in the keys array?
+determined by MYKEYS?
+
+Apiza [5:36 PM]
+I was able to find an example that may answer your question:
+```enum MYKEYS {
+   KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
+};```
+
+Programmer_18 [5:38 PM]
+Does Allegro have an event for key press
+
+Apiza [5:40 PM]
+There are three Event types relating to the keyboard:
+
+ALLEGRO_EVENT_KEY_DOWN
+ALLEGRO_EVENT_KEY_UP
+ALLEGRO_EVENT_KEY_CHAR
+
+They share the attributes
+
+
+struct ALLEGRO_DISPLAY *display
+int keycode
+int unichar
+unsigned int modifiers
+bool repeat
+
+Programmer_18 [5:42 PM]
+How do I register for KEY_DOWN events
+How do I register for keyboard events?
+
+Apiza [5:44 PM]
+Once the keyboard has been installed with al_install_keyboard, the keyboard can be registered as an event source with
+
+```al_register_event_source(event_queue, al_get_keyboard_event_source());```
+
+Programmer_18 [5:54 PM]
+can more then one key be down at once?
+
+Apiza [5:56 PM]
+Using the ALLEGRO_EVENT_QUEUE struct, multiple keys can be down at once. Every key press will add a new ALLEGRO_EVENT to the ALLEGRO_EVENT_QUEUE, even if other keys are being held.
+
+Programmer_18 [5:59 PM]
+false
+keybdnu.c:190: al_get_keyboard: Assertion `new_keyboard_driver' failed.
+
+Apiza [6:02 PM]
+Keyboard errors may emerge if the keyboard driver is not successfully installed. You can call al_is_keyboard_installed to confirm that the driver has installed properly:
+
+```bool al_is_keyboard_installed(void)```
+
+Programmer_18 [6:04 PM]
+How do I install the keyboard?
+
+Apiza [6:04 PM]
+```bool al_install_keyboard(void)```
+
+Install a keyboard driver. Returns true if successful. If a driver was already installed, nothing happens and true is returned.
+
+Programmer_18 [6:07 PM]
+How do I add sound effects?
+How do I play sound files?
+
+Apiza [6:10 PM]
+To play sound, the audio add-on and audio codec add-on must be installed.
+
+```bool al_install_audio(void)```
+```bool al_init_acodec_addon(void)```
+
+There are several functions to play audio samples. The simplest is al_play_sample
+:
+
+```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```
+
+An ALLEGRO_SAMPLE must first be reserved and loaded.
+
+```bool al_reserve_samples(int reserve_samples)```
+```ALLEGRO_SAMPLE *al_load_sample(const char *filename)```
+
+Programmer_18 [6:14 PM]
+what is the parameter reserve_samples
+
+Apiza [6:15 PM]
+int reserve_samples - refers to the number of sample instances to be reserved and attached to the default mixer
+
+Programmer_18 [6:18 PM]
+what are the valid gain values for al_play_sample?
+I need documentation for al_play_sample
+
+Apiza [6:18 PM]
+gain - relative volume at which the sample is played; 1.0 is normal.
+gain is a float
+Sure, here's the documentation:
+
+al_play_sample
+
+```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```
+
+Plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.
+
+Parameters:
+
+gain - relative volume at which the sample is played; 1.0 is normal.
+pan - 0.0 is centred, -1.0 is left, 1.0 is right, or ALLEGRO_AUDIO_PAN_NONE.
+speed - relative speed at which the sample is played; 1.0 is normal.
+loop - ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR
+ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.
+
+See also: ALLEGRO_PLAYMODE, ALLEGRO_AUDIO_PAN_NONE, ALLEGRO_SAMPLE_ID, al_stop_sample, al_stop_samples, al_lock_sample_id.
+
+Programmer_18 [6:22 PM]
+How do I draw text on the display
+I need documentation for al_draw_text
+
+Apiza [6:23 PM]
+Three are several methods to Draw text on the display. The simplest is
+
+```void al_draw_text(const ALLEGRO_FONT *font,
+   ALLEGRO_COLOR color, float x, float y, int flags,
+   char const *text)``` 
+
+The font add-on must first be initialized.
+
+```bool al_init_font_addon(void)```
+
+An ALLEGRO_FONT struct can be loaded with
+
+```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```
+Sure, here it is:
+
+al_draw_text
+
+```void al_draw_text(const ALLEGRO_FONT *font,
+   ALLEGRO_COLOR color, float x, float y, int flags,
+   char const *text)``` 
+
+Writes the NUL-terminated string text onto the target bitmap at position  x, y, using the specified font.
+
+The flags parameter can be 0 or one of the following flags:
+
+ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).
+ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.
+ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.
+It can also be combined with this flag:
+
+ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4
+This function does not support newline characters (\n), but you can use al_draw_multiline_text for multi line text output.
+
+See also: al_draw_ustr, al_draw_textf, al_draw_justified_text, al_draw_multiline_text.
+
+Programmer_18 [6:30 PM]
+define ALLEGRO_COLOR
+
+Apiza [6:30 PM]
+typedef struct ALLEGRO_COLOR ALLEGRO_COLOR;
+
+An ALLEGRO_COLOR structure describes a color in a device independent way. Use al_map_rgb et al. and al_unmap_rgb et al. to translate from and to various color representations.
+
+Programmer_18 [6:37 PM]
+what are the parameters for al_load_font
+
+Apiza [6:38 PM]
+```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```
+
+The flags can be 0 or
+
+ALLEGRO_TTF_NO_KERNING - Do not use any kerning even if the font file supports it.
+
+ALLEGRO_TTF_MONOCHROME - Load as a monochrome font (which means no anti-aliasing of the font is done).
+
+ALLEGRO_TTF_NO_AUTOHINT - Disable the Auto Hinter which is enabled by default in newer versions of FreeType. Since: 5.0.6, 5.1.2
+
+Programmer_18 [6:49 PM]
+what is the x y orientation of the display

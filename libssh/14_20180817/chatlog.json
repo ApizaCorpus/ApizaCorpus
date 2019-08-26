@@ -1,0 +1,395 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "ff124bc1-985c-4aa0-9796-85a9ecf81ab5",
+            "type": "message",
+            "text": "ssh authentication example",
+            "user": "UC9RKA4E5",
+            "ts": "1534532698.000100"
+        },
+        {
+            "client_msg_id": "4c3abf3c-b8cb-45e1-843d-a6d0f4aeef3f",
+            "type": "message",
+            "text": "example code of ssh connection  authentication",
+            "user": "UC9RKA4E5",
+            "ts": "1534527285.000100"
+        },
+        {
+            "client_msg_id": "0f11e215-d703-4199-89c8-9985837e4f10",
+            "type": "message",
+            "text": "As well as\nint ssh_get_server_publickey\t(\tssh_session \tsession,\nssh_key * \tkey\n)\n\nDescription\nGet the server public key from a session.\n\nParameters\nsession: The session to get the key from.\n[out]: key: A pointer to store the allocated key. You need to free the key.\n\nReturns\nSSH_OK on success, SSH_ERROR on errror.\n\nSee also\nssh_key_free()",
+            "user": "UB659D0FM",
+            "ts": "1534520261.000100"
+        },
+        {
+            "client_msg_id": "7ad905c3-1fbc-4a3d-a009-224ee8d7452a",
+            "type": "message",
+            "text": "I couldn't find any examples for\n\nint ssh_get_publickey\t(\tssh_session \tsession,\nssh_key * \tkey\n)\n\nand the documentation is limited. There is documentation for the related function:\n\nint ssh_get_publickey_hash\t(\tconst ssh_key \tkey,\nenum ssh_publickey_hash_type \ttype,\nunsigned char ** \thash,\nsize_t * \thlen\n)\n\nDescription\nAllocates a buffer with the hash of the public key.\nThis function allows you to get a hash of the public key. You can then print this hash in a human-readable form to the user so that he is able to verify it. Use ssh_get_hexa() or ssh_print_hexa() to display it.\n\nParameters\nkey: The public key to create the hash for.\ntype: The type of the hash you want.\nhash: A pointer to store the allocated buffer. It can be freed using ssh_clean_pubkey_hash().\nhlen: The length of the hash.\n\nReturns\n0 on success, -1 if an error occured.\n\nSee also\nssh_is_server_known()\nssh_get_hexa()\nssh_print_hexa()\nssh_clean_pubkey_hash()",
+            "user": "UB659D0FM",
+            "ts": "1534520229.000100"
+        },
+        {
+            "client_msg_id": "1e41971d-82de-45c8-ac6f-9b964c2aba97",
+            "type": "message",
+            "text": "ssh_get_publickey example code",
+            "user": "UC9RKA4E5",
+            "ts": "1534520086.000100"
+        },
+        {
+            "client_msg_id": "7ef1ca8d-c3ed-47ea-8b2a-d73010e606e3",
+            "type": "message",
+            "text": "There are also the functions related to \"public key\" in the ssh_session module:\n\nssh_get_publickey\nssh_get_publickey_hash\nssh_get_server_publickey",
+            "user": "UB659D0FM",
+            "ts": "1534520065.000100"
+        },
+        {
+            "client_msg_id": "b391d9c8-76b4-4a75-9138-bb39b61ee617",
+            "type": "message",
+            "text": "how to get ssh public key from host",
+            "user": "UC9RKA4E5",
+            "ts": "1534520046.000100"
+        },
+        {
+            "client_msg_id": "37b1b594-7050-44e8-b1d7-024496f7bbf6",
+            "type": "message",
+            "text": "There are 21 public key functions:\n\nssh_key_clean\nssh_key_cmp\nssh_key_free\nssh_key_is_private\nssh_key_is_public\nssh_key_new\nssh_key_type\nssh_key_type_from_name\nssh_key_type_to_char\nssh_pki_copy_cert_to_privkey\nssh_pki_export_privkey_file\nssh_pki_export_privkey_to_pubkey\nssh_pki_export_pubkey_base64\nssh_pki_generate\nssh_pki_import_cert_base64\nssh_pki_import_cert_file\nssh_pki_import_privkey_base64\nssh_pki_import_privkey_file\nssh_pki_import_pubkey_base64\nssh_pki_import_pubkey_file\nssh_pki_key_ecdsa_name",
+            "user": "UB659D0FM",
+            "ts": "1534519997.000100"
+        },
+        {
+            "client_msg_id": "225ca129-45a5-43e4-a9d8-3b7504558b6d",
+            "type": "message",
+            "text": "get ssh public key  functions",
+            "user": "UC9RKA4E5",
+            "ts": "1534519941.000100"
+        },
+        {
+            "client_msg_id": "7a47f22f-dd65-4a44-9143-8664d5ea0abd",
+            "type": "message",
+            "text": "The code snippet above should \"check that the server you just connected to is known and safe to use.\"\n\nThe session variable must first be initialized and connected to the server.",
+            "user": "UB659D0FM",
+            "ts": "1534519869.000100"
+        },
+        {
+            "client_msg_id": "3f60e5fb-268d-416c-afde-e19ef8dafb11",
+            "type": "message",
+            "text": "verify ssh server example code",
+            "user": "UC9RKA4E5",
+            "ts": "1534519709.000100"
+        },
+        {
+            "client_msg_id": "13f33631-012c-4905-baec-027387a86630",
+            "type": "message",
+            "text": "The function ssh_is_server_known should work something like this:\n\nint rc = ssh_is_server_known(session);\nif(rc!=SSH_SERVER_KNOWN_OK){\n    return -1;\n}",
+            "user": "UB659D0FM",
+            "ts": "1534519666.000100"
+        },
+        {
+            "client_msg_id": "28f5e7a3-3241-4ae5-b6f0-45191dec50ef",
+            "type": "message",
+            "text": "ssh_is_server_known example code",
+            "user": "UC9RKA4E5",
+            "ts": "1534519527.000100"
+        },
+        {
+            "client_msg_id": "a22b7d65-1e2e-405b-bb77-773e54b7e10d",
+            "type": "message",
+            "text": "I found ssh_session_is_known_server in several examples, but it appears to be deprecated in the current library. The function int ssh_is_server_known\t(ssh_session \tsession) is the up-to-date version of that function.\n\nDescription\nCheck if the server is known.\nChecks the user's known host file for a previous connection to the current server.\n\nParameters\nsession: The SSH session to use.\n\nReturns\nSSH_SERVER_KNOWN_OK: The server is known and has not changed.\nSSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.\nSSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.\nSSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.\nSSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.\nSSH_SERVER_ERROR: Some error happened.",
+            "user": "UB659D0FM",
+            "ts": "1534519176.000100"
+        },
+        {
+            "client_msg_id": "0a9fa797-51c1-458e-a9c8-2f0b5e50fd29",
+            "type": "message",
+            "text": "header file of ssh_session_is_known_server",
+            "user": "UC9RKA4E5",
+            "ts": "1534519017.000100"
+        },
+        {
+            "client_msg_id": "5c664d55-e75a-4468-8ea2-482d5a900589",
+            "type": "message",
+            "text": "It appears SSH_KNOWN_HOSTS_OK may be deprecated. In libssh.h, I was able to find the following:\n\nenum ssh_server_known_e {\n\tSSH_SERVER_ERROR=-1,\n\tSSH_SERVER_NOT_KNOWN=0,\n\tSSH_SERVER_KNOWN_OK,\n\tSSH_SERVER_KNOWN_CHANGED,\n\tSSH_SERVER_FOUND_OTHER,\n\tSSH_SERVER_FILE_NOT_FOUND\n};\n\nThis enum may serve the same purpose in the most up-to-date version of the library.",
+            "user": "UB659D0FM",
+            "ts": "1534518346.000100"
+        },
+        {
+            "client_msg_id": "d8d48de8-bd77-4a14-8e84-35b9b363266c",
+            "type": "message",
+            "text": "This may take a second, I can't find SSH_KNOWN_HOSTS_OK in the headers. I am searching for similar strings that serve a similar purpose.",
+            "user": "UB659D0FM",
+            "ts": "1534518070.000200"
+        },
+        {
+            "client_msg_id": "9e5cd53d-ed86-475f-87fe-626c98e7193b",
+            "type": "message",
+            "text": "SSH_KNOWN_HOSTS_OK is defined in which header file",
+            "user": "UC9RKA4E5",
+            "ts": "1534517887.000100"
+        },
+        {
+            "client_msg_id": "dd420ef9-a580-403a-ab24-e2f43706890f",
+            "type": "message",
+            "text": "It is defined in libssh.h",
+            "user": "UB659D0FM",
+            "ts": "1534517832.000200"
+        },
+        {
+            "client_msg_id": "c9baa57a-fd06-476e-9101-24ecc3a38e9f",
+            "type": "message",
+            "text": "SSH_OK is defined in which header file",
+            "user": "UC9RKA4E5",
+            "ts": "1534517817.000100"
+        },
+        {
+            "client_msg_id": "48d391dd-6924-4c62-802c-d73980afcc70",
+            "type": "message",
+            "text": "I found SSH_OK listed as an Error return code:\n\n\/* Error return codes *\/\n#define SSH_OK 0     \/* No error *\/\n#define SSH_ERROR -1 \/* Error of some kind *\/\n#define SSH_AGAIN -2 \/* The nonblocking call must be repeated *\/\n#define SSH_EOF -127 \/* We have already a eof *\/",
+            "user": "UB659D0FM",
+            "ts": "1534517727.000100"
+        },
+        {
+            "client_msg_id": "35bccf00-3f10-4dd3-9e3b-aa17bb9bed8e",
+            "type": "message",
+            "text": "header file of SSH_OK",
+            "user": "UC9RKA4E5",
+            "ts": "1534517681.000100"
+        },
+        {
+            "client_msg_id": "35866980-5fcf-4f9a-95dd-90d8aab1569f",
+            "type": "message",
+            "text": "Sure, here's an example of authenticating the server:\n\n`enum ssh_known_hosts_e state;\n...\nstate = ssh_session_is_known_server(session);\n    switch (state) {\n        case SSH_KNOWN_HOSTS_OK:\n            \/* OK *\/\n            break;\n        case SSH_KNOWN_HOSTS_CHANGED:\n            fprintf(stderr, \"Host key for server changed: it is now:\\n\");\n            ssh_print_hexa(\"Public key hash\", hash, hlen);\n            fprintf(stderr, \"For security reasons, connection will be stopped\\n\");\n            ssh_clean_pubkey_hash(&amp;hash);\n            return -1;\n        case SSH_KNOWN_HOSTS_OTHER:\n            fprintf(stderr, \"The host key for this server was not found but an other\"\n                    \"type of key exists.\\n\");\n            fprintf(stderr, \"An attacker might change the default server key to\"\n                    \"confuse your client into thinking the key does not exist\\n\");\n            ssh_clean_pubkey_hash(&amp;hash);\n            return -1;\n        case SSH_KNOWN_HOSTS_NOT_FOUND:\n            fprintf(stderr, \"Could not find known host file.\\n\");\n            fprintf(stderr, \"If you accept the host key here, the file will be\"\n                    \"automatically created.\\n\");\n            \/* FALL THROUGH to SSH_SERVER_NOT_KNOWN behavior *\/\n        case SSH_KNOWN_HOSTS_UNKNOWN:\n            hexa = ssh_get_hexa(hash, hlen);\n            fprintf(stderr,\"The server is unknown. Do you trust the host key?\\n\");\n            fprintf(stderr, \"Public key hash: %s\\n\", hexa);\n            ssh_string_free_char(hexa);\n            ssh_clean_pubkey_hash(&amp;hash);\n            p = fgets(buf, sizeof(buf), stdin);\n            if (p == NULL) {\n                return -1;\n            }\n            cmp = strncasecmp(buf, \"yes\", 3);\n            if (cmp != 0) {\n                return -1;\n            }\n            rc = ssh_session_update_known_hosts(session);\n            if (rc &lt; 0) {\n                fprintf(stderr, \"Error %s\\n\", strerror(errno));\n                return -1;\n            }\n            break;\n        case SSH_KNOWN_HOSTS_ERROR:\n            fprintf(stderr, \"Error %s\", ssh_get_error(session));\n            ssh_clean_pubkey_hash(&amp;hash);\n            return -1;\n    }`",
+            "user": "UB659D0FM",
+            "ts": "1534517339.000200"
+        },
+        {
+            "client_msg_id": "69d30537-aa9d-4927-8138-fe41374bba90",
+            "type": "message",
+            "text": "example code of authenticate the server",
+            "user": "UC9RKA4E5",
+            "ts": "1534517270.000100"
+        },
+        {
+            "client_msg_id": "31dbb274-28fc-411b-9cdf-e4b7c477d6e0",
+            "type": "message",
+            "text": "I found the following code snippet:\n\n\/\/ Authenticate ourselves\n  password = getpass(\"Password: \");\n  rc = ssh_userauth_password(my_ssh_session, NULL, password);\n  if (rc != SSH_AUTH_SUCCESS)\n  {\n    fprintf(stderr, \"Error authenticating with password: %s\\n\",\n            ssh_get_error(my_ssh_session));\n    ssh_disconnect(my_ssh_session);\n    ssh_free(my_ssh_session);\n    exit(-1);\n  }",
+            "user": "UB659D0FM",
+            "ts": "1534517230.000100"
+        },
+        {
+            "client_msg_id": "a38fac65-b43e-479c-bfa3-4ded3b7bdc51",
+            "type": "message",
+            "text": "also authenticate the server",
+            "user": "UC9RKA4E5",
+            "ts": "1534517228.000100",
+            "edited": {
+                "user": "UC9RKA4E5",
+                "ts": "1534517235.000000"
+            }
+        },
+        {
+            "client_msg_id": "c7f07061-02ea-41f1-b29f-a91beffab001",
+            "type": "message",
+            "text": "authenticate the user",
+            "user": "UC9RKA4E5",
+            "ts": "1534517198.000100"
+        },
+        {
+            "client_msg_id": "5fea6efe-aed8-40c4-b4c7-bc2ac47d31f9",
+            "type": "message",
+            "text": "Sure, are you interested in authenticating the server or the user?",
+            "user": "UB659D0FM",
+            "ts": "1534517181.000100"
+        },
+        {
+            "client_msg_id": "53045be0-c81a-4c13-bcba-851311e63399",
+            "type": "message",
+            "text": "ssh authenticate example",
+            "user": "UC9RKA4E5",
+            "ts": "1534517152.000100"
+        },
+        {
+            "client_msg_id": "e230d9ba-e219-4568-85fa-8281c4f8819c",
+            "type": "message",
+            "text": "Remember, I'm here to help \u2013 I can provide examples, suggestions, or function details. Don't hesitate to ask!",
+            "user": "UB659D0FM",
+            "ts": "1534517120.000100"
+        },
+        {
+            "client_msg_id": "9603a6a3-95a6-4e25-927c-03b70a0f2cef",
+            "type": "message",
+            "text": "The function ssh_options_set allows you to set the ssh host.\n\nint ssh_options_set\t(\tssh_session \tsession,\nenum ssh_options_e \ttype,\nconst void * \tvalue\n)\n\nThe type parameter can take the value SSH_OPTIONS_HOST, and value is then the hostname or ip address to connect to (const char *).",
+            "user": "UB659D0FM",
+            "ts": "1534516742.000100"
+        },
+        {
+            "client_msg_id": "6f91724f-a85a-4b56-ac12-1f37ab4f5c95",
+            "type": "message",
+            "text": "function to set ssh host",
+            "user": "UC9RKA4E5",
+            "ts": "1534516645.000100"
+        },
+        {
+            "client_msg_id": "1fa04b72-fd0a-4205-b079-399c628d298b",
+            "type": "message",
+            "text": "It appears to be related to the setter an getter functions ssh_options_set and ssh_options_get. Would you like to know more about either of these?",
+            "user": "UB659D0FM",
+            "ts": "1534516643.000200"
+        },
+        {
+            "client_msg_id": "3fc90478-5085-4454-81e8-e6d20f8dad5d",
+            "type": "message",
+            "text": "The function ssh_options_copy works as follows:\n\nDescription\nDuplicate the options of a session structure.\nIf you make several sessions with the same options this is useful. You cannot use twice the same option structure in ssh_session_connect.\n\nParameters\nsrc: The session to use to copy the options.\ndest: A pointer to store the allocated session with duplicated options. You have to free the memory.\n\nReturns\n0 on sucess, -1 on error with errno set.",
+            "user": "UB659D0FM",
+            "ts": "1534516609.000200"
+        },
+        {
+            "client_msg_id": "2131691c-79c3-4c55-926d-fc5e7907d126",
+            "type": "message",
+            "text": "help on ssh option functions",
+            "user": "UC9RKA4E5",
+            "ts": "1534516561.000100"
+        },
+        {
+            "client_msg_id": "689daead-8d3b-4472-b45b-45af5099eb6a",
+            "type": "message",
+            "text": "It looks like ssh_connect() is the function most directly related to \"connection.\"",
+            "user": "UB659D0FM",
+            "ts": "1534516454.000200"
+        },
+        {
+            "client_msg_id": "0b4c8a65-9730-49fd-a413-91fa33c57063",
+            "type": "message",
+            "text": "These are all of the functions I could find related to \"connection\":\n\nssh_channel ssh_channel_accept_forward\t(\tssh_session \tsession,\nint \ttimeout_ms,\nint * \tdestination_port\n)\n\nint ssh_channel_listen_forward\t(\tssh_session \tsession,\nconst char * \taddress,\nint \tport,\nint * \tbound_port\n)\n\nint ssh_connect\t(\tssh_session \tsession\t)\n\nvoid ssh_disconnect\t(\tssh_session \tsession\t)\n\nint ssh_event_add_connector\t(\tssh_event \tevent,\nssh_connector \tconnector\n)\n\nint ssh_event_remove_connector\t(\tssh_event \tevent,\nssh_connector \tconnector\n)\n\nconst char* ssh_get_disconnect_message\t(\tssh_session \tsession\t)\n\nsocket_t ssh_get_fd\t(\tssh_session \tsession\t)\n\nint ssh_is_connected\t(\tssh_session \tsession\t)\n\nint ssh_is_server_known\t(\tssh_session \tsession\t)\n\nint ssh_options_copy\t(\tssh_session \tsrc,\nssh_session * \tdest\n)\n\nvoid ssh_silent_disconnect\t(\tssh_session \tsession\t)",
+            "user": "UB659D0FM",
+            "ts": "1534516426.000100"
+        },
+        {
+            "client_msg_id": "428c1cbe-10ee-4ba5-903b-b2c8842442ea",
+            "type": "message",
+            "text": "list all ssh connection functions",
+            "user": "UC9RKA4E5",
+            "ts": "1534516357.000100"
+        },
+        {
+            "client_msg_id": "96b94ff6-faa4-48d6-8eb2-4c1ff3f14cbf",
+            "type": "message",
+            "text": "There are many function in the libssh library! Feel free to ask about a particular topic, and I will list all related functions.",
+            "user": "UB659D0FM",
+            "ts": "1534516339.000100"
+        },
+        {
+            "client_msg_id": "6548e0e5-b999-4e6d-82ac-96f40b5a7f7c",
+            "type": "message",
+            "text": "list all ssh functions",
+            "user": "UC9RKA4E5",
+            "ts": "1534516300.000100"
+        },
+        {
+            "client_msg_id": "1f672c6b-5945-47d5-9ec5-7dcadf5f6c12",
+            "type": "message",
+            "text": "Here are the details about the function ssh_connect:\n\nint ssh_connect\t(\tssh_session \tsession\t)\n\nDescription\nConnect to the ssh server.\n\nParameters\nsession: The ssh session to connect.\n\nReturns\nSSH_OK on success, SSH_ERROR on error.\nSSH_AGAIN, if the session is in nonblocking mode, and call must be done again.\n\nSee also\nssh_new()\nssh_disconnect()",
+            "user": "UB659D0FM",
+            "ts": "1534516129.000100"
+        },
+        {
+            "client_msg_id": "387db55c-8998-43af-9493-9f8b2bf55af7",
+            "type": "message",
+            "text": "help on ssh_connect",
+            "user": "UC9RKA4E5",
+            "ts": "1534516105.000200"
+        },
+        {
+            "client_msg_id": "1ef34c68-4c44-4589-b77a-08b9a0c50c21",
+            "type": "message",
+            "text": "I found two functions relating directly to ssh_session connection:\n\nint ssh_connect\t(\tssh_session \tsession\t)\n\nvoid ssh_disconnect\t(\tssh_session \tsession\t)",
+            "user": "UB659D0FM",
+            "ts": "1534516087.000100"
+        },
+        {
+            "client_msg_id": "261adc6c-67af-4452-b428-4318b805dd26",
+            "type": "message",
+            "text": "help on ssh_session connection",
+            "user": "UC9RKA4E5",
+            "ts": "1534516049.000100"
+        },
+        {
+            "client_msg_id": "e1984f4b-599a-4a87-9949-7c743e985ace",
+            "type": "message",
+            "text": "Typical usage of ssh_new() looks something like this:\n\nssh_session *session = ssh_new();",
+            "user": "UB659D0FM",
+            "ts": "1534515752.000100"
+        },
+        {
+            "client_msg_id": "1a11041c-7815-4891-b419-04475cb3415a",
+            "type": "message",
+            "text": "How can I help with ssh_new?",
+            "user": "UB659D0FM",
+            "ts": "1534515678.000200"
+        },
+        {
+            "client_msg_id": "6127ff33-c072-4ac8-90c6-9915124d6deb",
+            "type": "message",
+            "text": "Unfortunately I can't provide you with a manpage, but I can answer any specific questions you have!",
+            "user": "UB659D0FM",
+            "ts": "1534515668.000100"
+        },
+        {
+            "client_msg_id": "83f163d3-368d-406e-95cb-d46a358c2f8c",
+            "type": "message",
+            "text": "help on ssh_new",
+            "user": "UC9RKA4E5",
+            "ts": "1534515656.000100"
+        },
+        {
+            "client_msg_id": "a98d6007-e111-47b1-abcc-22545d128a8a",
+            "type": "message",
+            "text": "manpage of ssh_new",
+            "user": "UC9RKA4E5",
+            "ts": "1534515624.000100"
+        },
+        {
+            "client_msg_id": "caf96406-f63a-4e4d-9384-b4b7ae61ae8a",
+            "type": "message",
+            "text": "This function should work:\n\nssh_session ssh_new\t(\tvoid \t\t)\n\nDescription\nCreate a new ssh session.\n\nReturns\nA new ssh_session pointer, NULL on error.",
+            "user": "UB659D0FM",
+            "ts": "1534515595.000200"
+        },
+        {
+            "client_msg_id": "cf065770-3d20-4e29-8e03-e1bfc5927739",
+            "type": "message",
+            "text": "create a new ssh_session",
+            "user": "UC9RKA4E5",
+            "ts": "1534515580.000100"
+        },
+        {
+            "client_msg_id": "33577cd2-344c-4bac-9914-2110f3319c99",
+            "type": "message",
+            "text": "Hello! I have several functions relating to ssh_session. What can I help you with?",
+            "user": "UB659D0FM",
+            "ts": "1534515550.000300"
+        },
+        {
+            "client_msg_id": "7acfa83b-c6e8-4504-9191-1e73be08033b",
+            "type": "message",
+            "text": "help",
+            "user": "UC9RKA4E5",
+            "ts": "1534515526.000100"
+        },
+        {
+            "client_msg_id": "96d06c6e-2294-48ad-b9b7-632655636563",
+            "type": "message",
+            "text": "man ssh_session",
+            "user": "UC9RKA4E5",
+            "ts": "1534515514.000100"
+        },
+        {
+            "client_msg_id": "250e5910-a917-4ff6-a635-a288d7754c60",
+            "type": "message",
+            "text": "help on ssh_session",
+            "user": "UC9RKA4E5",
+            "ts": "1534515497.000100"
+        }
+    ],
+    "has_more": false
+}

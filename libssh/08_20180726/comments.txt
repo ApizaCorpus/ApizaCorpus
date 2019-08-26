@@ -1,0 +1,7 @@
+Programmer_8 [8:16 PM]
+OK.  I did the best I could.  Sometime Apiza's answers didn't really give me the library calls I needed.
+
+...
+
+Programmer_8 [8:18 PM]
+I did step 1 and coded step 2 just fine.  I coded step 3, but was mostly flying blind, because it never actually opened an SSH connection to localhost.  I suspect that Apiza was giving me the wrong command, but since the rules are to only ask questions about libssh to Apiza, all I could do is try to ask the question multiple ways.

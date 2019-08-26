@@ -1,0 +1,123 @@
+Here is the source code for `al_load_ttf_font_stretch_f`:
+```
+/* Function: al_load_ttf_font_stretch_f
+ */
+ALLEGRO_FONT *al_load_ttf_font_stretch_f(ALLEGRO_FILE *file,
+    char const *filename, int w, int h, int flags)
+{
+    FT_Face face;
+    ALLEGRO_TTF_FONT_DATA *data;
+    ALLEGRO_FONT *f;
+    ALLEGRO_PATH *path;
+    FT_Open_Args args;
+    int result;
+    ALLEGRO_CONFIG* system_cfg = al_get_system_config();
+    const char* min_page_size_str =
+      al_get_config_value(system_cfg, "ttf", "min_page_size");
+    const char* max_page_size_str =
+      al_get_config_value(system_cfg, "ttf", "max_page_size");
+    const char* cache_str =
+      al_get_config_value(system_cfg, "ttf", "cache_text");
+    const char* skip_cache_misses_str =
+      al_get_config_value(system_cfg, "ttf", "skip_cache_misses");
+    if ((h > 0 && w < 0) || (h < 0 && w > 0)) {
+       ALLEGRO_ERROR("Height/width have opposite signs (w = %d, h = %d).\n", w, h);
+       return NULL;
+    }
+    data = al_calloc(1, sizeof *data);
+    data->stream.read = ftread;
+    data->stream.close = ftclose;
+    data->stream.pathname.pointer = data;
+    data->base_offset = al_ftell(file);
+    data->stream.size = al_fsize(file);
+    data->file = file;
+    data->bitmap_format = al_get_new_bitmap_format();
+    data->bitmap_flags = al_get_new_bitmap_flags();
+    data->min_page_size = 256;
+    data->max_page_size = 8192;
+    if (min_page_size_str) {
+      int min_page_size = atoi(min_page_size_str);
+      if (min_page_size > 0) {
+         data->min_page_size = min_page_size;
+      }
+    }
+    if (max_page_size_str) {
+      int max_page_size = atoi(max_page_size_str);
+      if (max_page_size > 0 && max_page_size >= data->min_page_size) {
+         data->max_page_size = max_page_size;
+      }
+    }
+    if (skip_cache_misses_str && !strcmp(skip_cache_misses_str, "true")) {
+       data->skip_cache_misses = true;
+    }
+    memset(&args, 0, sizeof args);
+    args.flags = FT_OPEN_STREAM;
+    args.stream = &data->stream;
+    if ((result = FT_Open_Face(ft, &args, 0, &face)) != 0) {
+        ALLEGRO_ERROR("Reading %s failed. Freetype error code %d\n", filename,
+          result);
+        // Note: Freetype already closed the file for us.
+        al_free(data);
+        return NULL;
+    }
+    // FIXME: The below doesn't use Allegro's streaming.
+    /* Small hack for Type1 fonts which store kerning information in
+     * a separate file - and we try to guess the name of that file.
+     */
+    path = al_create_path(filename);
+    if (!strcmp(al_get_path_extension(path), ".pfa")) {
+        const char *helper;
+        ALLEGRO_DEBUG("Type1 font assumed for %s.\n", filename);
+        al_set_path_extension(path, ".afm");
+        helper = al_path_cstr(path, '/');
+        FT_Attach_File(face, helper);
+        ALLEGRO_DEBUG("Guessed afm file %s.\n", helper);
+        al_set_path_extension(path, ".tfm");
+        helper = al_path_cstr(path, '/');
+        FT_Attach_File(face, helper);
+        ALLEGRO_DEBUG("Guessed tfm file %s.\n", helper);
+    }
+    al_destroy_path(path);
+    if (h > 0) {
+       FT_Set_Pixel_Sizes(face, w, h);
+    }
+    else {
+       /* Set the "real dimension" of the font to be the passed size,
+        * in pixels.
+        */
+       FT_Size_RequestRec req;
+       ASSERT(w <= 0);
+       ASSERT(h <= 0);
+       req.type = FT_SIZE_REQUEST_TYPE_REAL_DIM;
+       req.width = (-w) << 6;
+       req.height = (-h) << 6;
+       req.horiResolution = 0;
+       req.vertResolution = 0;
+       FT_Request_Size(face, &req);
+    }
+    ALLEGRO_DEBUG("Font %s loaded with pixel size %d x %d.\n", filename,
+        w, h);
+    ALLEGRO_DEBUG("    ascent=%.1f, descent=%.1f, height=%.1f\n",
+        face->size->metrics.ascender / 64.0,
+        face->size->metrics.descender / 64.0,
+        face->size->metrics.height / 64.0);
+    data->face = face;
+    data->flags = flags;
+    _al_vector_init(&data->glyph_ranges, sizeof(ALLEGRO_TTF_GLYPH_RANGE));
+    _al_vector_init(&data->page_bitmaps, sizeof(ALLEGRO_BITMAP*));
+    if (data->skip_cache_misses) {
+       cache_glyphs(data, "\0", 1);
+    }
+    if (cache_str) {
+       cache_glyphs(data, cache_str, strlen(cache_str));
+    }
+    unlock_current_page(data);
+    f = al_calloc(sizeof *f, 1);
+    f->height = face->size->metrics.height >> 6;
+    f->vtable = &vt;
+    f->data = data;
+    f->dtor_item = _al_register_destructor(_al_dtor_list, "ttf_font", f,
+       (void (*)(void *))al_destroy_font);
+    return f;
+}
+```

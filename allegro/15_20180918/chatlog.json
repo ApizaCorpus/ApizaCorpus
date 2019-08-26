@@ -1,0 +1,244 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "06928266-ee85-4f59-8781-aba297fdd771",
+            "type": "message",
+            "text": "Sorry, could you rephrase your question?",
+            "user": "UB659D0FM",
+            "ts": "1537324585.000100"
+        },
+        {
+            "client_msg_id": "2f0eb729-fb54-4d11-a14b-7f38dd7d628a",
+            "type": "message",
+            "text": "Image not displayed event after loading the png in bitmap?",
+            "user": "UCW6SL599",
+            "ts": "1537324523.000100"
+        },
+        {
+            "client_msg_id": "cdc8ed6f-c1c7-4924-9aa8-3aef437352ec",
+            "type": "message",
+            "text": "If you're getting errors loading an image, you may need to initialize the \"image addon.\" You can do this using al_init_image_addon()",
+            "user": "UB659D0FM",
+            "ts": "1537323773.000100"
+        },
+        {
+            "client_msg_id": "23eec140-b9f1-4eda-9cb8-93fbd9fb4493",
+            "type": "message",
+            "text": "Load bitmap returns null",
+            "user": "UCW6SL599",
+            "ts": "1537323651.000100"
+        },
+        {
+            "client_msg_id": "0eb36d65-06d3-41f9-bf60-b3a468a6d427",
+            "type": "message",
+            "text": "ALLEGRO_BITMAP *al_load_bitmap(const char *filename)\n\nLoads an image file into a new ALLEGRO_BITMAP. The file type is determined by the extension, except if the file has no extension in which case al_identify_bitmap is used instead.\n\nReturns NULL on error.",
+            "user": "UB659D0FM",
+            "ts": "1537323414.000100"
+        },
+        {
+            "client_msg_id": "a1553cb1-de47-4c3a-9665-47abd442fc15",
+            "type": "message",
+            "text": "What function takes a png file as input and draws a bitmap?",
+            "user": "UCW6SL599",
+            "ts": "1537323368.000200"
+        },
+        {
+            "client_msg_id": "e1ef9fea-934e-4cd4-92bb-ae0635695c28",
+            "type": "message",
+            "text": "Alright, the variable that you will need to initialize is an ALLEGRO_BITMAP. You can do so with the function al_create_bitmap: ALLEGRO_BITMAP *al_create_bitmap(int w, int h)",
+            "user": "UB659D0FM",
+            "ts": "1537323316.000100"
+        },
+        {
+            "client_msg_id": "de54a65e-36f4-4bfc-8419-013f077eab0f",
+            "type": "message",
+            "text": "I want to draw a png",
+            "user": "UCW6SL599",
+            "ts": "1537323203.000100"
+        },
+        {
+            "client_msg_id": "d1b41cb1-1ba6-4c34-8477-50806b0f44fa",
+            "type": "message",
+            "text": "I'm happy to help! Where would you like to start with bitmap drawing?",
+            "user": "UB659D0FM",
+            "ts": "1537323185.000200"
+        },
+        {
+            "client_msg_id": "01182c22-7782-43d1-b9cc-fde5e1124f14",
+            "type": "message",
+            "text": "Can you help me with fuctions that draw bitmap",
+            "user": "UCW6SL599",
+            "ts": "1537323132.000100"
+        },
+        {
+            "client_msg_id": "b39d1854-4607-4587-929d-1f696539dc1c",
+            "type": "message",
+            "text": "For sample-loading errors, it look like you may need to initialize the \"audio codec add-on\". Use `al_init_acodec_addon()` to initialize the audio codec.",
+            "user": "UB659D0FM",
+            "ts": "1537322589.000200"
+        },
+        {
+            "client_msg_id": "01195311-02fc-4f53-b07e-39bd4cb78b9b",
+            "type": "message",
+            "text": "The al_load_sample function looks like this: ALLEGRO_SAMPLE *al_load_sample(const char *filename)\n\nReturns the sample on success, NULL on failure.",
+            "user": "UB659D0FM",
+            "ts": "1537322482.000100"
+        },
+        {
+            "client_msg_id": "4b065e78-be35-4460-964d-fb2b80122b78",
+            "type": "message",
+            "text": "What does the function al_load_sample return",
+            "user": "UCW6SL599",
+            "ts": "1537322439.000100"
+        },
+        {
+            "client_msg_id": "5cad8594-9f72-457c-8579-27debd1b71e0",
+            "type": "message",
+            "text": "Why is allergo sample* mistaken as int*",
+            "user": "UCW6SL599",
+            "ts": "1537322418.000200"
+        },
+        {
+            "client_msg_id": "313a25d1-7bfd-4f3c-acb9-ecb823a50be6",
+            "type": "message",
+            "text": "Sure thing! It looks like this is how you could load and play an audio file:\n\n\n   ALLEGRO_SAMPLE *sample=NULL;\n\t\n   if(!al_install_audio()){\n      fprintf(stderr, \"failed to initialize audio!\\n\");\n      return -1;\n   }\n\t\n   if (!al_reserve_samples(1)){\n      fprintf(stderr, \"failed to reserve samples!\\n\");\n      return -1;\n   }\n\t\n   sample = al_load_sample( \"footstep.wav\" );\n\n   if (!sample){\n      printf( \"Audio clip sample not loaded!\\n\" );\n      return -1;\n   }\n\n   al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);\n\t\n   al_destroy_sample(sample);",
+            "user": "UB659D0FM",
+            "ts": "1537321503.000100"
+        },
+        {
+            "client_msg_id": "301f1925-3933-4495-860c-e2e9923aa9be",
+            "type": "message",
+            "text": "Yes",
+            "user": "UCW6SL599",
+            "ts": "1537321399.000100"
+        },
+        {
+            "client_msg_id": "5cdd296e-9ee1-48ed-9c5e-95029a644e24",
+            "type": "message",
+            "text": "Would you like help loading and playing an ALLEGRO_SAMPLE?",
+            "user": "UB659D0FM",
+            "ts": "1537321309.000100"
+        },
+        {
+            "client_msg_id": "0a4d4075-a5a1-4792-b15e-77244f453440",
+            "type": "message",
+            "text": "There are many function related to Audio playback. al_play_sample plays a given ALLEGRO_SAMPLE.\n bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)",
+            "user": "UB659D0FM",
+            "ts": "1537321203.000100"
+        },
+        {
+            "client_msg_id": "4f964cb6-3235-49a8-ba9d-2925f76e804c",
+            "type": "message",
+            "text": "What function plays an audio file?",
+            "user": "UCW6SL599",
+            "ts": "1537321113.000200"
+        },
+        {
+            "client_msg_id": "99b81696-4bb6-42c2-8e60-a87c591ed746",
+            "type": "message",
+            "text": "There are 9 functions directly relating to the keyboard:\n\nal_install_keyboard\nal_is_keyboard_installed\nal_uninstall_keyboard\nal_get_keyboard_state\nal_clear_keyboard_state\nal_key_down\nal_keycode_to_name\nal_set_keyboard_leds\nal_get_keyboard_event_source",
+            "user": "UB659D0FM",
+            "ts": "1537320975.000200"
+        },
+        {
+            "client_msg_id": "173bdeca-1255-4f74-b6da-4144d5f072c2",
+            "type": "message",
+            "text": "Tell me more about al_key routines",
+            "user": "UCW6SL599",
+            "ts": "1537320893.000100"
+        },
+        {
+            "client_msg_id": "f6dc694a-8c94-47ed-8c1e-310b73da56b7",
+            "type": "message",
+            "text": "I found two Key codes: ALLEGRO_KEY_LEFT and ALLEGRO_KEY_RIGHT. These can be used with keyboard routines such as al_key_down",
+            "user": "UB659D0FM",
+            "ts": "1537320652.000100"
+        },
+        {
+            "client_msg_id": "84fdec39-c3bc-4541-b624-e0f16ca91045",
+            "type": "message",
+            "text": "Is there allergo_event key left and key right",
+            "user": "UCW6SL599",
+            "ts": "1537320492.000200"
+        },
+        {
+            "client_msg_id": "dbb6c29e-0c16-4287-9ec1-31b6dca6d6bf",
+            "type": "message",
+            "text": "There are three different types of EVENT_KEY events: ALLEGRO_EVENT_KEY_DOWN, ALLEGRO_EVENT_KEY_UP, and ALLEGRO_EVENT_KEY_CHAR",
+            "user": "UB659D0FM",
+            "ts": "1537320461.000200"
+        },
+        {
+            "client_msg_id": "b1ce5ed6-fa00-4c8a-b9f8-7ad5954061f4",
+            "type": "message",
+            "text": "Please tell me more about ALlERGO_EVENT_KEY events",
+            "user": "UCW6SL599",
+            "ts": "1537320396.000100"
+        },
+        {
+            "client_msg_id": "3fc5863e-d997-456c-b33a-725f9b752132",
+            "type": "message",
+            "text": "I found the following description of ALLEGRO_EVENT_SOURCE:\n\nAn event source is any object which can generate events. For example, an ALLEGRO_DISPLAY can generate events, and you can get the ALLEGRO_EVENT_SOURCE pointer from an ALLEGRO_DISPLAY with al_get_display_event_source.\n\nYou may create your own \"user\" event sources that emit custom events.",
+            "user": "UB659D0FM",
+            "ts": "1537320089.000100"
+        },
+        {
+            "client_msg_id": "fb9764a9-9302-4fb4-a813-468be46377d7",
+            "type": "message",
+            "text": "ALLERGO_EVENT_TYPE is an enum with several values, including ALLEGRO_EVENT_JOYSTICK_AXIS , ALLEGRO_EVENT_KEY_DOWN   , and ALLEGRO_EVENT_MOUSE_AXES. There are 30 different values in total. Are you looking for one type in particular?",
+            "user": "UB659D0FM",
+            "ts": "1537320037.000100"
+        },
+        {
+            "client_msg_id": "f38527fd-31b4-41eb-8cc8-7ac4ffcced1c",
+            "type": "message",
+            "text": "And ALLERGO_EVENT_SOURCE",
+            "user": "UCW6SL599",
+            "ts": "1537319991.000100"
+        },
+        {
+            "client_msg_id": "6ac18fe1-3461-409f-9fa2-91e7b70de075",
+            "type": "message",
+            "text": "What are the possible values for ALLERGO_EVENT_TYPE",
+            "user": "UCW6SL599",
+            "ts": "1537319963.000100"
+        },
+        {
+            "client_msg_id": "144954ee-73ee-440e-b0bf-6145cce9b1cb",
+            "type": "message",
+            "text": "I found the following description for ALLEGRO_EVENT:\n\nAn ALLEGRO_EVENT is a union of all builtin event structures, i.e. it is an object large enough to hold the data of any event type. All events have the following fields in common:\n\ntype (ALLEGRO_EVENT_TYPE)\n\tIndicates the type of event.\nany.source (ALLEGRO_EVENT_SOURCE *)\n\tThe event source which generated the event.\nany.timestamp (double)\n\tWhen the event was generated.",
+            "user": "UB659D0FM",
+            "ts": "1537319895.000100"
+        },
+        {
+            "client_msg_id": "be33a715-31ef-4140-b91d-e0d5b8e01678",
+            "type": "message",
+            "text": "?",
+            "user": "UCW6SL599",
+            "ts": "1537319851.000200"
+        },
+        {
+            "client_msg_id": "769c217a-fb19-48ff-b0e0-34ce378474b0",
+            "type": "message",
+            "text": "What is the definition of structure of ALLERGO_EVENT",
+            "user": "UCW6SL599",
+            "ts": "1537319831.000100"
+        },
+        {
+            "client_msg_id": "a9bdedf8-6ee2-4903-b34c-6a469edae73e",
+            "type": "message",
+            "text": "Hello! I am Apiza, a virtual assistant designed to help you navigate and use APIs. How can I help?",
+            "user": "UB659D0FM",
+            "ts": "1537319775.000100"
+        },
+        {
+            "client_msg_id": "d5298362-208d-4dc8-8136-4a1d900682b7",
+            "type": "message",
+            "text": "Hi Apiza",
+            "user": "UCW6SL599",
+            "ts": "1537319769.000200"
+        }
+    ],
+    "has_more": false
+}

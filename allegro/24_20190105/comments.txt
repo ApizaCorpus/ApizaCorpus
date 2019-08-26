@@ -1,0 +1,36 @@
+Zack [3:37 PM]
+Alright, we can start finishing up!
+How did it go?
+
+Programmer_24 [3:40 PM]
+It was alright. It took me awhile to realize that I had to register the keyboard in order to listen for events on it
+But once I registered the keyboard, I was able to respond to its input
+
+...
+
+Zack [3:43 PM]
+Lastly, I have a quick survey for you to fill out, and will also ask for you to share any comments that you have about the experience of relying on Apiza
+
+Programmer_24 [3:50 PM]
+I thought some of Apiza's responses weren't verbose enough. For example, I asked, "what does al_key_down do?" and Apiza answered that "al_key_down returns true if the key specified was held down in the state specified". I wish it had given more low level details. For example, I would be interested in knowing for how long after a key is pressed will al_key_down return true.
+But those may be specifics that game programmers don't necessarily care about, but it would have helped me get oriented.
+I also would have appreciated more background information on boilerplate stuff such as registering the keyboard. I understand that's hard to do, because what I'm asking for is for Apiza to tell me about registering the keyboard when I make a query about al_key_down. But once I know I have to register the keyboard, I don't want Apiza to continue telling me about registering the keyboard every time I ask about al_key_down.
+Also, it's often easier to get a declaration and explanation like the POSIX manual than it is for Apiza to give me a pared-down explanation
+I would rather have Apiza be more verbose
+I suppose Apiza may have been geared towards programmers who have used this library before; I haven't
+and so programmers who know this library may want more concise descriptions of the information they seek.
+
+Zack [3:57 PM]
+Are there any specific features you wish that it would have had?
+
+Programmer_24 [4:00 PM]
+I can't really think of any
+
+Zack [4:00 PM]
+That's alright, I was curious if anything would immediately spring to mind.
+
+Programmer_24 [4:00 PM]
+It might be more convenient for the programmer if Apiza could fetch the documentation
+or portions of it.
+but that may defeat the purpose
+but I think I would have found that helpful only because I couldn't go look at the documentation myself

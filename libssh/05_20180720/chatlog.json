@@ -1,0 +1,531 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "3b178d90-5df3-4674-a09e-017ad1cb4de3",
+            "type": "message",
+            "text": "Here is an example:\n\nsftp_file file;\nsftp_session sftp;\nint access_type = O_WRONLY | O_CREAT | O_TRUNC;\n\nfile = sftp_open(sftp, \"helloworld\/helloworld.txt\",  access_type, S_IRWXU);",
+            "user": "UB659D0FM",
+            "ts": "1532110768.000365"
+        },
+        {
+            "client_msg_id": "148a376f-79da-4241-ba47-70283e754708",
+            "type": "message",
+            "text": "sftp_file sftp_open\t(\tsftp_session \tsession,\nconst char * \tfile,\nint \taccesstype,\nmode_t \tmode \n)\n\nDescription\nOpen a file on the server.\n\nParameters\nsession: The sftp session handle.\nfile: The file to be opened.\naccesstype: Is one of O_RDONLY, O_WRONLY or O_RDWR which request opening the file read-only,write-only or read\/write. Acesss may also be bitwise-or'd with one or more of the following: O_CREAT - If the file does not exist it will be created. O_EXCL - When used with O_CREAT, if the file already exists it is an error and the open will fail. O_TRUNC - If the file already exists it will be truncated.\nmode: Mode specifies the permissions to use if a new file is created. It is modified by the process's umask in the usual way: The permissions of the created file are (mode &amp; ~umask)\n\nReturns\nA sftp file handle, NULL on error with ssh and sftp error set.\n\nReferences ssh_buffer_free(), ssh_buffer_new(), and ssh_string_from_char().\n\nSee also\nsftp_get_error()",
+            "user": "UB659D0FM",
+            "ts": "1532110761.000248"
+        },
+        {
+            "client_msg_id": "723fac38-7769-4baa-9f07-32707651b70c",
+            "type": "message",
+            "text": "can you give me an example of sftp_open",
+            "user": "UBVAD029M",
+            "ts": "1532110672.000093"
+        },
+        {
+            "client_msg_id": "1df13d14-1956-4e3f-84df-7a10d47d4ad1",
+            "type": "message",
+            "text": "tell me about sftp_open",
+            "user": "UBVAD029M",
+            "ts": "1532110663.000392"
+        },
+        {
+            "client_msg_id": "ffa5e554-3f2c-4a8c-b2b2-a5a7bae0e717",
+            "type": "message",
+            "text": "I can't find specific information on \"server responses\" but in context, I believe you are referring to \n\n\/* Error return codes *\/\n #define SSH_OK 0     \/* No error *\/\n #define SSH_ERROR -1 \/* Error of some kind *\/\n #define SSH_AGAIN -2 \/* The nonblocking call must be repeated *\/\n #define SSH_EOF -127 \/* We have already a eof *\/",
+            "user": "UB659D0FM",
+            "ts": "1532110629.000060"
+        },
+        {
+            "client_msg_id": "fbc50009-82c7-4a13-b422-bf41c47a885c",
+            "type": "message",
+            "text": "tell me about server respones",
+            "user": "UBVAD029M",
+            "ts": "1532110409.000350"
+        },
+        {
+            "client_msg_id": "7811b26b-69f5-430d-a9d9-c2609d67c2a7",
+            "type": "message",
+            "text": "int sftp_get_error\t(\tsftp_session \tsftp\t)\n\nDescription\nGet the last sftp error.\nUse this function to get the latest error set by a posix like sftp function.\n\nParameters\nsftp: The sftp session where the error is saved.\n\nReturns\nThe saved error (see server responses), &lt; 0 if an error in the function occured.\n\nReferences ssh_buffer_free(), and ssh_buffer_new().\n\nSee also\nServer responses",
+            "user": "UB659D0FM",
+            "ts": "1532110372.000079"
+        },
+        {
+            "client_msg_id": "e77fa196-0dca-4e04-a2b1-5728e7376131",
+            "type": "message",
+            "text": "tell me about sftp_get_error",
+            "user": "UBVAD029M",
+            "ts": "1532110350.000445"
+        },
+        {
+            "client_msg_id": "62370cb8-0dfb-47cf-8023-4c7d4f43dd71",
+            "type": "message",
+            "text": "I can't find a function that checks if a directory exists. However, there are many functions requiring a directory, including \n\nsftp_dir sftp_opendir\t(\tsftp_session \tsession,\nconst char * \tpath \n)\n\nsftp_attributes sftp_readdir\t(\tsftp_session \tsession,\nsftp_dir \tdir \n)\n\nint sftp_rmdir\t(\tsftp_session \tsftp,\nconst char * \tdirectory \n)",
+            "user": "UB659D0FM",
+            "ts": "1532110329.000102"
+        },
+        {
+            "client_msg_id": "85d854d5-e301-4b03-b972-7dc44cc9108c",
+            "type": "message",
+            "text": "tell me about Error",
+            "user": "UBVAD029M",
+            "ts": "1532110329.000087"
+        },
+        {
+            "client_msg_id": "abe2182e-1431-453d-8f1d-3591b3375844",
+            "type": "message",
+            "text": "Was sftp_write useful in creating a file? If not, sftp_open might help.\n\nDescription\nOpen a file on the server.",
+            "user": "UB659D0FM",
+            "ts": "1532110221.000141"
+        },
+        {
+            "client_msg_id": "040883b1-6bd6-44fe-82a2-d88629bc4d56",
+            "type": "message",
+            "text": "how do I tell if a directory already exists",
+            "user": "UBVAD029M",
+            "ts": "1532110154.000004"
+        },
+        {
+            "client_msg_id": "7a753031-f5b2-458d-b61c-a3fbbb208dac",
+            "type": "message",
+            "text": "how do I create a file in libssh using sftp",
+            "user": "UBVAD029M",
+            "ts": "1532110139.000211"
+        },
+        {
+            "client_msg_id": "b0c6badc-4025-46a8-87aa-215d2d5172f0",
+            "type": "message",
+            "text": "Returns\n0 on success, &lt; 0 on error with ssh and sftp error set.",
+            "user": "UB659D0FM",
+            "ts": "1532110065.000224"
+        },
+        {
+            "client_msg_id": "3777f982-29d6-4303-9df6-096af5da12c7",
+            "type": "message",
+            "text": "what does sftp_mkdir returhn",
+            "user": "UBVAD029M",
+            "ts": "1532110052.000057"
+        },
+        {
+            "client_msg_id": "e7b7b387-cc1b-4076-a491-24be97fbeac3",
+            "type": "message",
+            "text": "Sure, here's an example:\n\nint rc;\nsftp_session sftp;\nrc = sftp_mkdir(sftp, \"helloworld\", S_IRWXU);",
+            "user": "UB659D0FM",
+            "ts": "1532109584.000188"
+        },
+        {
+            "client_msg_id": "da8d3b4d-bc7b-4d6b-807b-fc1b0b49cb75",
+            "type": "message",
+            "text": "can you give me an example of sftp_mkdir",
+            "user": "UBVAD029M",
+            "ts": "1532109502.000320"
+        },
+        {
+            "client_msg_id": "cd24a0bc-f80c-4644-b73a-1c8380a8e51a",
+            "type": "message",
+            "text": "I can't find a function to \"create\" a file, but I found one to \"write\" a file:\n\nssize_t sftp_write\t(\tsftp_file file, \nconst void * buf, \nsize_t count \n)\n\nDescription \nWrite to a file using an opened sftp file handle.\n\nParameters \nfile: Open sftp file handle to write to. \nbuf: Pointer to buffer to write data. \ncount: Size of buffer in bytes.\n\nReturns \nNumber of bytes written, &lt; 0 on error with ssh and sftp error set.",
+            "user": "UB659D0FM",
+            "ts": "1532109448.000138"
+        },
+        {
+            "client_msg_id": "b4a0a951-e091-461b-8303-b9b8921c9005",
+            "type": "message",
+            "text": "I found two functions that may be appropriate to create a directory:\n\nint sftp_mkdir\t(\tsftp_session \tsftp,\nconst char * \tdirectory,\nmode_t \tmode \n)\n\nDescription\nCreate a directory.\n\nand\n\nsftp_dir sftp_opendir\t(\tsftp_session \tsession,\nconst char * \tpath \n)\n\nDescription\nOpen a directory used to obtain directory entries.",
+            "user": "UB659D0FM",
+            "ts": "1532109384.000460"
+        },
+        {
+            "client_msg_id": "60e4d439-24d4-42ac-b974-6d95142a64a9",
+            "type": "message",
+            "text": "how do I create a file in libssh using sftp",
+            "user": "UBVAD029M",
+            "ts": "1532109376.000348"
+        },
+        {
+            "client_msg_id": "086900b9-014f-4ff4-8a9f-1e5b8acd5d31",
+            "type": "message",
+            "text": "how do I create a directory in libssh using sftp",
+            "user": "UBVAD029M",
+            "ts": "1532109363.000482"
+        },
+        {
+            "client_msg_id": "94d0d74d-9291-4fbe-acd5-82541eddacaa",
+            "type": "message",
+            "text": "This should do it:\n\nint sftp_init\t(\tsftp_session \tsftp\t)\n\nDescription\nInitialize the sftp session with the server.\n\nParameters\nsftp: The sftp session to initialize.\n\nReturns\n0 on success, &lt; 0 on error with ssh error set.\n\nReferences ssh_buffer_new().\n\nSee also\nsftp_new()",
+            "user": "UB659D0FM",
+            "ts": "1532109308.000052"
+        },
+        {
+            "client_msg_id": "af94e9cf-030e-402d-9bfd-b7f27e92b7c3",
+            "type": "message",
+            "text": "how do I create a directory",
+            "user": "UBVAD029M",
+            "ts": "1532109300.000373"
+        },
+        {
+            "client_msg_id": "4c6ce7fe-ce06-4d39-afe4-ecc54cf6cdc8",
+            "type": "message",
+            "text": "how do I init the sftp session",
+            "user": "UBVAD029M",
+            "ts": "1532109280.000452"
+        },
+        {
+            "client_msg_id": "a3ba8f2d-dabb-4c2a-98da-e5fe669ccb8a",
+            "type": "message",
+            "text": "sftp_session sftp_new\t(\tssh_session \tsession\t)\n\nDescription\nStart a new sftp session.\n\nParameters\nsession: The ssh session to use.\n\nReturns\nA new sftp session or NULL on error.\n\nReferences ssh_channel_free(), ssh_channel_new(), and ssh_channel_open_session().\n\nSee also\nsftp_free()",
+            "user": "UB659D0FM",
+            "ts": "1532109196.000454"
+        },
+        {
+            "client_msg_id": "e6298fd4-0b99-45fd-95ad-fdc15284047f",
+            "type": "message",
+            "text": "how do I create a sftp session in libssh",
+            "user": "UBVAD029M",
+            "ts": "1532109149.000494"
+        },
+        {
+            "client_msg_id": "d5c23727-6414-4515-8889-8004a231a6ad",
+            "type": "message",
+            "text": "This function should let you open a channel session\n\nint ssh_channel_open_session\t(\tssh_channel \tchannel\t)\n\nDescription\nOpen a session channel (suited for a shell, not TCP forwarding).\n\nParameters\nchannel: An allocated channel.\n\nReturns\nSSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.\n\nSee also\nssh_channel_open_forward()\nssh_channel_request_env()\nssh_channel_request_shell()\nssh_channel_request_exec()",
+            "user": "UB659D0FM",
+            "ts": "1532109017.000462"
+        },
+        {
+            "client_msg_id": "d48bcdda-2514-42f8-bb23-6756a85c8ae4",
+            "type": "message",
+            "text": "This function may help with deciphering a disconnect message\n\nconst char* ssh_get_disconnect_message\t(\tssh_session \tsession\t)",
+            "user": "UB659D0FM",
+            "ts": "1532108921.000160"
+        },
+        {
+            "client_msg_id": "577011bf-882f-4023-bb36-80730bcfbb55",
+            "type": "message",
+            "text": "how do I open a channel session",
+            "user": "UBVAD029M",
+            "ts": "1532108917.000202"
+        },
+        {
+            "client_msg_id": "72c360ee-c3fa-4f5b-9064-bf3934e0d01c",
+            "type": "message",
+            "text": "I don't have the channel open",
+            "user": "UBVAD029M",
+            "ts": "1532108883.000356"
+        },
+        {
+            "client_msg_id": "6e694c96-95bd-4a17-a258-7e2975995e0f",
+            "type": "message",
+            "text": "oh",
+            "user": "UBVAD029M",
+            "ts": "1532108880.000183"
+        },
+        {
+            "client_msg_id": "de0c6bb3-8eb8-4c95-b9e5-72fa3c773dae",
+            "type": "message",
+            "text": "what does ssh_msg_disconnect mean",
+            "user": "UBVAD029M",
+            "ts": "1532108788.000373"
+        },
+        {
+            "client_msg_id": "75400d35-8dc0-4ac5-b397-36490c7cf2b5",
+            "type": "message",
+            "text": "This function may help you debug: \n\nconst char* ssh_get_error\t(\tvoid * \terror\t)\n\nDescription\nRetrieve the error text message from the last error.\n\nParameters\nerror: An ssh_session or ssh_bind.\n\nReturns\nA static string describing the error.",
+            "user": "UB659D0FM",
+            "ts": "1532108683.000029"
+        },
+        {
+            "client_msg_id": "eeceae88-6427-4e9b-a0d4-71c112b35fb6",
+            "type": "message",
+            "text": "SSH_ERROR",
+            "user": "UBVAD029M",
+            "ts": "1532108641.000400"
+        },
+        {
+            "client_msg_id": "ba8f075d-b1cb-4543-a5ed-a1de084d5219",
+            "type": "message",
+            "text": "What kind of error are you getting?",
+            "user": "UB659D0FM",
+            "ts": "1532108635.000265"
+        },
+        {
+            "client_msg_id": "5ccd7f6b-6c12-4d52-b023-6eed9e683054",
+            "type": "message",
+            "text": "why am I getting an error on ssh_channel_request_exec",
+            "user": "UBVAD029M",
+            "ts": "1532108582.000282"
+        },
+        {
+            "client_msg_id": "cf2adf79-db93-4e95-b1d2-b2a947f7d644",
+            "type": "message",
+            "text": "Returns\nSSH_OK on success, SSH_ERROR if an error occurred.",
+            "user": "UB659D0FM",
+            "ts": "1532108086.000084"
+        },
+        {
+            "client_msg_id": "8d6c7c06-117a-4b7e-a431-8ea9fedd5be0",
+            "type": "message",
+            "text": "what does ssh_channel_close     return",
+            "user": "UBVAD029M",
+            "ts": "1532108070.000440"
+        },
+        {
+            "client_msg_id": "da0a5388-78ef-470e-aef5-31a34ef6d8a5",
+            "type": "message",
+            "text": "I think you can use int ssh_channel_close\t(\tssh_channel \tchannel\t)",
+            "user": "UB659D0FM",
+            "ts": "1532108041.000468"
+        },
+        {
+            "client_msg_id": "35f9c257-113d-40b8-8707-d497236f36ca",
+            "type": "message",
+            "text": "how do I close the channel",
+            "user": "UBVAD029M",
+            "ts": "1532108010.000398"
+        },
+        {
+            "client_msg_id": "fb3f9c48-1f71-4c8d-ad93-09db3846529b",
+            "type": "message",
+            "text": "This method should work:\n\nint ssh_channel_send_eof\t(\tssh_channel channel\t)\n\nDescription \nSend an end of file on the channel. \nThis doesn't close the channel. You may still read from it but not write.\n\nParameters \nchannel: The channel to send the eof to.\n\nReturns \nSSH_OK on success, SSH_ERROR if an error occurred.",
+            "user": "UB659D0FM",
+            "ts": "1532107990.000329"
+        },
+        {
+            "client_msg_id": "2e848344-05af-4908-9f33-5bf58a102ebb",
+            "type": "message",
+            "text": "how do I send an eof to the channel",
+            "user": "UBVAD029M",
+            "ts": "1532107961.000111"
+        },
+        {
+            "client_msg_id": "4c048deb-2e0a-47a8-9242-16ac73f3ba80",
+            "type": "message",
+            "text": "Sure, here's an example:\nssh_channel channel;\nchar buffer[256];\nint nbytes;\nnbytes = ssh_channel_read(channel, buffer, sizeof(buffer), 0);",
+            "user": "UB659D0FM",
+            "ts": "1532107908.000083"
+        },
+        {
+            "client_msg_id": "090e7513-6cad-40a3-8d07-da64f19d3a6a",
+            "type": "message",
+            "text": "can you give me an example of ssh_channel_read",
+            "user": "UBVAD029M",
+            "ts": "1532107789.000121"
+        },
+        {
+            "client_msg_id": "a353e5fa-f1a0-4780-ac29-abe5a515d115",
+            "type": "message",
+            "text": "I found a couple of functions that involve reading from the channel:\n\nint channel_read_buffer\t(\tssh_channel \tchannel,\nssh_buffer \tbuffer,\nuint32_t \tcount,\nint \tis_stderr \n)\n\nint ssh_channel_read\t(\tssh_channel \tchannel,\nvoid * \tdest,\nuint32_t \tcount,\nint \tis_stderr \n)\n\nint ssh_channel_read_nonblocking\t(\tssh_channel \tchannel,\nvoid * \tdest,\nuint32_t \tcount,\nint \tis_stderr \n)\n\nint ssh_channel_read_timeout\t(\tssh_channel \tchannel,\nvoid * \tdest,\nuint32_t \tcount,\nint \tis_stderr,\nint \ttimeout \n)\n\nWould you like to hear more about one of these?",
+            "user": "UB659D0FM",
+            "ts": "1532107760.000320"
+        },
+        {
+            "client_msg_id": "09521349-39fc-4c53-a15c-f6063d2ccec6",
+            "type": "message",
+            "text": "how do I read the result of ssh_channel_request_exec",
+            "user": "UBVAD029M",
+            "ts": "1532107681.000079"
+        },
+        {
+            "client_msg_id": "23b52c51-7558-4543-ab2d-6b240d024a28",
+            "type": "message",
+            "text": "Returns\nSSH_OK on success, SSH_ERROR if an error occurred, SSH_AGAIN if in nonblocking mode and call has to be done again.",
+            "user": "UB659D0FM",
+            "ts": "1532107629.000328"
+        },
+        {
+            "client_msg_id": "bb2cc57c-b810-44b2-a720-5d58480483ef",
+            "type": "message",
+            "text": "what does ssh_channel_request_exec     return",
+            "user": "UBVAD029M",
+            "ts": "1532107610.000413"
+        },
+        {
+            "client_msg_id": "812423fc-679f-4699-8a2c-05381d549bd1",
+            "type": "message",
+            "text": "int ssh_channel_request_exec\t(\tssh_channel \tchannel,\nconst char * \tcmd \n)\n\nDescription\nRun a shell command without an interactive shell.\nThis is similar to 'sh -c command'.",
+            "user": "UB659D0FM",
+            "ts": "1532107588.000435"
+        },
+        {
+            "client_msg_id": "1d11a92c-5eae-4468-b9bf-e1498ed470bc",
+            "type": "message",
+            "text": "how do I execute a command with a ssh_channel",
+            "user": "UBVAD029M",
+            "ts": "1532107551.000307"
+        },
+        {
+            "client_msg_id": "56f0842a-0bba-43e5-af5b-10f522f32000",
+            "type": "message",
+            "text": "I think you're looking for \n\nssh_channel ssh_channel_new\t(\tssh_session \tsession\t)\n\nDescription\nAllocate a new channel.\n\nParameters\nsession: The ssh session to use.\n\nReturns\nA pointer to a newly allocated channel, NULL on error.",
+            "user": "UB659D0FM",
+            "ts": "1532107467.000360"
+        },
+        {
+            "client_msg_id": "02898de9-3c0e-4a25-bab8-423fa908799c",
+            "type": "message",
+            "text": "how do I create a new ssh_channel  with libssh",
+            "user": "UBVAD029M",
+            "ts": "1532107428.000466"
+        },
+        {
+            "client_msg_id": "af75a727-2f3a-4b37-9092-11905665fc0e",
+            "type": "message",
+            "text": "Returns\nSSH_SERVER_KNOWN_OK: The server is known and has not changed.\nSSH_SERVER_KNOWN_CHANGED: The server key has changed. Either you are under attack or the administrator changed the key. You HAVE to warn the user about a possible attack.\nSSH_SERVER_FOUND_OTHER: The server gave use a key of a type while we had an other type recorded. It is a possible attack.\nSSH_SERVER_NOT_KNOWN: The server is unknown. User should confirm the MD5 is correct.\nSSH_SERVER_FILE_NOT_FOUND: The known host file does not exist. The host is thus unknown. File will be created if host key is accepted.\nSSH_SERVER_ERROR: Some error happened.",
+            "user": "UB659D0FM",
+            "ts": "1532106890.000334"
+        },
+        {
+            "client_msg_id": "c6116f69-30b5-45b5-a003-3d8ca7d86702",
+            "type": "message",
+            "text": "what does ssh_is_server_known   return",
+            "user": "UBVAD029M",
+            "ts": "1532106882.000029"
+        },
+        {
+            "client_msg_id": "aacd2203-2d65-40de-b5e2-99d352cc6bf0",
+            "type": "message",
+            "text": "There is a function int ssh_is_server_known\t(\tssh_session \tsession\t)\n\nDescription\nCheck if the server is known.\nChecks the user's known host file for a previous connection to the current server.",
+            "user": "UB659D0FM",
+            "ts": "1532106857.000094"
+        },
+        {
+            "client_msg_id": "e0e0f07f-ba8d-4651-8513-7851635c0c4d",
+            "type": "message",
+            "text": "how do I check that the host is known in libssh",
+            "user": "UBVAD029M",
+            "ts": "1532106809.000339"
+        },
+        {
+            "client_msg_id": "a2873ac6-454d-4ca7-9d7a-1ebf5d83d6cd",
+            "type": "message",
+            "text": "Returns\nSSH_AUTH_ERROR: A serious error happened.\nSSH_AUTH_DENIED: Authentication failed: use another method\nSSH_AUTH_PARTIAL: You've been partially authenticated, you still have to use another method\nSSH_AUTH_SUCCESS: Authentication success\nSSH_AUTH_AGAIN: In nonblocking mode, you've got to call this again later.\nNote\nMost server implementations do not permit changing the username during authentication. The username should only be set with ssh_options_set() only before you connect to the server.",
+            "user": "UB659D0FM",
+            "ts": "1532106688.000373"
+        },
+        {
+            "client_msg_id": "efb7218c-48b6-47b2-b29a-290bf79cf076",
+            "type": "message",
+            "text": "what are the return values for ssh_userauth_password",
+            "user": "UBVAD029M",
+            "ts": "1532106658.000194"
+        },
+        {
+            "client_msg_id": "5f19dd22-e3ae-41a8-853b-8e0fa49458d4",
+            "type": "message",
+            "text": "Returns\nSSH_OK on success, SSH_ERROR on error.\nSSH_AGAIN, if the session is in nonblocking mode, and call must be done again.",
+            "user": "UB659D0FM",
+            "ts": "1532106595.000089"
+        },
+        {
+            "client_msg_id": "2cff14ad-cdf3-4cfc-828e-34d276835c37",
+            "type": "message",
+            "text": "what are the return values for ssh_connect",
+            "user": "UBVAD029M",
+            "ts": "1532106587.000135"
+        },
+        {
+            "client_msg_id": "b80ec5c9-d924-4fa2-9ab3-c9d8dc2af18e",
+            "type": "message",
+            "text": "what do the return values for ssh_connect",
+            "user": "UBVAD029M",
+            "ts": "1532106579.000433"
+        },
+        {
+            "client_msg_id": "688cb789-1c2d-4c9e-9d6f-2abe70a05212",
+            "type": "message",
+            "text": "To connect, I would recommend the function\n int ssh_connect\t(\tssh_session \tsession\t).\n\nI also found a reference to \"localhost\" in \nint ssh_options_getopt\t(\tssh_session \tsession,\nint * \targcptr,\nchar ** \targv \n)",
+            "user": "UB659D0FM",
+            "ts": "1532106501.000377"
+        },
+        {
+            "client_msg_id": "397ef56a-3ad5-461e-b446-22d71d68b42b",
+            "type": "message",
+            "text": "how do I connect to localhost with libssh",
+            "user": "UBVAD029M",
+            "ts": "1532106384.000350"
+        },
+        {
+            "client_msg_id": "faee7e24-a22e-4c6a-ba04-6bbf80b16f35",
+            "type": "message",
+            "text": "I found a few functions that authenticate with username:\n\nint ssh_userauth_none\t(\tssh_session \tsession,\nconst char * \tusername \n)\n\nint ssh_userauth_password\t(\tssh_session \tsession,\nconst char * \tusername,\nconst char * \tpassword \n)\n\nint ssh_userauth_publickey\t(\tssh_session \tsession,\nconst char * \tusername,\nconst ssh_key \tprivkey \n)",
+            "user": "UB659D0FM",
+            "ts": "1532106375.000239"
+        },
+        {
+            "client_msg_id": "935751b4-7195-47d7-9adf-a37a44c3f45e",
+            "type": "message",
+            "text": "username",
+            "user": "UBVAD029M",
+            "ts": "1532106321.000236"
+        },
+        {
+            "client_msg_id": "7a68bc28-f7a2-481b-a57e-0e42a7b416bd",
+            "type": "message",
+            "text": "There are several authentication functions. How would you like to authenticate?",
+            "user": "UB659D0FM",
+            "ts": "1532106313.000205"
+        },
+        {
+            "client_msg_id": "e0cdfa11-1c13-4918-a33f-6983b9d84acf",
+            "type": "message",
+            "text": "how do I authenticate my libssh session",
+            "user": "UBVAD029M",
+            "ts": "1532106229.000147"
+        },
+        {
+            "client_msg_id": "905e688d-603d-4311-b7b2-330cd95295c7",
+            "type": "message",
+            "text": "I'm glad to hear it!",
+            "user": "UB659D0FM",
+            "ts": "1532106214.000322"
+        },
+        {
+            "client_msg_id": "8709549e-dd30-488f-97c0-76a9bcfc0437",
+            "type": "message",
+            "text": "sweet",
+            "user": "UBVAD029M",
+            "ts": "1532106191.000053"
+        },
+        {
+            "client_msg_id": "1570cd96-afd3-4301-ab1c-c399d3279a0e",
+            "type": "message",
+            "text": "Sure! Something like:\n\nmy_ssh_session = ssh_new();",
+            "user": "UB659D0FM",
+            "ts": "1532106188.000075"
+        },
+        {
+            "client_msg_id": "ec90af73-03ae-4f5c-9d19-f7f6d30bb47c",
+            "type": "message",
+            "text": "can you give me an example on how to use ssh_new",
+            "user": "UBVAD029M",
+            "ts": "1532106169.000308"
+        },
+        {
+            "client_msg_id": "65da6bc2-abea-459f-a735-0b7af00a07ea",
+            "type": "message",
+            "text": "I would suggest using the function ssh_new:\n\nssh_session ssh_new\t(\tvoid \t\t)\n\nDescription\nCreate a new ssh session.\n\nReturns\nA new ssh_session pointer, NULL on error.\n\nReferences ssh_buffer_new(), and ssh_set_blocking().",
+            "user": "UB659D0FM",
+            "ts": "1532106152.000279"
+        },
+        {
+            "client_msg_id": "26c205ae-52b2-494d-b36d-e5177136781d",
+            "type": "message",
+            "text": "how do I create a new session in libssh",
+            "user": "UBVAD029M",
+            "ts": "1532106122.000268"
+        },
+        {
+            "client_msg_id": "1b91e661-4f27-4589-a047-9aa89e23bcce",
+            "type": "message",
+            "text": "Hello! I am Apiza, an automated virtual assistant for programmers that is supervised by a human. I look forward to helping you today!",
+            "user": "UB659D0FM",
+            "ts": "1532106108.000418"
+        },
+        {
+            "client_msg_id": "56f885a8-f5b8-4805-97f3-5af4e491f991",
+            "type": "message",
+            "text": "Hi",
+            "user": "UBVAD029M",
+            "ts": "1532106086.000450"
+        }
+    ],
+    "has_more": false
+}

@@ -1,0 +1,283 @@
+Programmer_16 [4:11 PM]
+Hello Apiza
+
+
+Apiza [4:11 PM]
+Hi! I’m Apiza, a virtual assistant designed to help you use a new API. How can I help you?
+
+Programmer_16 [4:15 PM]
+How do I get keyboard events
+How do I register keyboard events?
+Apiza are you there
+@Apiza do you hear me
+How do I register keyboard events with allegro?
+
+Apiza [4:18 PM]
+Something like ALLEGRO_EVENT_KEY_DOWN? If you have an event
+```ev```
+, you can check the value of
+```ev.keyboard.keycode```
+.
+You do not need to specifically register the keyboard, though it should be installed with
+```bool al_install_keyboard(void)```
+
+Programmer_16 [4:27 PM]
+What header do i need to include for the allegro key events
+?
+
+Apiza [4:28 PM]
+Events and keyboard input are included in the allegro.h header.
+
+Programmer_16 [4:29 PM]
+What are the allegro event key right and allegro event key left variables called
+
+Apiza [4:30 PM]
+ALLEGRO_KEY_LEFT and ALLEGRO_KEY_RIGHT are key codes, which are returned in the event.keyboard.keycode field of the ALLEGRO_KEY_DOWN and ALLEGRO_KEY_UP events.
+
+Programmer_16 [4:36 PM]
+how to pop elements off the allegro event queue
+
+Apiza [4:37 PM]
+The function
+
+```void al_wait_for_event(ALLEGRO_EVENT_QUEUE *queue, ALLEGRO_EVENT *ret_event)```    
+
+Description: Wait until the event queue specified is non-empty. If ret_event is not NULL, the first event in the queue will be copied into ret_event and removed from the queue. If ret_event is NULL the first event is left at the head of the queue.
+
+Programmer_16 [4:40 PM]
+Is there a timeout to wait for an event?
+
+Apiza [4:42 PM]
+Do either of these functions look useful?
+
+```bool al_wait_for_event_timed(ALLEGRO_EVENT_QUEUE *queue,
+   ALLEGRO_EVENT *ret_event, float secs)```
+
+```bool al_wait_for_event_until(ALLEGRO_EVENT_QUEUE *queue,
+   ALLEGRO_EVENT *ret_event, ALLEGRO_TIMEOUT *timeout)```
+
+Programmer_16 [4:43 PM]
+What is ALLEGRO_TIMEOUT
+
+Apiza [4:44 PM]
+ALLEGRO_TIMEOUT
+
+```typedef struct ALLEGRO_TIMEOUT ALLEGRO_TIMEOUT;```
+
+Represent a timeout value. The size of the structure is known so it can be statically allocated. The contents are private.
+
+Initialized with
+
+```void al_init_timeout(ALLEGRO_TIMEOUT *timeout, double seconds)```
+
+Programmer_16 [4:45 PM]
+what is the function signature of al_get_timer_event_source
+
+Apiza [4:45 PM]
+```void al_set_timer_speed(ALLEGRO_TIMER *timer, double new_speed_secs)```
+Correction:
+```ALLEGRO_EVENT_SOURCE *al_get_timer_event_source(ALLEGRO_TIMER *timer)```
+
+Programmer_16 [4:47 PM]
+please provide more information about al_wait_for_event_timed
+
+Apiza [4:48 PM]
+al_wait_for_event_timed:
+
+Wait until the event queue specified is non-empty. If ret_event is not NULL, the first event in the queue will be copied into ret_event and removed from the queue. If ret_event is NULL the first event is left at the head of the queue.
+
+secs determines approximately how many seconds to wait. If the call times out, false is returned. Otherwise, if an event ocurred, true is returned.
+
+For compatibility with all platforms, secs must be 2,147,483.647 seconds or less.
+
+Programmer_16 [4:54 PM]
+what are all the possible allegro event types?
+What are the allegro keyboard input event types
+
+Apiza [4:56 PM]
+There are about 27 event types, related to KEY, MOUSE, JOYSTICK, TIME, DISPLAY, and TOUCH. The event types related to Key Events are ALLEGRO_EVENT_KEY_DOWN and ALLEGRO_EVENT_KEY_UP.
+The event types related to Key Events are ALLEGRO_EVENT_KEY_DOWN and ALLEGRO_EVENT_KEY_UP.
+
+Programmer_16 [5:04 PM]
+how to play a sound with allegro'
+How to play a sound with Allegro?
+
+Apiza [5:05 PM]
+The simplest method is al_play_sample
+
+```bool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,
+   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)```
+
+Plays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.
+
+Programmer_16 [5:06 PM]
+What is ALLEGRO_PLAYMODE
+What is ALLEGRO_SAMPLE_ID
+
+Apiza [5:07 PM]
+That refers to an enum. Options are ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR
+Regarding ALLEGRO_SAMPLE_ID variable ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns  false, then the contents of ret_id are invalid and must not be used as argument to other functions.
+I was able to find an example function call:
+
+```al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);```
+
+Programmer_16 [5:09 PM]
+What is an ALLEGRO_SAMPLE
+
+Apiza [5:10 PM]
+An ALLEGRO_SAMPLE object stores the data necessary for playing pre-defined digital audio. It holds a user-specified PCM data buffer and information about its format (data length, depth, frequency, channel configuration). You can have the same ALLEGRO_SAMPLE playing multiple times simultaneously.
+
+Samples are often initialized with the function al_load_sample:
+
+```ALLEGRO_SAMPLE *al_load_sample(const char *filename)```
+
+Programmer_16 [5:12 PM]
+how to free pointers allegro
+how to free ALLEGRO_SAMPLE
+
+Apiza [5:12 PM]
+The function al_destroy_sample should work:
+
+```void al_destroy_sample(ALLEGRO_SAMPLE *spl)```
+
+Programmer_16 [5:16 PM]
+al_load_sample is returning NULL
+
+Apiza [5:17 PM]
+It looks like al_load_sample only returns NULL on failure. Could I see how you are calling the function?
+
+Programmer_16 [5:17 PM]
+spl = al_load_sample( AUDIO_SAMPLE_PATH );
+
+Apiza [5:19 PM]
+If AUDIO_SAMPLE_PATH is a valid path, this call should return a sample.
+There a couple of other reasons this function might not work. Have you called al_install_audio() and al_init_acodec_addon()?
+
+Programmer_16 [5:19 PM]
+finction signature for al_install_audio()
+function signature for al_init_acodec_addon()
+
+Apiza [5:20 PM]
+```bool al_install_audio(void)```
+```bool al_init_acodec_addon(void)```
+If it helps, I was able to extract the following example that should Play an audio file.
+
+```ALLEGRO_SAMPLE *sample=NULL;
+
+...
+
+if(!al_install_audio()){
+      fprintf(stderr, "failed to initialize audio!\n");
+      return -1;
+}
+
+if(!al_init_acodec_addon()){
+      fprintf(stderr, "failed to initialize audio codecs!\n");
+      return -1;
+}
+    
+if (!al_reserve_samples(1)){
+      fprintf(stderr, "failed to reserve samples!\n");
+      return -1;
+}
+
+...
+    
+sample = al_load_sample( "footstep.wav" );
+
+...
+
+al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);```
+
+Programmer_16 [5:26 PM]
+how to display text with allegro
+
+Apiza [5:27 PM]
+There are several functions to display text, the simplest is al_draw_text
+
+```void al_draw_text(const ALLEGRO_FONT *font,
+   ALLEGRO_COLOR color, float x, float y, int flags,
+   char const *text)``` 
+
+Writes the NUL-terminated string text onto the target bitmap at position  x, y, using the specified font.
+
+The flags parameter can be 0 or one of the following flags:
+
+ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).
+ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.
+ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.
+It can also be combined with this flag:
+
+ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4
+This function does not support newline characters (\n), but you can use al_draw_multiline_text for multi line text output.
+
+Programmer_16 [5:28 PM]
+load ALLEGRO_FONT
+load ALLEGRO_COLOR
+
+Apiza [5:29 PM]
+This function should work:
+
+```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```
+I could not find a function to load ALLEGRO_COLOR, but there are several functions that take primitive parameters and return ALLEGRO_COLOR, such as
+
+```ALLEGRO_COLOR al_color_cmyk(float c, float m, float y, float k)```
+
+Programmer_16 [5:32 PM]
+al_load_font flags
+more information about al_load_font please
+more information about al_color_cmyk please
+
+Apiza [5:33 PM]
+Sure thing!
+
+```ALLEGRO_FONT *al_load_font(char const *filename, int size, int flags)```
+
+Loads a font from disk. This will use al_load_bitmap_font_flags if you pass the name of a known bitmap format, or else al_load_ttf_font.
+
+The flags parameter is passed through to either of those functions. Bitmap and TTF fonts are also affected by the current bitmap flags at the time the font is loaded.
+```ALLEGRO_COLOR al_color_cmyk(float c, float m, float y, float k)```
+
+Return an ALLEGRO_COLOR structure from CMYK values (cyan, magenta, yellow, black).
+Would you like me to list all of the functions related to ALLEGRO_COLOR?
+
+Programmer_16 [5:36 PM]
+YES please
+
+Apiza [5:36 PM]
+```al_color_cmyk
+al_color_cmyk_to_rgb
+al_color_hsl
+al_color_hsl_to_rgb
+al_color_hsv
+al_color_hsv_to_rgb
+al_color_html
+al_color_html_to_rgb
+al_color_rgb_to_html
+al_color_name
+al_color_name_to_rgb
+al_color_rgb_to_cmyk
+al_color_rgb_to_hsl
+al_color_rgb_to_hsv
+al_color_rgb_to_name
+al_color_rgb_to_xyz
+al_color_xyz
+al_color_xyz_to_rgb
+al_color_rgb_to_xyy
+al_color_xyy
+al_color_xyy_to_rgb
+al_color_rgb_to_lab
+al_color_lab
+al_color_lab_to_rgb
+al_color_rgb_to_lch
+al_color_lch
+al_color_lch_to_rgb
+al_color_distance_ciede2000_lab
+al_color_rgb_to_yuv
+al_color_yuv
+al_color_yuv_to_rgb
+al_get_allegro_color_version
+al_is_color_valid```
+
+Programmer_16 [5:37 PM]
+al_load_font example please

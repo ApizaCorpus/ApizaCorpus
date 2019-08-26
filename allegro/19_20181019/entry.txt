@@ -1,0 +1,7 @@
+English
+
+16
+1
+No
+Yes
+I know of Allegro from my game development days... I've browsed forums and other materials online, but have no first hand experience using it.

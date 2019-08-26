@@ -1,0 +1,4 @@
+Programmer_17 [4:35 PM]
+Done. Sorry, there are a few indifferent answers, where I gave 3 stars, which would probably be better explained with comments.
+
+But the main criticism is the reaction time + the fact that within a conventional API documentation, you see parameters, return type etc at once. I'd say I prefer this, but maybe only because that's what I'm used to.

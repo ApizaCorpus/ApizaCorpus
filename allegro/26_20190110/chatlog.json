@@ -1,0 +1,130 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "df793710-24cc-4e13-9bc6-63590e2dea68",
+            "type": "message",
+            "text": "Here is the documentation on `al_play_sample`:\n\n```\nal_play_sample\n\nbool al_play_sample(ALLEGRO_SAMPLE *spl, float gain, float pan, float speed,\n   ALLEGRO_PLAYMODE loop, ALLEGRO_SAMPLE_ID *ret_id)\n\nSource Code\n\nPlays a sample on one of the sample instances created by al_reserve_samples. Returns true on success, false on failure. Playback may fail because all the reserved sample instances are currently used.\n\nParameters:\n\n    gain - relative volume at which the sample is played; 1.0 is normal.\n    pan - 0.0 is centred, -1.0 is left, 1.0 is right, or ALLEGRO_AUDIO_PAN_NONE.\n    speed - relative speed at which the sample is played; 1.0 is normal.\n    loop - ALLEGRO_PLAYMODE_ONCE, ALLEGRO_PLAYMODE_LOOP, or ALLEGRO_PLAYMODE_BIDIR\n    ret_id - if non-NULL the variable which this points to will be assigned an id representing the sample being played. If al_play_sample returns false, then the contents of ret_id are invalid and must not be used as argument to other functions.\n\nSee also: ALLEGRO_PLAYMODE, ALLEGRO_AUDIO_PAN_NONE, ALLEGRO_SAMPLE_ID, al_stop_sample, al_stop_samples, al_lock_sample_id.\n```",
+            "user": "UB659D0FM",
+            "ts": "1547163671.003400"
+        },
+        {
+            "client_msg_id": "47a4e4ae-ce12-47ad-8716-f6b11ad35ad3",
+            "type": "message",
+            "text": "give me interface for al_play_sample all parameters",
+            "user": "UFCHDF2BY",
+            "ts": "1547163634.003200"
+        },
+        {
+            "client_msg_id": "b151734b-8262-4385-8cca-da0e5d307cc7",
+            "type": "message",
+            "text": "Try using `ALLEGRO_PLAYMODE_ONCE`",
+            "user": "UB659D0FM",
+            "ts": "1547163594.002900"
+        },
+        {
+            "client_msg_id": "a24f1185-bb63-43fa-aac9-2a889557cc44",
+            "type": "message",
+            "text": "I do not need loop",
+            "user": "UFCHDF2BY",
+            "ts": "1547163519.002700"
+        },
+        {
+            "client_msg_id": "9531b36e-16cc-4c19-b502-a9ea17bfbf63",
+            "type": "message",
+            "text": "what is the interface \/ settings to play sound only once",
+            "user": "UFCHDF2BY",
+            "ts": "1547163512.002500"
+        },
+        {
+            "client_msg_id": "d33b9b24-8b1b-4abc-a670-150abb63335d",
+            "type": "message",
+            "text": "My name is Apiza. Hello!",
+            "user": "UB659D0FM",
+            "ts": "1547162099.002000"
+        },
+        {
+            "client_msg_id": "6f0635f0-b66e-4acb-94d0-03dcfb92b17c",
+            "type": "message",
+            "text": "what is your name?",
+            "user": "UFCHDF2BY",
+            "ts": "1547162079.001800"
+        },
+        {
+            "client_msg_id": "4fdb19de-8b2d-4389-b142-57bae2d62677",
+            "type": "message",
+            "text": "Here is an example of displaying text:\n\n```\n#include &lt;stdio.h&gt;\n#include &lt;allegro5\/allegro.h&gt;\n#include &lt;allegro5\/allegro_font.h&gt;\n#include &lt;allegro5\/allegro_ttf.h&gt;\n\nint main(int argc, char **argv){\n\n   if(!al_init()){\n      fprintf(stderr, \"Failed to initialize Allegro.\\n\");\n      return -1;\n   }\n\n   al_init_font_addon(); \/\/ initialize the font addon\n   al_init_ttf_addon();\/\/ initialize the ttf (True Type Font) addon\n\n   ALLEGRO_DISPLAY *display = al_create_display(640,480);\n   \n   if (!display){\n      fprintf(stderr, \"Failed to create display.\\n\");\n      return -1;\n   }\n\n   ALLEGRO_FONT *font = al_load_ttf_font(\"pirulen.ttf\",72,0 );\n\n   if (!font){\n      fprintf(stderr, \"Could not load 'pirulen.ttf'.\\n\");\n      return -1;\n   }\n\n   al_clear_to_color(al_map_rgb(50,10,70));\n   al_draw_text(font, al_map_rgb(255,255,255), 640\/2, (480\/4),ALLEGRO_ALIGN_CENTRE, \"Your Text Here!\");\n\n   al_flip_display();\n\n   al_rest(10.0);\n\n   al_destroy_display(display);\n\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1547162021.001600"
+        },
+        {
+            "client_msg_id": "ce56ed5f-6344-4b92-9642-fe5e3bfeed7e",
+            "type": "message",
+            "text": "how to display text on the screen?",
+            "user": "UFCHDF2BY",
+            "ts": "1547161982.001400"
+        },
+        {
+            "client_msg_id": "0f68de70-cf35-4e9b-8910-99953cdf55c3",
+            "type": "message",
+            "text": "Here is an example of using audio:\n\n```\n#include &lt;stdio.h&gt;\n#include &lt;allegro5\/allegro.h&gt;\n#include &lt;allegro5\/allegro_audio.h&gt;\n#include &lt;allegro5\/allegro_acodec.h&gt;\n\nint main(int argc, char **argv){\n\n   ALLEGRO_DISPLAY *display = NULL;\n   ALLEGRO_SAMPLE *sample=NULL;\n    \n   if(!al_init()){\n      fprintf(stderr, \"failed to initialize allegro!\\n\");\n      return -1;\n   }\n        \n   if(!al_install_audio()){\n      fprintf(stderr, \"failed to initialize audio!\\n\");\n      return -1;\n   }\n\n   if(!al_init_acodec_addon()){\n      fprintf(stderr, \"failed to initialize audio codecs!\\n\");\n      return -1;\n   }\n    \n   if (!al_reserve_samples(1)){\n      fprintf(stderr, \"failed to reserve samples!\\n\");\n      return -1;\n   }\n    \n   sample = al_load_sample( \"footstep.wav\" );\n\n   if (!sample){\n      printf( \"Audio clip sample not loaded!\\n\" ); \n      return -1;\n   }\n    \n   display = al_create_display(640, 480);\n    \n   if(!display){\n      fprintf(stderr, \"failed to create display!\\n\");\n      return -1;\n   }\n\n   \/* Loop the sample until the display closes. *\/\n   al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);\n\n   al_rest(10.0);\n    \n   al_destroy_display(display);\n   al_destroy_sample(sample);\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1547161879.001100"
+        },
+        {
+            "client_msg_id": "c2e70184-3ae7-4337-ae65-1f7121c4271c",
+            "type": "message",
+            "text": "how to play sound",
+            "user": "UFCHDF2BY",
+            "ts": "1547161829.000900"
+        },
+        {
+            "type": "message",
+            "text": "",
+            "files": [
+                {
+                    "id": "FFCJD174N",
+                    "created": 1547160496,
+                    "timestamp": 1547160496,
+                    "name": "-.txt",
+                    "title": "Untitled",
+                    "mimetype": "text\/plain",
+                    "filetype": "text",
+                    "pretty_type": "Plain Text",
+                    "user": "UB659D0FM",
+                    "editable": true,
+                    "size": 4418,
+                    "mode": "snippet",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FFCJD174N\/-.txt",
+                    "url_private_download": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FFCJD174N\/download\/-.txt",
+                    "permalink": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FFCJD174N\/-.txt",
+                    "permalink_public": "https:\/\/slack-files.com\/T9H4718E4-FFCJD174N-1b3a03c78a",
+                    "edit_link": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FFCJD174N\/-.txt\/edit",
+                    "preview": "Here is an example using keyboard events:\r\n\r\n```\r\n#include <stdio.h>\r\n#include <allegro5\/allegro.h>\r",
+                    "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Here is an example using keyboard events:<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre>```<\/pre><\/div>\n<div><pre>#include &lt;stdio.h&gt;<\/pre><\/div>\n<div><pre>#include &lt;allegro5\/allegro.h&gt;<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                    "lines": 173,
+                    "lines_more": 168,
+                    "preview_is_truncated": true
+                }
+            ],
+            "upload": true,
+            "user": "UB659D0FM",
+            "display_as_bot": false,
+            "ts": "1547160496.000600"
+        },
+        {
+            "client_msg_id": "4fb54473-9d1e-47fe-80b7-12275010d739",
+            "type": "message",
+            "text": "how to implement key press event?",
+            "user": "UFCHDF2BY",
+            "ts": "1547160434.000400"
+        }
+    ],
+    "has_more": false
+}

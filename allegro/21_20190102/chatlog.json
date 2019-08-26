@@ -1,0 +1,428 @@
+{
+    "ok": true,
+    "messages": [
+        {
+            "client_msg_id": "239ac4f6-52d9-410b-8832-9a39fa68d13e",
+            "type": "message",
+            "text": "The native dialogs addon might help. Here is an example:\n\n```\n#include \"allegro5\/allegro.h\"\n#include &lt;allegro5\/allegro_native_dialog.h&gt;\n\nint main(int argc, char **argv){\n\n   if(al_init()) {\n      al_show_native_message_box(al_get_current_display(), \n                                 \"Window Title\", \n                                 \"Content Title\", \n                                 \"The error message here\",\n                                 NULL, ALLEGRO_MESSAGEBOX_ERROR);\n      return 0;\n   }\n\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1546405502.013500"
+        },
+        {
+            "client_msg_id": "7d598e25-169b-4c1b-add5-338457fa6b53",
+            "type": "message",
+            "text": "Does Allegro have a way to display a number in the UI?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546405432.013300"
+        },
+        {
+            "client_msg_id": "fd17bfda-e73b-45da-9446-9e7542b95090",
+            "type": "message",
+            "text": "Sorry, I'm not sure what you mean by that.",
+            "user": "UB659D0FM",
+            "ts": "1546405411.012800"
+        },
+        {
+            "client_msg_id": "c19c0d02-129e-4257-ae01-b5450725bff8",
+            "type": "message",
+            "text": "Allegro doesn't have the ability to display HUD numbers?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546405368.012600"
+        },
+        {
+            "client_msg_id": "93034541-b20f-46f1-9753-312490388092",
+            "type": "message",
+            "text": "Does this C function help?\n\n```\nsprintf(str, \"%d\", 42);\n```",
+            "user": "UB659D0FM",
+            "ts": "1546405205.012000"
+        },
+        {
+            "client_msg_id": "afaf0cc5-c5cd-4cc2-ae2e-7d04034bc4a9",
+            "type": "message",
+            "text": "number to string",
+            "user": "UF4QB6A2Z",
+            "ts": "1546405121.011800"
+        },
+        {
+            "client_msg_id": "73465b6c-1c9e-4872-ae70-6fb6fc1fed09",
+            "type": "message",
+            "text": "Here's an example function call:\n\n```\nal_draw_text(font, al_map_rgb(255,255,255), 640\/2, (480\/4),ALLEGRO_ALIGN_CENTRE, \"Your Text Here!\");\n```",
+            "user": "UB659D0FM",
+            "ts": "1546405104.011600"
+        },
+        {
+            "client_msg_id": "a6a94f6f-a3c5-4db3-998c-390cd8936513",
+            "type": "message",
+            "text": "al_draw_text number example",
+            "user": "UF4QB6A2Z",
+            "ts": "1546405020.011200",
+            "edited": {
+                "user": "UF4QB6A2Z",
+                "ts": "1546405040.000000"
+            }
+        },
+        {
+            "client_msg_id": "2be635f4-8255-4695-96fc-5119ede98faa",
+            "type": "message",
+            "text": "Here's the documentation on that function:\n\n```\nal_draw_text\n\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) \n\nSource Code\n\nWrites the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.\n\nThe flags parameter can be 0 or one of the following flags:\n\n    ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\n    ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\n    ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\n\nIt can also be combined with this flag:\n\n    ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\n\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.\n\nSee also: al_draw_ustr, al_draw_textf, al_draw_justified_text, al_draw_multiline_text.\n```",
+            "user": "UB659D0FM",
+            "ts": "1546404975.010800"
+        },
+        {
+            "client_msg_id": "b09b29f6-bd8e-493b-b27a-2c85e2cea3e4",
+            "type": "message",
+            "text": "al_draw_text integer",
+            "user": "UF4QB6A2Z",
+            "ts": "1546404942.010600"
+        },
+        {
+            "client_msg_id": "d8bbcefc-1d9e-46ac-b308-d69f920fa52f",
+            "type": "message",
+            "text": "Here's the documentation on that function:\n\n```\nal_draw_textf\n\nvoid al_draw_textf(const ALLEGRO_FONT *font, ALLEGRO_COLOR color,\n   float x, float y, int flags,\n   const char *format, ...)\n\nSource Code\n\nFormatted text output, using a printf() style format string. All parameters have the same meaning as with al_draw_text otherwise.\n\nSee also: al_draw_text, al_draw_ustr\n```",
+            "user": "UB659D0FM",
+            "ts": "1546404907.010200"
+        },
+        {
+            "client_msg_id": "a0fca15b-a130-426b-8f78-958dde031837",
+            "type": "message",
+            "text": "al_draw_textf",
+            "user": "UF4QB6A2Z",
+            "ts": "1546404868.010000"
+        },
+        {
+            "client_msg_id": "3a8798f2-6a6a-4575-8054-0ac629e74e93",
+            "type": "message",
+            "text": "screen size",
+            "user": "UF4QB6A2Z",
+            "ts": "1546404708.009800"
+        },
+        {
+            "client_msg_id": "37c13832-4554-460c-9fcf-50af6b7bc5eb",
+            "type": "message",
+            "text": "Here's some documentation that might help:\n\n\n```\nal_draw_text\n\nvoid al_draw_text(const ALLEGRO_FONT *font,\n   ALLEGRO_COLOR color, float x, float y, int flags,\n   char const *text) \n\nSource Code\n\nWrites the NUL-terminated string text onto the target bitmap at position x, y, using the specified font.\n\nThe flags parameter can be 0 or one of the following flags:\n\n    ALLEGRO_ALIGN_LEFT - Draw the text left-aligned (same as 0).\n    ALLEGRO_ALIGN_CENTRE - Draw the text centered around the given position.\n    ALLEGRO_ALIGN_RIGHT - Draw the text right-aligned to the given position.\n\nIt can also be combined with this flag:\n\n    ALLEGRO_ALIGN_INTEGER - Always draw text aligned to an integer pixel position. This was formerly the default behaviour. Since: 5.0.8, 5.1.4\n\nThis function does not support newline characters (\\n), but you can use al_draw_multiline_text for multi line text output.\n\nSee also: al_draw_ustr, al_draw_textf, al_draw_justified_text, al_draw_multiline_text.\n```",
+            "user": "UB659D0FM",
+            "ts": "1546404612.009600"
+        },
+        {
+            "client_msg_id": "97577378-9056-49b1-ab4d-b7664508d8af",
+            "type": "message",
+            "text": "ALLEGRO_ALIGN_*",
+            "user": "UF4QB6A2Z",
+            "ts": "1546404536.009400"
+        },
+        {
+            "client_msg_id": "5865e582-4791-4395-8aa6-64630a562722",
+            "type": "message",
+            "text": "Here's an example of displaying text:\n\n```\n#include &lt;stdio.h&gt;\n#include &lt;allegro5\/allegro.h&gt;\n#include &lt;allegro5\/allegro_font.h&gt;\n#include &lt;allegro5\/allegro_ttf.h&gt;\n\nint main(int argc, char **argv){\n\n   if(!al_init()){\n      fprintf(stderr, \"Failed to initialize Allegro.\\n\");\n      return -1;\n   }\n\n   al_init_font_addon(); \/\/ initialize the font addon\n   al_init_ttf_addon();\/\/ initialize the ttf (True Type Font) addon\n\n   ALLEGRO_DISPLAY *display = al_create_display(640,480);\n   \n   if (!display){\n      fprintf(stderr, \"Failed to create display.\\n\");\n      return -1;\n   }\n\n   ALLEGRO_FONT *font = al_load_ttf_font(\"pirulen.ttf\",72,0 );\n\n   if (!font){\n      fprintf(stderr, \"Could not load 'pirulen.ttf'.\\n\");\n      return -1;\n   }\n\n   al_clear_to_color(al_map_rgb(50,10,70));\n   al_draw_text(font, al_map_rgb(255,255,255), 640\/2, (480\/4),ALLEGRO_ALIGN_CENTRE, \"Your Text Here!\");\n\n   al_flip_display();\n\n   al_rest(10.0);\n\n   al_destroy_display(display);\n\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1546404274.009200"
+        },
+        {
+            "client_msg_id": "8463d036-332f-42a0-85f4-393e3b0909b4",
+            "type": "message",
+            "text": "display ui text",
+            "user": "UF4QB6A2Z",
+            "ts": "1546404129.009000"
+        },
+        {
+            "client_msg_id": "2e308d50-140b-4751-80f0-198112c576e4",
+            "type": "message",
+            "text": "Here is an example of some display code that might help:\n\n```\n#include \"allegro5\/allegro.h\"\n#include \"allegro5\/allegro_image.h\"\n#include \"allegro5\/allegro_native_dialog.h\"\n\nint main(int argc, char **argv){\n\n   ALLEGRO_DISPLAY *display = NULL;\n   ALLEGRO_BITMAP  *image   = NULL;\n\n   if(!al_init()) {\n      al_show_native_message_box(display, \"Error\", \"Error\", \"Failed to initialize allegro!\", \n                                 NULL, ALLEGRO_MESSAGEBOX_ERROR);\n      return 0;\n   }\n\n   if(!al_init_image_addon()) {\n      al_show_native_message_box(display, \"Error\", \"Error\", \"Failed to initialize al_init_image_addon!\", \n                                 NULL, ALLEGRO_MESSAGEBOX_ERROR);\n      return 0;\n   }\n\n   display = al_create_display(800,600);\n\n   if(!display) {\n      al_show_native_message_box(display, \"Error\", \"Error\", \"Failed to initialize display!\", \n                                 NULL, ALLEGRO_MESSAGEBOX_ERROR);\n      return 0;\n   }\n\n   image = al_load_bitmap(\"image.png\");\n\n   if(!image) {\n      al_show_native_message_box(display, \"Error\", \"Error\", \"Failed to load image!\", \n                                 NULL, ALLEGRO_MESSAGEBOX_ERROR);\n      al_destroy_display(display);\n      return 0;\n   }\n\n   al_draw_bitmap(image,200,200,0);\n\n   al_flip_display();\n   al_rest(2);\n\n   al_destroy_display(display);\n   al_destroy_bitmap(image);\n\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1546404012.008700"
+        },
+        {
+            "client_msg_id": "6dbd74be-d052-4dde-a7a0-6531c9146f2d",
+            "type": "message",
+            "text": "hud display align top left",
+            "user": "UF4QB6A2Z",
+            "ts": "1546403920.008500"
+        },
+        {
+            "client_msg_id": "a5b84430-d508-4023-b95c-6d67219dad56",
+            "type": "message",
+            "text": "Here is the documentation I have about ALLEGRO_PLAYMODE:\n\n```\nALLEGRO_PLAYMODE\n\nenum ALLEGRO_PLAYMODE\n\nSource Code\n\nSample and stream playback mode.\n\n    ALLEGRO_PLAYMODE_ONCE\n    ALLEGRO_PLAYMODE_LOOP\n    ALLEGRO_PLAYMODE_BIDIR\n```",
+            "user": "UB659D0FM",
+            "ts": "1546403802.008200"
+        },
+        {
+            "client_msg_id": "9cd22743-6960-4978-86d0-24bbba4627a6",
+            "type": "message",
+            "text": "ALLEGRO_PLAYMODE_* single",
+            "user": "UF4QB6A2Z",
+            "ts": "1546403743.008000"
+        },
+        {
+            "client_msg_id": "79b5a2d3-e720-42dc-9f43-062f277c0270",
+            "type": "message",
+            "text": "Here is an example of using audio:\n\n```\n#include &lt;stdio.h&gt;\n#include &lt;allegro5\/allegro.h&gt;\n#include &lt;allegro5\/allegro_audio.h&gt;\n#include &lt;allegro5\/allegro_acodec.h&gt;\n\nint main(int argc, char **argv){\n\n   ALLEGRO_DISPLAY *display = NULL;\n   ALLEGRO_SAMPLE *sample=NULL;\n   \n   if(!al_init()){\n      fprintf(stderr, \"failed to initialize allegro!\\n\");\n      return -1;\n   }\n        \n   if(!al_install_audio()){\n      fprintf(stderr, \"failed to initialize audio!\\n\");\n      return -1;\n   }\n\n   if(!al_init_acodec_addon()){\n      fprintf(stderr, \"failed to initialize audio codecs!\\n\");\n      return -1;\n   }\n   \n   if (!al_reserve_samples(1)){\n      fprintf(stderr, \"failed to reserve samples!\\n\");\n      return -1;\n   }\n   \n   sample = al_load_sample( \"footstep.wav\" );\n\n   if (!sample){\n      printf( \"Audio clip sample not loaded!\\n\" ); \n      return -1;\n   }\n   \n   display = al_create_display(640, 480);\n   \n   if(!display){\n      fprintf(stderr, \"failed to create display!\\n\");\n      return -1;\n   }\n\n   \/* Loop the sample until the display closes. *\/\n   al_play_sample(sample, 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_LOOP,NULL);\n\n   al_rest(10.0);\n   \n   al_destroy_display(display);\n   al_destroy_sample(sample);\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1546403534.007700"
+        },
+        {
+            "client_msg_id": "381771e5-60e0-4411-9a71-0c8e4139bec5",
+            "type": "message",
+            "text": "Load audio",
+            "user": "UF4QB6A2Z",
+            "ts": "1546403496.007500"
+        },
+        {
+            "client_msg_id": "4fa0bb9c-497e-4b32-9c54-7e69789a7f5b",
+            "type": "message",
+            "text": "Thank you.",
+            "user": "UF4QB6A2Z",
+            "ts": "1546403488.007300"
+        },
+        {
+            "client_msg_id": "d100a8a3-129e-4fca-86ad-237c78fe7a86",
+            "type": "message",
+            "text": "Here is some more context for that line:\n\n```\n event_queue = al_create_event_queue();\n   if(!event_queue) {\n      fprintf(stderr, \"failed to create event_queue!\\n\");\n      al_destroy_bitmap(bouncer);\n      al_destroy_display(display);\n      al_destroy_timer(timer);\n      return -1;\n   }\n \n   al_register_event_source(event_queue, al_get_display_event_source(display));\n \n   al_register_event_source(event_queue, al_get_timer_event_source(timer));\n\n   al_register_event_source(event_queue, al_get_keyboard_event_source());   \n```",
+            "user": "UB659D0FM",
+            "ts": "1546403472.007100"
+        },
+        {
+            "client_msg_id": "92dc06ae-51f6-4645-8c81-ccc01dde7176",
+            "type": "message",
+            "text": "Does this work?\n\n```\n   al_register_event_source(event_queue, al_get_keyboard_event_source());\n```",
+            "user": "UB659D0FM",
+            "ts": "1546403402.006900"
+        },
+        {
+            "client_msg_id": "6b503475-39f7-4435-a7c8-abaddb9a9e57",
+            "type": "message",
+            "text": "al_register_event_source keyboard",
+            "user": "UF4QB6A2Z",
+            "ts": "1546403309.006700"
+        },
+        {
+            "client_msg_id": "ddf7e13f-1656-4cae-81ef-b811ea25b075",
+            "type": "message",
+            "text": "Here is the documentation I have on ALLEGRO_EVENT_TYPE:\n\n```\nALLEGRO_EVENT_TYPE\n\ntypedef unsigned int ALLEGRO_EVENT_TYPE;\n\nSource Code\n\nAn integer used to distinguish between different types of events.\n```",
+            "user": "UB659D0FM",
+            "ts": "1546403111.006500"
+        },
+        {
+            "client_msg_id": "2b2904f9-3e99-43c6-9cf8-22bbaf3eefa9",
+            "type": "message",
+            "text": "print event.type",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402964.006300"
+        },
+        {
+            "client_msg_id": "0a691db7-67e3-4e77-9bd1-c486df644e32",
+            "type": "message",
+            "text": "event.type to string",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402888.006100"
+        },
+        {
+            "client_msg_id": "ab6f060f-d8cb-411c-be1e-548f2669b414",
+            "type": "message",
+            "text": "Does this help with your question about printing?\n\n```\nal_fprintf\n\nint al_fprintf(ALLEGRO_FILE *pfile, const char *format, ...)\n\nSource Code\n\nWrites to a file with stdio \"printf\"-like formatting. Returns the number of bytes written, or a negative number on error.\n```",
+            "user": "UB659D0FM",
+            "ts": "1546402672.005900"
+        },
+        {
+            "client_msg_id": "20f67701-ca73-42a9-abdf-52bb2bd18cdb",
+            "type": "message",
+            "text": "Here is some information about events that might help:\n\n```\nWhat are Events?\n\nEvents tell you that something has happened in your program such as a key being pressed, the mouse has moved, a timer has been ticked, and the display has synchronized. Allegro uses them to notify you of all types of events, but you may create your own customized events if required.\nWhy do I want Events?\n\nUsing Allegro's event queue system is the most efficient way to handle events; you simply wait for the arrival of new events and handle them when they occur. An alternative method of handling events is via polling -- constantly checking whether an event has occurred. The event system reduces processor usage compared to the polling method.\nEvent Sources\n\nAn event source is something that notifies the program when something has occurred. There are several standard Allegro event sources, including but not limited to Timers, Displays, and Inputs.\nEvent Queues\n\nAn event queue is where events are placed in a first-in-first-out container and are removed when the events are being handled by the main program. You may create multiple event queues and direct the event sources into the appropriate queues. However, using a single event queue is the simplest method. \n```",
+            "user": "UB659D0FM",
+            "ts": "1546402593.005600"
+        },
+        {
+            "client_msg_id": "ee6b40dc-5be8-4f0d-80d6-4d65606af7bd",
+            "type": "message",
+            "text": "ALLEGRO_EVENT_KEY_DOWN isn't triggering",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402510.005400"
+        },
+        {
+            "client_msg_id": "6623eae8-f60c-4148-bbd7-6f4fc6406eaa",
+            "type": "message",
+            "text": "No.",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402497.005200"
+        },
+        {
+            "client_msg_id": "8ff1bff4-bdc5-431f-be55-e0048e47efef",
+            "type": "message",
+            "text": "Does this function help?\n\n```\nal_ustr_newf\n\nALLEGRO_USTR *al_ustr_newf(const char *fmt, ...)\n\nSource Code\n\nCreate a new string using a printf-style format string.\n\nNotes:\n\nThe \"%s\" specifier takes C string arguments, not ALLEGRO_USTRs. Therefore to pass an ALLEGRO_USTR as a parameter you must use al_cstr, and it must be NUL terminated. If the string contains an embedded NUL byte everything from that byte onwards will be ignored.\n\nThe \"%c\" specifier outputs a single byte, not the UTF-8 encoding of a code point. Therefore it is only usable for ASCII characters (value &lt;= 127) or if you really mean to output byte values from 128--255. To insert the UTF-8 encoding of a code point, encode it into a memory buffer using al_utf8_encode then use the \"%s\" specifier. Remember to NUL terminate the buffer.\n\nSee also: al_ustr_new, al_ustr_appendf\n```",
+            "user": "UB659D0FM",
+            "ts": "1546402459.005000"
+        },
+        {
+            "client_msg_id": "b085b021-81ab-4902-806b-afcb6416726f",
+            "type": "message",
+            "text": "print function",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402336.004800"
+        },
+        {
+            "client_msg_id": "35e7d569-c7ff-4412-be24-1638e46640c6",
+            "type": "message",
+            "text": "how do I output debug strings?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402323.004600"
+        },
+        {
+            "client_msg_id": "3122ebc5-1714-4d18-b985-ff8ebedf5546",
+            "type": "message",
+            "text": "Sorry, I'm not sure what you mean by that",
+            "user": "UB659D0FM",
+            "ts": "1546402301.004300"
+        },
+        {
+            "client_msg_id": "dfa0993c-e4eb-479d-b3c0-8222379a079c",
+            "type": "message",
+            "text": "debug text",
+            "user": "UF4QB6A2Z",
+            "ts": "1546402236.004100"
+        },
+        {
+            "type": "message",
+            "text": "",
+            "files": [
+                {
+                    "id": "FF40VP28Z",
+                    "created": 1546401626,
+                    "timestamp": 1546401626,
+                    "name": "-.txt",
+                    "title": "Untitled",
+                    "mimetype": "text\/plain",
+                    "filetype": "text",
+                    "pretty_type": "Plain Text",
+                    "user": "UB659D0FM",
+                    "editable": true,
+                    "size": 4413,
+                    "mode": "snippet",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FF40VP28Z\/-.txt",
+                    "url_private_download": "https:\/\/files.slack.com\/files-pri\/T9H4718E4-FF40VP28Z\/download\/-.txt",
+                    "permalink": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FF40VP28Z\/-.txt",
+                    "permalink_public": "https:\/\/slack-files.com\/T9H4718E4-FF40VP28Z-72539bc7f6",
+                    "edit_link": "https:\/\/apiza.slack.com\/files\/UB659D0FM\/FF40VP28Z\/-.txt\/edit",
+                    "preview": "Here is an example using `KEY_DOWN`:\r\n\r\n```\r\n#include <stdio.h>\r\n#include <allegro5\/allegro.h>\r",
+                    "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Here is an example using `KEY_DOWN`:<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre>```<\/pre><\/div>\n<div><pre>#include &lt;stdio.h&gt;<\/pre><\/div>\n<div><pre>#include &lt;allegro5\/allegro.h&gt;<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                    "lines": 173,
+                    "lines_more": 168,
+                    "preview_is_truncated": true
+                }
+            ],
+            "upload": true,
+            "user": "UB659D0FM",
+            "display_as_bot": false,
+            "ts": "1546401627.003600"
+        },
+        {
+            "client_msg_id": "b5e82cbe-6843-4e67-8bf2-1c02ca353642",
+            "type": "message",
+            "text": "example event.keyboard.keycode",
+            "user": "UF4QB6A2Z",
+            "ts": "1546401595.003400"
+        },
+        {
+            "client_msg_id": "810af5c9-40b4-4483-a29d-48c754836efa",
+            "type": "message",
+            "text": "example ALLEGRO_KEY_DOWN",
+            "user": "UF4QB6A2Z",
+            "ts": "1546401548.003200"
+        },
+        {
+            "client_msg_id": "afe4331a-24a9-41b5-98ac-82b28736263b",
+            "type": "message",
+            "text": "These are the list of key codes used by Allegro, which are returned in the event.keyboard.keycode field of the ALLEGRO_KEY_DOWN and ALLEGRO_KEY_UP events and which you can pass to al_key_down:\n\n```\nALLEGRO_KEY_A ... ALLEGRO_KEY_Z\nALLEGRO_KEY_0 ... ALLEGRO_KEY_9\nALLEGRO_KEY_PAD_0 ... ALLEGRO_KEY_PAD_9\nALLEGRO_KEY_F1 ... ALLEGRO_KEY_F12\nALLEGRO_KEY_ESCAPE\nALLEGRO_KEY_TILDE\nALLEGRO_KEY_MINUS\nALLEGRO_KEY_EQUALS\nALLEGRO_KEY_BACKSPACE\nALLEGRO_KEY_TAB\nALLEGRO_KEY_OPENBRACE\nALLEGRO_KEY_CLOSEBRACE\nALLEGRO_KEY_ENTER\nALLEGRO_KEY_SEMICOLON\nALLEGRO_KEY_QUOTE\nALLEGRO_KEY_BACKSLASH\nALLEGRO_KEY_BACKSLASH2\nALLEGRO_KEY_COMMA\nALLEGRO_KEY_FULLSTOP\nALLEGRO_KEY_SLASH\nALLEGRO_KEY_SPACE\nALLEGRO_KEY_INSERT\nALLEGRO_KEY_DELETE\nALLEGRO_KEY_HOME\nALLEGRO_KEY_END\nALLEGRO_KEY_PGUP\nALLEGRO_KEY_PGDN\nALLEGRO_KEY_LEFT\nALLEGRO_KEY_RIGHT\nALLEGRO_KEY_UP\nALLEGRO_KEY_DOWN\nALLEGRO_KEY_PAD_SLASH\nALLEGRO_KEY_PAD_ASTERISK\nALLEGRO_KEY_PAD_MINUS\nALLEGRO_KEY_PAD_PLUS\nALLEGRO_KEY_PAD_DELETE\nALLEGRO_KEY_PAD_ENTER\nALLEGRO_KEY_PRINTSCREEN\nALLEGRO_KEY_PAUSE\nALLEGRO_KEY_ABNT_C1\nALLEGRO_KEY_YEN\nALLEGRO_KEY_KANA\nALLEGRO_KEY_CONVERT\nALLEGRO_KEY_NOCONVERT\nALLEGRO_KEY_AT\nALLEGRO_KEY_CIRCUMFLEX\nALLEGRO_KEY_COLON2\nALLEGRO_KEY_KANJI\nALLEGRO_KEY_LSHIFT\nALLEGRO_KEY_RSHIFT\nALLEGRO_KEY_LCTRL\nALLEGRO_KEY_RCTRL\nALLEGRO_KEY_ALT\nALLEGRO_KEY_ALTGR\nALLEGRO_KEY_LWIN\nALLEGRO_KEY_RWIN\nALLEGRO_KEY_MENU\nALLEGRO_KEY_SCROLLLOCK\nALLEGRO_KEY_NUMLOCK\nALLEGRO_KEY_CAPSLOCK\nALLEGRO_KEY_PAD_EQUALS\nALLEGRO_KEY_BACKQUOTE\nALLEGRO_KEY_SEMICOLON2\nALLEGRO_KEY_COMMAND\n\n\/* Since: 5.1.1 *\/\n\/* Android only for now *\/\nALLEGRO_KEY_BACK\n\n\/* Since: 5.1.2 *\/\n\/* Android only for now *\/\nALLEGRO_KEY_VOLUME_UP\nALLEGRO_KEY_VOLUME_DOWN\n\n\/* Since: 5.1.6 *\/\n\/* Android only for now *\/\nALLEGRO_KEY_SEARCH\nALLEGRO_KEY_DPAD_CENTER\nALLEGRO_KEY_BUTTON_X\nALLEGRO_KEY_BUTTON_Y\nALLEGRO_KEY_DPAD_UP\nALLEGRO_KEY_DPAD_DOWN\nALLEGRO_KEY_DPAD_LEFT\nALLEGRO_KEY_DPAD_RIGHT\nALLEGRO_KEY_SELECT\nALLEGRO_KEY_START\nALLEGRO_KEY_L1\nALLEGRO_KEY_R1\n```",
+            "user": "UB659D0FM",
+            "ts": "1546401283.002800"
+        },
+        {
+            "client_msg_id": "3fcce53e-df45-4291-bbd4-270220e585bc",
+            "type": "message",
+            "text": "list of ALLEGRO_KEY_* constants",
+            "user": "UF4QB6A2Z",
+            "ts": "1546401186.002600"
+        },
+        {
+            "client_msg_id": "07c0dc88-0c39-459f-9312-35928de837ed",
+            "type": "message",
+            "text": "Here's an example of using events:\n```\n#include &lt;stdio.h&gt;\n#include &lt;allegro5\/allegro.h&gt;\n \nint main(int argc, char **argv){\n   \n   ALLEGRO_DISPLAY *display = NULL;\n   ALLEGRO_EVENT_QUEUE *event_queue = NULL;\n\n   if(!al_init()) {\n      fprintf(stderr, \"failed to initialize allegro!\\n\");\n      return -1;\n   }\n\n   display = al_create_display(640, 480);\n   if(!display) {\n      fprintf(stderr, \"failed to create display!\\n\");\n      return -1;\n   }\n\n   event_queue = al_create_event_queue();\n   if(!event_queue) {\n      fprintf(stderr, \"failed to create event_queue!\\n\");\n      al_destroy_display(display);\n      return -1;\n   }\n \n   al_register_event_source(event_queue, al_get_display_event_source(display));\n\n   al_clear_to_color(al_map_rgb(0,0,0));\n \n   al_flip_display();\n \n   while(1)\n   {\n      ALLEGRO_EVENT ev;\n      ALLEGRO_TIMEOUT timeout;\n      al_init_timeout(&amp;timeout, 0.06);\n      \n      bool get_event = al_wait_for_event_until(event_queue, &amp;ev, &amp;timeout);\n\n      if(get_event &amp;&amp; ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {\n         break;\n      }\n\n      al_clear_to_color(al_map_rgb(0,0,0));\n      al_flip_display();\n   }\n \n   al_destroy_display(display);\n   al_destroy_event_queue(event_queue);\n\n   return 0;\n}\n```",
+            "user": "UB659D0FM",
+            "ts": "1546401083.002400"
+        },
+        {
+            "client_msg_id": "ddbde337-b9a6-4cd6-8535-4ec7bf0c0e73",
+            "type": "message",
+            "text": "Do you have any examples?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546401008.002200"
+        },
+        {
+            "client_msg_id": "4b94cdd3-29da-4da1-af00-532f5448726a",
+            "type": "message",
+            "text": "Here is some information about getting events:\n```\nEvent queues and input\n\nInput comes from multiple sources: keyboard, mouse, joystick, timers, etc. Event queues aggregate events from all these sources, then you can query the queue for events.\n\nCreate an event queue with al_create_event_queue, then tell input sources to place new events into that queue using al_register_event_source. The usual input event sources can be retrieved with al_get_keyboard_event_source, al_get_mouse_event_source and al_get_joystick_event_source.\n\nEvents can be retrieved with al_wait_for_event or al_get_next_event. Check the event type and other fields of ALLEGRO_EVENT to react to the input.\n\nDisplays are also event sources, which emit events when they are resized. You'll need to set the ALLEGRO_RESIZABLE flag with al_set_new_display_flags before creating the display, then register the display with an event queue. When you get a resize event, call al_acknowledge_resize.\n\nTimers are event sources which \"tick\" periodically, causing an event to be inserted into the queues that the timer is registered with. Create some with al_create_timer.\n\nal_get_time and al_rest are more direct ways to deal with time.\n```",
+            "user": "UB659D0FM",
+            "ts": "1546400984.002000"
+        },
+        {
+            "client_msg_id": "fea79b17-fefd-40c3-b54a-106a9f92e8c9",
+            "type": "message",
+            "text": "How do I use that?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546400877.001800"
+        },
+        {
+            "client_msg_id": "529897b6-2f43-47c7-8796-106a1d976b25",
+            "type": "message",
+            "text": "Does this help?\n\n```\nALLEGRO_EVENT_KEY_CHAR\n\nA character was typed on the keyboard, or a character was auto-repeated.\n\nkeyboard.keycode (int)\n    The code corresponding to the physical key which was last pressed. See the Key codes section for the list of ALLEGRO_KEY_* constants. \nkeyboard.unichar (int)\n\n    A Unicode code point (character). This may be zero or negative if the event was generated for a non-visible \"character\", such as an arrow or Function key. In that case you can act upon the keycode field.\n\n    Some special keys will set the unichar field to their standard ASCII values: Tab=9, Return=13, Escape=27. In addition if you press the Control key together with A to Z the unichar field will have the values 1 to 26. For example Ctrl-A will set unichar to 1 and Ctrl-H will set it to 8.\n\n    As of Allegro 5.0.2 there are some inconsistencies in the treatment of Backspace (8 or 127) and Delete (127 or 0) keys on different platforms. These can be worked around by checking the keycode field.\nkeyboard.modifiers (unsigned)\n    This is a bitfield of the modifier keys which were pressed when the event occurred. See \"Keyboard modifier flags\" for the constants. \nkeyboard.repeat (bool)\n    Indicates if this is a repeated character. \nkeyboard.display (ALLEGRO_DISPLAY *)\n    The display which had keyboard focus when the event occurred. \n```",
+            "user": "UB659D0FM",
+            "ts": "1546400825.001600"
+        },
+        {
+            "client_msg_id": "c5430342-e0cb-428e-a39c-b657e0484cff",
+            "type": "message",
+            "text": "How do I get the keyboard input in allegro?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546400786.001400"
+        },
+        {
+            "client_msg_id": "82d09a32-afba-4b73-a714-4d76ca78d768",
+            "type": "message",
+            "text": "how do I get the key input?",
+            "user": "UF4QB6A2Z",
+            "ts": "1546400694.001100"
+        },
+        {
+            "client_msg_id": "7bf0ff96-0186-46b2-91ec-f847058125aa",
+            "type": "message",
+            "text": "Ask about an Allegro function or feature and I will try to provide you with helpful information!",
+            "user": "UB659D0FM",
+            "ts": "1546400527.000800"
+        },
+        {
+            "client_msg_id": "65d0599b-b6f9-413c-a046-d48e3823ee13",
+            "type": "message",
+            "text": "I've never used Allegro before",
+            "user": "UF4QB6A2Z",
+            "ts": "1546400498.000600"
+        },
+        {
+            "client_msg_id": "7c1936c3-eb84-43b9-b036-d5c1c87e5c64",
+            "type": "message",
+            "text": "Hi Programmer_21",
+            "user": "UB659D0FM",
+            "ts": "1546400481.000400"
+        },
+        {
+            "client_msg_id": "369848ce-f3a2-4a77-a165-18ad30abbaf5",
+            "type": "message",
+            "text": "Hello Apiza",
+            "user": "UF4QB6A2Z",
+            "ts": "1546400472.000200"
+        }
+    ],
+    "has_more": false
+}
