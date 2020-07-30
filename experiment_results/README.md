@@ -44,7 +44,7 @@ This folder contains the formatted results of both studies (task completion and 
         * total_exit - The total of all responses in the exit survey filled out by the programmer.
         * e1_expected_behavior - The programmer's response to Question 1 on the exit survey.
         * e2_comprehension - The programmer's response to Question 2 on the exit survey.
-        * e3_coparable_interface - The programmer's response to Question 3 on the exit survey.
+        * e3_comparable_interface - The programmer's response to Question 3 on the exit survey.
         * e4_future_use - The programmer's response to Question 4 on the exit survey.
         * e5_task_ease - The programmer's response to Question 5 on the exit survey.
         * e6_comprehensibility - The programmer's response to Question 6 on the exit survey.

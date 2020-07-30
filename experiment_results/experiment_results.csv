@@ -1,4 +1,4 @@
-pro_id,wiz_id,lib,num_pro_mess,avg_pro_len,num_wiz_mess,avg_wiz_len,num_tot_mess,avg_tot_len,total_score,total_exit,e1_expected_behavior,e2_comprehension,e3_coparable_interface,e4_future_use,e5_task_ease,e6_comprehensibility,e7_system_response,e8_user_expertise,e9_interaction_pace,,
+pro_id,wiz_id,lib,num_pro_mess,avg_pro_len,num_wiz_mess,avg_wiz_len,num_tot_mess,avg_tot_len,total_score,total_exit,e1_expected_behavior,e2_comprehension,e3_comparable_interface,e4_future_use,e5_task_ease,e6_comprehensibility,e7_system_response,e8_user_expertise,e9_interaction_pace,,
 28,6,1,27,5.555555556,21,75.14285714,48,36,6,42,5,5,5,5,4,5,4,5,4,,
 25,6,1,19,6.684210526,16,61.125,35,31.57142857,5,39,4,4,5,5,4,5,4,4,4,,
 26,4,1,7,6.285714286,6,60,13,31.07692308,4,42,5,5,3,5,5,5,5,5,4,,

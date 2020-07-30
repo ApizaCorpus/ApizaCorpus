@@ -1,0 +1,9 @@
+Did the system work the way you expected it to in this conversation?
+In this conversation, how well did the system understand what you said?
+How did the system's interface compare to that of normal API documentation? (5 stars = much better, 1 star = much worse)
+From your experience interacting with the system, would you continue to use the system when learning other unfamiliar APIs? (5 stars = absolutely, 1 star = absolutely not)
+In this conversation, was it easy to find the information you wanted?
+Was the system easy to understand in this conversation?
+How often were the system responses frustrating, sluggish, or unhelpful? (5 stars = Never, 1 star = Always)
+In this conversation, did you know what you could say at each point in the dialogue?
+Was the pace of interaction appropriate in this conversation?

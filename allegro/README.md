@@ -24,10 +24,10 @@ This folder contains the raw data for each study using the allegro scenario. It 
         * score.txt 
             * Reports the programmer's completion of each task in the session. A score of 0 indicates that the task was not attempted; a score of 1 indicates that the task was attempted but not successfully completed; a score of 2 indicates that the task was successfully completed.
 
-* entry_survey.txt
+* entry_survey_questions.txt
     * The list of questions asked of participants in the entry survey in the allegro scenario.
 
-* exit_survey.txt
+* exit_survey_questions.txt
     * The list of questions asked of participants in the exit survey.
 
 * skeleton_code.c
