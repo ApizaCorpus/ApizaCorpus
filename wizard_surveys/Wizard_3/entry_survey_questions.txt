@@ -1,0 +1,5 @@
+How many years of programming experience do you have (any language)?
+How many years of experience do you have with the C programming language?
+Are you familiar with the LibSSH API?
+If so, please describe your level of familiarity (otherwise leave blank).
+Rate your familiarity with SSH or similar networking protocol.

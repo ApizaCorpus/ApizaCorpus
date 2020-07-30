@@ -1,0 +1,11 @@
+https://www.codingunit.com/printf-format-specifiers-format-conversions-and-formatted-output
+https://stackoverflow.com/questions/11732402/how-do-i-properly-printf-an-integer-and-a-string-in-c
+https://ubuntuforums.org/showthread.php?t=2083697
+https://ubuntuforums.org/showthread.php?t=2083697&page=3&s=dffe48a47a7bd8a39ca71b8adc6e87c3
+https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm
+https://www.google.com/search?q=connecting+to+localhost+and+authenticating+the+server
+https://www.google.com/search?q=localhost+and+its+port
+https://www.google.com/search?q=printf+integer+c+example
+https://www.google.com/search?q=printf+interger
+https://www.google.com/search?q=printf+interger+c
+https://www.google.com/search?q=ubuntu+shell+how+to+run+an+executable+file

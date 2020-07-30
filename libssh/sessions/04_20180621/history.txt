@@ -1,0 +1,16 @@
+https://bugs.libssh.org/file/data/jgqm374kmzxamq432hie/PHID-FILE-r3a27fm3f6lhd56vk53h/file
+https://www.google.com/search?q=implicit+declaration+of+ssh_session_is_known_server
+http://api.libssh.org/master/group__libssh__session.html
+http://api.libssh.org/master/group__libssh__session.html#ga6f37e3d7bb6b938b44d6a34a76fdfa0b
+https://www.google.com/search?q=printf+return+value
+https://stackoverflow.com/questions/7055882/return-value-of-printf-function-in-c
+https://www.google.com/search?q=ssh_is_server_known+states
+https://www.google.com/search?q=ssh_session_is_known_server
+https://bugs.libssh.org/file/data/jgqm374kmzxamq432hie/PHID-FILE-r3a27fm3f6lhd56vk53h/file
+https://www.google.com/search?q=implicit+declaration+of+ssh_session_is_known_server
+http://api.libssh.org/master/group__libssh__session.html
+http://api.libssh.org/master/group__libssh__session.html#ga6f37e3d7bb6b938b44d6a34a76fdfa0b
+https://www.google.com/search?q=printf+return+value
+https://stackoverflow.com/questions/7055882/return-value-of-printf-function-in-c
+https://www.google.com/search?q=ssh_is_server_known+states
+https://www.google.com/search?q=ssh_session_is_known_server

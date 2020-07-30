@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/16430108/what-does-it-mean-to-write-to-stdout-in-c
+https://www.google.com/search?q=how+to+print+to+stdout+c
+https://www.google.com/search?q=return+-1+c

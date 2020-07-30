@@ -1,0 +1,6 @@
+http://www.cplusplus.com/reference/cmath/nan-function/
+https://www.tutorialspoint.com/c_standard_library/c_function_atan2.htm
+https://stackoverflow.com/questions/47909048/what-will-be-atan2-output-for-both-x-and-y-as-0 
+https://www.google.com/search?q=c+return+nan
+https://www.google.com/search?q=c+atan2
+https://www.google.com/search?q=c+atan2+0+0

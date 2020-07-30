@@ -1,4 +1,0 @@
-https://askubuntu.com/questions/80254/how-do-i-turn-off-caps-lock-the-lock-not-the-key-by-command-line/607915
-https://stackoverflow.com/questions/3723592/what-is-the-c-equivalent-to-the-c-cin-statement
-https://www.tutorialspoint.com/c_standard_library/c_function_free.htm
-https://www.google.com/search?q=localhost+name&oq=localhost+name&aqs=chrome..69i57j0l5.2175j0j7&sourceid=chrome&ie=UTF-8

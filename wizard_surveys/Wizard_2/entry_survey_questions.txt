@@ -1,0 +1,8 @@
+What is (are) your native language(s)?
+What is the highest level of education you have completed?
+How many years of experience do you have writing code in any programming language?
+How many years of experience do you have writing code in C?
+Would you say you write in C regularly?
+Are you familiar with the Allegro library?
+If so, please describe your level of familiarity (otherwise leave blank).
+Rate your familiarity with video game or similar multimedia programming.

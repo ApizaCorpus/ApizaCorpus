@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/10463201/getch-and-arrow-codes
+https://www.google.com/search?q=how+to+capture+arrow+keys+in+c
+https://stackoverflow.com/questions/190229/where-is-the-itoa-function-in-linux
+https://www.google.com/search?q=convert+into+to+string+in+c

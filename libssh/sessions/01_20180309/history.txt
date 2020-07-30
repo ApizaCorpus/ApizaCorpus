@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/29200100/c-functions-with-double-colon-syntax
+https://www.google.com/search?client=ubuntu&channel=fs&q=double+colons+in+c&ie=utf-8&oe=utf-8
+https://stackoverflow.com/questions/1258550/why-should-you-use-strncpy-instead-of-strcpy
+https://www.google.com/search?client=ubuntu&channel=fs&q=c+strcpy+length&ie=utf-8&oe=utf-8
+https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm
+https://www.google.com/search?q=c+strcpy&oq=c+strcpy
+https://www.google.com/search?q=EOF+in+c
+https://stackoverflow.com/questions/1768620/how-do-i-show-what-fields-a-struct-has-in-gdb
+https://stackoverflow.com/questions/11726225/how-to-display-the-fields-of-a-struct
+https://www.google.com/search?q=show+struct+properties+in+C
+https://www.google.com/search?q=show+struct+properties+in+C+without+IDE
+https://stackoverflow.com/questions/2576554/c-programming-dereferencing-pointer-to-incomplete-type-error
+https://www.google.com/search?q=error%3A+dereferencing+pointer+to+incomplete+type
