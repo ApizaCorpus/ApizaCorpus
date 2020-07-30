@@ -14,8 +14,8 @@ This repository is organized as follows:
 * annotations/
 	* Contains the dialogue act annotations for each study session.
 
-* other/
-	* Contains the wizards' entry surveys, as well as the mapping between wizards and participants
+* wizard_surveys/
+	* Contains the wizards' entry surveys
 
 * experiments_summary.txt
     * Outlines the programmer, wizard, and library in each study session.
