@@ -1,4 +1,5 @@
 # Apiza WoZ Studies on API Usage with a Simulated Virtual Assistant
+[![DOI](https://zenodo.org/badge/204487701.svg)](https://zenodo.org/badge/latestdoi/204487701)
 
 This repository is organized as follows:
 
