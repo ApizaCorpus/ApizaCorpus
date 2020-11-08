@@ -1,7 +1,7 @@
 # Apiza WoZ Studies on API Usage with a Simulated Virtual Assistant
 ## allegro/
 
-This folder contains the raw data for each study using the allegro scenario. It is organized as follows:
+This folder contains the dialogue results for each study using the allegro scenario. It is organized as follows:
 
 * sessions/
     * Contains folders for each study session using the allegro scenario. The names of the folders describe the session ID and on which date that session took place; for instance, the folder 16_20181016 was the 16th session of the Apiza studies (with ID# 16), taking place on October 16, 2018. Each folder contains some combination of the following files 

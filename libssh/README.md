@@ -1,7 +1,7 @@
 # Apiza WoZ Studies on API Usage with a Simulated Virtual Assistant
 ## libssh/
 
-This folder contains the raw data for each study using the libssh scenario. It is organized as follows:
+This folder contains the dialogue results for each study using the libssh scenario. It is organized as follows:
 
 * sessions/
     * Contains folders for each study session using the libssh scenario. The names of the folders describe the session ID and on which date that session took place; for instance, the folder 03_20180614 was the 3rd session of the Apiza studies (with ID# 03), taking place on June 14, 2018. Each folder contains some combination of the following files:

@@ -47,7 +47,7 @@ This folder contains the dialogue act annotations for each study session. It is 
         * link - If this dialogue act has a backwards-facing dialogue act type, this field indicates the id of the prior dialogue act with which this act has a relationship.
         * relationship - If this dialogue act has a backwards-facing dialogue act type, this field indicates that type.
         * api_labels - Lists the API dialogue act types assigned to this dialogue act.
-        * topic - Lists any specific API components that are the "topic" of the dialogue act type (the "traceability" annotations).
+        * api_components - Lists any specific API components that are the "topic" of the dialogue act type (the "traceability" annotations).
         * entities - Not currently used.
 
 
